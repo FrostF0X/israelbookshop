@@ -2,7 +2,7 @@ import fs from 'fs';
 import lighthouse from 'lighthouse';
 import puppeteer from 'puppeteer';
 
-const url = 'https://www.israelbookshop.com';
+const url = 'https://kukr29uk66duhr1k-55888609445.shopifypreview.com/';
 const options = {
   logLevel: 'info',
   output: 'json',

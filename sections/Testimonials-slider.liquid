@@ -64,7 +64,7 @@
       {% for block in section.blocks %}
         <div class="testimonails-block">
           {% if block.settings.image != blank %}
-            <img src="{{ block.settings.image | img_url:'master'}}">
+            {{ block.settings.image | image_url: width: 400 | image_tag: loading: 'lazy' }}
           {% endif %}
           <p>{{ block.settings.testimonails_text }}</p>
           <h4>{{ block.settings.testimonails_author }}</h4>

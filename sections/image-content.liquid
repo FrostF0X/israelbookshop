@@ -67,7 +67,7 @@
         <a href="{{ block.settings.view-btn-link }}">
         <div class="icon-content-block item">
           <div class="icon-container">
-            <img src="{{ block.settings.image | img_url:'master'}}">
+            {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy' }}
           </div>
           <div class="content-block">
             <span>{{ block.settings.title_image }}</span>
@@ -132,7 +132,7 @@
 ]
 }
 {% endschema %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script type="text/javascript">
   (function ($) {

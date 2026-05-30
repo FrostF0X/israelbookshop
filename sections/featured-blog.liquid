@@ -201,7 +201,7 @@
           <div class="item">
             <div class="blog-single-container">
               {%- if article.image -%}
-                {{ article | img_url: 'master', scale: 2 | img_tag: '' }}
+                {{ article.image | image_url: width: 800 | image_tag: loading: 'lazy' }}
               {%- endif -%}
               {% if section.settings.blog != blank %}
                 <span class="category-blog">{{ section.settings.blog }}</span>

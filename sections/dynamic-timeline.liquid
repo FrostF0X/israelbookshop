@@ -26,7 +26,7 @@
                 <div class="timeline-contact-wrapper">
                   <p>{{ block.settings.timeline_text }}</p>
                   {% if block.settings.image != blank %}
-                    <img src="{{block.settings.image | img_url:"master" }}">
+                    {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy' }}
                   {% endif %}
                 </div>
               {% endif %}
@@ -44,7 +44,7 @@
                   <p>{{ block.settings['timeline_text-1'] }}</p>
                 {% endif %}
                 {% if block.settings['image-1'] != blank %}
-                  <img src="{{block.settings.image-1 | img_url:"master" }}">
+                  {{ block.settings.image-1 | image_url: width: 800 | image_tag: loading: 'lazy' }}
                 {% endif %}
               </div>
             </div>

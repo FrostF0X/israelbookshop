@@ -35,7 +35,7 @@
     {% if block.settings.text != blank %}
       <div class="site-footer-block-content rte block-{{ forloop.index }}">
         {% if block.settings.image != blank %}
-          <img src="{{ block.settings.image | img_url:'master'}}">
+          {{ block.settings.image | image_url: width: 400 | image_tag: loading: 'lazy' }}
         {% endif %}
         {{ block.settings.text }}
       </div>
