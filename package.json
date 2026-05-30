@@ -9,5 +9,8 @@
   "dependencies": {
     "lighthouse": "^11.5.0",
     "puppeteer": "^22.4.0"
+  },
+  "devDependencies": {
+    "purgecss": "^8.0.0"
   }
 }
