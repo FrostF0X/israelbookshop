@@ -1,0 +1,160 @@
+{% style %}
+  .page-width button.owl-next:hover {
+  background: #fff0 !important;
+  }
+  .page-width button.owl-prev:hover {
+  background: #fff0 !important;
+  }
+  .icon-content-wrapper a {
+    text-decoration: none;
+   }
+  .icon-content-block img{
+  width:100%;
+  }
+  .slideshows {
+  margin: 80px 0px;
+  }
+  a.icon-link {
+  color: #F05036;
+  text-decoration: none;
+  }
+  .header-title {
+  text-align: center;
+  margin-bottom: 30px;
+  }
+  .header-title h2 {
+  text-align: center;
+  margin-bottom: 5px;
+  }
+  .content-block {
+  text-align: center;
+  margin-top: 10px;
+  }
+  .content-block span {
+  color: #0A2A43;
+  font-size: 16px !important;
+  font-weight: 600;
+  }
+  .owl-nav.disabled {
+  display: block !important;
+  }
+  .icon-container {
+  padding: 40px;
+  border-radius: 100%;
+  border: 1px solid #004974;
+  }
+  .page-width button.owl-prev {
+  position: absolute;
+  top: 0;
+  left: -4%;
+  bottom: 13%;
+  }
+  .page-width button.owl-next {
+  position: absolute;
+  top: 0;
+  right: -4%;
+  bottom: 13%;
+  }
+{% endstyle %}
+<div class="{{ section.id }}">
+  <div class="page-width promo-mosaic--container">
+    <div class="header-title">
+      <h2>{{ section.settings.title }}</h2>
+      <a class="icon-link" href="{{ section.settings.view-btn-link }}">{{ section.settings['view-btn'] }}</a>
+    </div>
+    <div class="icon-content-wrapper owl-carousel owl-theme">
+      {% for block in section.blocks %}
+        <a href="{{ block.settings.view-btn-link }}">
+        <div class="icon-content-block item">
+          <div class="icon-container">
+            {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+          </div>
+          <div class="content-block">
+            <span>{{ block.settings.title_image }}</span>
+          </div>
+        </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+"name": "Image Content",
+"tag": "section",
+"class": "slideshows",
+"max_blocks": 5,
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": "Title"
+},
+{
+"id": "view-btn-link",
+"type": "url",
+"label": "Button URL"
+},
+{
+"id": "view-btn",
+"type": "text",
+"label": "Button name"
+}
+],
+"blocks": [
+{
+"name": "Image",
+"type": "Image",
+"settings": [
+{
+"type": "image_picker",
+"id": "image",
+"label": "Image"
+},
+{
+"type": "text",
+"id": "title_image",
+"label": "Heading"
+},
+{
+"id": "view-btn-link",
+"type": "url",
+"label": "Button URL"
+}
+]
+}
+],
+"presets": [
+{
+"name": "Image Content",
+"category": "ADVANCED LAYOUT"
+}
+]
+}
+{% endschema %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script type="text/javascript">
+  (function ($) {
+    'use strict';
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:40,
+        nav:true,
+        navText: ["<img src='https://cdn.shopify.com/s/files/1/0558/8860/9445/files/Vector_5.svg?v=1688552113'/>", "<img src='https://cdn.shopify.com/s/files/1/0558/8860/9445/files/Vector_6.svg?v=1688552246'/>"],
+        dots:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:5
+            }
+        }
+    })
+
+  })(jQuery);
+</script>

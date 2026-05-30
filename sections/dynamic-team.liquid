@@ -1,0 +1,174 @@
+{%- style -%}
+                  .section-{{ section.id }}-padding {
+                    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+                    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+                  }
+                  .team-wrapper{
+                   max-width: 1100px;
+                    margin: 0 auto;
+                    width: 100%;
+                    position: relative;
+                    padding: 0 30px;
+                  }
+                  .team-wrapper {
+                    display: grid;
+                    grid-template-columns: 0.5fr 1fr;
+                    column-gap: 60px;
+                }
+              .team-right-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 30px;
+            column-gap: 30px;
+        }
+        .team-section-block img {
+          border-radius: 100%;
+      }
+      .team-left-wrapper p {
+        margin-bottom: 40px;
+    }
+    a.team-link {
+        font-weight: 200;
+        padding: 14px 20px;
+        text-decoration: none;
+        background: #EF5036;
+        color: #fff;
+    }
+            .team-right-wrapper h3 {
+                font-size: 20px;
+                margin: 2px 0px;
+            }
+            .job-content p {
+              font-size: 14px;
+              margin-top: 10px;
+          }
+    @media only screen and (max-width: 768px) {
+  .team-wrapper {
+      display: block;
+  }
+  .team-right-wrapper {
+      margin-top: 80px;
+  }
+  }
+
+                  @media screen and (min-width: 750px) {
+                    .section-{{ section.id }}-padding {
+                      padding-top: {{ section.settings.padding_top }}px;
+                      padding-bottom: {{ section.settings.padding_bottom }}px;
+                    }
+                  }
+{%- endstyle -%}
+<div id="team" class="{{ section.id }} section-{{ section.id }}-padding">
+  <div class="team-wrapper">
+    <div class="team-left-wrapper">
+      {% if section.settings.title != blank %}
+        <h2>{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.team_text != blank %}
+        <P>{{ section.settings.team_text }}</P>
+      {% endif %}
+      <a class="team-link" href="{{ section.settings.view-btn-link }}">{{ section.settings['view-btn'] }}</a>
+    </div>
+
+    <div class="team-right-wrapper">
+      {% for block in section.blocks %}
+        <div class="team-section-block">
+          {% if block.settings.image != blank %}
+            {{ block.settings.image | image_url: width: 400 | image_tag: loading: 'lazy' }}
+          {% endif %}
+          {% if block.settings.name_title != blank %}
+            <h3>{{ block.settings.name_title }}</h3>
+          {% endif %}
+          {% if block.settings.job_title != blank %}
+            <span>{{ block.settings.job_title }}</span>
+          {% endif %}
+          {% if block.settings.job_text != blank %}
+            <div class="job-content">{{ block.settings.job_text }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+"name": "Team",
+"class": "team",
+"settings": [
+{
+"type": "text",
+"id": "title",
+"label": "Title"
+},
+{
+"type":"richtext",
+"id":"team_text",
+"label":"Content"
+},
+{
+"id": "view-btn-link",
+"type": "url",
+"label": "Button URL"
+},
+{
+"id": "view-btn",
+"type": "text",
+"label": "Button name"
+},
+        {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "padding_bottom",
+      "default": 36
+    }
+],
+"blocks": [
+{
+"name": "Slide",
+"type": "slide",
+"settings": [
+{
+"type": "image_picker",
+"id": "image",
+"label": "Image"
+},
+{
+"type": "text",
+"id": "name_title",
+"label": "Title"
+},
+{
+"type": "text",
+"id": "job_title",
+"label": "Job Title"
+},
+{
+"type":"richtext",
+"id":"job_text",
+"label":"Content"
+}
+]
+}
+],
+"presets": [
+{
+"name": "Team",
+"category": "ADVANCED LAYOUT"
+}
+]
+}
+{% endschema %}

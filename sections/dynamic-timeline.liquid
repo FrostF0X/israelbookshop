@@ -1,0 +1,139 @@
+{{ 'timeline.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="{{ section.id }} section-{{ section.id }}-padding">
+  <div class="timeline">
+    {% for block in section.blocks %}
+      <div class="testimonails-block">
+        {% if block.settings.date_author != blank %}
+          <div class="container left">
+            <div class="content">
+              {% if block.settings.date_author != blank %}
+                <h2>{{ block.settings.date_author }}</h2>
+              {% endif %}
+              {% if block.settings.timeline_text != blank %}
+                <div class="timeline-contact-wrapper">
+                  <p>{{ block.settings.timeline_text }}</p>
+                  {% if block.settings.image != blank %}
+                    {{ block.settings.image | image_url: width: 400 | image_tag: loading: 'lazy' }}
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+        {% if block.settings['timeline_text-1'] != blank %}
+          <div class="container right">
+            <div class="content right-container">
+              {% if block.settings['date_author-1'] != blank %}
+                <h2>{{ block.settings['date_author-1'] }}</h2>
+              {% endif %}
+              <div class="timeline-contact-wrapper">
+                {% if block.settings['timeline_text-1'] != blank %}
+                  <p>{{ block.settings['timeline_text-1'] }}</p>
+                {% endif %}
+                {% if block.settings['image-1'] != blank %}
+                  {{ block.settings.image-1 | image_url: width: 400 | image_tag: loading: 'lazy' }}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Timeline",
+  "settings": [
+      {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+     {
+       "name": "Left Timeline",
+       "type": "Timeline",
+       "settings": [
+         {
+           "type":"image_picker",
+           "id":"image",
+           "label":"image"
+         },
+         {
+           "type": "text",
+           "id": "date_author",
+           "label": "Date"
+         },
+         {
+           "type": "richtext",
+           "id": "timeline_text",
+           "label": "Content"
+         }
+       ]
+     },
+     {
+       "name": "Right Timeline",
+       "type": "R-Timeline",
+       "settings": [
+         {
+           "type":"image_picker",
+           "id":"image-1",
+           "label":"image"
+         },
+         {
+           "type": "text",
+           "id": "date_author-1",
+           "label": "Date"
+         },
+         {
+           "type": "richtext",
+           "id": "timeline_text-1",
+           "label": "Content"
+         }
+       ]
+     }
+   ],
+  "presets": [
+{
+"name": "Timeline",
+"category": "ADVANCED LAYOUT"
+}
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

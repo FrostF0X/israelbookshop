@@ -1,0 +1,236 @@
+{% style %}
+.contact-page-content {
+max-width: 100%;
+padding: 0px 45px 0px 0px;
+width: 100%;
+margin-top: 0px;
+}
+.contact-wrapper {
+width: 100%;
+max-width: 1300px;
+margin: 0 auto;
+padding: 0px 25px;
+}
+.contact-wrapper header.page-masthead {
+padding-left: 0px;
+}
+.form-wrapper {
+display: grid;
+grid-template-columns: 1fr 1fr;
+column-gap: 40px;
+}
+.image-info-container {
+display: grid;
+grid-template-columns: 1fr 1fr;
+row-gap: 40px;
+column-gap: 20px;
+}
+.mini-info-container p {
+line-height: 1.5;
+}
+article.site-page header {
+margin-bottom: 15px;
+}
+h1.page-title {
+text-align: left;
+}
+@media only screen and (max-width: 768px) {
+.form-wrapper {
+grid-template-columns: 1fr;
+}
+.contact-page-content {
+max-width: 100%;
+padding: 0px 30px;
+}
+.image-info-wrapper {
+padding: 0px 30px;
+column-gap: 20px !important;
+}
+}
+{% endstyle %}
+<article class="site-page" data-template-page data-template-contact>
+  <header class="page-masthead">
+    <h1 class="page-title">
+      {{ page.title }}
+    </h1>
+  </header>
+  <div class="form-wrapper">
+    <div class="form-block-container">
+      {% form 'contact' %}
+        {% if page.content != blank %}
+          <div class="page-content rte">
+            {{ page.content }}
+          </div>
+        {% endif %}
+
+        <div class="contact-page-content">
+          {% assign has_message = false %}
+
+          {% if form.errors != blank %}
+            {% assign has_message = true %}
+            {% assign message_type = 'error' %}
+          {% endif %}
+
+          {% if form.posted_successfully? %}
+            {% assign has_message = true %}
+            {% assign message_type = 'success' %}
+          {% endif %}
+
+          {% if has_message %}
+            <div class="contact-message message--{{ message_type }}">
+              {% case message_type %}
+                {% when 'success' %}
+                  <p>
+                    {{ 'contact.form.post_success' | t }}
+                  </p>
+                {% when 'error' %}
+                  {{ form.errors | default_errors }}
+              {% endcase %}
+            </div>
+          {% endif %}
+
+          <div class="form-fields-columns">
+            <div class="form-field form-field--half">
+              {% assign value = '' %}
+              {%- if form.name -%}
+                {% assign value = form.name %}
+              {%- elsif customer -%}
+                {% assign value = customer.name %}
+              {%- endif -%}
+
+              <input
+                class="form-field-input form-field-text {% if form.errors contains 'name' %}form-field-error{% endif %}"
+                id="contact_name"
+                name="contact[name]"
+                type="text"
+                value="{{ value }}"
+              >
+
+              <label class="form-field-title" for="contact_name">
+                {{ 'contact.form.name' | t }}
+              </label>
+            </div>
+
+            <div class="form-field form-field--half">
+              {% assign value = '' %}
+              {%- if form.email -%}
+                {% assign value = form.email %}
+              {%- elsif customer -%}
+                {% assign value = customer.email %}
+              {%- endif -%}
+              <input
+                class="form-field-input form-field-text {% if form.errors contains 'email' %}form-field-error{% endif %}"
+                id="contact_email"
+                name="contact[email]"
+                type="text"
+                value="{{ value }}"
+                autocorrect="off"
+                autocapitalize="off"
+              >
+
+              <label class="form-field-title" for="contact_email">
+                {{ 'contact.form.email' | t }}
+              </label>
+            </div>
+          </div>
+
+          <div class="form-field">
+            {% assign value = '' %}
+            {%- if form.phone -%}
+              {% assign value = form.phone %}
+            {%- elsif customer -%}
+              {% assign value = customer.phone %}
+            {%- endif -%}
+
+            <input
+              class="form-field-input form-field-text {% if form.errors contains 'phone' %}form-field-error{% endif %}"
+              id="contact_phone"
+              name="contact[phone]"
+              type="tel"
+              value="{{ value }}"
+            >
+
+            <label class="form-field-title" for="contact_phone">
+              {{ 'contact.form.phone' | t }}
+            </label>
+          </div>
+
+          <div class="form-field">
+            {% assign value = '' %}
+
+            {%- if form.body -%}
+              {% assign value = form.body %}
+            {%- endif -%}
+
+            <textarea
+              class="
+                form-field-input
+                form-field-textarea
+                {% if form.errors contains 'body' %}
+                  form-field-error
+                {% endif %}
+              "
+              id="contact_message"
+              name="contact[message]"
+            >
+          {{- value -}}
+        </textarea>
+
+            <label class="form-field-title" for="contact_message">
+              {{- 'contact.form.message' | t -}}
+            </label>
+          </div>
+
+          <div class="form-action-row">
+            <button class="button-primary contact-form-button" type="submit">
+              {{ 'contact.form.send' | t }}
+            </button>
+          </div>
+        </div>
+      {% endform %}
+    </div>
+    <div class="image-info-wrapper">
+      <div class="image-info-container">
+        {% for block in section.blocks %}
+          <div class="mini-info-container">
+            {% if block.settings.image != blank %}
+              {{ block.settings.image | image_url: width: 400 | image_tag: loading: 'lazy' }}
+            {% endif %}
+            {% if block.settings['info-content'] != blank %}
+              {{ block.settings['info-content'] }}
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "Contact",
+  "tag": "section",
+  "class": "contact-wrapper",
+  "settings": [
+  ],
+  "blocks": [
+     {
+       "name": "Contact block",
+       "type": "Contact",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         },
+         {
+           "type":"richtext",
+           "id":"info-content",
+           "label":"Information",
+           "default":"<p>Contact</p>"
+         }
+       ]
+     }
+   ]
+}
+{% endschema %}

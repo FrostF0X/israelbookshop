@@ -1,0 +1,5 @@
+node_modules/
+lighthouse-report.json
+*.zip
+.DS_Store
+.shopify
