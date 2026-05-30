@@ -67,7 +67,7 @@
         <a href="{{ block.settings.view-btn-link }}">
         <div class="icon-content-block item">
           <div class="icon-container">
-            {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+            <img src="{{ block.settings.image | img_url:'master'}}">
           </div>
           <div class="content-block">
             <span>{{ block.settings.title_image }}</span>

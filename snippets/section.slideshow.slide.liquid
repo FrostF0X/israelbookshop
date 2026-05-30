@@ -147,11 +147,9 @@
     assign bg_opacity = text_background_opacity | times: 0.01
   endif
 
-  assign fetchpriority_attribute = 'auto'
   assign loading_attribute = 'lazy'
   if block_index == 0
     assign loading_attribute = 'eager'
-    assign fetchpriority_attribute = 'high'
   endif
 
   assign block_crop_images = 'center'
@@ -216,7 +214,12 @@
     data-slide-image-wrapper
   >
     {% if block_slide_image != blank %}
-      {{ block_slide_image | image_url: width: 2000 | image_tag: class: 'slideshow-slide__image slideshow-slide__image--desktop', loading: loading_attribute, fetchpriority: fetchpriority_attribute }}
+      <img
+        src="{{ block_slide_image | img_url: '2000x' }}"
+        alt="{{ block_slide_image.alt | escape }}"
+        class="slideshow-slide__image slideshow-slide__image--desktop"
+        loading="{{ loading_attribute }}"
+      >
     {% else %}
       {{
         placeholder
@@ -225,7 +228,12 @@
     {% endif %}
 
     {% if block_slide_image_mobile != blank %}
-      {{ block_slide_image_mobile | image_url: width: 800 | image_tag: class: 'slideshow-slide__image slideshow-slide__image--mobile', loading: loading_attribute, fetchpriority: fetchpriority_attribute }}
+      <img
+        src="{{ block_slide_image_mobile | img_url: '800x' }}"
+        alt="{{ block_slide_image_mobile.alt | escape }}"
+        class="slideshow-slide__image slideshow-slide__image--mobile"
+        loading="{{ loading_attribute }}"
+      >
     {% endif %}
 
     {% if block.settings.show_overlay and block_overlay_opacity != 0 and block_overlay_color != 'rgba(0,0,0,0)' %}
