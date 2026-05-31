@@ -492,6 +492,7 @@
     <script>
       window.__theme_asset_url__ = "{{ 'main.js' | asset_url | split: 'main.js' | first }}";
     </script>
+    {% comment %}
     {%- if settings.minify_scripts -%}
       <script
         src="{{ 'empire.min.js' | asset_url }}"
@@ -515,6 +516,7 @@
         defer
       ></script>
     {%- endif -%}
+    {% endcomment %}
 
     {% render 'structured-data' %}
 
