@@ -20,6 +20,13 @@ import rimg from '@pixelunion/rimg-shopify'; // eslint-disable-line
 import Sections from './Sections';
 
 // Polyfills
+
+// Critical Static Sections
+import StaticHeader from './sections/StaticHeader';
+import StaticAnnouncement from './sections/StaticAnnouncement';
+import StaticUtilityBar from './sections/StaticUtilityBar';
+import StaticFooter from './sections/StaticFooter';
+
 import polyfillUrls from './checkPolyfills';
 
 // Static Sections
@@ -89,9 +96,9 @@ const initEmpire = () => {
 
   const sections = new Sections();
   // Static sections
-  sections.register('static-header', () => import(/* webpackChunkName: "static-header" */ './sections/StaticHeader'));
-  sections.register('static-announcement', () => import(/* webpackChunkName: "static-announcement" */ './sections/StaticAnnouncement'));
-  sections.register('static-footer', () => import(/* webpackChunkName: "static-footer" */ './sections/StaticFooter'));
+  sections.register('static-header', section => new StaticHeader(section));
+  sections.register('static-announcement', section => new StaticAnnouncement(section));
+  sections.register('static-footer', section => new StaticFooter(section));
   sections.register('static-article', () => import(/* webpackChunkName: "static-article" */ './sections/StaticArticle'));
   sections.register('static-blog', () => import(/* webpackChunkName: "static-blog" */ './sections/StaticBlog'));
   sections.register('static-cart', () => import(/* webpackChunkName: "static-cart" */ './sections/StaticCart'));
@@ -105,7 +112,7 @@ const initEmpire = () => {
   sections.register('static-recently-viewed', () => import(/* webpackChunkName: "static-recently-viewed" */ './sections/StaticRecentlyViewed'));
   sections.register('static-search', () => import(/* webpackChunkName: "static-search" */ './sections/StaticSearch'));
   sections.register('static-search-faceted-filters', () => import(/* webpackChunkName: "static-search-faceted-filters" */ './sections/FacetedFilterSearch'));
-  sections.register('static-utility-bar', () => import(/* webpackChunkName: "static-utility-bar" */ './sections/StaticUtilityBar'));
+  sections.register('static-utility-bar', section => new StaticUtilityBar(section));
   sections.register('static-subcollections-featured-collection', () => import(/* webpackChunkName: "static-subcollections-featured-collection" */ './sections/StaticSubcollectionsFeaturedCollection'));
 
   // Dynamic sections (lazy loaded)
