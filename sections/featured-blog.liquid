@@ -286,28 +286,29 @@
 {% stylesheet %}
 {% endstylesheet %}
 <script type="text/javascript">
-  (function ($) {
-    'use strict';
-    $('.owl-blog-slider').owlCarousel({
-        loop:true,
-        margin:20,
-        nav:true,
-        dots:true,
-        navText: ["<img src='https://cdn.shopify.com/s/files/1/0558/8860/9445/files/Vector.svg?v=1688621289'/>", "<img src='https://cdn.shopify.com/s/files/1/0558/8860/9445/files/Vector_d8eb1e9f-1636-4722-a55d-d4fc80c51005.svg?v=1688621352'/>"],
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:3
-            },
-            1000:{
-                items:3
-            }
-        }
-    })
-
-  })(jQuery);
+  window.addEventListener('DOMContentLoaded', function() {
+    (function ($) {
+      'use strict';
+      $('.owl-blog-slider').owlCarousel({
+          loop:true,
+          margin:20,
+          nav:true,
+          dots:true,
+          navText: ["<img src='https://cdn.shopify.com/s/files/1/0558/8860/9445/files/Vector.svg?v=1688621289'/>", "<img src='https://cdn.shopify.com/s/files/1/0558/8860/9445/files/Vector_d8eb1e9f-1636-4722-a55d-d4fc80c51005.svg?v=1688621352'/>"],
+          responsive:{
+              0:{
+                  items:1
+              },
+              600:{
+                  items:3
+              },
+              1000:{
+                  items:3
+              }
+          }
+      })
+    })(window.jQuery);
+  });
 </script>
 {% style %}
   .owl-carousel{

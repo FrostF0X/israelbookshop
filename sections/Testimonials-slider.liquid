@@ -141,26 +141,27 @@
 }
 {% endschema %}
 <script type="text/javascript">
-  (function ($) {
-    'use strict';
-    $('#testimonails').owlCarousel({
-        loop:true,
-        margin:20,
-        nav:false,
-        dots:true,
-        navText: ["<img src='https://cdn.shopify.com/s/files/1/0558/8860/9445/files/Button_f1583cd8-47bb-4084-88ec-6e97dde25d1c.svg?v=1688618253'/>", "<img src='https://cdn.shopify.com/s/files/1/0558/8860/9445/files/Button.svg?v=1688618129'/>"],
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:3
-            },
-            1000:{
-                items:{{section.settings.range-slide}}
-            }
-        }
-    })
-
-  })(jQuery);
+  window.addEventListener('DOMContentLoaded', function() {
+    (function ($) {
+      'use strict';
+      $('#testimonails').owlCarousel({
+          loop:true,
+          margin:20,
+          nav:false,
+          dots:true,
+          navText: ["<img src='https://cdn.shopify.com/s/files/1/0558/8860/9445/files/Button_f1583cd8-47bb-4084-88ec-6e97dde25d1c.svg?v=1688618253'/>", "<img src='https://cdn.shopify.com/s/files/1/0558/8860/9445/files/Button.svg?v=1688618129'/>"],
+          responsive:{
+              0:{
+                  items:1
+              },
+              600:{
+                  items:3
+              },
+              1000:{
+                  items:{{section.settings.range-slide}}
+              }
+          }
+      })
+    })(window.jQuery);
+  });
 </script>
