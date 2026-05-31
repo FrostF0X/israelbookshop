@@ -1,0 +1,415 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: visual.spec.js >> Visual Regression Tests >> should load /collections/calendars/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times successfully and match baseline screenshot
+- Location: tests/visual.spec.js:22:5
+
+# Error details
+
+```
+Error: expect(page).toHaveScreenshot(expected) failed
+
+  Expected an image 1280px by 2986px, received 1280px by 3292px. 931580 pixels (ratio 0.23 of all image pixels) are different.
+
+  Snapshot: collections_calendars_products_hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times.png
+
+Call log:
+  - Expect "toHaveScreenshot(collections_calendars_products_hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times.png)" with timeout 60000ms
+    - verifying given screenshot expectation
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - Expected an image 1280px by 2986px, received 1280px by 3292px. 931580 pixels (ratio 0.23 of all image pixels) are different.
+  - waiting 100ms before taking screenshot
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - captured a stable screenshot
+  - Expected an image 1280px by 2986px, received 1280px by 3292px. 931580 pixels (ratio 0.23 of all image pixels) are different.
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - alertdialog "Cookie consent" [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - heading "Cookie consent" [level=2] [ref=e5]
+        - paragraph [ref=e6]:
+          - text: We and our partners, including Shopify, use cookies and other technologies to personalize your experience, show you ads, and perform analytics, and we will not use cookies or other technologies for these purposes unless you accept them. Learn more in our
+          - link "Privacy Policy" [ref=e7] [cursor=pointer]:
+            - /url: https://www.israelbookshop.com/policies/privacy-policy
+      - generic [ref=e8]:
+        - button "Manage preferences" [ref=e9]
+        - button "Accept" [ref=e10]
+        - button "Decline" [ref=e11]
+  - link "Skip to content" [ref=e12] [cursor=pointer]:
+    - /url: "#site-main"
+  - generic [ref=e14]:
+    - link [ref=e15] [cursor=pointer]:
+      - /url: https://israelbookshop.com/collections/sukkah-depot-decorations
+    - generic [ref=e16]:
+      - text: ☎ Need Help? Call Us
+      - link "617-566-7113" [ref=e17] [cursor=pointer]:
+        - /url: tel:+1-617-566-7113
+      - text: or
+      - link "800-323-7723" [ref=e18] [cursor=pointer]:
+        - /url: +1-800-323-7723
+  - banner [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - link [ref=e24] [cursor=pointer]:
+          - /url: /
+        - search "Product" [ref=e26]:
+          - generic [ref=e27]:
+            - combobox "Search" [ref=e28]
+            - button "Search" [ref=e29] [cursor=pointer]:
+              - img [ref=e31]
+      - generic [ref=e34]:
+        - list [ref=e35]:
+          - listitem [ref=e36]:
+            - link "My Account" [ref=e37] [cursor=pointer]:
+              - /url: https://www.israelbookshop.com/customer_authentication/redirect?locale=en&region_country=US
+              - img [ref=e39]
+              - generic [ref=e43]: My Account
+        - link "View cart" [ref=e45] [cursor=pointer]:
+          - /url: /cart
+          - img [ref=e48]
+          - generic [ref=e53]: View cart
+    - navigation "Main" [ref=e55]:
+      - list "Main menu" [ref=e56]:
+        - listitem [ref=e57]:
+          - group [ref=e58]:
+            - generic "Categories" [ref=e59] [cursor=pointer]:
+              - text: Categories
+              - img [ref=e61]
+        - listitem [ref=e64]:
+          - link "Calendars" [ref=e65] [cursor=pointer]:
+            - /url: /collections/calendars
+        - listitem [ref=e66]:
+          - link "Education" [ref=e67] [cursor=pointer]:
+            - /url: /collections/educational-resources
+        - listitem [ref=e68]:
+          - link "Literature & Novels" [ref=e69] [cursor=pointer]:
+            - /url: /collections/judaic-literature-novels
+        - listitem [ref=e70]:
+          - link "Synagogue" [ref=e71] [cursor=pointer]:
+            - /url: /collections/synagogue-supply
+        - listitem [ref=e72]:
+          - link "Israel" [ref=e73] [cursor=pointer]:
+            - /url: /collections/israel-educational-resources
+        - listitem [ref=e74]:
+          - link "About Us" [ref=e75] [cursor=pointer]:
+            - /url: /pages/about
+        - listitem [ref=e76]:
+          - link "Contact" [ref=e77] [cursor=pointer]:
+            - /url: /pages/contact
+      - list [ref=e78]:
+        - listitem [ref=e79]:
+          - link "Shipping & Returns" [ref=e80] [cursor=pointer]:
+            - /url: /pages/shipping-return-policy
+        - listitem [ref=e81]:
+          - link "Gift Cards" [ref=e82] [cursor=pointer]:
+            - /url: /products/israel-book-shop-gift-card
+  - main "Main content" [ref=e83]:
+    - generic [ref=e84]:
+      - navigation "Breadcrumbs" [ref=e85]:
+        - link "Home" [ref=e86] [cursor=pointer]:
+          - /url: /
+        - img [ref=e88]
+        - link "Calendars" [ref=e90] [cursor=pointer]:
+          - /url: /collections/calendars
+        - img [ref=e92]
+        - text: "Hebrew Illuminations 16-Month 2026-2027 Wall Calendar: And Candle Lighting Times"
+      - article [ref=e95]:
+        - generic [ref=e102] [cursor=pointer]:
+          - button "Click to expand" [ref=e103]:
+            - generic [ref=e104]:
+              - img [ref=e105]
+              - text: Click to expand
+          - 'img "Hebrew Illuminations 16-Month 2026-2027 Wall Calendar: And Candle Lighting Times cover image" [ref=e107]'
+        - generic [ref=e109]:
+          - 'heading "Hebrew Illuminations 16-Month 2026-2027 Wall Calendar: And Candle Lighting Times" [level=1] [ref=e111]'
+          - generic [ref=e113]:
+            - strong [ref=e114]: SKU
+            - text: "9798881607203"
+          - generic [ref=e117]:
+            - generic [ref=e118]:
+              - generic [ref=e119]: Original price
+              - text: $17.99 -
+              - generic [ref=e120]: Original price
+              - text: $17.99
+            - generic [ref=e121]: Original price
+            - generic [ref=e122]: $17.99
+            - generic [ref=e123]: $17.99 - $17.99
+            - generic [ref=e124]:
+              - generic [ref=e125]: Current price
+              - text: $17.99
+            - generic [ref=e126]:
+              - text: "|"
+              - text: /
+          - generic [ref=e132]:
+            - generic [ref=e133]:
+              - generic [ref=e134]: Quantity
+              - generic [ref=e135]:
+                - generic [ref=e136]:
+                  - button "Decrease quantity by 1":
+                    - img
+                - spinbutton "Quantity" [ref=e137] [cursor=pointer]: "1"
+                - button "Increase quantity by 1" [ref=e139] [cursor=pointer]:
+                  - img [ref=e140]
+            - button "Add to cart" [ref=e142] [cursor=pointer]:
+              - generic [ref=e143]: Add to cart
+            - generic [ref=e145]:
+              - generic:
+                - link "More payment options":
+                  - /url: "#"
+          - generic [ref=e147]:
+            - paragraph [ref=e148]: For Jewish families, the Hebrew Illuminations 16-Month 2026-2027 Wall Calendar showcases inspirational art created with neshama, “Jewish soul,” and provides Shabbat candle lighting times.
+            - paragraph [ref=e149]: From contemporary artist Adam Rhine, the calendar begins in September 2026 to coincide with Jewish New Year and ends with December 2027. The calendar's colorful renderings of the Menorah, Magen David, and Judaic-inspired mandalas are meant to glorify The Lord and serve as visual prayers for Israel and Judaism.
+            - paragraph [ref=e150]: "Features include:"
+            - paragraph [ref=e151]:
+              - text: "* 12\" x 12\" wall calendar (12\" x 24\" open)"
+              - text: "* Cover design eliminates need for plastic packaging"
+              - text: "* Printed on FSCÂ® certified paper with soy-based ink"
+              - text: "* Spans September 2026–December 2027 19 Elul, 5786 – 1 Tevet, 5788"
+              - text: "* Jewish holidays and observances"
+              - text: "* Shabbat and holiday candle lighting times for twenty-four US cities, plus Montreal, Toronto, Vancouver, London, Melbourne, and Sydney"
+              - text: "* English and Hebrew dates on each monthly spread"
+              - text: "* Official major world holidays and observances"
+              - text: "* Moon phases, based on Universal Time"
+              - text: "* Inspiring biblical quotes"
+              - text: "* Artwork created with a combination of watercolor, colored pencil, and acrylic"
+              - text: "* Wall art for your home, school, or office that provides a sense of time for planning and dreaming"
+              - text: "* WE PLANT TREES to help offset our carbon footprint and resource usage — more than 1.25 MILLION and growing!"
+              - text: "* NO SINGLE-USE PLASTIC — We have eliminated single-use shrink wrap to reduce plastic pollution."
+              - text: "* RESPONSIBLY SOURCED — Our paper is responsibly sourced from a combination of recycled materials and wood harvested from socially and environmentally sustainable forests and is FSC® certified."
+          - generic [ref=e154]:
+            - generic [ref=e155]:
+              - generic [ref=e156]: Author(s)
+              - img [ref=e157]
+              - generic [ref=e160]: Adam Rhine
+            - generic [ref=e161]:
+              - generic [ref=e162]: Pages
+              - img [ref=e163]
+              - generic [ref=e165]: "32"
+            - generic [ref=e166]:
+              - generic [ref=e167]: Binding
+              - img [ref=e168]
+              - generic [ref=e171]: Calendar
+            - generic [ref=e172]:
+              - generic [ref=e173]: Publication date
+              - img [ref=e174]
+              - generic [ref=e178]: 2026-05-19
+            - generic [ref=e179]:
+              - generic [ref=e180]: Publisher
+              - img [ref=e181]
+              - generic [ref=e186]: Amber Lotus Publishing
+            - generic [ref=e187]:
+              - generic [ref=e188]: ISBN
+              - img [ref=e189]
+              - generic [ref=e191]: "9798881607203"
+            - generic [ref=e192]:
+              - generic [ref=e193]: Dimensions
+              - img [ref=e194]
+              - generic [ref=e198]: 12.0 x 0.2 x 12.0 in
+            - generic [ref=e199]:
+              - generic [ref=e200]: Language
+              - img [ref=e201]
+              - generic [ref=e205]: English
+          - complementary "Share this:" [ref=e208]:
+            - text: "Share this:"
+            - generic [ref=e209]:
+              - link "Share on Facebook" [ref=e210] [cursor=pointer]:
+                - /url: //www.facebook.com/sharer.php?u=https://kukr29uk66duhr1k-55888609445.shopifypreview.com/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times
+                - img [ref=e211]
+                - generic [ref=e213]: Share on Facebook
+              - link "Share on X" [ref=e214] [cursor=pointer]:
+                - /url: //x.com/intent/tweet?url=https://kukr29uk66duhr1k-55888609445.shopifypreview.com/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times
+                - img [ref=e215]
+                - generic [ref=e219]: Share on X
+              - link "Share on LinkedIn" [ref=e220] [cursor=pointer]:
+                - /url: //www.linkedin.com/shareArticle?mini=true&url=https://kukr29uk66duhr1k-55888609445.shopifypreview.com/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times&title=Hebrew%20Illuminations%2016-Month%202026-2027%20Wall%20Calendar:%20And%20Candle%20Lighting%20Times
+                - img [ref=e221]
+                - generic [ref=e223]: Share on LinkedIn
+              - link "Pin on Pinterest" [ref=e224] [cursor=pointer]:
+                - /url: //pinterest.com/pin/create/button/?url=https://kukr29uk66duhr1k-55888609445.shopifypreview.com/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times&media=//kukr29uk66duhr1k-55888609445.shopifypreview.com/cdn/shop/files/9798881607203_1024x.jpg?v=1779984006&description=Hebrew%20Illuminations%2016-Month%202026-2027%20Wall%20Calendar:%20And%20Candle%20Lighting%20Times
+                - img [ref=e225]
+                - generic [ref=e227]: Pin on Pinterest
+    - complementary "Recently viewed products" [ref=e229]:
+      - generic [ref=e231]:
+        - heading "You recently viewed" [level=2] [ref=e232]
+        - button "Clear recently viewed" [ref=e233]
+  - contentinfo "Footer" [ref=e235]:
+    - generic [ref=e236]:
+      - generic [ref=e238]:
+        - generic [ref=e239]:
+          - heading "Israel Book Shop Publications" [level=2] [ref=e240]
+          - paragraph [ref=e242]:
+            - text: Our sister company in Lakewood, NJ. Publisher and distributor of Judaica oriented books and products to wholesale and retail markets.
+            - link "israelbookshoppublications.com" [ref=e243] [cursor=pointer]:
+              - /url: https://israelbookshoppublications.com
+              - strong [ref=e244]: israelbookshoppublications.com
+        - generic [ref=e245]:
+          - heading "Company" [level=2] [ref=e246]
+          - list [ref=e248]:
+            - listitem [ref=e249]:
+              - link "About Us" [ref=e250] [cursor=pointer]:
+                - /url: /pages/about
+            - listitem [ref=e251]:
+              - link "Contact Us" [ref=e252] [cursor=pointer]:
+                - /url: /pages/contact
+            - listitem [ref=e253]:
+              - link "Our Team" [ref=e254] [cursor=pointer]:
+                - /url: /pages/about/#team
+            - listitem [ref=e255]:
+              - link "Testimonials" [ref=e256] [cursor=pointer]:
+                - /url: /#testimonials
+            - listitem [ref=e257]:
+              - link "Account Login" [ref=e258] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e259]:
+              - link "Shipping Policy" [ref=e260] [cursor=pointer]:
+                - /url: /policies/shipping-policy
+            - listitem [ref=e261]:
+              - link "Returns & Refund Policy" [ref=e262] [cursor=pointer]:
+                - /url: /policies/refund-policy
+            - listitem [ref=e263]:
+              - link "Terms of Service" [ref=e264] [cursor=pointer]:
+                - /url: /policies/terms-of-service
+            - listitem [ref=e265]:
+              - link "Privacy Policy" [ref=e266] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e267]:
+              - link "Site Map" [ref=e268] [cursor=pointer]:
+                - /url: /sitemap.xml
+        - generic [ref=e269]:
+          - heading "Israel Book Shop" [level=2] [ref=e270]
+          - generic [ref=e271]:
+            - paragraph [ref=e272]:
+              - text: 410 Harvard Street
+              - text: Brookline, MA 02446
+              - text: 617-566-7113 / 800-323-7723
+              - link "info@israelbookshop.com" [ref=e273] [cursor=pointer]:
+                - /url: /pages/contact
+                - strong [ref=e274]: info@israelbookshop.com
+            - paragraph [ref=e275]:
+              - strong [ref=e276]: "Store Hours:"
+              - text: Sun-Wed 10a - 5pm
+              - text: Thu 10a - 6p
+              - text: Fri 10a - 2p (1:30p in winter)
+      - generic [ref=e277]:
+        - button "Follow on Shop" [ref=e282] [cursor=pointer]:
+          - img [ref=e285]
+          - generic [ref=e287]:
+            - text: Follow on
+            - img "Shop" [ref=e288]
+        - generic [ref=e291]:
+          - paragraph [ref=e292]:
+            - text: Copyright © 2026 IsraelBookShop. Site by
+            - link "Winter Solutions, Inc." [ref=e293] [cursor=pointer]:
+              - /url: https://wintersolutions.com
+            - text: with the Power of Shopify.
+          - paragraph [ref=e294]:
+            - link "Powered by Shopify" [ref=e295] [cursor=pointer]:
+              - /url: https://www.shopify.com?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore
+  - iframe [ref=e297]:
+    - generic [ref=f1e4]:
+      - button [ref=f1e7] [cursor=pointer]:
+        - img [ref=f1e9]
+        - img [ref=f1e12]
+      - generic [ref=f1e15]:
+        - generic [ref=f1e18]:
+          - link "Logo" [ref=f1e19] [cursor=pointer]:
+            - /url: https://admin.shopify.com/store/israelbookshop
+            - img "Logo" [ref=f1e20]
+          - generic [ref=f1e22]:
+            - generic [ref=f1e23]: israelbookshop/main
+            - generic [ref=f1e24]: Draft
+        - generic [ref=f1e26]:
+          - button "Hide bar" [ref=f1e28] [cursor=pointer]:
+            - generic [ref=f1e29]: Hide bar
+          - button "Copy link" [ref=f1e32] [cursor=pointer]:
+            - img [ref=f1e36]
+            - generic [ref=f1e38]: Copy link
+```
+
+# Test source
+
+```ts
+  1  | const { test, expect } = require('@playwright/test');
+  2  | 
+  3  | const paths = [
+  4  |   '/',
+  5  |   '/cart',
+  6  |   '/pages/about',
+  7  |   '/pages/contact',
+  8  |   '/pages/privacy-policy',
+  9  |   '/pages/search-results-page?q=test',
+  10 |   '/policies/shipping-policy',
+  11 |   '/policies/refund-policy',
+  12 |   '/policies/terms-of-service',
+  13 |   '/collections/calendars',
+  14 |   '/collections/educational-resources',
+  15 |   '/collections/calendars/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times'
+  16 | ];
+  17 | 
+  18 | test.describe('Visual Regression Tests', () => {
+  19 |   for (const p of paths) {
+  20 |     const safeName = p === '/' ? 'homepage' : p.replace(/\//g, '_').substring(1);
+  21 | 
+  22 |     test(`should load ${p} successfully and match baseline screenshot`, async ({ page }) => {
+  23 |       test.setTimeout(90000); 
+  24 | 
+  25 |       // Navigate to the page with 'load' instead of 'networkidle' to prevent hanging on tracking pixels
+  26 |       await page.goto(p, { waitUntil: 'load', timeout: 60000 });
+  27 | 
+  28 |       // Wait a moment for dynamic CSS or JS to kick in
+  29 |       await page.waitForTimeout(2000);
+  30 | 
+  31 |       // Smoothly scroll down the page to trigger intersection observers for lazy-loaded images
+  32 |       await page.evaluate(async () => {
+  33 |         await new Promise((resolve) => {
+  34 |           let totalHeight = 0;
+  35 |           const distance = 300; 
+  36 |           const timer = setInterval(() => {
+  37 |             const scrollHeight = document.body.scrollHeight;
+  38 |             window.scrollBy(0, distance);
+  39 |             totalHeight += distance;
+  40 | 
+  41 |             if (totalHeight >= scrollHeight - window.innerHeight) {
+  42 |               clearInterval(timer);
+  43 |               resolve();
+  44 |             }
+  45 |           }, 150); 
+  46 |         });
+  47 |       });
+  48 |       
+  49 |       // Wait for lazy-loaded images to fetch
+  50 |       await page.waitForTimeout(3000);
+  51 |       
+  52 |       // Scroll back to top
+  53 |       await page.evaluate(() => window.scrollTo(0, 0));
+  54 |       await page.waitForTimeout(1000);
+  55 | 
+  56 |       // Full page screenshot assertion
+> 57 |       await expect(page).toHaveScreenshot(`${safeName}.png`, {
+     |                          ^ Error: expect(page).toHaveScreenshot(expected) failed
+  58 |         fullPage: true,
+  59 |         maxDiffPixelRatio: 0.05, // Allow slight differences (5%)
+  60 |         timeout: 60000 
+  61 |       });
+  62 |     });
+  63 |   }
+  64 | });
+  65 | 
+```
