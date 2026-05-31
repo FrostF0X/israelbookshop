@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "lighthouse": "^11.5.0",
+    "postcss": "^8.5.15",
     "puppeteer": "^22.4.0"
   },
   "devDependencies": {
