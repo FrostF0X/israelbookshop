@@ -33,6 +33,6 @@ module.exports = {
     extensions: ['.js', '.es.js', '.json'],
   },
   optimization: {
-    minimize: false
+    minimize: true
   }
 };
