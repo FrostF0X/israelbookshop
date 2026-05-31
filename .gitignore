@@ -3,3 +3,5 @@ lighthouse-report.json
 *.zip
 .DS_Store
 .shopify
+playwright-report/
+test-results/

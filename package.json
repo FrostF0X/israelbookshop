@@ -4,10 +4,16 @@
   "description": "Lighthouse analysis for israelbookshop.com",
   "main": "run-lighthouse.js",
   "scripts": {
-    "analyze": "node run-lighthouse.js"
+    "analyze": "node run-lighthouse.js",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:update-snapshots": "playwright test --update-snapshots"
   },
   "dependencies": {
     "lighthouse": "^11.5.0",
     "puppeteer": "^22.4.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0"
   }
 }
