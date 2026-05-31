@@ -194,7 +194,7 @@ column-gap: 20px !important;
         {% for block in section.blocks %}
           <div class="mini-info-container">
             {% if block.settings.image != blank %}
-              {{ block.settings.image | image_url: width: 400 | image_tag: loading: 'lazy' }}
+              <img src="{{ block.settings.image | img_url:"master" }}">
             {% endif %}
             {% if block.settings['info-content'] != blank %}
               {{ block.settings['info-content'] }}

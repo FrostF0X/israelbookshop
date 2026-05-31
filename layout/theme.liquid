@@ -1,9 +1,9 @@
 <!doctype html>
 <html class="no-js no-touch" lang="{{ request.locale.iso_code }}">
   <head>
-        <!-- Added by AVADA SEO Suite -->
-        {% include 'avada-seo' %}
-        <!-- /Added by AVADA SEO Suite -->
+	<!-- Added by AVADA SEO Suite -->
+	{% include 'avada-seo' %}
+	<!-- /Added by AVADA SEO Suite -->
   <script>
     window.Store = window.Store || {};
     window.Store.id = {{ shop.id }};
@@ -86,7 +86,7 @@
 
     {{ content_for_header }}
 
-    <script src="//searchanise-ef84.kxcdn.com/widgets/shopify/init.js?a=3J9h8t6O0V" defer></script>
+    <script src="//searchanise-ef84.kxcdn.com/widgets/shopify/init.js?a=3J9h8t6O0V"></script>
     
     {{ 'theme.css' | asset_url | stylesheet_tag }}
     {{ 'style.css' | asset_url | stylesheet_tag }}
@@ -120,10 +120,7 @@
     </script>
     {% comment %}Inject theme-object end{% endcomment %}
 
-      {% comment %} 
-      Performance optimization: Removed duplicate jQuery since empire.js already bundles it.
-      <script src="https://cdn.younet.network/jquery.min.js" defer="defer"></script> 
-      {% endcomment %}
+      <script src="https://cdn.younet.network/jquery.min.js" defer="defer"></script>
 </head>
 
   <body class="template-{{ template.name }}" data-instant-allow-query-string {% if settings.reduce_animations %}data-reduce-animations{% endif %}>
@@ -501,7 +498,7 @@
         data-shopify-common="{{ 'shopify_common.js' | shopify_asset_url }}"
         data-shopify-cart="{{ 'jquery.cart.js' | asset_url }}"
         data-pxu-polyfills="{{ 'polyfills.min.js' | asset_url }}"
-        defer
+        async
       ></script>
     {%- else -%}
       <script
@@ -512,7 +509,7 @@
         data-shopify-common="{{ 'shopify_common.js' | shopify_asset_url }}"
         data-shopify-cart="{{ 'jquery.cart.js' | asset_url }}"
         data-pxu-polyfills="{{ 'polyfills.min.js' | asset_url }}"
-        defer
+        async
       ></script>
     {%- endif -%}
 
@@ -537,4 +534,5 @@
     >
     </script>
     <script>(function(n, v) {/* eslint-disable-next-line max-len */if (window.Shopify && window.Shopify.theme && navigator && navigator.sendBeacon && window.Shopify.designMode) {if (sessionStorage.getItem('oots_beacon')) return;navigator.sendBeacon('https://app.outofthesandbox.com/beacon', new URLSearchParams({shop_domain: window.Shopify.shop.toLowerCase(),shop_id: '{{ shop.id }}',shop_email: '{{ shop.email }}',theme_name: n.toLowerCase(),theme_version: v.toLowerCase(),theme_store_id: window.Shopify.theme.theme_store_id,theme_id: window.Shopify.theme.id,theme_role: window.Shopify.theme.role,}));sessionStorage.setItem('oots_beacon', '');}}('empire','12.1.1'))</script>
-  </body>
+  </body>  
+</html>
