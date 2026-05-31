@@ -1,0 +1,617 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: visual.spec.js >> Visual Regression Tests >> should load /collections/calendars/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times successfully and match baseline screenshot
+- Location: tests/visual.spec.js:22:5
+
+# Error details
+
+```
+Error: expect(page).toHaveScreenshot(expected) failed
+
+  Expected an image 1280px by 2986px, received 1280px by 12693px. 945667 pixels (ratio 0.06 of all image pixels) are different.
+
+  Snapshot: collections_calendars_products_hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times.png
+
+Call log:
+  - Expect "toHaveScreenshot(collections_calendars_products_hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times.png)" with timeout 60000ms
+    - verifying given screenshot expectation
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - Expected an image 1280px by 2986px, received 1280px by 12693px. 1496615 pixels (ratio 0.10 of all image pixels) are different.
+  - waiting 100ms before taking screenshot
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - captured a stable screenshot
+  - Expected an image 1280px by 2986px, received 1280px by 12693px. 945667 pixels (ratio 0.06 of all image pixels) are different.
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - alertdialog "Cookie consent" [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - heading "Cookie consent" [level=2] [ref=e5]
+        - paragraph [ref=e6]:
+          - text: We and our partners, including Shopify, use cookies and other technologies to personalize your experience, show you ads, and perform analytics, and we will not use cookies or other technologies for these purposes unless you accept them. Learn more in our
+          - link "Privacy Policy" [ref=e7] [cursor=pointer]:
+            - /url: https://www.israelbookshop.com/policies/privacy-policy
+      - generic [ref=e8]:
+        - button "Manage preferences" [ref=e9]
+        - button "Accept" [ref=e10]
+        - button "Decline" [ref=e11]
+  - link "Skip to content" [ref=e12] [cursor=pointer]:
+    - /url: "#site-main"
+  - generic [ref=e14]:
+    - link [ref=e15] [cursor=pointer]:
+      - /url: https://israelbookshop.com/collections/sukkah-depot-decorations
+    - generic [ref=e16]:
+      - text: ☎ Need Help? Call Us
+      - link "617-566-7113" [ref=e17] [cursor=pointer]:
+        - /url: tel:+1-617-566-7113
+      - text: or
+      - link "800-323-7723" [ref=e18] [cursor=pointer]:
+        - /url: +1-800-323-7723
+  - banner [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - link [ref=e24] [cursor=pointer]:
+          - /url: /
+        - search "Product" [ref=e26]:
+          - generic [ref=e27]:
+            - combobox "Search" [ref=e28]
+            - button "Search" [ref=e29] [cursor=pointer]:
+              - img [ref=e31]
+      - generic [ref=e34]:
+        - list [ref=e35]:
+          - listitem [ref=e36]:
+            - link "My Account" [ref=e37] [cursor=pointer]:
+              - /url: https://www.israelbookshop.com/customer_authentication/redirect?locale=en&region_country=US
+              - img [ref=e39]
+              - generic [ref=e43]: My Account
+        - link "View cart" [ref=e45] [cursor=pointer]:
+          - /url: /cart
+          - img [ref=e48]
+          - generic [ref=e53]: View cart
+    - navigation "Main" [ref=e55]:
+      - list "Main menu" [ref=e56]:
+        - listitem [ref=e57]:
+          - group [ref=e58]:
+            - generic "Categories" [ref=e59] [cursor=pointer]:
+              - text: Categories
+              - img [ref=e61]
+        - listitem [ref=e64]:
+          - link "Calendars" [ref=e65] [cursor=pointer]:
+            - /url: /collections/calendars
+        - listitem [ref=e66]:
+          - link "Education" [ref=e67] [cursor=pointer]:
+            - /url: /collections/educational-resources
+        - listitem [ref=e68]:
+          - link "Literature & Novels" [ref=e69] [cursor=pointer]:
+            - /url: /collections/judaic-literature-novels
+        - listitem [ref=e70]:
+          - link "Synagogue" [ref=e71] [cursor=pointer]:
+            - /url: /collections/synagogue-supply
+        - listitem [ref=e72]:
+          - link "Israel" [ref=e73] [cursor=pointer]:
+            - /url: /collections/israel-educational-resources
+        - listitem [ref=e74]:
+          - link "About Us" [ref=e75] [cursor=pointer]:
+            - /url: /pages/about
+        - listitem [ref=e76]:
+          - link "Contact" [ref=e77] [cursor=pointer]:
+            - /url: /pages/contact
+      - list [ref=e78]:
+        - listitem [ref=e79]:
+          - link "Shipping & Returns" [ref=e80] [cursor=pointer]:
+            - /url: /pages/shipping-return-policy
+        - listitem [ref=e81]:
+          - link "Gift Cards" [ref=e82] [cursor=pointer]:
+            - /url: /products/israel-book-shop-gift-card
+  - main "Main content" [ref=e83]:
+    - generic [ref=e84]:
+      - navigation "Breadcrumbs" [ref=e85]:
+        - link "Home" [ref=e86] [cursor=pointer]:
+          - /url: /
+        - img [ref=e88]
+        - link "Calendars" [ref=e90] [cursor=pointer]:
+          - /url: /collections/calendars
+        - img [ref=e92]
+        - text: "Hebrew Illuminations 16-Month 2026-2027 Wall Calendar: And Candle Lighting Times"
+      - article [ref=e95]:
+        - generic [ref=e102] [cursor=pointer]:
+          - button "Click to expand" [ref=e103]:
+            - generic [ref=e104]:
+              - img [ref=e105]
+              - text: Click to expand
+          - 'img "Hebrew Illuminations 16-Month 2026-2027 Wall Calendar: And Candle Lighting Times cover image" [ref=e107]'
+        - generic [ref=e109]:
+          - 'heading "Hebrew Illuminations 16-Month 2026-2027 Wall Calendar: And Candle Lighting Times" [level=1] [ref=e111]'
+          - generic [ref=e113]:
+            - strong [ref=e114]: SKU
+            - text: "9798881607203"
+          - generic [ref=e117]:
+            - generic [ref=e118]:
+              - generic [ref=e119]: Original price
+              - text: $0
+            - generic [ref=e120]:
+              - generic [ref=e121]: Original price
+              - text: $17.99 -
+              - generic [ref=e122]: Original price
+              - text: $17.99
+            - generic [ref=e123]: Original price
+            - generic [ref=e124]:
+              - generic [ref=e125]: Current price
+              - text: $17.99
+            - generic [ref=e126]: $17.99 - $17.99
+            - generic [ref=e127]:
+              - generic [ref=e128]: Current price
+              - text: $17.99
+            - generic [ref=e129]:
+              - text: "|"
+              - text: /
+          - generic [ref=e133]:
+            - generic [ref=e135]:
+              - generic [ref=e136]:
+                - generic [ref=e137]: Quantity
+                - generic [ref=e138]:
+                  - generic [ref=e139]:
+                    - button "Decrease quantity by 1":
+                      - img
+                  - spinbutton "Quantity" [ref=e140] [cursor=pointer]: "1"
+                  - button "Increase quantity by 1" [ref=e142] [cursor=pointer]:
+                    - img [ref=e143]
+              - button "Add to cart" [ref=e145] [cursor=pointer]:
+                - generic [ref=e146]: Add to cart
+              - generic [ref=e148]:
+                - generic:
+                  - link "More payment options":
+                    - /url: "#"
+            - generic [ref=e150]:
+              - img [ref=e151]
+              - generic [ref=e153]:
+                - paragraph [ref=e154]: Pickup available at 410 Harvard St
+                - text: Please confirm availability prior to pickup.
+              - button "View store information" [ref=e155]
+          - generic [ref=e157]:
+            - paragraph [ref=e158]: For Jewish families, the Hebrew Illuminations 16-Month 2026-2027 Wall Calendar showcases inspirational art created with neshama, “Jewish soul,” and provides Shabbat candle lighting times.
+            - paragraph [ref=e159]: From contemporary artist Adam Rhine, the calendar begins in September 2026 to coincide with Jewish New Year and ends with December 2027. The calendar's colorful renderings of the Menorah, Magen David, and Judaic-inspired mandalas are meant to glorify The Lord and serve as visual prayers for Israel and Judaism.
+            - paragraph [ref=e160]: "Features include:"
+            - paragraph [ref=e161]:
+              - text: "* 12\" x 12\" wall calendar (12\" x 24\" open)"
+              - text: "* Cover design eliminates need for plastic packaging"
+              - text: "* Printed on FSCÂ® certified paper with soy-based ink"
+              - text: "* Spans September 2026–December 2027 19 Elul, 5786 – 1 Tevet, 5788"
+              - text: "* Jewish holidays and observances"
+              - text: "* Shabbat and holiday candle lighting times for twenty-four US cities, plus Montreal, Toronto, Vancouver, London, Melbourne, and Sydney"
+              - text: "* English and Hebrew dates on each monthly spread"
+              - text: "* Official major world holidays and observances"
+              - text: "* Moon phases, based on Universal Time"
+              - text: "* Inspiring biblical quotes"
+              - text: "* Artwork created with a combination of watercolor, colored pencil, and acrylic"
+              - text: "* Wall art for your home, school, or office that provides a sense of time for planning and dreaming"
+              - text: "* WE PLANT TREES to help offset our carbon footprint and resource usage — more than 1.25 MILLION and growing!"
+              - text: "* NO SINGLE-USE PLASTIC — We have eliminated single-use shrink wrap to reduce plastic pollution."
+              - text: "* RESPONSIBLY SOURCED — Our paper is responsibly sourced from a combination of recycled materials and wood harvested from socially and environmentally sustainable forests and is FSC® certified."
+          - generic [ref=e164]:
+            - generic [ref=e165]:
+              - generic [ref=e166]: Author(s)
+              - img [ref=e167]
+              - generic [ref=e170]: Adam Rhine
+            - generic [ref=e171]:
+              - generic [ref=e172]: Pages
+              - img [ref=e173]
+              - generic [ref=e175]: "32"
+            - generic [ref=e176]:
+              - generic [ref=e177]: Binding
+              - img [ref=e178]
+              - generic [ref=e181]: Calendar
+            - generic [ref=e182]:
+              - generic [ref=e183]: Publication date
+              - img [ref=e184]
+              - generic [ref=e188]: 2026-05-19
+            - generic [ref=e189]:
+              - generic [ref=e190]: Publisher
+              - img [ref=e191]
+              - generic [ref=e196]: Amber Lotus Publishing
+            - generic [ref=e197]:
+              - generic [ref=e198]: ISBN
+              - img [ref=e199]
+              - generic [ref=e201]: "9798881607203"
+            - generic [ref=e202]:
+              - generic [ref=e203]: Dimensions
+              - img [ref=e204]
+              - generic [ref=e208]: 12.0 x 0.2 x 12.0 in
+            - generic [ref=e209]:
+              - generic [ref=e210]: Language
+              - img [ref=e211]
+              - generic [ref=e215]: English
+          - complementary "Share this:" [ref=e218]:
+            - text: "Share this:"
+            - generic [ref=e219]:
+              - link "Share on Facebook" [ref=e220] [cursor=pointer]:
+                - /url: //www.facebook.com/sharer.php?u=https://kukr29uk66duhr1k-55888609445.shopifypreview.com/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times
+                - img [ref=e221]
+                - generic [ref=e223]: Share on Facebook
+              - link "Share on X" [ref=e224] [cursor=pointer]:
+                - /url: //x.com/intent/tweet?url=https://kukr29uk66duhr1k-55888609445.shopifypreview.com/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times
+                - img [ref=e225]
+                - generic [ref=e229]: Share on X
+              - link "Share on LinkedIn" [ref=e230] [cursor=pointer]:
+                - /url: //www.linkedin.com/shareArticle?mini=true&url=https://kukr29uk66duhr1k-55888609445.shopifypreview.com/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times&title=Hebrew%20Illuminations%2016-Month%202026-2027%20Wall%20Calendar:%20And%20Candle%20Lighting%20Times
+                - img [ref=e231]
+                - generic [ref=e233]: Share on LinkedIn
+              - link "Pin on Pinterest" [ref=e234] [cursor=pointer]:
+                - /url: //pinterest.com/pin/create/button/?url=https://kukr29uk66duhr1k-55888609445.shopifypreview.com/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times&media=//kukr29uk66duhr1k-55888609445.shopifypreview.com/cdn/shop/files/9798881607203_1024x.jpg?v=1779984006&description=Hebrew%20Illuminations%2016-Month%202026-2027%20Wall%20Calendar:%20And%20Candle%20Lighting%20Times
+                - img [ref=e235]
+                - generic [ref=e237]: Pin on Pinterest
+    - generic [ref=e239]:
+      - heading "You may also like" [level=2] [ref=e240]
+      - generic [ref=e241]:
+        - generic [ref=e244]:
+          - link [ref=e246] [cursor=pointer]:
+            - /url: /products/5783-2022-2023-the-ezras-torah-pocket-luach-english-edited-by-rabbi-hillel-litwack?pr_prod_strat=collection_fallback&pr_rec_id=31df6d4b3&pr_rec_pid=8158927519909&pr_ref_pid=10594287059109&pr_seq=uniform
+            - figure [ref=e247]:
+              - generic [ref=e248]: 5786 (2025-2026) The Ezras Torah Pocket Luach English Edited by Rabbi Hillel Litwack
+          - generic [ref=e249]:
+            - generic [ref=e250]:
+              - generic [ref=e251]:
+                - generic [ref=e252]: Original price
+                - text: $14.95 -
+                - generic [ref=e253]: Original price
+                - text: $14.95
+              - generic [ref=e254]: Original price
+              - generic [ref=e255]: $14.95
+              - generic [ref=e256]: $14.95 - $14.95
+              - generic [ref=e257]:
+                - generic [ref=e258]: Current price
+                - text: $14.95
+              - generic [ref=e259]:
+                - text: "|"
+                - text: /
+            - heading "5786 (2025-2026) The Ezras Torah Pocket Luach English Edited by Rabbi Hillel Litwack" [level=2] [ref=e260]:
+              - link "5786 (2025-2026) The Ezras Torah Pocket Luach English Edited by Rabbi Hillel Litwack" [ref=e261] [cursor=pointer]:
+                - /url: /products/5783-2022-2023-the-ezras-torah-pocket-luach-english-edited-by-rabbi-hillel-litwack?pr_prod_strat=collection_fallback&pr_rec_id=31df6d4b3&pr_rec_pid=8158927519909&pr_ref_pid=10594287059109&pr_seq=uniform
+            - link "IsraelBookShop" [ref=e263] [cursor=pointer]:
+              - /url: /collections/vendors?q=IsraelBookShop
+            - generic [ref=e264]:
+              - paragraph [ref=e265]: "3.25\"x 5.75\" (250 Pages) Publisher: Ezras Torah More than just a calendar, this is an extremely popular and almost indispensable tool for thousands..."
+              - link "View full details" [ref=e266] [cursor=pointer]:
+                - /url: /products/5783-2022-2023-the-ezras-torah-pocket-luach-english-edited-by-rabbi-hillel-litwack?pr_prod_strat=collection_fallback&pr_rec_id=31df6d4b3&pr_rec_pid=8158927519909&pr_ref_pid=10594287059109&pr_seq=uniform
+        - generic [ref=e269]:
+          - link [ref=e271] [cursor=pointer]:
+            - /url: /products/5787-the-jewish-art-calendar-full-size-by-mickie-caspi-2026-2027-available-june-1-2026?pr_prod_strat=collection_fallback&pr_rec_id=31df6d4b3&pr_rec_pid=8158877221029&pr_ref_pid=10594287059109&pr_seq=uniform
+            - figure [ref=e272]:
+              - generic [ref=e273]: 5787 The Jewish Art Calendar Full Size by Mickie Caspi 2026-2027 Available June 1, 2026
+          - generic [ref=e274]:
+            - generic [ref=e275]:
+              - generic [ref=e276]:
+                - generic [ref=e277]: Original price
+                - text: $19.99 -
+                - generic [ref=e278]: Original price
+                - text: $19.99
+              - generic [ref=e279]: Original price
+              - generic [ref=e280]: $19.99
+              - generic [ref=e281]: $19.99 - $19.99
+              - generic [ref=e282]:
+                - generic [ref=e283]: Current price
+                - text: $19.99
+              - generic [ref=e284]:
+                - text: "|"
+                - text: /
+            - heading "5787 The Jewish Art Calendar Full Size by Mickie Caspi 2026-2027 Available June 1, 2026" [level=2] [ref=e285]:
+              - link "5787 The Jewish Art Calendar Full Size by Mickie Caspi 2026-2027 Available June 1, 2026" [ref=e286] [cursor=pointer]:
+                - /url: /products/5787-the-jewish-art-calendar-full-size-by-mickie-caspi-2026-2027-available-june-1-2026?pr_prod_strat=collection_fallback&pr_rec_id=31df6d4b3&pr_rec_pid=8158877221029&pr_ref_pid=10594287059109&pr_seq=uniform
+            - link "Mickie Caspi" [ref=e288] [cursor=pointer]:
+              - /url: /collections/vendors?q=Mickie%20Caspi
+            - generic [ref=e289]:
+              - paragraph [ref=e290]: JEWISH ART CALENDAR BY MICKIE 2027 Available June 1, 2026 In the 2027 Jewish Art Calendar , Mickie has created 14 lovely illuminations for a hangi...
+              - link "View full details" [ref=e291] [cursor=pointer]:
+                - /url: /products/5787-the-jewish-art-calendar-full-size-by-mickie-caspi-2026-2027-available-june-1-2026?pr_prod_strat=collection_fallback&pr_rec_id=31df6d4b3&pr_rec_pid=8158877221029&pr_ref_pid=10594287059109&pr_seq=uniform
+        - generic [ref=e294]:
+          - link [ref=e296] [cursor=pointer]:
+            - /url: /products/pre-order-5787-jewish-art-calendar-by-mickie-2026-2027?pr_prod_strat=collection_fallback&pr_rec_id=31df6d4b3&pr_rec_pid=9131917410469&pr_ref_pid=10594287059109&pr_seq=uniform
+            - figure [ref=e297]:
+              - generic [ref=e298]: Pre-Order 5787 Jewish Art Calendar by Mickie 2026-2027 Available June 1, 2026
+          - generic [ref=e299]:
+            - generic [ref=e300]:
+              - generic [ref=e301]:
+                - generic [ref=e302]: Original price
+                - text: $19.95 -
+                - generic [ref=e303]: Original price
+                - text: $19.95
+              - generic [ref=e304]: Original price
+              - generic [ref=e305]: $19.95
+              - generic [ref=e306]: $19.95 - $19.95
+              - generic [ref=e307]:
+                - generic [ref=e308]: Current price
+                - text: $19.95
+              - generic [ref=e309]:
+                - text: "|"
+                - text: /
+            - heading "Pre-Order 5787 Jewish Art Calendar by Mickie 2026-2027 Available June 1, 2026" [level=2] [ref=e310]:
+              - link "Pre-Order 5787 Jewish Art Calendar by Mickie 2026-2027 Available June 1, 2026" [ref=e311] [cursor=pointer]:
+                - /url: /products/pre-order-5787-jewish-art-calendar-by-mickie-2026-2027?pr_prod_strat=collection_fallback&pr_rec_id=31df6d4b3&pr_rec_pid=9131917410469&pr_ref_pid=10594287059109&pr_seq=uniform
+            - link "Mickie Caspi" [ref=e313] [cursor=pointer]:
+              - /url: /collections/vendors?q=Mickie%20Caspi
+            - generic [ref=e314]:
+              - paragraph [ref=e315]: 13 × 13 in The Jewish Art Calendar by Mickie 2027 is a hanging wall calendar that covers the 16 months from September 2026 – December 2027. Jewi...
+              - link "View full details" [ref=e316] [cursor=pointer]:
+                - /url: /products/pre-order-5787-jewish-art-calendar-by-mickie-2026-2027?pr_prod_strat=collection_fallback&pr_rec_id=31df6d4b3&pr_rec_pid=9131917410469&pr_ref_pid=10594287059109&pr_seq=uniform
+        - generic [ref=e319]:
+          - link [ref=e321] [cursor=pointer]:
+            - /url: /products/inside-time-a-chassidic-perspective-on-the-jewish-calendar-set-of-3-volumes-by-yanki-tauber?pr_prod_strat=collection_fallback&pr_rec_id=31df6d4b3&pr_rec_pid=8159168331941&pr_ref_pid=10594287059109&pr_seq=uniform
+            - figure [ref=e322]:
+              - generic [ref=e323]: "Inside Time: A Chassidic Perspective on the Jewish Calendar Set of 3 Volumes By Yanki Tauber"
+          - generic [ref=e324]:
+            - generic [ref=e325]:
+              - generic [ref=e326]:
+                - generic [ref=e327]: Original price
+                - text: $54.99 -
+                - generic [ref=e328]: Original price
+                - text: $54.99
+              - generic [ref=e329]: Original price
+              - generic [ref=e330]: $54.99
+              - generic [ref=e331]: $54.99 - $54.99
+              - generic [ref=e332]:
+                - generic [ref=e333]: Current price
+                - text: $54.99
+              - generic [ref=e334]:
+                - text: "|"
+                - text: /
+            - 'heading "Inside Time: A Chassidic Perspective on the Jewish Calendar Set of 3 Volumes By Yanki Tauber" [level=2] [ref=e335]':
+              - 'link "Inside Time: A Chassidic Perspective on the Jewish Calendar Set of 3 Volumes By Yanki Tauber" [ref=e336] [cursor=pointer]':
+                - /url: /products/inside-time-a-chassidic-perspective-on-the-jewish-calendar-set-of-3-volumes-by-yanki-tauber?pr_prod_strat=collection_fallback&pr_rec_id=31df6d4b3&pr_rec_pid=8159168331941&pr_ref_pid=10594287059109&pr_seq=uniform
+            - link "IsraelBookShop" [ref=e338] [cursor=pointer]:
+              - /url: /collections/vendors?q=IsraelBookShop
+            - generic [ref=e339]:
+              - paragraph [ref=e340]: Inside Time by acclaimed author, Rabbi Yanki Tauber, is a three-volume book series exploring the soul of time as defined by the Torah and illuminat...
+              - link "View full details" [ref=e341] [cursor=pointer]:
+                - /url: /products/inside-time-a-chassidic-perspective-on-the-jewish-calendar-set-of-3-volumes-by-yanki-tauber?pr_prod_strat=collection_fallback&pr_rec_id=31df6d4b3&pr_rec_pid=8159168331941&pr_ref_pid=10594287059109&pr_seq=uniform
+        - generic [ref=e344]:
+          - link [ref=e346] [cursor=pointer]:
+            - /url: /products/hayom-yom-bilingual-hebrew-english-edition-large?pr_prod_strat=collection_fallback&pr_rec_id=31df6d4b3&pr_rec_pid=8216185143461&pr_ref_pid=10594287059109&pr_seq=uniform
+            - figure [ref=e347]:
+              - generic [ref=e349]: Hayom Yom Bilingual Hebrew English Edition Large By Lubavitcher Rebbi Rabbi Menachem M. Schneerson
+          - generic [ref=e350]:
+            - generic [ref=e351]:
+              - generic [ref=e352]:
+                - generic [ref=e353]: Original price
+                - text: $30.95 -
+                - generic [ref=e354]: Original price
+                - text: $30.95
+              - generic [ref=e355]: Original price
+              - generic [ref=e356]: $30.95
+              - generic [ref=e357]: $30.95 - $30.95
+              - generic [ref=e358]:
+                - generic [ref=e359]: Current price
+                - text: $30.95
+              - generic [ref=e360]:
+                - text: "|"
+                - text: /
+            - heading "Hayom Yom Bilingual Hebrew English Edition Large By Lubavitcher Rebbi Rabbi Menachem M. Schneerson" [level=2] [ref=e361]:
+              - link "Hayom Yom Bilingual Hebrew English Edition Large By Lubavitcher Rebbi Rabbi Menachem M. Schneerson" [ref=e362] [cursor=pointer]:
+                - /url: /products/hayom-yom-bilingual-hebrew-english-edition-large?pr_prod_strat=collection_fallback&pr_rec_id=31df6d4b3&pr_rec_pid=8216185143461&pr_ref_pid=10594287059109&pr_seq=uniform
+            - link "Kehot Publication Society" [ref=e364] [cursor=pointer]:
+              - /url: /collections/vendors?q=Kehot%20Publication%20Society
+            - generic [ref=e365]:
+              - paragraph [ref=e366]: "Author: Rabbi Menachem M. SchneersonTranslated By: Rabbi Yitzchak M KaganLanguage: Hebrew / EnglishFormat: 7\"x10\" Hardcover, 278 pagesLanguage: Heb..."
+              - link "View full details" [ref=e367] [cursor=pointer]:
+                - /url: /products/hayom-yom-bilingual-hebrew-english-edition-large?pr_prod_strat=collection_fallback&pr_rec_id=31df6d4b3&pr_rec_pid=8216185143461&pr_ref_pid=10594287059109&pr_seq=uniform
+    - complementary "Recently viewed products" [ref=e369]:
+      - generic [ref=e370]:
+        - generic [ref=e371]:
+          - heading "You recently viewed" [level=2] [ref=e372]
+          - button "Clear recently viewed" [ref=e373]
+        - generic [ref=e377]:
+          - generic [ref=e378]:
+            - text: 0 seconds ago
+            - button "close" [ref=e379]:
+              - img [ref=e380]
+          - link [ref=e383] [cursor=pointer]:
+            - /url: /products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times
+            - figure [ref=e384]:
+              - 'img "Hebrew Illuminations 16-Month 2026-2027 Wall Calendar: And Candle Lighting Times cover image" [ref=e385]'
+              - generic [ref=e387]: "Hebrew Illuminations 16-Month 2026-2027 Wall Calendar: And Candle Lighting Times"
+          - generic [ref=e388]:
+            - generic [ref=e389]:
+              - generic [ref=e390]:
+                - generic [ref=e391]: Original price
+                - text: $17.99 -
+                - generic [ref=e392]: Original price
+                - text: $17.99
+              - generic [ref=e393]: Original price
+              - generic [ref=e394]: $17.99
+              - generic [ref=e395]: $17.99 - $17.99
+              - generic [ref=e396]:
+                - generic [ref=e397]: Current price
+                - text: $17.99
+              - generic [ref=e398]:
+                - text: "|"
+                - text: /
+            - 'heading "Hebrew Illuminations 16-Month 2026-2027 Wall Calendar: And Candle Lighting Times" [level=2] [ref=e399]':
+              - 'link "Hebrew Illuminations 16-Month 2026-2027 Wall Calendar: And Candle Lighting Times" [ref=e400] [cursor=pointer]':
+                - /url: /products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times
+            - link "Amber Lotus Publishing" [ref=e402] [cursor=pointer]:
+              - /url: /collections/vendors?q=Amber%20Lotus%20Publishing
+            - generic [ref=e407]: In stock
+            - generic [ref=e408]:
+              - paragraph [ref=e409]: For Jewish families, the Hebrew Illuminations 16-Month 2026-2027 Wall Calendar showcases inspirational art created with neshama, “Jewish soul,” and...
+              - link "View full details" [ref=e410] [cursor=pointer]:
+                - /url: /products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times
+  - contentinfo "Footer" [ref=e412]:
+    - generic [ref=e413]:
+      - generic [ref=e415]:
+        - generic [ref=e416]:
+          - heading "Israel Book Shop Publications" [level=2] [ref=e417]
+          - paragraph [ref=e419]:
+            - text: Our sister company in Lakewood, NJ. Publisher and distributor of Judaica oriented books and products to wholesale and retail markets.
+            - link "israelbookshoppublications.com" [ref=e420] [cursor=pointer]:
+              - /url: https://israelbookshoppublications.com
+              - strong [ref=e421]: israelbookshoppublications.com
+        - generic [ref=e422]:
+          - heading "Company" [level=2] [ref=e423]
+          - list [ref=e425]:
+            - listitem [ref=e426]:
+              - link "About Us" [ref=e427] [cursor=pointer]:
+                - /url: /pages/about
+            - listitem [ref=e428]:
+              - link "Contact Us" [ref=e429] [cursor=pointer]:
+                - /url: /pages/contact
+            - listitem [ref=e430]:
+              - link "Our Team" [ref=e431] [cursor=pointer]:
+                - /url: /pages/about/#team
+            - listitem [ref=e432]:
+              - link "Testimonials" [ref=e433] [cursor=pointer]:
+                - /url: /#testimonials
+            - listitem [ref=e434]:
+              - link "Account Login" [ref=e435] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e436]:
+              - link "Shipping Policy" [ref=e437] [cursor=pointer]:
+                - /url: /policies/shipping-policy
+            - listitem [ref=e438]:
+              - link "Returns & Refund Policy" [ref=e439] [cursor=pointer]:
+                - /url: /policies/refund-policy
+            - listitem [ref=e440]:
+              - link "Terms of Service" [ref=e441] [cursor=pointer]:
+                - /url: /policies/terms-of-service
+            - listitem [ref=e442]:
+              - link "Privacy Policy" [ref=e443] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e444]:
+              - link "Site Map" [ref=e445] [cursor=pointer]:
+                - /url: /sitemap.xml
+        - generic [ref=e446]:
+          - heading "Israel Book Shop" [level=2] [ref=e447]
+          - generic [ref=e448]:
+            - paragraph [ref=e449]:
+              - text: 410 Harvard Street
+              - text: Brookline, MA 02446
+              - text: 617-566-7113 / 800-323-7723
+              - link "info@israelbookshop.com" [ref=e450] [cursor=pointer]:
+                - /url: /pages/contact
+                - strong [ref=e451]: info@israelbookshop.com
+            - paragraph [ref=e452]:
+              - strong [ref=e453]: "Store Hours:"
+              - text: Sun-Wed 10a - 5pm
+              - text: Thu 10a - 6p
+              - text: Fri 10a - 2p (1:30p in winter)
+      - generic [ref=e454]:
+        - button "Follow on Shop" [ref=e459] [cursor=pointer]:
+          - img [ref=e462]
+          - generic [ref=e464]:
+            - text: Follow on
+            - img "Shop" [ref=e465]
+        - generic [ref=e468]:
+          - paragraph [ref=e469]:
+            - text: Copyright © 2026 IsraelBookShop. Site by
+            - link "Winter Solutions, Inc." [ref=e470] [cursor=pointer]:
+              - /url: https://wintersolutions.com
+            - text: with the Power of Shopify.
+          - paragraph [ref=e471]:
+            - link "Powered by Shopify" [ref=e472] [cursor=pointer]:
+              - /url: https://www.shopify.com?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore
+  - iframe [ref=e474]:
+    - generic [ref=f1e4]:
+      - button [ref=f1e7] [cursor=pointer]:
+        - img [ref=f1e9]
+        - img [ref=f1e12]
+      - generic [ref=f1e15]:
+        - generic [ref=f1e18]:
+          - link "Logo" [ref=f1e19] [cursor=pointer]:
+            - /url: https://admin.shopify.com/store/israelbookshop
+            - img "Logo" [ref=f1e20]
+          - generic [ref=f1e22]:
+            - generic [ref=f1e23]: israelbookshop/main
+            - generic [ref=f1e24]: Draft
+        - generic [ref=f1e26]:
+          - button "Hide bar" [ref=f1e28] [cursor=pointer]:
+            - generic [ref=f1e29]: Hide bar
+          - button "Copy link" [ref=f1e32] [cursor=pointer]:
+            - img [ref=f1e36]
+            - generic [ref=f1e38]: Copy link
+```
+
+# Test source
+
+```ts
+  1  | const { test, expect } = require('@playwright/test');
+  2  | 
+  3  | const paths = [
+  4  |   '/',
+  5  |   '/cart',
+  6  |   '/pages/about',
+  7  |   '/pages/contact',
+  8  |   '/pages/privacy-policy',
+  9  |   '/pages/search-results-page?q=test',
+  10 |   '/policies/shipping-policy',
+  11 |   '/policies/refund-policy',
+  12 |   '/policies/terms-of-service',
+  13 |   '/collections/calendars',
+  14 |   '/collections/educational-resources',
+  15 |   '/collections/calendars/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times'
+  16 | ];
+  17 | 
+  18 | test.describe('Visual Regression Tests', () => {
+  19 |   for (const p of paths) {
+  20 |     const safeName = p === '/' ? 'homepage' : p.replace(/\//g, '_').substring(1);
+  21 | 
+  22 |     test(`should load ${p} successfully and match baseline screenshot`, async ({ page }) => {
+  23 |       test.setTimeout(90000); 
+  24 | 
+  25 |       // Navigate to the page with 'load' instead of 'networkidle' to prevent hanging on tracking pixels
+  26 |       await page.goto(p, { waitUntil: 'load', timeout: 60000 });
+  27 | 
+  28 |       // Wait a moment for dynamic CSS or JS to kick in
+  29 |       await page.waitForTimeout(2000);
+  30 | 
+  31 |       // Smoothly scroll down the page to trigger intersection observers for lazy-loaded images
+  32 |       await page.evaluate(async () => {
+  33 |         await new Promise((resolve) => {
+  34 |           let totalHeight = 0;
+  35 |           const distance = 300; 
+  36 |           const timer = setInterval(() => {
+  37 |             const scrollHeight = document.body.scrollHeight;
+  38 |             window.scrollBy(0, distance);
+  39 |             totalHeight += distance;
+  40 | 
+  41 |             if (totalHeight >= scrollHeight - window.innerHeight) {
+  42 |               clearInterval(timer);
+  43 |               resolve();
+  44 |             }
+  45 |           }, 150); 
+  46 |         });
+  47 |       });
+  48 |       
+  49 |       // Wait for lazy-loaded images to fetch
+  50 |       await page.waitForTimeout(3000);
+  51 |       
+  52 |       // Scroll back to top
+  53 |       await page.evaluate(() => window.scrollTo(0, 0));
+  54 |       await page.waitForTimeout(1000);
+  55 | 
+  56 |       // Full page screenshot assertion
+> 57 |       await expect(page).toHaveScreenshot(`${safeName}.png`, {
+     |                          ^ Error: expect(page).toHaveScreenshot(expected) failed
+  58 |         fullPage: true,
+  59 |         maxDiffPixelRatio: 0.05, // Allow slight differences (5%)
+  60 |         timeout: 60000 
+  61 |       });
+  62 |     });
+  63 |   }
+  64 | });
+  65 | 
+```
