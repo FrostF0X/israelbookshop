@@ -1,0 +1,33 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '0 8 * * *' # Run daily at 8am UTC
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    name: Run Lighthouse Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Run Lighthouse Analysis
+        # Since this runs on the main branch, we test the live production site to monitor regressions
+        run: node run-lighthouse.js https://www.israelbookshop.com/
