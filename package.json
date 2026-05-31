@@ -14,6 +14,7 @@
     "puppeteer": "^22.4.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.60.0"
+    "@playwright/test": "^1.60.0",
+    "purgecss": "^8.0.0"
   }
 }

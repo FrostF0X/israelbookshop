@@ -5,3 +5,5 @@ lighthouse-report.json
 .shopify
 playwright-report/
 test-results/
+lighthouse-report.html
+lighthouse-report.json

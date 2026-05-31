@@ -1,0 +1,46 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '0 8 * * *' # Run daily at 8am UTC
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    name: Run Lighthouse Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Run Lighthouse Analysis
+        run: node run-lighthouse.js
+
+      - name: Upload Lighthouse HTML Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-report-html
+          path: lighthouse-report.html
+
+      - name: Upload Lighthouse JSON Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-report-json
+          path: lighthouse-report.json
