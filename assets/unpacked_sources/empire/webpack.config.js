@@ -20,6 +20,8 @@ exactAliases['unipointer/unipointer$'] = path.resolve(__dirname, 'node_modules/u
 // Fix material ripple
 exactAliases['@material/ripple/index.js$'] = path.resolve(__dirname, 'node_modules/@material/ripple/component.js');
 
+const webpack = require('webpack');
+
 module.exports = {
   entry: './source/scripts/Empire.js',
   output: {
@@ -32,6 +34,7 @@ module.exports = {
     alias: exactAliases,
     extensions: ['.js', '.es.js', '.json'],
   },
+  plugins: [new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 1 })],
   optimization: {
     minimize: true
   }
