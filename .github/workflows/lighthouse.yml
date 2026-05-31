@@ -29,5 +29,13 @@ jobs:
         run: npm ci || npm install
 
       - name: Run Lighthouse Analysis
-        # Since this runs on the main branch, we test the live production site to monitor regressions
-        run: node run-lighthouse.js https://www.israelbookshop.com/
+        run: node run-lighthouse.js
+
+      - name: Upload Lighthouse Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-report
+          path: |
+            lighthouse-report.html
+            lighthouse-report.json
