@@ -33,6 +33,16 @@ async function runLighthouse() {
   console.log('Best Practices score was', runnerResult.lhr.categories['best-practices'].score * 100);
   console.log('SEO score was', runnerResult.lhr.categories.seo.score * 100);
 
+  if (process.env.GITHUB_STEP_SUMMARY) {
+    const summary = `### Lighthouse Results for ${runnerResult.lhr.finalDisplayedUrl}
+- **Performance:** ${Math.round(runnerResult.lhr.categories.performance.score * 100)}
+- **Accessibility:** ${Math.round(runnerResult.lhr.categories.accessibility.score * 100)}
+- **Best Practices:** ${Math.round(runnerResult.lhr.categories['best-practices'].score * 100)}
+- **SEO:** ${Math.round(runnerResult.lhr.categories.seo.score * 100)}
+`;
+    fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary);
+  }
+
   await browser.close();
 }
 
