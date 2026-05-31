@@ -161,7 +161,7 @@ async function optimizeJS() {
         path.isFunctionDeclaration() ||
         path.isClassDeclaration() ||
         (path.isVariableDeclaration() && path.parentPath.isProgram()) ||
-        path.isObjectProperty(); 
+        (path.isObjectProperty() && path.node.value && (path.node.value.type === 'FunctionExpression' || path.node.value.type === 'ArrowFunctionExpression')); 
 
       if (isSafeToRemove) {
         // Protect webpack internals

@@ -3,11 +3,13 @@
 /******/var __webpack_module_cache__={};/******//******/// The require function
 /******/function __webpack_require__(moduleId){/******/// Check if module is in cache
 /******/if(__webpack_module_cache__[moduleId]){/******/return __webpack_module_cache__[moduleId].exports;/******/}/******/// Create a new module (and put it into the cache)
-/******/var module=__webpack_module_cache__[moduleId]={};/******//******/// Execute the module function
+/******/var module=__webpack_module_cache__[moduleId]={/******/// no module.id needed
+/******/// no module.loaded needed
+/******/exports:{}/******/};/******//******/// Execute the module function
 /******/__webpack_modules__[moduleId].call(module.exports,module,module.exports,__webpack_require__);/******//******/// Return the exports of the module
 /******/return module.exports;/******/}/******//************************************************************************//******//* webpack/runtime/compat get default export *//******/(()=>{/******/// getDefaultExport function for compatibility with non-harmony modules
-/******/__webpack_require__.n=module=>{/******/var getter=module&&module.__esModule?/******/()=>module['default']:/******/()=>module;/******/__webpack_require__.d(getter,{});/******/return getter;/******/};/******/})();/******//******//* webpack/runtime/define property getters *//******/(()=>{/******/// define getter functions for harmony exports
-/******/__webpack_require__.d=(exports,definition)=>{/******/for(var key in definition){/******/if(__webpack_require__.o(definition,key)&&!__webpack_require__.o(exports,key)){/******/Object.defineProperty(exports,key,{});/******/}/******/}/******/};/******/})();/******//******//* webpack/runtime/global *//******/(()=>{/******/__webpack_require__.g=function(){/******/if(typeof globalThis==='object')return globalThis;/******/try{/******/return this||new Function('return this')();/******/}catch(e){/******/if(typeof window==='object')return window;/******/}/******/}();/******/})();/******//******//* webpack/runtime/hasOwnProperty shorthand *//******/(()=>{/******/__webpack_require__.o=(obj,prop)=>Object.prototype.hasOwnProperty.call(obj,prop);/******/})();/******//************************************************************************/(()=>{"use strict";// EXTERNAL MODULE: ./node_modules/jquery/dist/jquery.js
+/******/__webpack_require__.n=module=>{/******/var getter=module&&module.__esModule?/******/()=>module['default']:/******/()=>module;/******/__webpack_require__.d(getter,{a:getter});/******/return getter;/******/};/******/})();/******//******//* webpack/runtime/define property getters *//******/(()=>{/******/// define getter functions for harmony exports
+/******/__webpack_require__.d=(exports,definition)=>{/******/for(var key in definition){/******/if(__webpack_require__.o(definition,key)&&!__webpack_require__.o(exports,key)){/******/Object.defineProperty(exports,key,{enumerable:true,get:definition[key]});/******/}/******/}/******/};/******/})();/******//******//* webpack/runtime/global *//******/(()=>{/******/__webpack_require__.g=function(){/******/if(typeof globalThis==='object')return globalThis;/******/try{/******/return this||new Function('return this')();/******/}catch(e){/******/if(typeof window==='object')return window;/******/}/******/}();/******/})();/******//******//* webpack/runtime/hasOwnProperty shorthand *//******/(()=>{/******/__webpack_require__.o=(obj,prop)=>Object.prototype.hasOwnProperty.call(obj,prop);/******/})();/******//************************************************************************/(()=>{"use strict";// EXTERNAL MODULE: ./node_modules/jquery/dist/jquery.js
 var jquery=__webpack_require__(755);var jquery_default=/*#__PURE__*/__webpack_require__.n(jquery);;// CONCATENATED MODULE: ./source/scripts/globals/jquery.js
 // jQuery plugins expect to find a global `jQuery` object, so we
 // need to attach it to the window.
@@ -22,7 +24,7 @@ var script=__webpack_require__(277);var script_default=/*#__PURE__*/__webpack_re
 /*!
  * @pixelunion/pxs-faq v2.0.0
  * (c) 2023 Pixel Union
- */function unwrapExports(x){return x&&x.__esModule&&Object.prototype.hasOwnProperty.call(x,'default')?x['default']:x;}function createCommonjsModule(fn,module){return module={},fn(module,module.exports),module.exports;}var EventHandler_1=createCommonjsModule(function(module,exports){exports.__esModule=true;var EventHandler=/** @class */function(){EventHandler.prototype.register=function(el,event,listener){if(!el||!event||!listener)return null;this.events.push({});el.addEventListener(event,listener);return{};};EventHandler.prototype.unregister=function(_a){var el=_a.el,event=_a.event,listener=_a.listener;if(!el||!event||!listener)return null;this.events=this.events.filter(function(e){return el!==e.el||event!==e.event||listener!==e.listener;});el.removeEventListener(event,listener);return{};};EventHandler.prototype.unregisterAll=function(){this.events.forEach(function(_a){var el=_a.el,event=_a.event,listener=_a.listener;return el.removeEventListener(event,listener);});this.events=[];};return EventHandler;}();exports["default"]=EventHandler;});var EventHandler=unwrapExports(EventHandler_1);/*!
+ */function unwrapExports(x){return x&&x.__esModule&&Object.prototype.hasOwnProperty.call(x,'default')?x['default']:x;}function createCommonjsModule(fn,module){return module={exports:{}},fn(module,module.exports),module.exports;}var EventHandler_1=createCommonjsModule(function(module,exports){exports.__esModule=true;var EventHandler=/** @class */function(){EventHandler.prototype.register=function(el,event,listener){if(!el||!event||!listener)return null;this.events.push({el:el,event:event,listener:listener});el.addEventListener(event,listener);return{el:el,event:event,listener:listener};};EventHandler.prototype.unregister=function(_a){var el=_a.el,event=_a.event,listener=_a.listener;if(!el||!event||!listener)return null;this.events=this.events.filter(function(e){return el!==e.el||event!==e.event||listener!==e.listener;});el.removeEventListener(event,listener);return{el:el,event:event,listener:listener};};EventHandler.prototype.unregisterAll=function(){this.events.forEach(function(_a){var el=_a.el,event=_a.event,listener=_a.listener;return el.removeEventListener(event,listener);});this.events=[];};return EventHandler;}();exports["default"]=EventHandler;});var EventHandler=unwrapExports(EventHandler_1);/*!
    * @pixelunion/animations v0.1.0
    * (c) 2019 Pixel Union
    * Released under the UNLICENSED license.
@@ -47,7 +49,7 @@ var script=__webpack_require__(277);var script_default=/*#__PURE__*/__webpack_re
    * Returns target element
    *
    * @return {HTMLElement} Target element
-   */_createClass$1(Animation,[{/**
+   */_createClass$1(Animation,[{key:"isState",/**
      * Check if a state is active
      * @param {String} state State to compare
      *
@@ -65,13 +67,13 @@ var script=__webpack_require__(277);var script_default=/*#__PURE__*/__webpack_re
      * next state change.
      *
      * @return {Promise} Resolves when endEvent triggered
-     */},{value:function(){}/**
+     */},{key:"animateTo",value:function(){}/**
      * Remove any event listeners
-     */},{value:function(){}},{get:function(){}/**
+     */},{key:"unload",value:function(){}},{key:"el",get:function(){}/**
      * Returns current state
      *
      * @return {String} Current state
-     */},{get:function(){}}]);return Animation;}();var justDebounce=debounce;var FAQ=/*#__PURE__*/function(){_createClass(FAQ,[{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}}]);return FAQ;}();/* harmony default export */const index_es=FAQ;;// CONCATENATED MODULE: ./node_modules/@pixelunion/pxs-map/dist/index.es.js
+     */},{key:"state",get:function(){}}]);return Animation;}();var justDebounce=debounce;var FAQ=/*#__PURE__*/function(){_createClass(FAQ,[{key:"initAnimations",value:function(){}},{key:"animateAccordion",value:function(){}},{key:"animateCategories",value:function(){}},{key:"openCategories",value:function(){}},{key:"closeCategories",value:function(){}},{key:"updateCategoriesHeight",value:function(){}},{key:"openAccordion",value:function(){}},{key:"closeAccordion",value:function(){}},{key:"onSectionBlockSelect",value:function(){}},{key:"onSectionBlockDeselect",value:function(){}},{key:"onSectionUnload",value:function(){}}]);return FAQ;}();/* harmony default export */const index_es=FAQ;;// CONCATENATED MODULE: ./node_modules/@pixelunion/pxs-map/dist/index.es.js
 /*!
  * @pixelunion/pxs-map v3.2.0
  * (c) 2024 Pixel Union
@@ -83,11 +85,11 @@ var script=__webpack_require__(277);var script_default=/*#__PURE__*/__webpack_re
  * The Geocoding API (https://developers.google.com/maps/documentation/geocoding/usage-and-billing) allows us
  * to take a place name and convert it to latitude and longitude expressed in decimal degrees.
  */var PxsMap=function PxsMap(section){var _this=this;index_es_classCallCheck(this,PxsMap);this.map=null;var el=section.el.querySelector('[data-map]');var container=el.querySelector('[data-map-container]');var settings=section.data;var address=settings.address,colors=settings.colors;var apiKey=settings.api_key;// Scale so range is 12 ~ 17, rather than 1 to 6
-var zoom=Number.isNaN(settings.zoom)?13:11+parseInt(settings.zoom,10);if(apiKey){if(window.googleMaps===undefined){script_default()("https://maps.googleapis.com/maps/api/js?key=".concat(apiKey),function(){window.googleMaps=true;createMap({}).then(function(map){_this.map=map;})["catch"](function(error){return displayErrorInThemeEditor(container,error);});});}else{createMap({}).then(function(map){_this.map=map;})["catch"](function(error){return displayErrorInThemeEditor(container,error);});}}};/* harmony default export */const dist_index_es=PxsMap;;// CONCATENATED MODULE: ./node_modules/@pixelunion/age-gate/dist/index.es.js
+var zoom=Number.isNaN(settings.zoom)?13:11+parseInt(settings.zoom,10);if(apiKey){if(window.googleMaps===undefined){script_default()("https://maps.googleapis.com/maps/api/js?key=".concat(apiKey),function(){window.googleMaps=true;createMap({container:container,address:address,zoom:zoom,colors:colors}).then(function(map){_this.map=map;})["catch"](function(error){return displayErrorInThemeEditor(container,error);});});}else{createMap({container:container,address:address,zoom:zoom,colors:colors}).then(function(map){_this.map=map;})["catch"](function(error){return displayErrorInThemeEditor(container,error);});}}};/* harmony default export */const dist_index_es=PxsMap;;// CONCATENATED MODULE: ./node_modules/@pixelunion/age-gate/dist/index.es.js
 /*!
  * @pixelunion/age-gate v1.1.2
  * (c) 2025 Pixel Union
- */var scrollLock=__webpack_require__(265);var isbot=__webpack_require__(458);var SiteAgeGate=/*#__PURE__*/function(){index_es_createClass(SiteAgeGate,[{value:function(){}},{value:function(){}},{value:function(){}}]);return SiteAgeGate;}();var PageAgeGate=/*#__PURE__*/function(){index_es_createClass(PageAgeGate,[{value:function(){}},{value:function(){}},{value:function(){}}]);return PageAgeGate;}();;// CONCATENATED MODULE: ./node_modules/@pixelunion/rimg-shopify/dist/index.es.js
+ */var scrollLock=__webpack_require__(265);var isbot=__webpack_require__(458);var SiteAgeGate=/*#__PURE__*/function(){index_es_createClass(SiteAgeGate,[{key:"_open",value:function(){}},{key:"_close",value:function(){}},{key:"_onFormSubmit",value:function(){}}]);return SiteAgeGate;}();var PageAgeGate=/*#__PURE__*/function(){index_es_createClass(PageAgeGate,[{key:"onSectionLoad",value:function(){}},{key:"onSectionSelect",value:function(){}},{key:"onSectionDeselect",value:function(){}}]);return PageAgeGate;}();;// CONCATENATED MODULE: ./node_modules/@pixelunion/rimg-shopify/dist/index.es.js
 /*!
  * @pixelunion/rimg-shopify v2.7.1
  * (c) 2023 Pixel Union
@@ -103,7 +105,7 @@ var zoom=Number.isNaN(settings.zoom)?13:11+parseInt(settings.zoom,10);if(apiKey)
  * @returns {String}
  *//**
  * @type Settings
- */var defaults={};/**
+ */var defaults={scale:1,template:false,templateRender:defaultTemplateRender,max:{width:Infinity,height:Infinity},round:32,placeholder:false,crop:null};/**
  * Get a data attribute value from an element, with a default fallback and
  * sanitization step.
  *
@@ -290,7 +292,7 @@ var zoom=Number.isNaN(settings.zoom)?13:11+parseInt(settings.zoom,10);if(apiKey)
  * Polyfill for Element.matches().
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/API/Element/matches
- */if(!Element.prototype.matches){Element.prototype.matches=Element.prototype.matchesSelector||Element.prototype.mozMatchesSelector||Element.prototype.msMatchesSelector||Element.prototype.oMatchesSelector||Element.prototype.webkitMatchesSelector||function(s){var matches=(this.document||this.ownerDocument).querySelectorAll(s),i=matches.length;while(--i>=0&&matches.item(i)!==this){}return i>-1;};}var state={};/**
+ */if(!Element.prototype.matches){Element.prototype.matches=Element.prototype.matchesSelector||Element.prototype.mozMatchesSelector||Element.prototype.msMatchesSelector||Element.prototype.oMatchesSelector||Element.prototype.webkitMatchesSelector||function(s){var matches=(this.document||this.ownerDocument).querySelectorAll(s),i=matches.length;while(--i>=0&&matches.item(i)!==this){}return i>-1;};}var state={init:init,watch:watch,unwatch:unwatch,load:load$1};/**
  * Track an element, and its children.
  *
  * @param {HTMLElement} el
@@ -395,7 +397,7 @@ countryNodeElement.addEventListener('change',function(event){var target=event.ta
 /*!
    * @pixelunion/shopify-asyncview v3.0.0
    * (c) 2020 Pixel Union
-  */var deferred={};var AsyncView=/*#__PURE__*/function(){dist_index_es_createClass(AsyncView,null,[{/**
+  */var deferred={};var AsyncView=/*#__PURE__*/function(){dist_index_es_createClass(AsyncView,null,[{key:"load",/**
      * Load the template given by the provided URL into the provided
      * view
      *
@@ -432,7 +434,7 @@ var dist_EventHandler=__webpack_require__(766);;// CONCATENATED MODULE: ./source
    * Returns target element
    *
    * @return {HTMLElement} Target element
-   */animations_es_createClass(Animation,[{/**
+   */animations_es_createClass(Animation,[{key:"isState",/**
      * Check if a state is active
      * @param {String} state State to compare
      *
@@ -450,13 +452,13 @@ var dist_EventHandler=__webpack_require__(766);;// CONCATENATED MODULE: ./source
      * next state change.
      *
      * @return {Promise} Resolves when endEvent triggered
-     */},{value:function(){}/**
+     */},{key:"animateTo",value:function(){}/**
      * Remove any event listeners
-     */},{value:function(){}},{get:function(){}/**
+     */},{key:"unload",value:function(){}},{key:"el",get:function(){}/**
      * Returns current state
      *
      * @return {String} Current state
-     */},{get:function(){}}]);return Animation;}();/**
+     */},{key:"state",get:function(){}}]);return Animation;}();/**
  * Manage state changes for a set of elements
  */var AnimationsManager=/*#__PURE__*//* unused pure expression or super */null&&function(){/**
    * Add a new element and return an animation for that element. If element already has an associated animation, return that animation.
@@ -470,18 +472,18 @@ var dist_EventHandler=__webpack_require__(766);;// CONCATENATED MODULE: ./source
    * @param {Function} [options.onStart] Callback to execute immediate after applying stateChangeAttribute.
    *
    * @return {Animation}
-   */animations_es_createClass(AnimationsManager,[{value:function(){}/**
+   */animations_es_createClass(AnimationsManager,[{key:"add",value:function(){}/**
      * Remove a single animation
      * @param {Animation} animation Animation to remove. Any event listeners will also be removed.
-     */},{value:function(){}/**
+     */},{key:"remove",value:function(){}/**
      * Remove all animations, including all event listeners.
-     */},{value:function(){}}]);return AnimationsManager;}();;// CONCATENATED MODULE: ./source/scripts/components/MessageBanner.js
+     */},{key:"removeAll",value:function(){}}]);return AnimationsManager;}();;// CONCATENATED MODULE: ./source/scripts/components/MessageBanner.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/StaticCart.js
 // EXTERNAL MODULE: ./node_modules/@pixelunion/breakpoint/dist/cjs/index.js
 var cjs=__webpack_require__(646);// EXTERNAL MODULE: ./node_modules/flickity/js/index.js
 var js=__webpack_require__(442);var js_default=/*#__PURE__*/__webpack_require__.n(js);;// CONCATENATED MODULE: ./source/scripts/helpers/throttle.js
 ;// CONCATENATED MODULE: ./source/scripts/Layout.js
-const eventHandlers=[];let previousBreakpoint=null;jquery_default()(window).on('resize',throttle(event=>{const currentBreakpoint=getBreakpoint();if(previousBreakpoint!==currentBreakpoint){eventHandlers.forEach(eventHandler=>{eventHandler(event,{});});}previousBreakpoint=currentBreakpoint;},100));/* harmony default export */const Layout={};;// CONCATENATED MODULE: ./source/scripts/helpers/LazyLoader.js
+const eventHandlers=[];let previousBreakpoint=null;jquery_default()(window).on('resize',throttle(event=>{const currentBreakpoint=getBreakpoint();if(previousBreakpoint!==currentBreakpoint){eventHandlers.forEach(eventHandler=>{eventHandler(event,{previous:previousBreakpoint,current:currentBreakpoint});});}previousBreakpoint=currentBreakpoint;},100));/* harmony default export */const Layout={isLessThanBreakpoint,isGreaterThanBreakpoint,isBreakpoint,onBreakpointChange,offBreakpointChange};;// CONCATENATED MODULE: ./source/scripts/helpers/LazyLoader.js
 /**
  * Allows a callback to be run once, when a target intersects the viewport.
  * @constructor
@@ -539,7 +541,7 @@ var vanilla_modal_dist=__webpack_require__(529);var vanilla_modal_dist_default=/
  * @param {string} options.messages.newWindowExternal - When the link is to a different host domain and opens in a new window.
  * @param {object} options.prefix - Prefix to namespace "id" of the messages
  */;// CONCATENATED MODULE: ./source/scripts/helpers/ScrollLock.js
-const{}=document;const html=document.querySelector('html');;// CONCATENATED MODULE: ./source/scripts/components/Modal.js
+const{body}=document;const html=document.querySelector('html');;// CONCATENATED MODULE: ./source/scripts/components/Modal.js
 let openModals=[];const unlockScrollLock=()=>{if(openModals.length===0){ScrollLock.unlock();}};// EXTERNAL MODULE: ./node_modules/@pixelunion/shopify-variants-ui/dist/index.es.js
 var shopify_variants_ui_dist_index_es=__webpack_require__(722);;// CONCATENATED MODULE: ./node_modules/@pixelunion/shopify-surface-pick-up/dist/index.es.js
 const LOCAL_STORAGE_KEY='pxu-shopify-surface-pick-up';const loadingClass='surface-pick-up--loading';const isNotExpired=timestamp=>timestamp+1000*60*60>=Date.now();const removeTrailingSlash=s=>s.replace(/(.*)\/$/,'$1');// Haversine Distance
@@ -549,7 +551,7 @@ const LOCAL_STORAGE_KEY='pxu-shopify-surface-pick-up';const loadingClass='surfac
 /*!
  * @pixelunion/pxs-gift-card-recipient-form v1.1.0
  * (c) 2024 Pixel Union
- */function index_es_unwrapExports(x){return x&&x.__esModule&&Object.prototype.hasOwnProperty.call(x,'default')?x['default']:x;}function index_es_createCommonjsModule(fn,module){return module={},fn(module,module.exports),module.exports;}var index_es_EventHandler_1=index_es_createCommonjsModule(function(module,exports){exports.__esModule=true;var EventHandler=/** @class */function(){EventHandler.prototype.register=function(el,event,listener){if(!el||!event||!listener)return null;this.events.push({});el.addEventListener(event,listener);return{};};EventHandler.prototype.unregister=function(_a){var el=_a.el,event=_a.event,listener=_a.listener;if(!el||!event||!listener)return null;this.events=this.events.filter(function(e){return el!==e.el||event!==e.event||listener!==e.listener;});el.removeEventListener(event,listener);return{};};EventHandler.prototype.unregisterAll=function(){this.events.forEach(function(_a){var el=_a.el,event=_a.event,listener=_a.listener;return el.removeEventListener(event,listener);});this.events=[];};return EventHandler;}();exports["default"]=EventHandler;});var index_es_EventHandler=index_es_unwrapExports(index_es_EventHandler_1);/*!
+ */function index_es_unwrapExports(x){return x&&x.__esModule&&Object.prototype.hasOwnProperty.call(x,'default')?x['default']:x;}function index_es_createCommonjsModule(fn,module){return module={exports:{}},fn(module,module.exports),module.exports;}var index_es_EventHandler_1=index_es_createCommonjsModule(function(module,exports){exports.__esModule=true;var EventHandler=/** @class */function(){EventHandler.prototype.register=function(el,event,listener){if(!el||!event||!listener)return null;this.events.push({el:el,event:event,listener:listener});el.addEventListener(event,listener);return{el:el,event:event,listener:listener};};EventHandler.prototype.unregister=function(_a){var el=_a.el,event=_a.event,listener=_a.listener;if(!el||!event||!listener)return null;this.events=this.events.filter(function(e){return el!==e.el||event!==e.event||listener!==e.listener;});el.removeEventListener(event,listener);return{el:el,event:event,listener:listener};};EventHandler.prototype.unregisterAll=function(){this.events.forEach(function(_a){var el=_a.el,event=_a.event,listener=_a.listener;return el.removeEventListener(event,listener);});this.events=[];};return EventHandler;}();exports["default"]=EventHandler;});var index_es_EventHandler=index_es_unwrapExports(index_es_EventHandler_1);/*!
    * @pixelunion/animations v0.1.0
    * (c) 2019 Pixel Union
    * Released under the UNLICENSED license.
@@ -574,7 +576,7 @@ const LOCAL_STORAGE_KEY='pxu-shopify-surface-pick-up';const loadingClass='surfac
    * Returns target element
    *
    * @return {HTMLElement} Target element
-   */pxs_gift_card_recipient_form_dist_index_es_createClass(Animation,[{/**
+   */pxs_gift_card_recipient_form_dist_index_es_createClass(Animation,[{key:"isState",/**
      * Check if a state is active
      * @param {String} state State to compare
      *
@@ -592,13 +594,13 @@ const LOCAL_STORAGE_KEY='pxu-shopify-surface-pick-up';const loadingClass='surfac
      * next state change.
      *
      * @return {Promise} Resolves when endEvent triggered
-     */},{value:function(){}/**
+     */},{key:"animateTo",value:function(){}/**
      * Remove any event listeners
-     */},{value:function(){}},{get:function(){}/**
+     */},{key:"unload",value:function(){}},{key:"el",get:function(){}/**
      * Returns current state
      *
      * @return {String} Current state
-     */},{get:function(){}}]);return Animation;}();/* harmony default export */const pxs_gift_card_recipient_form_dist_index_es=RecipientForm;;// CONCATENATED MODULE: ./source/scripts/helpers/Images.js
+     */},{key:"state",get:function(){}}]);return Animation;}();/* harmony default export */const pxs_gift_card_recipient_form_dist_index_es=RecipientForm;;// CONCATENATED MODULE: ./source/scripts/helpers/Images.js
 ;// CONCATENATED MODULE: ./node_modules/tslib/tslib.es6.js
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -613,7 +615,7 @@ INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
 LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** *//* global Reflect, Promise */var extendStatics=function(d,b){extendStatics=Object.setPrototypeOf||{}instanceof Array&&function(d,b){d.__proto__=b;}||function(d,b){for(var p in b)if(b.hasOwnProperty(p))d[p]=b[p];};return extendStatics(d,b);};var __assign=function(){__assign=Object.assign||function __assign(t){for(var s,i=1,n=arguments.length;i<n;i++){s=arguments[i];for(var p in s)if(Object.prototype.hasOwnProperty.call(s,p))t[p]=s[p];}return t;};return __assign.apply(this,arguments);};;;;// CONCATENATED MODULE: ./node_modules/@material/base/foundation.js
+***************************************************************************** *//* global Reflect, Promise */var extendStatics=function(d,b){extendStatics=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(d,b){d.__proto__=b;}||function(d,b){for(var p in b)if(b.hasOwnProperty(p))d[p]=b[p];};return extendStatics(d,b);};var __assign=function(){__assign=Object.assign||function __assign(t){for(var s,i=1,n=arguments.length;i<n;i++){s=arguments[i];for(var p in s)if(Object.prototype.hasOwnProperty.call(s,p))t[p]=s[p];}return t;};return __assign.apply(this,arguments);};;;;// CONCATENATED MODULE: ./node_modules/@material/base/foundation.js
 /**
  * @license
  * Copyright 2016 Google Inc.
@@ -635,7 +637,7 @@ PERFORMANCE OF THIS SOFTWARE.
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
- */var MDCFoundation=/** @class */function(){Object.defineProperty(MDCFoundation,"cssClasses",{get:function(){}});Object.defineProperty(MDCFoundation,"strings",{get:function(){}});Object.defineProperty(MDCFoundation,"numbers",{get:function(){}});Object.defineProperty(MDCFoundation,"defaultAdapter",{get:function(){}});MDCFoundation.prototype.init=function(){// Subclasses should override this method to perform initialization routines (registering events, etc.)
+ */var MDCFoundation=/** @class */function(){Object.defineProperty(MDCFoundation,"cssClasses",{get:function(){},enumerable:true,configurable:true});Object.defineProperty(MDCFoundation,"strings",{get:function(){},enumerable:true,configurable:true});Object.defineProperty(MDCFoundation,"numbers",{get:function(){},enumerable:true,configurable:true});Object.defineProperty(MDCFoundation,"defaultAdapter",{get:function(){},enumerable:true,configurable:true});MDCFoundation.prototype.init=function(){// Subclasses should override this method to perform initialization routines (registering events, etc.)
 };MDCFoundation.prototype.destroy=function(){// Subclasses should override this method to perform de-initialization routines (de-registering events, etc.)
 };return MDCFoundation;}();// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
 /* harmony default export */const foundation=/* unused pure expression or super */null&&MDCFoundation;//# sourceMappingURL=foundation.js.map
@@ -678,7 +680,7 @@ throw new Error('Subclasses must override getDefaultFoundation to return a prope
 // attached. An example of this might be deregistering a resize event from the window object.
 this.foundation_.destroy();};MDCComponent.prototype.listen=function(evtType,handler,options){this.root_.addEventListener(evtType,handler,options);};MDCComponent.prototype.unlisten=function(evtType,handler,options){this.root_.removeEventListener(evtType,handler,options);};/**
      * Fires a cross-browser-compatible custom event from the component root of the given type, with the given data.
-     */MDCComponent.prototype.emit=function(evtType,evtData,shouldBubble){if(shouldBubble===void 0){shouldBubble=false;}var evt;if(typeof CustomEvent==='function'){evt=new CustomEvent(evtType,{});}else{evt=document.createEvent('CustomEvent');evt.initCustomEvent(evtType,shouldBubble,false,evtData);}this.root_.dispatchEvent(evt);};return MDCComponent;}();// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
+     */MDCComponent.prototype.emit=function(evtType,evtData,shouldBubble){if(shouldBubble===void 0){shouldBubble=false;}var evt;if(typeof CustomEvent==='function'){evt=new CustomEvent(evtType,{bubbles:shouldBubble,detail:evtData});}else{evt=document.createEvent('CustomEvent');evt.initCustomEvent(evtType,shouldBubble,false,evtData);}this.root_.dispatchEvent(evt);};return MDCComponent;}();// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
 /* harmony default export */const component=/* unused pure expression or super */null&&MDCComponent;//# sourceMappingURL=component.js.map
 ;// CONCATENATED MODULE: ./node_modules/@material/dom/events.js
 /**
@@ -761,7 +763,10 @@ this.foundation_.destroy();};MDCComponent.prototype.listen=function(evtType,hand
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
- */var cssClasses={};var strings={};var numbers={};//# sourceMappingURL=constants.js.map
+ */var cssClasses={// Ripple is a special case where the "root" component is really a "mixin" of sorts,
+// given that it's an 'upgrade' to an existing component. That being said it is the root
+// CSS class that all other CSS classes derive from.
+BG_FOCUSED:'mdc-ripple-upgraded--background-focused',FG_ACTIVATION:'mdc-ripple-upgraded--foreground-activation',FG_DEACTIVATION:'mdc-ripple-upgraded--foreground-deactivation',ROOT:'mdc-ripple-upgraded',UNBOUNDED:'mdc-ripple-upgraded--unbounded'};var strings={VAR_FG_SCALE:'--mdc-ripple-fg-scale',VAR_FG_SIZE:'--mdc-ripple-fg-size',VAR_FG_TRANSLATE_END:'--mdc-ripple-fg-translate-end',VAR_FG_TRANSLATE_START:'--mdc-ripple-fg-translate-start',VAR_LEFT:'--mdc-ripple-left',VAR_TOP:'--mdc-ripple-top'};var numbers={DEACTIVATION_TIMEOUT_MS:225,FG_DEACTIVATION_MS:150,INITIAL_ORIGIN_SCALE:0.6,PADDING:10,TAP_DELAY_MS:300};//# sourceMappingURL=constants.js.map
 ;// CONCATENATED MODULE: ./node_modules/@material/ripple/util.js
 /**
  * Stores result from supportsCssVariables to avoid redundant processing to
@@ -792,7 +797,7 @@ this.foundation_.destroy();};MDCComponent.prototype.listen=function(evtType,hand
  */// Activation events registered on the root element of each instance for activation
 var ACTIVATION_EVENT_TYPES=['touchstart','pointerdown','mousedown','keydown'];// Deactivation events registered on documentElement when a pointer-related down event occurs
 var POINTER_DEACTIVATION_EVENT_TYPES=['touchend','pointerup','mouseup','contextmenu'];// simultaneous nested activations
-var activatedTargets=[];var MDCRippleFoundation=/** @class */function(_super){__extends(MDCRippleFoundation,_super);Object.defineProperty(MDCRippleFoundation,"cssClasses",{get:function(){}});Object.defineProperty(MDCRippleFoundation,"strings",{get:function(){}});Object.defineProperty(MDCRippleFoundation,"numbers",{get:function(){}});Object.defineProperty(MDCRippleFoundation,"defaultAdapter",{get:function(){}});MDCRippleFoundation.prototype.init=function(){var _this=this;var supportsPressRipple=this.supportsPressRipple_();this.registerRootHandlers_(supportsPressRipple);if(supportsPressRipple){var _a=MDCRippleFoundation.cssClasses,ROOT_1=_a.ROOT,UNBOUNDED_1=_a.UNBOUNDED;requestAnimationFrame(function(){_this.adapter_.addClass(ROOT_1);if(_this.adapter_.isUnbounded()){_this.adapter_.addClass(UNBOUNDED_1);// Unbounded ripples need layout logic applied immediately to set coordinates for both shade and ripple
+var activatedTargets=[];var MDCRippleFoundation=/** @class */function(_super){__extends(MDCRippleFoundation,_super);Object.defineProperty(MDCRippleFoundation,"cssClasses",{get:function(){},enumerable:true,configurable:true});Object.defineProperty(MDCRippleFoundation,"strings",{get:function(){},enumerable:true,configurable:true});Object.defineProperty(MDCRippleFoundation,"numbers",{get:function(){},enumerable:true,configurable:true});Object.defineProperty(MDCRippleFoundation,"defaultAdapter",{get:function(){},enumerable:true,configurable:true});MDCRippleFoundation.prototype.init=function(){var _this=this;var supportsPressRipple=this.supportsPressRipple_();this.registerRootHandlers_(supportsPressRipple);if(supportsPressRipple){var _a=MDCRippleFoundation.cssClasses,ROOT_1=_a.ROOT,UNBOUNDED_1=_a.UNBOUNDED;requestAnimationFrame(function(){_this.adapter_.addClass(ROOT_1);if(_this.adapter_.isUnbounded()){_this.adapter_.addClass(UNBOUNDED_1);// Unbounded ripples need layout logic applied immediately to set coordinates for both shade and ripple
 _this.layoutInternal_();}});}};MDCRippleFoundation.prototype.destroy=function(){var _this=this;if(this.supportsPressRipple_()){if(this.activationTimer_){clearTimeout(this.activationTimer_);this.activationTimer_=0;this.adapter_.removeClass(MDCRippleFoundation.cssClasses.FG_ACTIVATION);}if(this.fgDeactivationRemovalTimer_){clearTimeout(this.fgDeactivationRemovalTimer_);this.fgDeactivationRemovalTimer_=0;this.adapter_.removeClass(MDCRippleFoundation.cssClasses.FG_DEACTIVATION);}var _a=MDCRippleFoundation.cssClasses,ROOT_2=_a.ROOT,UNBOUNDED_2=_a.UNBOUNDED;requestAnimationFrame(function(){_this.adapter_.removeClass(ROOT_2);_this.adapter_.removeClass(UNBOUNDED_2);_this.removeCssVars_();});}this.deregisterRootHandlers_();this.deregisterDeactivationHandlers_();};/**
      * @param evt Optional event containing position information.
      */MDCRippleFoundation.prototype.activate=function(evt){this.activate_(evt);};MDCRippleFoundation.prototype.deactivate=function(){this.deactivate_();};MDCRippleFoundation.prototype.layout=function(){var _this=this;if(this.layoutFrame_){cancelAnimationFrame(this.layoutFrame_);}this.layoutFrame_=requestAnimationFrame(function(){_this.layoutInternal_();_this.layoutFrame_=0;});};MDCRippleFoundation.prototype.setUnbounded=function(unbounded){var UNBOUNDED=MDCRippleFoundation.cssClasses.UNBOUNDED;if(unbounded){this.adapter_.addClass(UNBOUNDED);}else{this.adapter_.removeClass(UNBOUNDED);}};MDCRippleFoundation.prototype.handleFocus=function(){var _this=this;requestAnimationFrame(function(){return _this.adapter_.addClass(MDCRippleFoundation.cssClasses.BG_FOCUSED);});};MDCRippleFoundation.prototype.handleBlur=function(){var _this=this;requestAnimationFrame(function(){return _this.adapter_.removeClass(MDCRippleFoundation.cssClasses.BG_FOCUSED);});};/**
@@ -800,7 +805,7 @@ _this.layoutInternal_();}});}};MDCRippleFoundation.prototype.destroy=function(){
      * until the point in time where the foundation requests it. This prevents scenarios where
      * client-side feature-detection may happen too early, such as when components are rendered on the server
      * and then initialized at mount time on the client.
-     */MDCRippleFoundation.prototype.supportsPressRipple_=function(){return this.adapter_.browserSupportsCssVars();};MDCRippleFoundation.prototype.defaultActivationState_=function(){return{};};/**
+     */MDCRippleFoundation.prototype.supportsPressRipple_=function(){return this.adapter_.browserSupportsCssVars();};MDCRippleFoundation.prototype.defaultActivationState_=function(){return{activationEvent:undefined,hasDeactivationUXRun:false,isActivated:false,isProgrammatic:false,wasActivatedByPointer:false,wasElementMadeActive:false};};/**
      * supportsPressRipple Passed from init to save a redundant function call
      */MDCRippleFoundation.prototype.registerRootHandlers_=function(supportsPressRipple){var _this=this;if(supportsPressRipple){ACTIVATION_EVENT_TYPES.forEach(function(evtType){_this.adapter_.registerInteractionHandler(evtType,_this.activateHandler_);});if(this.adapter_.isUnbounded()){this.adapter_.registerResizeHandler(this.resizeHandler_);}}this.adapter_.registerInteractionHandler('focus',this.focusHandler_);this.adapter_.registerInteractionHandler('blur',this.blurHandler_);};MDCRippleFoundation.prototype.registerDeactivationHandlers_=function(evt){var _this=this;if(evt.type==='keydown'){this.adapter_.registerInteractionHandler('keyup',this.deactivateHandler_);}else{POINTER_DEACTIVATION_EVENT_TYPES.forEach(function(evtType){_this.adapter_.registerDocumentInteractionHandler(evtType,_this.deactivateHandler_);});}};MDCRippleFoundation.prototype.deregisterRootHandlers_=function(){var _this=this;ACTIVATION_EVENT_TYPES.forEach(function(evtType){_this.adapter_.deregisterInteractionHandler(evtType,_this.activateHandler_);});this.adapter_.deregisterInteractionHandler('focus',this.focusHandler_);this.adapter_.deregisterInteractionHandler('blur',this.blurHandler_);if(this.adapter_.isUnbounded()){this.adapter_.deregisterResizeHandler(this.resizeHandler_);}};MDCRippleFoundation.prototype.deregisterDeactivationHandlers_=function(){var _this=this;this.adapter_.deregisterInteractionHandler('keyup',this.deactivateHandler_);POINTER_DEACTIVATION_EVENT_TYPES.forEach(function(evtType){_this.adapter_.deregisterDocumentInteractionHandler(evtType,_this.deactivateHandler_);});};MDCRippleFoundation.prototype.removeCssVars_=function(){var _this=this;var rippleStrings=MDCRippleFoundation.strings;var keys=Object.keys(rippleStrings);keys.forEach(function(key){if(key.indexOf('VAR_')===0){_this.adapter_.updateCssVariable(rippleStrings[key],null);}});};MDCRippleFoundation.prototype.activate_=function(evt){var _this=this;if(this.adapter_.isSurfaceDisabled()){return;}var activationState=this.activationState_;if(activationState.isActivated){return;}// Avoid reacting to follow-on events fired by touch device after an already-processed user interaction
 var previousActivationEvent=this.previousActivationEvent_;var isSameInteraction=previousActivationEvent&&evt!==undefined&&previousActivationEvent.type!==evt.type;if(isSameInteraction){return;}activationState.isActivated=true;activationState.isProgrammatic=evt===undefined;activationState.activationEvent=evt;activationState.wasActivatedByPointer=activationState.isProgrammatic?false:evt!==undefined&&(evt.type==='mousedown'||evt.type==='touchstart'||evt.type==='pointerdown');var hasActivatedChild=evt!==undefined&&activatedTargets.length>0&&activatedTargets.some(function(target){return _this.adapter_.containsEventTarget(target);});if(hasActivatedChild){// Immediately reset activation state, while preserving logic that prevents touch follow-on events
@@ -814,8 +819,8 @@ activatedTargets=[];if(!activationState.wasElementMadeActive&&evt!==undefined&&(
 activationState.wasElementMadeActive=_this.checkElementMadeActive_(evt);if(activationState.wasElementMadeActive){_this.animateActivation_();}}if(!activationState.wasElementMadeActive){// Reset activation state immediately if element was not made active.
 _this.activationState_=_this.defaultActivationState_();}});};MDCRippleFoundation.prototype.checkElementMadeActive_=function(evt){return evt!==undefined&&evt.type==='keydown'?this.adapter_.isSurfaceActive():true;};MDCRippleFoundation.prototype.animateActivation_=function(){var _this=this;var _a=MDCRippleFoundation.strings,VAR_FG_TRANSLATE_START=_a.VAR_FG_TRANSLATE_START,VAR_FG_TRANSLATE_END=_a.VAR_FG_TRANSLATE_END;var _b=MDCRippleFoundation.cssClasses,FG_DEACTIVATION=_b.FG_DEACTIVATION,FG_ACTIVATION=_b.FG_ACTIVATION;var DEACTIVATION_TIMEOUT_MS=MDCRippleFoundation.numbers.DEACTIVATION_TIMEOUT_MS;this.layoutInternal_();var translateStart='';var translateEnd='';if(!this.adapter_.isUnbounded()){var _c=this.getFgTranslationCoordinates_(),startPoint=_c.startPoint,endPoint=_c.endPoint;translateStart=startPoint.x+"px, "+startPoint.y+"px";translateEnd=endPoint.x+"px, "+endPoint.y+"px";}this.adapter_.updateCssVariable(VAR_FG_TRANSLATE_START,translateStart);this.adapter_.updateCssVariable(VAR_FG_TRANSLATE_END,translateEnd);// Cancel any ongoing activation/deactivation animations
 clearTimeout(this.activationTimer_);clearTimeout(this.fgDeactivationRemovalTimer_);this.rmBoundedActivationClasses_();this.adapter_.removeClass(FG_DEACTIVATION);// Force layout in order to re-trigger the animation.
-this.adapter_.computeBoundingRect();this.adapter_.addClass(FG_ACTIVATION);this.activationTimer_=setTimeout(function(){return _this.activationTimerCallback_();},DEACTIVATION_TIMEOUT_MS);};MDCRippleFoundation.prototype.getFgTranslationCoordinates_=function(){var _a=this.activationState_,activationEvent=_a.activationEvent,wasActivatedByPointer=_a.wasActivatedByPointer;var startPoint;if(wasActivatedByPointer){startPoint=getNormalizedEventCoords(activationEvent,this.adapter_.getWindowPageOffset(),this.adapter_.computeBoundingRect());}else{startPoint={};}// Center the element around the start point.
-startPoint={};var endPoint={};return{};};MDCRippleFoundation.prototype.runDeactivationUXLogicIfReady_=function(){var _this=this;// This method is called both when a pointing device is released, and when the activation animation ends.
+this.adapter_.computeBoundingRect();this.adapter_.addClass(FG_ACTIVATION);this.activationTimer_=setTimeout(function(){return _this.activationTimerCallback_();},DEACTIVATION_TIMEOUT_MS);};MDCRippleFoundation.prototype.getFgTranslationCoordinates_=function(){var _a=this.activationState_,activationEvent=_a.activationEvent,wasActivatedByPointer=_a.wasActivatedByPointer;var startPoint;if(wasActivatedByPointer){startPoint=getNormalizedEventCoords(activationEvent,this.adapter_.getWindowPageOffset(),this.adapter_.computeBoundingRect());}else{startPoint={x:this.frame_.width/2,y:this.frame_.height/2};}// Center the element around the start point.
+startPoint={x:startPoint.x-this.initialSize_/2,y:startPoint.y-this.initialSize_/2};var endPoint={x:this.frame_.width/2-this.initialSize_/2,y:this.frame_.height/2-this.initialSize_/2};return{startPoint:startPoint,endPoint:endPoint};};MDCRippleFoundation.prototype.runDeactivationUXLogicIfReady_=function(){var _this=this;// This method is called both when a pointing device is released, and when the activation animation ends.
 // The deactivation animation should only run after both of those occur.
 var FG_DEACTIVATION=MDCRippleFoundation.cssClasses.FG_DEACTIVATION;var _a=this.activationState_,hasDeactivationUXRun=_a.hasDeactivationUXRun,isActivated=_a.isActivated;var activationHasEnded=hasDeactivationUXRun||!isActivated;if(activationHasEnded&&this.activationAnimationHasEnded_){this.rmBoundedActivationClasses_();this.adapter_.addClass(FG_DEACTIVATION);this.fgDeactivationRemovalTimer_=setTimeout(function(){_this.adapter_.removeClass(FG_DEACTIVATION);},numbers.FG_DEACTIVATION_MS);}};MDCRippleFoundation.prototype.rmBoundedActivationClasses_=function(){var FG_ACTIVATION=MDCRippleFoundation.cssClasses.FG_ACTIVATION;this.adapter_.removeClass(FG_ACTIVATION);this.activationAnimationHasEnded_=false;this.adapter_.computeBoundingRect();};MDCRippleFoundation.prototype.resetActivationState_=function(){var _this=this;this.previousActivationEvent_=this.activationState_.activationEvent;this.activationState_=this.defaultActivationState_();// Touch devices may fire additional events for the same interaction within a short time.
 // Store the previous event until it's safe to assume that subsequent events are for new interactions.
@@ -828,7 +833,7 @@ if(!activationState.isActivated){return;}var state=__assign({},activationState);
 // `overflow: hidden`.
 var getBoundedRadius=function(){var hypotenuse=Math.sqrt(Math.pow(_this.frame_.width,2)+Math.pow(_this.frame_.height,2));return hypotenuse+MDCRippleFoundation.numbers.PADDING;};this.maxRadius_=this.adapter_.isUnbounded()?maxDim:getBoundedRadius();// Ripple is sized as a fraction of the largest dimension of the surface, then scales up using a CSS scale transform
 var initialSize=Math.floor(maxDim*MDCRippleFoundation.numbers.INITIAL_ORIGIN_SCALE);// Unbounded ripple size should always be even number to equally center align.
-if(this.adapter_.isUnbounded()&&initialSize%2!==0){this.initialSize_=initialSize-1;}else{this.initialSize_=initialSize;}this.fgScale_=""+this.maxRadius_/this.initialSize_;this.updateLayoutCssVars_();};MDCRippleFoundation.prototype.updateLayoutCssVars_=function(){var _a=MDCRippleFoundation.strings,VAR_FG_SIZE=_a.VAR_FG_SIZE,VAR_LEFT=_a.VAR_LEFT,VAR_TOP=_a.VAR_TOP,VAR_FG_SCALE=_a.VAR_FG_SCALE;this.adapter_.updateCssVariable(VAR_FG_SIZE,this.initialSize_+"px");this.adapter_.updateCssVariable(VAR_FG_SCALE,this.fgScale_);if(this.adapter_.isUnbounded()){this.unboundedCoords_={};this.adapter_.updateCssVariable(VAR_LEFT,this.unboundedCoords_.left+"px");this.adapter_.updateCssVariable(VAR_TOP,this.unboundedCoords_.top+"px");}};return MDCRippleFoundation;}(MDCFoundation);// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
+if(this.adapter_.isUnbounded()&&initialSize%2!==0){this.initialSize_=initialSize-1;}else{this.initialSize_=initialSize;}this.fgScale_=""+this.maxRadius_/this.initialSize_;this.updateLayoutCssVars_();};MDCRippleFoundation.prototype.updateLayoutCssVars_=function(){var _a=MDCRippleFoundation.strings,VAR_FG_SIZE=_a.VAR_FG_SIZE,VAR_LEFT=_a.VAR_LEFT,VAR_TOP=_a.VAR_TOP,VAR_FG_SCALE=_a.VAR_FG_SCALE;this.adapter_.updateCssVariable(VAR_FG_SIZE,this.initialSize_+"px");this.adapter_.updateCssVariable(VAR_FG_SCALE,this.fgScale_);if(this.adapter_.isUnbounded()){this.unboundedCoords_={left:Math.round(this.frame_.width/2-this.initialSize_/2),top:Math.round(this.frame_.height/2-this.initialSize_/2)};this.adapter_.updateCssVariable(VAR_LEFT,this.unboundedCoords_.left+"px");this.adapter_.updateCssVariable(VAR_TOP,this.unboundedCoords_.top+"px");}};return MDCRippleFoundation;}(MDCFoundation);// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
 /* harmony default export */const ripple_foundation=/* unused pure expression or super */null&&MDCRippleFoundation;//# sourceMappingURL=foundation.js.map
 ;// CONCATENATED MODULE: ./node_modules/@material/ripple/component.js
 /**
@@ -852,8 +857,8 @@ if(this.adapter_.isUnbounded()&&initialSize%2!==0){this.initialSize_=initialSize
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
- */var MDCRipple=/** @class */function(_super){__extends(MDCRipple,_super);MDCRipple.attachTo=function(root,opts){if(opts===void 0){opts={};}var ripple=new MDCRipple(root);// Only override unbounded behavior if option is explicitly specified
-if(opts.isUnbounded!==undefined){ripple.unbounded=opts.isUnbounded;}return ripple;};MDCRipple.createAdapter=function(instance){return{addClass:function(){},browserSupportsCssVars:function(){},computeBoundingRect:function(){},containsEventTarget:function(){},deregisterDocumentInteractionHandler:function(){},deregisterInteractionHandler:function(){},deregisterResizeHandler:function(){},getWindowPageOffset:function(){},isSurfaceActive:function(){},isSurfaceDisabled:function(){},isUnbounded:function(){},registerDocumentInteractionHandler:function(){},registerInteractionHandler:function(){},registerResizeHandler:function(){},removeClass:function(){},updateCssVariable:function(){}};};Object.defineProperty(MDCRipple.prototype,"unbounded",{get:function(){},set:function(){}});MDCRipple.prototype.activate=function(){this.foundation_.activate();};MDCRipple.prototype.deactivate=function(){this.foundation_.deactivate();};MDCRipple.prototype.layout=function(){this.foundation_.layout();};MDCRipple.prototype.getDefaultFoundation=function(){return new MDCRippleFoundation(MDCRipple.createAdapter(this));};MDCRipple.prototype.initialSyncWithDOM=function(){var root=this.root_;this.unbounded='mdcRippleIsUnbounded'in root.dataset;};/**
+ */var MDCRipple=/** @class */function(_super){__extends(MDCRipple,_super);MDCRipple.attachTo=function(root,opts){if(opts===void 0){opts={isUnbounded:undefined};}var ripple=new MDCRipple(root);// Only override unbounded behavior if option is explicitly specified
+if(opts.isUnbounded!==undefined){ripple.unbounded=opts.isUnbounded;}return ripple;};MDCRipple.createAdapter=function(instance){return{addClass:function(){},browserSupportsCssVars:function(){},computeBoundingRect:function(){},containsEventTarget:function(){},deregisterDocumentInteractionHandler:function(){},deregisterInteractionHandler:function(){},deregisterResizeHandler:function(){},getWindowPageOffset:function(){},isSurfaceActive:function(){},isSurfaceDisabled:function(){},isUnbounded:function(){},registerDocumentInteractionHandler:function(){},registerInteractionHandler:function(){},registerResizeHandler:function(){},removeClass:function(){},updateCssVariable:function(){}};};Object.defineProperty(MDCRipple.prototype,"unbounded",{get:function(){},set:function(){},enumerable:true,configurable:true});MDCRipple.prototype.activate=function(){this.foundation_.activate();};MDCRipple.prototype.deactivate=function(){this.foundation_.deactivate();};MDCRipple.prototype.layout=function(){this.foundation_.layout();};MDCRipple.prototype.getDefaultFoundation=function(){return new MDCRippleFoundation(MDCRipple.createAdapter(this));};MDCRipple.prototype.initialSyncWithDOM=function(){var root=this.root_;this.unbounded='mdcRippleIsUnbounded'in root.dataset;};/**
      * Closure Compiler throws an access control error when directly accessing a
      * protected or private property inside a getter/setter, like unbounded above.
      * By accessing the protected property inside a method, we solve that problem.
@@ -862,25 +867,25 @@ if(opts.isUnbounded!==undefined){ripple.unbounded=opts.isUnbounded;}return rippl
 ;// CONCATENATED MODULE: ./source/scripts/helpers/Ripple.js
 // This function sets up the ripple effect for the various buttons throughout the
 // theme using CSS selectors.
-const setupRippleEffect=rootElement=>{if('reduceAnimations'in document.body.dataset){return;}const rippleElements=['.button-primary','.button-secondary','.slideshow-slide__button','.product-form--atc-button','.mobile-nav-content .navmenu-link','.mobile-nav-content .navmenu-button','.mobile-nav-primary-content .navmenu-link','.mobile-nav-primary-content .navmenu-button','.live-search-button','.options-selection__radios .options-selection__option-value-name','.countdown-timer__caption-button','.order-page__atc-button'];rootElement.querySelectorAll(rippleElements.join(',')).forEach(el=>{if(!el.classList.contains('disabled')&&!el.hasAttribute('disabled')){el.classList.add('mdc-ripple-surface');MDCRipple.attachTo(el);}});};/* harmony default export */const Ripple={};;// CONCATENATED MODULE: ./source/scripts/components/AddToCartFlyout.js
+const setupRippleEffect=rootElement=>{if('reduceAnimations'in document.body.dataset){return;}const rippleElements=['.button-primary','.button-secondary','.slideshow-slide__button','.product-form--atc-button','.mobile-nav-content .navmenu-link','.mobile-nav-content .navmenu-button','.mobile-nav-primary-content .navmenu-link','.mobile-nav-primary-content .navmenu-button','.live-search-button','.options-selection__radios .options-selection__option-value-name','.countdown-timer__caption-button','.order-page__atc-button'];rootElement.querySelectorAll(rippleElements.join(',')).forEach(el=>{if(!el.classList.contains('disabled')&&!el.hasAttribute('disabled')){el.classList.add('mdc-ripple-surface');MDCRipple.attachTo(el);}});};/* harmony default export */const Ripple={setupRippleEffect};;// CONCATENATED MODULE: ./source/scripts/components/AddToCartFlyout.js
 ;// CONCATENATED MODULE: ./source/scripts/helpers/PaymentTerms.js
 ;// CONCATENATED MODULE: ./source/scripts/components/ProductDetails.js
 ;// CONCATENATED MODULE: ./source/scripts/helpers/ProductReviews.js
-const initShopifyProductReviews=()=>{if(!window.SPR){return;}window.SPR.registerCallbacks();window.SPR.initRatingHandler();window.SPR.initDomEls();window.SPR.loadProducts();window.SPR.loadBadges();};/* harmony default export */const ProductReviews={};;// CONCATENATED MODULE: ./source/scripts/components/ProductQuickshop.js
+const initShopifyProductReviews=()=>{if(!window.SPR){return;}window.SPR.registerCallbacks();window.SPR.initRatingHandler();window.SPR.initDomEls();window.SPR.loadProducts();window.SPR.loadBadges();};/* harmony default export */const ProductReviews={initShopifyProductReviews};;// CONCATENATED MODULE: ./source/scripts/components/ProductQuickshop.js
 ;// CONCATENATED MODULE: ./source/scripts/components/GridItemSwatches.js
 let swatchGap=null;;// CONCATENATED MODULE: ./source/scripts/components/ProductCompare.js
 const storageKey='pxuProductCompareV3';const MAX_COMPARE_PRODUCTS=3;/* harmony default export */const components_ProductCompare=new ProductCompare();;// CONCATENATED MODULE: ./source/scripts/components/Checkbox.js
 ;// CONCATENATED MODULE: ./source/scripts/components/ProductGridItem.js
 ;// CONCATENATED MODULE: ./source/scripts/Accordion.js
-const makeBlock=el=>({});const setOpenHeight=el=>{el.style.setProperty('--menu-open-height',`${el.scrollHeight}px`);};;// CONCATENATED MODULE: ./source/scripts/components/FilterGroups.js
+const makeBlock=el=>({animation:animations_es_transition({el,state:'open',stateAttribute:'data-accordion-state',stateChangeAttribute:'data-accordion-animation'}),isOpen:true});const setOpenHeight=el=>{el.style.setProperty('--menu-open-height',`${el.scrollHeight}px`);};;// CONCATENATED MODULE: ./source/scripts/components/FilterGroups.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/StaticCollection.js
 ;// CONCATENATED MODULE: ./node_modules/@pixelunion/shopify-cross-border/dist/index.es.js
-function getDefaultExportFromCjs(x){return x&&x.__esModule&&Object.prototype.hasOwnProperty.call(x,'default')?x['default']:x;}function dist_index_es_createCommonjsModule(fn){var module={};return fn(module,module.exports),module.exports;}var dist_index_es_EventHandler_1=dist_index_es_createCommonjsModule(function(module,exports){exports.__esModule=true;var EventHandler=/** @class */function(){EventHandler.prototype.register=function(el,event,listener){if(!el||!event||!listener)return null;this.events.push({});el.addEventListener(event,listener);return{};};EventHandler.prototype.unregister=function(_a){var el=_a.el,event=_a.event,listener=_a.listener;if(!el||!event||!listener)return null;this.events=this.events.filter(function(e){return el!==e.el||event!==e.event||listener!==e.listener;});el.removeEventListener(event,listener);return{};};EventHandler.prototype.unregisterAll=function(){this.events.forEach(function(_a){var el=_a.el,event=_a.event,listener=_a.listener;return el.removeEventListener(event,listener);});this.events=[];};return EventHandler;}();exports["default"]=EventHandler;});var Events=/*@__PURE__*/getDefaultExportFromCjs(dist_index_es_EventHandler_1);var selectors={};var classes={};var Disclosure=/*#__PURE__*/function(){shopify_cross_border_dist_index_es_createClass(Disclosure,[{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}}]);return Disclosure;}();if(!Element.prototype.matches){Element.prototype.matches=Element.prototype.msMatchesSelector||Element.prototype.webkitMatchesSelector;}if(!Element.prototype.closest){Element.prototype.closest=function closest(s){var el=this;do{if(el.matches(s))return el;el=el.parentElement||el.parentNode;}while(el!==null&&el.nodeType===1);return null;};}/* harmony default export */const shopify_cross_border_dist_index_es=Disclosure;;// CONCATENATED MODULE: ./source/scripts/sections/StaticFooter.js
+function getDefaultExportFromCjs(x){return x&&x.__esModule&&Object.prototype.hasOwnProperty.call(x,'default')?x['default']:x;}function dist_index_es_createCommonjsModule(fn){var module={exports:{}};return fn(module,module.exports),module.exports;}var dist_index_es_EventHandler_1=dist_index_es_createCommonjsModule(function(module,exports){exports.__esModule=true;var EventHandler=/** @class */function(){EventHandler.prototype.register=function(el,event,listener){if(!el||!event||!listener)return null;this.events.push({el:el,event:event,listener:listener});el.addEventListener(event,listener);return{el:el,event:event,listener:listener};};EventHandler.prototype.unregister=function(_a){var el=_a.el,event=_a.event,listener=_a.listener;if(!el||!event||!listener)return null;this.events=this.events.filter(function(e){return el!==e.el||event!==e.event||listener!==e.listener;});el.removeEventListener(event,listener);return{el:el,event:event,listener:listener};};EventHandler.prototype.unregisterAll=function(){this.events.forEach(function(_a){var el=_a.el,event=_a.event,listener=_a.listener;return el.removeEventListener(event,listener);});this.events=[];};return EventHandler;}();exports["default"]=EventHandler;});var Events=/*@__PURE__*/getDefaultExportFromCjs(dist_index_es_EventHandler_1);var selectors={disclosureList:'[data-disclosure-list]',disclosureToggle:'[data-disclosure-toggle]',disclosureInput:'[data-disclosure-input]',disclosureOptions:'[data-disclosure-option]'};var classes={listVisible:'disclosure-list--visible',alternateDrop:'disclosure-list--alternate-drop'};var Disclosure=/*#__PURE__*/function(){shopify_cross_border_dist_index_es_createClass(Disclosure,[{key:"_cacheSelectors",value:function(){}},{key:"_connectToggle",value:function(){}},{key:"_connectOptions",value:function(){}},{key:"_onFocusOut",value:function(){}},{key:"_submitForm",value:function(){}},{key:"_hideList",value:function(){}},{key:"unload",value:function(){}}]);return Disclosure;}();if(!Element.prototype.matches){Element.prototype.matches=Element.prototype.msMatchesSelector||Element.prototype.webkitMatchesSelector;}if(!Element.prototype.closest){Element.prototype.closest=function closest(s){var el=this;do{if(el.matches(s))return el;el=el.parentElement||el.parentNode;}while(el!==null&&el.nodeType===1);return null;};}/* harmony default export */const shopify_cross_border_dist_index_es=Disclosure;;// CONCATENATED MODULE: ./source/scripts/sections/StaticFooter.js
 ;// CONCATENATED MODULE: ./source/scripts/components/StickyHeader.js
 ;// CONCATENATED MODULE: ./source/scripts/components/navigation/NavMobileSubMenus.js
 ;// CONCATENATED MODULE: ./source/scripts/components/navigation/NavMobile.js
 ;// CONCATENATED MODULE: ./source/scripts/helpers/site-main-dimmer.js
-const el=document.querySelector('[data-site-main-dimmer]');const site_main_dimmer_animation=animations_es_transition({});const openers=new Set();const disableAnimations='reduceAnimations'in document.body.dataset;;// CONCATENATED MODULE: ./source/scripts/components/navigation/NavDesktopParent.js
+const el=document.querySelector('[data-site-main-dimmer]');const site_main_dimmer_animation=animations_es_transition({el,state:'closed'});const openers=new Set();const disableAnimations='reduceAnimations'in document.body.dataset;;// CONCATENATED MODULE: ./source/scripts/components/navigation/NavDesktopParent.js
 // eslint-disable-line import/no-cycle
 ;// CONCATENATED MODULE: ./source/scripts/components/navigation/NavDesktopMeganavParent.js
 // eslint-disable-line import/no-cycle
@@ -896,10 +901,10 @@ const el=document.querySelector('[data-site-main-dimmer]');const site_main_dimme
 /*!
  * @pixelunion/pxs-complementary-products v3.5.4
  * (c) 2023 Pixel Union
- */var commonjsGlobal=typeof globalThis!=='undefined'?globalThis:typeof window!=='undefined'?window:typeof __webpack_require__.g!=='undefined'?__webpack_require__.g:typeof self!=='undefined'?self:{};function dist_index_es_unwrapExports(x){return x&&x.__esModule&&Object.prototype.hasOwnProperty.call(x,'default')?x['default']:x;}function pxs_complementary_products_dist_index_es_createCommonjsModule(fn,module){return module={},fn(module,module.exports),module.exports;}var pxs_complementary_products_dist_index_es_EventHandler_1=pxs_complementary_products_dist_index_es_createCommonjsModule(function(module,exports){exports.__esModule=true;var EventHandler=/** @class */function(){EventHandler.prototype.register=function(el,event,listener){if(!el||!event||!listener)return null;this.events.push({});el.addEventListener(event,listener);return{};};EventHandler.prototype.unregister=function(_a){var el=_a.el,event=_a.event,listener=_a.listener;if(!el||!event||!listener)return null;this.events=this.events.filter(function(e){return el!==e.el||event!==e.event||listener!==e.listener;});el.removeEventListener(event,listener);return{};};EventHandler.prototype.unregisterAll=function(){this.events.forEach(function(_a){var el=_a.el,event=_a.event,listener=_a.listener;return el.removeEventListener(event,listener);});this.events=[];};return EventHandler;}();exports["default"]=EventHandler;});var dist_index_es_EventHandler=dist_index_es_unwrapExports(pxs_complementary_products_dist_index_es_EventHandler_1);/*!
+ */var commonjsGlobal=typeof globalThis!=='undefined'?globalThis:typeof window!=='undefined'?window:typeof __webpack_require__.g!=='undefined'?__webpack_require__.g:typeof self!=='undefined'?self:{};function dist_index_es_unwrapExports(x){return x&&x.__esModule&&Object.prototype.hasOwnProperty.call(x,'default')?x['default']:x;}function pxs_complementary_products_dist_index_es_createCommonjsModule(fn,module){return module={exports:{}},fn(module,module.exports),module.exports;}var pxs_complementary_products_dist_index_es_EventHandler_1=pxs_complementary_products_dist_index_es_createCommonjsModule(function(module,exports){exports.__esModule=true;var EventHandler=/** @class */function(){EventHandler.prototype.register=function(el,event,listener){if(!el||!event||!listener)return null;this.events.push({el:el,event:event,listener:listener});el.addEventListener(event,listener);return{el:el,event:event,listener:listener};};EventHandler.prototype.unregister=function(_a){var el=_a.el,event=_a.event,listener=_a.listener;if(!el||!event||!listener)return null;this.events=this.events.filter(function(e){return el!==e.el||event!==e.event||listener!==e.listener;});el.removeEventListener(event,listener);return{el:el,event:event,listener:listener};};EventHandler.prototype.unregisterAll=function(){this.events.forEach(function(_a){var el=_a.el,event=_a.event,listener=_a.listener;return el.removeEventListener(event,listener);});this.events=[];};return EventHandler;}();exports["default"]=EventHandler;});var dist_index_es_EventHandler=dist_index_es_unwrapExports(pxs_complementary_products_dist_index_es_EventHandler_1);/*!
    * @pixelunion/shopify-asyncview v2.0.5
    * (c) 2020 Pixel Union
-  */var index_es_deferred={};var index_es_AsyncView=/*#__PURE__*/function(){index_es_createClass$1(AsyncView,null,[{/**
+  */var index_es_deferred={};var index_es_AsyncView=/*#__PURE__*/function(){index_es_createClass$1(AsyncView,null,[{key:"load",/**
      * Load the template given by the provided URL into the provided
      * view
      *
@@ -1046,7 +1051,15 @@ var _Flickity=window.Flickity;window.Flickity=factory(window,window.EvEmitter,wi
 var jQuery=window.jQuery;var getComputedStyle=window.getComputedStyle;var console=window.console;// -------------------------- Flickity -------------------------- //
 // globally unique identifiers
 var GUID=0;// internal store of all Flickity intances
-var instances={};Flickity.defaults={};// hash of methods triggered on _create()
+var instances={};Flickity.defaults={accessibility:true,// adaptiveHeight: false,
+cellAlign:'center',// cellSelector: undefined,
+// contain: false,
+freeScrollFriction:0.075,// friction when free-scrolling
+friction:0.28,// friction when selecting
+namespaceJQueryEvents:true,// initialIndex: 0,
+percentPosition:true,resize:true,selectedAttraction:0.025,setGallerySize:true// watchCSS: false,
+// wrapAround: false
+};// hash of methods triggered on _create()
 Flickity.createMethods=[];var proto=Flickity.prototype;// inherit EventEmitter
 utils.extend(proto,EvEmitter.prototype);proto._create=function(){// add id for Flickity.data
 var id=this.guid=++GUID;this.element.flickityGUID=id;// expando
@@ -1099,7 +1112,8 @@ this.updateSelectedSlide();};proto._getCanCellFit=function(){var groupCells=this
 var number=parseInt(groupCells,10);return function(i){return i%number!==0;};}// default, group by width of slide
 // parse '75%
 var percentMatch=typeof groupCells=='string'&&groupCells.match(/^(\d+)%$/);var percent=percentMatch?parseInt(percentMatch[1],10)/100:1;return function(i,slideWidth){/* eslint-disable-next-line no-invalid-this */return slideWidth<=(this.size.innerWidth+1)*percent;};};// alias _init for jQuery plugin .flickity()
-proto._init=proto.reposition=function(){this.positionCells();this.positionSliderAtSelected();};proto.getSize=function(){this.size=getSize(this.element);this.setCellAlign();this.cursorPosition=this.size.innerWidth*this.cellAlign;};var cellAlignShorthands={};proto.setCellAlign=function(){var shorthand=cellAlignShorthands[this.options.cellAlign];this.cellAlign=shorthand?shorthand[this.originSide]:this.options.cellAlign;};proto.setGallerySize=function(){if(this.options.setGallerySize){var height=this.options.adaptiveHeight&&this.selectedSlide?this.selectedSlide.height:this.maxCellHeight;this.viewport.style.height=height+'px';}};proto._getWrapShiftCells=function(){// only for wrap-around
+proto._init=proto.reposition=function(){this.positionCells();this.positionSliderAtSelected();};proto.getSize=function(){this.size=getSize(this.element);this.setCellAlign();this.cursorPosition=this.size.innerWidth*this.cellAlign;};var cellAlignShorthands={// cell align, then based on origin side
+center:{left:0.5,right:0.5},left:{left:0,right:1},right:{right:0,left:1}};proto.setCellAlign=function(){var shorthand=cellAlignShorthands[this.options.cellAlign];this.cellAlign=shorthand?shorthand[this.originSide]:this.options.cellAlign;};proto.setGallerySize=function(){if(this.options.setGallerySize){var height=this.options.adaptiveHeight&&this.selectedSlide?this.selectedSlide.height:this.maxCellHeight;this.viewport.style.height=height+'px';}};proto._getWrapShiftCells=function(){// only for wrap-around
 if(!this.options.wrapAround){return;}// unshift previous cells
 this._unshiftCells(this.beforeShiftCells);this._unshiftCells(this.afterShiftCells);// get before cells
 // initial gap
@@ -1201,7 +1215,7 @@ var isNotFocused=document.activeElement&&document.activeElement!=this.element;if
 proto.focus=function(){// TODO remove scrollTo once focus options gets more support
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus ...
 //    #Browser_compatibility
-var prevScrollY=window.pageYOffset;this.element.focus({});// hack to fix scroll jump after focus, #76
+var prevScrollY=window.pageYOffset;this.element.focus({preventScroll:true});// hack to fix scroll jump after focus, #76
 if(window.pageYOffset!=prevScrollY){window.scrollTo(window.pageXOffset,prevScrollY);}};// -------------------------- destroy -------------------------- //
 // deactivate all Flickity functionality, but keep stuff available
 proto.deactivate=function(){if(!this.isActive){return;}this.element.classList.remove('flickity-enabled');this.element.classList.remove('flickity-rtl');this.unselectSelectedSlide();// destroy cells
@@ -1243,7 +1257,7 @@ var button=event.button;if(button&&button!==0&&button!==1){return;}this._pointer
 if(event.button||this.isPointerDown){return;}this.isPointerDown=true;// save pointer identifier to match up touch events
 this.pointerIdentifier=pointer.pointerId!==undefined?// pointerId for pointer events, touch.indentifier for touch events
 pointer.pointerId:pointer.identifier;this.pointerDown(event,pointer);};proto.pointerDown=function(event,pointer){this._bindPostStartEvents(event);this.emitEvent('pointerDown',[event,pointer]);};// hash of events to be bound after start event
-var postStartEvents={};proto._bindPostStartEvents=function(event){if(!event){return;}// get proper events to match start event
+var postStartEvents={mousedown:['mousemove','mouseup'],touchstart:['touchmove','touchend','touchcancel'],pointerdown:['pointermove','pointerup','pointercancel']};proto._bindPostStartEvents=function(event){if(!event){return;}// get proper events to match start event
 var events=postStartEvents[event.type];// bind events to node
 events.forEach(function(eventName){window.addEventListener(eventName,this);},this);// save these arguments
 this._boundPointerEvents=events;};proto._unbindPostStartEvents=function(){// check for _boundEvents, in case dragEnd triggered twice (old IE8 bug)
@@ -1273,7 +1287,7 @@ proto.onpointercancel=function(event){if(event.pointerId==this.pointerIdentifier
  */proto._pointerCancel=function(event,pointer){this._pointerDone();this.pointerCancel(event,pointer);};// public
 proto.pointerCancel=function(event,pointer){this.emitEvent('pointerCancel',[event,pointer]);};// -----  ----- //
 // utility function for getting x/y coords from event
-Unipointer.getPointerPoint=function(pointer){return{};};// -----  ----- //
+Unipointer.getPointerPoint=function(pointer){return{x:pointer.pageX,y:pointer.pageY};};// -----  ----- //
 return Unipointer;});});var unidragger=pxs_complementary_products_dist_index_es_createCommonjsModule(function(module){/*!
  * Unidragger v2.4.0
  * Draggable base class
@@ -1298,10 +1312,10 @@ proto._touchActionValue='none';// ----- start event ----- //
  * @param {Event or Touch} pointer
  */proto.pointerDown=function(event,pointer){var isOkay=this.okayPointerDown(event);if(!isOkay){return;}// track start event position
 // Safari 9 overrides pageX and pageY. These values needs to be copied. flickity#842
-this.pointerDownPointer={};event.preventDefault();this.pointerDownBlur();// bind move and end events
+this.pointerDownPointer={pageX:pointer.pageX,pageY:pointer.pageY};event.preventDefault();this.pointerDownBlur();// bind move and end events
 this._bindPostStartEvents(event);this.emitEvent('pointerDown',[event,pointer]);};// nodes that have text fields
-var cursorNodes={};// input types that do not have text fields
-var clickTypes={};// dismiss inputs with text fields. flickity#403, flickity#404
+var cursorNodes={TEXTAREA:true,INPUT:true,SELECT:true,OPTION:true};// input types that do not have text fields
+var clickTypes={radio:true,checkbox:true,button:true,submit:true,image:true,file:true};// dismiss inputs with text fields. flickity#403, flickity#404
 proto.okayPointerDown=function(event){var isCursorNode=cursorNodes[event.target.nodeName];var isClickType=clickTypes[event.target.type];var isOkay=!isCursorNode||isClickType;if(!isOkay){this._pointerReset();}return isOkay;};// kludge to blur previously focused input
 proto.pointerDownBlur=function(){var focused=document.activeElement;// do not blur body for IE10, metafizzy/flickity#117
 var canBlur=focused&&focused.blur&&focused!=document.body;if(canBlur){focused.blur();}};// ----- move event ----- //
@@ -1310,7 +1324,7 @@ var canBlur=focused&&focused.blur&&focused!=document.body;if(canBlur){focused.bl
  * @param {Event} event
  * @param {Event or Touch} pointer
  */proto.pointerMove=function(event,pointer){var moveVector=this._dragPointerMove(event,pointer);this.emitEvent('pointerMove',[event,pointer,moveVector]);this._dragMove(event,pointer,moveVector);};// base pointer move logic
-proto._dragPointerMove=function(event,pointer){var moveVector={};// start drag if pointer has moved far enough to start drag
+proto._dragPointerMove=function(event,pointer){var moveVector={x:pointer.pageX-this.pointerDownPointer.pageX,y:pointer.pageY-this.pointerDownPointer.pageY};// start drag if pointer has moved far enough to start drag
 if(!this.isDragging&&this.hasDragStarted(moveVector)){this._dragStart(event,pointer);}return moveVector;};// condition if pointer has moved far enough to start drag
 proto.hasDragStarted=function(moveVector){return Math.abs(moveVector.x)>3||Math.abs(moveVector.y)>3;};// ----- end event ----- //
 /**
@@ -1340,7 +1354,7 @@ return Unidragger;});});var drag=pxs_complementary_products_dist_index_es_create
 if(module.exports){// CommonJS
 module.exports=factory(window,flickity,unidragger,utils);}else{// browser global
 window.Flickity=factory(window,window.Flickity,window.Unidragger,window.fizzyUIUtils);}})(window,function factory(window,Flickity,Unidragger,utils){// ----- defaults ----- //
-utils.extend(Flickity.defaults,{});// ----- create ----- //
+utils.extend(Flickity.defaults,{draggable:'>1',dragThreshold:3});// ----- create ----- //
 Flickity.createMethods.push('_createDrag');// -------------------------- drag prototype -------------------------- //
 var proto=Flickity.prototype;utils.extend(proto,Unidragger.prototype);proto._touchActionValue='pan-y';// --------------------------  -------------------------- //
 proto._createDrag=function(){this.on('activate',this.onActivateDrag);this.on('uiChange',this._uiChangeDrag);this.on('deactivate',this.onDeactivateDrag);this.on('cellChange',this.updateDraggable);// TODO updateDraggable on resize? if groupCells & slides change
@@ -1354,8 +1368,8 @@ this.dragX=this.x;this.viewport.classList.add('is-pointer-down');// track scroll
 this.pointerDownScroll=getScrollPosition();window.addEventListener('scroll',this);this._pointerDownDefault(event,pointer);};// default pointerDown logic, used for staticClick
 proto._pointerDownDefault=function(event,pointer){// track start event position
 // Safari 9 overrides pageX and pageY. These values needs to be copied. #779
-this.pointerDownPointer={};// bind move and end events
-this._bindPostStartEvents(event);this.dispatchEvent('pointerDown',event,[pointer]);};var focusNodes={};proto.pointerDownFocus=function(event){var isFocusNode=focusNodes[event.target.nodeName];if(!isFocusNode){this.focus();}};proto._pointerDownPreventDefault=function(event){var isTouchStart=event.type=='touchstart';var isTouchPointer=event.pointerType=='touch';var isFocusNode=focusNodes[event.target.nodeName];if(!isTouchStart&&!isTouchPointer&&!isFocusNode){event.preventDefault();}};// ----- move ----- //
+this.pointerDownPointer={pageX:pointer.pageX,pageY:pointer.pageY};// bind move and end events
+this._bindPostStartEvents(event);this.dispatchEvent('pointerDown',event,[pointer]);};var focusNodes={INPUT:true,TEXTAREA:true,SELECT:true};proto.pointerDownFocus=function(event){var isFocusNode=focusNodes[event.target.nodeName];if(!isFocusNode){this.focus();}};proto._pointerDownPreventDefault=function(event){var isTouchStart=event.type=='touchstart';var isTouchPointer=event.pointerType=='touch';var isFocusNode=focusNodes[event.target.nodeName];if(!isTouchStart&&!isTouchPointer&&!isFocusNode){event.preventDefault();}};// ----- move ----- //
 proto.hasDragStarted=function(moveVector){return Math.abs(moveVector.x)>this.options.dragThreshold;};// ----- up ----- //
 proto.pointerUp=function(event,pointer){delete this.isTouchScrolling;this.viewport.classList.remove('is-pointer-down');this.dispatchEvent('pointerUp',event,[pointer]);this._dragPointerUp(event,pointer);};proto.pointerDone=function(){window.removeEventListener('scroll',this);delete this.pointerDownScroll;};// -------------------------- dragging -------------------------- //
 proto.dragStart=function(event,pointer){if(!this.isDraggable){return;}this.dragStartPosition=this.x;this.startAnimation();window.removeEventListener('scroll',this);this.dispatchEvent('dragStart',event,[pointer]);};proto.pointerMove=function(event,pointer){var moveVector=this._dragPointerMove(event,pointer);this.dispatchEvent('pointerMove',event,[pointer,moveVector]);this._dragMove(event,pointer,moveVector);};proto.dragMove=function(event,pointer,moveVector){if(!this.isDraggable){return;}event.preventDefault();this.previousDragX=this.dragX;// reverse if right-to-left
@@ -1381,7 +1395,8 @@ var index=positiveResting.distance<negativeResting.distance?positiveResting.inde
  * @returns {Object} - { distance: {Number}, index: {Integer} }
  */proto._getClosestResting=function(restingX,distance,increment){var index=this.selectedIndex;var minDistance=Infinity;var condition=this.options.contain&&!this.options.wrapAround?// if contain, keep going if distance is equal to minDistance
 function(dist,minDist){return dist<=minDist;}:function(dist,minDist){return dist<minDist;};while(condition(distance,minDistance)){// measure distance to next cell
-index+=increment;minDistance=distance;distance=this.getSlideDistance(-restingX,index);if(distance===null){break;}distance=Math.abs(distance);}return{};};/**
+index+=increment;minDistance=distance;distance=this.getSlideDistance(-restingX,index);if(distance===null){break;}distance=Math.abs(distance);}return{distance:minDistance,// selected was previous index
+index:index-increment};};/**
  * measure distance between x and a slide target
  * @param {Number} x - horizontal position
  * @param {Integer} index - slide index
@@ -1417,7 +1432,7 @@ PrevNextButton.prototype.handleEvent=utils.handleEvent;PrevNextButton.prototype.
 PrevNextButton.prototype.enable=function(){if(this.isEnabled){return;}this.element.disabled=false;this.isEnabled=true;};PrevNextButton.prototype.disable=function(){if(!this.isEnabled){return;}this.element.disabled=true;this.isEnabled=false;};PrevNextButton.prototype.update=function(){// index of first or last slide, if previous or next
 var slides=this.parent.slides;// enable is wrapAround and at least 2 slides
 if(this.parent.options.wrapAround&&slides.length>1){this.enable();return;}var lastIndex=slides.length?slides.length-1:0;var boundIndex=this.isPrevious?0:lastIndex;var method=this.parent.selectedIndex==boundIndex?'disable':'enable';this[method]();};PrevNextButton.prototype.destroy=function(){this.deactivate();this.allOff();};// -------------------------- Flickity prototype -------------------------- //
-utils.extend(Flickity.defaults,{});Flickity.createMethods.push('_createPrevNextButtons');var proto=Flickity.prototype;proto._createPrevNextButtons=function(){if(!this.options.prevNextButtons){return;}this.prevButton=new PrevNextButton(-1,this);this.nextButton=new PrevNextButton(1,this);this.on('activate',this.activatePrevNextButtons);};proto.activatePrevNextButtons=function(){this.prevButton.activate();this.nextButton.activate();this.on('deactivate',this.deactivatePrevNextButtons);};proto.deactivatePrevNextButtons=function(){this.prevButton.deactivate();this.nextButton.deactivate();this.off('deactivate',this.deactivatePrevNextButtons);};// --------------------------  -------------------------- //
+utils.extend(Flickity.defaults,{prevNextButtons:true,arrowShape:{x0:10,x1:60,y1:50,x2:70,y2:40,x3:30}});Flickity.createMethods.push('_createPrevNextButtons');var proto=Flickity.prototype;proto._createPrevNextButtons=function(){if(!this.options.prevNextButtons){return;}this.prevButton=new PrevNextButton(-1,this);this.nextButton=new PrevNextButton(1,this);this.on('activate',this.activatePrevNextButtons);};proto.activatePrevNextButtons=function(){this.prevButton.activate();this.nextButton.activate();this.on('deactivate',this.deactivatePrevNextButtons);};proto.deactivatePrevNextButtons=function(){this.prevButton.deactivate();this.nextButton.deactivate();this.off('deactivate',this.deactivatePrevNextButtons);};// --------------------------  -------------------------- //
 Flickity.PrevNextButton=PrevNextButton;return Flickity;});});var pageDots=pxs_complementary_products_dist_index_es_createCommonjsModule(function(module){// page dots
 (function(window,factory){// universal module definition
 if(module.exports){// CommonJS
@@ -1435,7 +1450,7 @@ if(this.selectedDot){this.selectedDot.className='dot';this.selectedDot.removeAtt
 if(!this.dots.length){return;}this.selectedDot=this.dots[this.parent.selectedIndex];this.selectedDot.className='dot is-selected';this.selectedDot.setAttribute('aria-current','step');};PageDots.prototype.onTap=// old method name, backwards-compatible
 PageDots.prototype.onClick=function(event){var target=event.target;// only care about dot clicks
 if(target.nodeName!='LI'){return;}this.parent.uiChange();var index=this.dots.indexOf(target);this.parent.select(index);};PageDots.prototype.destroy=function(){this.deactivate();this.allOff();};Flickity.PageDots=PageDots;// -------------------------- Flickity -------------------------- //
-utils.extend(Flickity.defaults,{});Flickity.createMethods.push('_createPageDots');var proto=Flickity.prototype;proto._createPageDots=function(){if(!this.options.pageDots){return;}this.pageDots=new PageDots(this);// events
+utils.extend(Flickity.defaults,{pageDots:true});Flickity.createMethods.push('_createPageDots');var proto=Flickity.prototype;proto._createPageDots=function(){if(!this.options.pageDots){return;}this.pageDots=new PageDots(this);// events
 this.on('activate',this.activatePageDots);this.on('select',this.updateSelectedPageDots);this.on('cellChange',this.updatePageDots);this.on('resize',this.updatePageDots);this.on('deactivate',this.deactivatePageDots);};proto.activatePageDots=function(){this.pageDots.activate();};proto.updateSelectedPageDots=function(){this.pageDots.updateSelected();};proto.updatePageDots=function(){this.pageDots.setDots();};proto.deactivatePageDots=function(){this.pageDots.deactivate();};// -----  ----- //
 Flickity.PageDots=PageDots;return Flickity;});});var player=pxs_complementary_products_dist_index_es_createCommonjsModule(function(module){// player & autoPlay
 (function(window,factory){// universal module definition
@@ -1453,7 +1468,7 @@ this.clear();this.timeout=setTimeout(function(){_this.parent.next(true);_this.ti
 document.removeEventListener('visibilitychange',this.onVisibilityChange);};Player.prototype.clear=function(){clearTimeout(this.timeout);};Player.prototype.pause=function(){if(this.state=='playing'){this.state='paused';this.clear();}};Player.prototype.unpause=function(){// re-start play if paused
 if(this.state=='paused'){this.play();}};// pause if page visibility is hidden, unpause if visible
 Player.prototype.visibilityChange=function(){var isPageHidden=document.hidden;this[isPageHidden?'pause':'unpause']();};Player.prototype.visibilityPlay=function(){this.play();document.removeEventListener('visibilitychange',this.onVisibilityPlay);};// -------------------------- Flickity -------------------------- //
-utils.extend(Flickity.defaults,{});Flickity.createMethods.push('_createPlayer');var proto=Flickity.prototype;proto._createPlayer=function(){this.player=new Player(this);this.on('activate',this.activatePlayer);this.on('uiChange',this.stopPlayer);this.on('pointerDown',this.stopPlayer);this.on('deactivate',this.deactivatePlayer);};proto.activatePlayer=function(){if(!this.options.autoPlay){return;}this.player.play();this.element.addEventListener('mouseenter',this);};// Player API, don't hate the ... thanks I know where the door is
+utils.extend(Flickity.defaults,{pauseAutoPlayOnHover:true});Flickity.createMethods.push('_createPlayer');var proto=Flickity.prototype;proto._createPlayer=function(){this.player=new Player(this);this.on('activate',this.activatePlayer);this.on('uiChange',this.stopPlayer);this.on('pointerDown',this.stopPlayer);this.on('deactivate',this.deactivatePlayer);};proto.activatePlayer=function(){if(!this.options.autoPlay){return;}this.player.play();this.element.addEventListener('mouseenter',this);};// Player API, don't hate the ... thanks I know where the door is
 proto.playPlayer=function(){this.player.play();};proto.stopPlayer=function(){this.player.stop();};proto.pausePlayer=function(){this.player.pause();};proto.unpausePlayer=function(){this.player.unpause();};proto.deactivatePlayer=function(){this.player.stop();this.element.removeEventListener('mouseenter',this);};// ----- mouseenter/leave ----- //
 // pause auto-play on hover
 proto.onmouseenter=function(){if(!this.options.pauseAutoPlayOnHover){return;}this.player.pause();this.element.addEventListener('mouseleave',this);};// resume auto-play on hover off
@@ -1519,7 +1534,7 @@ Flickity.LazyLoader=LazyLoader;return Flickity;});});var index_es_js=pxs_complem
  * Copyright 2015-2021 Metafizzy
  */(function(window,factory){// universal module definition
 if(module.exports){// CommonJS
-module.exports=factory(flickity,drag,prevNextButton,pageDots,player,addRemoveCell,lazyload);}})(window,function factory(Flickity){return Flickity;});});var ComplementaryProducts=/*#__PURE__*/function(){pxs_complementary_products_dist_index_es_createClass(ComplementaryProducts,[{value:function(){}},{value:function(){}}]);return ComplementaryProducts;}();/* harmony default export */const pxs_complementary_products_dist_index_es=ComplementaryProducts;;// CONCATENATED MODULE: ./source/scripts/sections/Product.js
+module.exports=factory(flickity,drag,prevNextButton,pageDots,player,addRemoveCell,lazyload);}})(window,function factory(Flickity){return Flickity;});});var ComplementaryProducts=/*#__PURE__*/function(){pxs_complementary_products_dist_index_es_createClass(ComplementaryProducts,[{key:"loadRecommendations",value:function(){}},{key:"unload",value:function(){}}]);return ComplementaryProducts;}();/* harmony default export */const pxs_complementary_products_dist_index_es=ComplementaryProducts;;// CONCATENATED MODULE: ./source/scripts/sections/Product.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/StaticProduct.js
 ;// CONCATENATED MODULE: ./source/scripts/helpers/ScrollLink.js
 ;// CONCATENATED MODULE: ./source/scripts/components/ShowMoreToggle.js
@@ -1527,7 +1542,7 @@ const noOverflowClass='show-more__content-wrapper--no-overflow';;// CONCATENATED
 /**
  * Gets comma separated product handles from `compare` query parameter
  * @returns [String] Product handles
- */const getCompareHandles=()=>{const{}=new URL(window.location);const handles=searchParams.get('compare');if(typeof handles==='string'&&handles!==''){return handles.split(',');}return[];};const updateUrlForHandles=handles=>{if(window.Shopify&&window.Shopify.designMode)return;const[productHandle,...compareHandles]=handles;const url=new URL(window.location);url.searchParams.set('compare',compareHandles.join(','));if(productHandle){url.pathname=url.pathname.replace(/\/[^/]+$/,`/${productHandle}`);}history.replaceState({},'',url);};const generateBaseUrl=rootUrl=>{const separator=/\/$/.test(rootUrl)?'':'/';return`${rootUrl}${separator}products`;};const lastRowClass='product-compare__table-row--last';;// CONCATENATED MODULE: ./source/scripts/helpers/FlickityA11yPatch.js
+ */const getCompareHandles=()=>{const{searchParams}=new URL(window.location);const handles=searchParams.get('compare');if(typeof handles==='string'&&handles!==''){return handles.split(',');}return[];};const updateUrlForHandles=handles=>{if(window.Shopify&&window.Shopify.designMode)return;const[productHandle,...compareHandles]=handles;const url=new URL(window.location);url.searchParams.set('compare',compareHandles.join(','));if(productHandle){url.pathname=url.pathname.replace(/\/[^/]+$/,`/${productHandle}`);}history.replaceState({},'',url);};const generateBaseUrl=rootUrl=>{const separator=/\/$/.test(rootUrl)?'':'/';return`${rootUrl}${separator}products`;};const lastRowClass='product-compare__table-row--last';;// CONCATENATED MODULE: ./source/scripts/helpers/FlickityA11yPatch.js
 ;// CONCATENATED MODULE: ./source/scripts/components/ProductRowScroller.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/StaticProductRecommendations.js
 // eslint-disable-line
@@ -1542,21 +1557,21 @@ const noOverflowClass='show-more__content-wrapper--no-overflow';;// CONCATENATED
 ;// CONCATENATED MODULE: ./source/scripts/sections/DynamicBlogPosts.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/DynamicPromoBlocks.js
 // Adjusts the height of the block so it can contain the wrapper within it
-const adjustHeight=block=>{const $block=jquery_default()(block);const $wrapper=$block.find('.promo-block--content-wrapper');const padding=window.getComputedStyle($block[0],null).getPropertyValue('padding-top').replace('px','');if($block.innerHeight()-padding*2<$wrapper.innerHeight()){$block.css({});$wrapper.css({});}};// Removes height settings on the block because they only need to be there for small screens
-const resetHeight=block=>{const $block=jquery_default()(block);const $wrapper=$block.find('.promo-block--content-wrapper');$block.css({});$wrapper.css({});};;// CONCATENATED MODULE: ./source/scripts/sections/DynamicFeaturedCollection.js
+const adjustHeight=block=>{const $block=jquery_default()(block);const $wrapper=$block.find('.promo-block--content-wrapper');const padding=window.getComputedStyle($block[0],null).getPropertyValue('padding-top').replace('px','');if($block.innerHeight()-padding*2<$wrapper.innerHeight()){$block.css({height:`${$wrapper.innerHeight()+padding*2}px`});$wrapper.css({transform:'none',top:'auto'});}};// Removes height settings on the block because they only need to be there for small screens
+const resetHeight=block=>{const $block=jquery_default()(block);const $wrapper=$block.find('.promo-block--content-wrapper');$block.css({height:''});$wrapper.css({transform:'',top:''});};;// CONCATENATED MODULE: ./source/scripts/sections/DynamicFeaturedCollection.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/DynamicMenuList.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/DynamicCollectionList.js
 ;// CONCATENATED MODULE: ./node_modules/@pixelunion/pxs-countdown-timer/dist/index.es.js
 /*!
  * @pixelunion/pxs-countdown-timer v3.0.1
  * (c) 2025 Pixel Union
- */var CountdownTimer=/*#__PURE__*/function(){pxs_countdown_timer_dist_index_es_createClass(CountdownTimer,[{value:function(){}/**
+ */var CountdownTimer=/*#__PURE__*/function(){pxs_countdown_timer_dist_index_es_createClass(CountdownTimer,[{key:"updateLoadingState",value:function(){}/**
      * Implements a self-adjusting timer.
      * 
      * setTimeout has no guarantees that it will be accurate. Therefore,
      * we'll calculate how much "drift" (i.e. delay per each iteration of setTimeout)
      * has occurred and keep adjusting the setTimeout delay accordingly.
-     */},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}}]);return CountdownTimer;}();/* harmony default export */const pxs_countdown_timer_dist_index_es=CountdownTimer;;// CONCATENATED MODULE: ./source/scripts/sections/DynamicCountdownTimer.js
+     */},{key:"startTimer",value:function(){}},{key:"stopTimer",value:function(){}},{key:"convertTime",value:function(){}},{key:"updateDom",value:function(){}},{key:"handleCountDownComplete",value:function(){}}]);return CountdownTimer;}();/* harmony default export */const pxs_countdown_timer_dist_index_es=CountdownTimer;;// CONCATENATED MODULE: ./source/scripts/sections/DynamicCountdownTimer.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/DynamicProduct.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/DynamicRichText.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/DynamicSearch.js
@@ -1570,7 +1585,7 @@ const Vimeo_api='https://player.vimeo.com/api/player.js';let Vimeo_apiLoaded=fal
 /*!
  * @pixelunion/pxs-shoppable-image v1.0.2
  * (c) 2024 Pixel Union
- */function pxs_shoppable_image_dist_index_es_unwrapExports(x){return x&&x.__esModule&&Object.prototype.hasOwnProperty.call(x,'default')?x['default']:x;}function pxs_shoppable_image_dist_index_es_createCommonjsModule(fn,module){return module={},fn(module,module.exports),module.exports;}var pxs_shoppable_image_dist_index_es_EventHandler_1=pxs_shoppable_image_dist_index_es_createCommonjsModule(function(module,exports){exports.__esModule=true;var EventHandler=/** @class */function(){EventHandler.prototype.register=function(el,event,listener){if(!el||!event||!listener)return null;this.events.push({});el.addEventListener(event,listener);return{};};EventHandler.prototype.unregister=function(_a){var el=_a.el,event=_a.event,listener=_a.listener;if(!el||!event||!listener)return null;this.events=this.events.filter(function(e){return el!==e.el||event!==e.event||listener!==e.listener;});el.removeEventListener(event,listener);return{};};EventHandler.prototype.unregisterAll=function(){this.events.forEach(function(_a){var el=_a.el,event=_a.event,listener=_a.listener;return el.removeEventListener(event,listener);});this.events=[];};return EventHandler;}();exports["default"]=EventHandler;});var pxs_shoppable_image_dist_index_es_EventHandler=pxs_shoppable_image_dist_index_es_unwrapExports(pxs_shoppable_image_dist_index_es_EventHandler_1);var ShoppableImage=/*#__PURE__*/function(){pxs_shoppable_image_dist_index_es_createClass(ShoppableImage,[{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}}]);return ShoppableImage;}();/* harmony default export */const pxs_shoppable_image_dist_index_es=ShoppableImage;;// CONCATENATED MODULE: ./source/scripts/sections/DynamicShoppableImage.js
+ */function pxs_shoppable_image_dist_index_es_unwrapExports(x){return x&&x.__esModule&&Object.prototype.hasOwnProperty.call(x,'default')?x['default']:x;}function pxs_shoppable_image_dist_index_es_createCommonjsModule(fn,module){return module={exports:{}},fn(module,module.exports),module.exports;}var pxs_shoppable_image_dist_index_es_EventHandler_1=pxs_shoppable_image_dist_index_es_createCommonjsModule(function(module,exports){exports.__esModule=true;var EventHandler=/** @class */function(){EventHandler.prototype.register=function(el,event,listener){if(!el||!event||!listener)return null;this.events.push({el:el,event:event,listener:listener});el.addEventListener(event,listener);return{el:el,event:event,listener:listener};};EventHandler.prototype.unregister=function(_a){var el=_a.el,event=_a.event,listener=_a.listener;if(!el||!event||!listener)return null;this.events=this.events.filter(function(e){return el!==e.el||event!==e.event||listener!==e.listener;});el.removeEventListener(event,listener);return{el:el,event:event,listener:listener};};EventHandler.prototype.unregisterAll=function(){this.events.forEach(function(_a){var el=_a.el,event=_a.event,listener=_a.listener;return el.removeEventListener(event,listener);});this.events=[];};return EventHandler;}();exports["default"]=EventHandler;});var pxs_shoppable_image_dist_index_es_EventHandler=pxs_shoppable_image_dist_index_es_unwrapExports(pxs_shoppable_image_dist_index_es_EventHandler_1);var ShoppableImage=/*#__PURE__*/function(){pxs_shoppable_image_dist_index_es_createClass(ShoppableImage,[{key:"_bindEvents",value:function(){}},{key:"_positionElements",value:function(){}},{key:"_setActivePoint",value:function(){}},{key:"_closeActivePoint",value:function(){}},{key:"_clearAllActive",value:function(){}},{key:"_resetTooltips",value:function(){}},{key:"positionHotspots",value:function(){}},{key:"positionTooltips",value:function(){}},{key:"onSectionBlockSelect",value:function(){}},{key:"onSectionBlockDeselect",value:function(){}},{key:"onSectionUnload",value:function(){}}]);return ShoppableImage;}();/* harmony default export */const pxs_shoppable_image_dist_index_es=ShoppableImage;;// CONCATENATED MODULE: ./source/scripts/sections/DynamicShoppableImage.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/DynamicTestimonials.js
 ;// CONCATENATED MODULE: ./source/scripts/templates/Account.js
 ;// CONCATENATED MODULE: ./source/scripts/templates/Contact.js
@@ -1584,13 +1599,13 @@ const ProductCompareFlyout_storageKey='pxuProductCompareFlyoutV1';;// CONCATENAT
 // This is a helper class to fix a touch issue that came up in flickity
 // on iOS devices as of version 13. It should smooth out some of the scroll
 // and swipe issues that flickity is having on that version of iOS.
-const flickityTouchFix=()=>{let touchingSlider=false;let touchStartCoordsX=0;const onTouchStart=e=>{if(e.target.closest&&e.target.closest('.flickity-slider')){touchingSlider=true;touchStartCoordsX=e.touches[0].pageX;}else{touchingSlider=false;}};const onTouchMove=e=>{if(!(touchingSlider&&e.cancelable)){return;}if(Math.abs(e.touches[0].pageX-touchStartCoordsX)>10){e.preventDefault();}};document.body.addEventListener('touchstart',onTouchStart);document.body.addEventListener('touchmove',onTouchMove,{});};/* harmony default export */const FlickityTouchFix=flickityTouchFix;;// CONCATENATED MODULE: ./source/scripts/helpers/ContainSwatchTooltips.js
+const flickityTouchFix=()=>{let touchingSlider=false;let touchStartCoordsX=0;const onTouchStart=e=>{if(e.target.closest&&e.target.closest('.flickity-slider')){touchingSlider=true;touchStartCoordsX=e.touches[0].pageX;}else{touchingSlider=false;}};const onTouchMove=e=>{if(!(touchingSlider&&e.cancelable)){return;}if(Math.abs(e.touches[0].pageX-touchStartCoordsX)>10){e.preventDefault();}};document.body.addEventListener('touchstart',onTouchStart);document.body.addEventListener('touchmove',onTouchMove,{passive:false});};/* harmony default export */const FlickityTouchFix=flickityTouchFix;;// CONCATENATED MODULE: ./source/scripts/helpers/ContainSwatchTooltips.js
 ;// CONCATENATED MODULE: ./source/scripts/helpers/LoadInAnimations.js
-const LoadInAnimations_classes={};const mappingSelector='[type="application/pxs-animation-mapping+json"]';/**
+const LoadInAnimations_classes={block:'pxu-lia-block',element:'pxu-lia-element',playBlock:'pxu-lia-block--play',resetBlock:'pxu-lia-block--reset',playSection:'pxu-lia-section--play',resetSection:'pxu-lia-section--reset'};const mappingSelector='[type="application/pxs-animation-mapping+json"]';/**
  * Find common parent of this block and the closest animation mapping block.
  *
  * @param {HTMLElement} node Block from which to begin search.
- */const getMappingParentFromBlock=({})=>parentNode.querySelector(mappingSelector)?parentNode:getMappingParentFromBlock(parentNode);const LoadInAnimations_reset=(block,elements)=>{block.style.animationName='none';block.classList.add(LoadInAnimations_classes.resetBlock);elements.forEach(element=>{element.style.animationName='none';});};const removeReset=(block,elements)=>{block.style.animationName='';block.classList.remove(LoadInAnimations_classes.resetBlock);elements.forEach(element=>{element.style.animationName='';});};const play=(block,elements)=>{block.style.animationPlayState='running';block.classList.add(LoadInAnimations_classes.playBlock);elements.forEach(element=>{element.style.animationPlayState='running';});};const pause=(block,elements)=>{block.style.animationPlayState='';block.classList.remove(LoadInAnimations_classes.playBlock);elements.forEach(element=>{element.style.animationPlayState='';});};/**
+ */const getMappingParentFromBlock=({parentNode})=>parentNode.querySelector(mappingSelector)?parentNode:getMappingParentFromBlock(parentNode);const LoadInAnimations_reset=(block,elements)=>{block.style.animationName='none';block.classList.add(LoadInAnimations_classes.resetBlock);elements.forEach(element=>{element.style.animationName='none';});};const removeReset=(block,elements)=>{block.style.animationName='';block.classList.remove(LoadInAnimations_classes.resetBlock);elements.forEach(element=>{element.style.animationName='';});};const play=(block,elements)=>{block.style.animationPlayState='running';block.classList.add(LoadInAnimations_classes.playBlock);elements.forEach(element=>{element.style.animationPlayState='running';});};const pause=(block,elements)=>{block.style.animationPlayState='';block.classList.remove(LoadInAnimations_classes.playBlock);elements.forEach(element=>{element.style.animationPlayState='';});};/**
  * Play, or reset animations for a collection of blocks.
  *
  * @param {[HTMLElement]} blocks Blocks to process
@@ -1615,7 +1630,7 @@ const parentSequence=getMappingParentFromBlock(entry.target);const existingSibli
 // block, and element. Animations are triggered when blocks
 // enter view, and are sequenced within sections by block and by subElement.
 // Sequencing information is applied as custom properties that can be referenced in css.
-blockObserver=new IntersectionObserver(intersectionCallback,{});if(!('reduceAnimations'in document.body.dataset)){const observe=parent=>{parent.querySelectorAll(`.${LoadInAnimations_classes.block}`).forEach(block=>blockObserver.observe(block));};observe(document);}};;// CONCATENATED MODULE: ./source/scripts/Empire.js
+blockObserver=new IntersectionObserver(intersectionCallback,{threshold:0.3});if(!('reduceAnimations'in document.body.dataset)){const observe=parent=>{parent.querySelectorAll(`.${LoadInAnimations_classes.block}`).forEach(block=>blockObserver.observe(block));};observe(document);}};;// CONCATENATED MODULE: ./source/scripts/Empire.js
 // jQuery plugins
 // eslint-disable-line
 // eslint-disable-line
@@ -1630,6 +1645,6 @@ blockObserver=new IntersectionObserver(intersectionCallback,{});if(!('reduceAnim
 // Templates
 // Components
 // Flickity iOS fix
-const initEmpire=()=>{initLoadInAnimationsAutoplay();rimg_shopify_dist_index_es.init('[data-rimg="lazy"]',{});const initRipple=()=>setupRippleEffect(document);if('requestIdleCallback'in window){window.requestIdleCallback(initRipple);}else{initRipple();}const sections=new Sections();// Static sections
+const initEmpire=()=>{initLoadInAnimationsAutoplay();rimg_shopify_dist_index_es.init('[data-rimg="lazy"]',{round:1});const initRipple=()=>setupRippleEffect(document);if('requestIdleCallback'in window){window.requestIdleCallback(initRipple);}else{initRipple();}const sections=new Sections();// Static sections
 sections.register('static-header',section=>new StaticHeader(section));sections.register('static-announcement',section=>new StaticAnnouncement(section));sections.register('static-footer',section=>new StaticFooter(section));sections.register('static-article',section=>new StaticArticle(section));sections.register('static-blog',section=>new StaticBlog(section));sections.register('static-cart',section=>new StaticCart(section));sections.register('static-collection',section=>new StaticCollection(section));sections.register('static-collection-faceted-filters',section=>new FacetedFilterCollection(section));sections.register('static-subcollections-menu',section=>new StaticSubCollectionsMenuList(section));sections.register('static-password',section=>new StaticPassword(section));sections.register('static-product',section=>new StaticProduct(section));sections.register('static-product-compare',section=>new StaticProductCompare(section));sections.register('static-product-recommendations',section=>new StaticProductRecommendations(section));sections.register('static-recently-viewed',section=>new StaticRecentlyViewed(section));sections.register('static-search',section=>new StaticSearch(section));sections.register('static-search-faceted-filters',section=>new FacetedFilterSearch(section));sections.register('static-utility-bar',section=>new StaticUtilityBar(section));sections.register('static-subcollections-featured-collection',section=>new StaticSubcollectionsFeaturedCollection(section));// Dynamic sections (lazy loaded)
-sections.register('dynamic-blog-posts',section=>new DynamicTwitterFeed(section),{});sections.register('dynamic-promo-mosaic',section=>new DynamicPromoBlocks(section),{});sections.register('dynamic-menu-list',section=>new DynamicMenuList(section),{});sections.register('dynamic-collection-list',section=>new DynamicCollectionList(section),{});sections.register('dynamic-countdown-timer',section=>new DynamicCountdownTimer(section),{});sections.register('dynamic-featured-collection',section=>new DynamicFeaturedCollection(section),{});sections.register('dynamic-featured-product',section=>new DynamicProduct(section),{});sections.register('dynamic-rich-text',section=>new DynamicRichText(section),{});sections.register('dynamic-page',section=>new DynamicRichText(section),{});sections.register('dynamic-custom-liquid',section=>new DynamicRichText(section),{});sections.register('dynamic-html',section=>new DynamicRichText(section),{});sections.register('dynamic-search',section=>new DynamicSearch(section),{});sections.register('dynamic-highlights-banner',section=>new DynamicHighlightsBanner(section));sections.register('dynamic-video',section=>new DynamicVideo(section),{});sections.register('pxs-newsletter',section=>new DynamicNewsletter(section),{});sections.register('pxs-map',section=>new dist_index_es(section),{});sections.register('pxs-shoppable-image',section=>new DynamicShoppableImage(section),{});sections.register('dynamic-testimonials',section=>new DynamicTestimonials(section),{});sections.register('age-gate',section=>new PageAgeGate(section));sections.register('pxs-faq',section=>new index_es(section));if(document.body.classList.contains('template-giftcard')){new GiftCard();}if(document.querySelector('[data-template-account]')){new Account();}if(document.querySelector('[data-template-contact]')){new Contact();}if(document.body.classList.contains('template-page')){new Page();}if(document.body.classList.contains('template-order')){new Order();}if(document.querySelector('[data-swatch-tooltip]')){new ContainSwatchTooltips();}const compareDrawer=document.querySelector('[data-product-compare-drawer]');if(compareDrawer){new ProductCompareFlyout(compareDrawer);}const backToTop=document.querySelector('[data-back-to-top]');if(backToTop){new BackToTop(backToTop);}};FlickityTouchFix();if(checkPolyfills.length){script_default()(checkPolyfills,initEmpire);}else{initEmpire();}const ageGatePage=document.getElementById('age-gate-page');if(ageGatePage){new SiteAgeGate(ageGatePage);}})();/******/})();//# sourceMappingURL=empire.js.map?1755751621630
+sections.register('dynamic-blog-posts',section=>new DynamicTwitterFeed(section),{lazy:true});sections.register('dynamic-promo-mosaic',section=>new DynamicPromoBlocks(section),{lazy:true});sections.register('dynamic-menu-list',section=>new DynamicMenuList(section),{lazy:true});sections.register('dynamic-collection-list',section=>new DynamicCollectionList(section),{lazy:true});sections.register('dynamic-countdown-timer',section=>new DynamicCountdownTimer(section),{lazy:true});sections.register('dynamic-featured-collection',section=>new DynamicFeaturedCollection(section),{lazy:true});sections.register('dynamic-featured-product',section=>new DynamicProduct(section),{lazy:true});sections.register('dynamic-rich-text',section=>new DynamicRichText(section),{lazy:true});sections.register('dynamic-page',section=>new DynamicRichText(section),{lazy:true});sections.register('dynamic-custom-liquid',section=>new DynamicRichText(section),{lazy:true});sections.register('dynamic-html',section=>new DynamicRichText(section),{lazy:true});sections.register('dynamic-search',section=>new DynamicSearch(section),{lazy:true});sections.register('dynamic-highlights-banner',section=>new DynamicHighlightsBanner(section));sections.register('dynamic-video',section=>new DynamicVideo(section),{lazy:true});sections.register('pxs-newsletter',section=>new DynamicNewsletter(section),{lazy:true});sections.register('pxs-map',section=>new dist_index_es(section),{lazy:true});sections.register('pxs-shoppable-image',section=>new DynamicShoppableImage(section),{lazy:false});sections.register('dynamic-testimonials',section=>new DynamicTestimonials(section),{lazy:true});sections.register('age-gate',section=>new PageAgeGate(section));sections.register('pxs-faq',section=>new index_es(section));if(document.body.classList.contains('template-giftcard')){new GiftCard();}if(document.querySelector('[data-template-account]')){new Account();}if(document.querySelector('[data-template-contact]')){new Contact();}if(document.body.classList.contains('template-page')){new Page();}if(document.body.classList.contains('template-order')){new Order();}if(document.querySelector('[data-swatch-tooltip]')){new ContainSwatchTooltips();}const compareDrawer=document.querySelector('[data-product-compare-drawer]');if(compareDrawer){new ProductCompareFlyout(compareDrawer);}const backToTop=document.querySelector('[data-back-to-top]');if(backToTop){new BackToTop(backToTop);}};FlickityTouchFix();if(checkPolyfills.length){script_default()(checkPolyfills,initEmpire);}else{initEmpire();}const ageGatePage=document.getElementById('age-gate-page');if(ageGatePage){new SiteAgeGate(ageGatePage);}})();/******/})();//# sourceMappingURL=empire.js.map?1755751621630
