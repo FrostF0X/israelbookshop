@@ -18,7 +18,10 @@
     "puppeteer": "^22.4.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@babel/types": "^7.29.7",
     "@playwright/test": "^1.60.0",
-    "purgecss": "^8.0.0"
+    "purgecss": "^8.0.0",
+    "source-map": "^0.7.6"
   }
 }
