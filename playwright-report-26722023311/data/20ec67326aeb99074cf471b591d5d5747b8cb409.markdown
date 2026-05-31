@@ -1,0 +1,376 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: visual.spec.js >> Visual Regression Tests >> should load /pages/about successfully and match baseline screenshot
+- Location: tests/visual.spec.js:22:5
+
+# Error details
+
+```
+Error: expect(page).toHaveScreenshot(expected) failed
+
+  Expected an image 1280px by 5499px, received 1280px by 3749px. 837514 pixels (ratio 0.12 of all image pixels) are different.
+
+  Snapshot: pages_about.png
+
+Call log:
+  - Expect "toHaveScreenshot(pages_about.png)" with timeout 60000ms
+    - verifying given screenshot expectation
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - Expected an image 1280px by 5499px, received 1280px by 3749px. 837514 pixels (ratio 0.12 of all image pixels) are different.
+  - waiting 100ms before taking screenshot
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - captured a stable screenshot
+  - Expected an image 1280px by 5499px, received 1280px by 3749px. 837514 pixels (ratio 0.12 of all image pixels) are different.
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - alertdialog "Cookie consent" [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - heading "Cookie consent" [level=2] [ref=e5]
+        - paragraph [ref=e6]:
+          - text: We and our partners, including Shopify, use cookies and other technologies to personalize your experience, show you ads, and perform analytics, and we will not use cookies or other technologies for these purposes unless you accept them. Learn more in our
+          - link "Privacy Policy" [ref=e7] [cursor=pointer]:
+            - /url: https://www.israelbookshop.com/policies/privacy-policy
+      - generic [ref=e8]:
+        - button "Manage preferences" [ref=e9]
+        - button "Accept" [ref=e10]
+        - button "Decline" [ref=e11]
+  - link "Skip to content" [ref=e12] [cursor=pointer]:
+    - /url: "#site-main"
+  - generic [ref=e14]:
+    - link [ref=e15] [cursor=pointer]:
+      - /url: https://israelbookshop.com/collections/sukkah-depot-decorations
+    - generic [ref=e16]:
+      - text: ☎ Need Help? Call Us
+      - link "617-566-7113" [ref=e17] [cursor=pointer]:
+        - /url: tel:+1-617-566-7113
+      - text: or
+      - link "800-323-7723" [ref=e18] [cursor=pointer]:
+        - /url: +1-800-323-7723
+  - banner [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - link [ref=e24] [cursor=pointer]:
+          - /url: /
+        - search "Product" [ref=e26]:
+          - generic [ref=e27]:
+            - combobox "Search" [ref=e28]
+            - button "Search" [ref=e29] [cursor=pointer]:
+              - img [ref=e31]
+      - generic [ref=e34]:
+        - list [ref=e35]:
+          - listitem [ref=e36]:
+            - link "My Account" [ref=e37] [cursor=pointer]:
+              - /url: https://www.israelbookshop.com/customer_authentication/redirect?locale=en&region_country=US
+              - img [ref=e39]
+              - generic [ref=e43]: My Account
+        - link "View cart" [ref=e45] [cursor=pointer]:
+          - /url: /cart
+          - img [ref=e48]
+          - generic [ref=e53]: View cart
+    - navigation "Main" [ref=e55]:
+      - list "Main menu" [ref=e56]:
+        - listitem [ref=e57]:
+          - group [ref=e58]:
+            - generic "Categories" [ref=e59] [cursor=pointer]:
+              - text: Categories
+              - img [ref=e61]
+        - listitem [ref=e64]:
+          - link "Calendars" [ref=e65] [cursor=pointer]:
+            - /url: /collections/calendars
+        - listitem [ref=e66]:
+          - link "Education" [ref=e67] [cursor=pointer]:
+            - /url: /collections/educational-resources
+        - listitem [ref=e68]:
+          - link "Literature & Novels" [ref=e69] [cursor=pointer]:
+            - /url: /collections/judaic-literature-novels
+        - listitem [ref=e70]:
+          - link "Synagogue" [ref=e71] [cursor=pointer]:
+            - /url: /collections/synagogue-supply
+        - listitem [ref=e72]:
+          - link "Israel" [ref=e73] [cursor=pointer]:
+            - /url: /collections/israel-educational-resources
+        - listitem [ref=e74]:
+          - link "About Us" [ref=e75] [cursor=pointer]:
+            - /url: /pages/about
+        - listitem [ref=e76]:
+          - link "Contact" [ref=e77] [cursor=pointer]:
+            - /url: /pages/contact
+      - list [ref=e78]:
+        - listitem [ref=e79]:
+          - link "Shipping & Returns" [ref=e80] [cursor=pointer]:
+            - /url: /pages/shipping-return-policy
+        - listitem [ref=e81]:
+          - link "Gift Cards" [ref=e82] [cursor=pointer]:
+            - /url: /products/israel-book-shop-gift-card
+  - main "Main content" [ref=e83]:
+    - heading "History of Israel Book Shop" [level=2] [ref=e90]
+    - generic [ref=e93]:
+      - heading "History of Israel Book Shop" [level=2] [ref=e94]
+      - generic [ref=e95]:
+        - paragraph [ref=e96]:
+          - text: In a retail world dominated by chains and online sales, for six decades, the
+          - strong [ref=e97]: Israel Book Shop
+          - text: in
+          - strong [ref=e98]: Brookline, Massachusetts
+          - text: has stood proudly as an enduring and inspiring example of the success that comes from true customer service.
+        - paragraph [ref=e99]:
+          - text: Israel Book Shop Founder
+          - strong [ref=e100]: Eli Dovek z"l
+          - text: was born in a small town near Warsaw, his survival in a Russian labor camp in Siberia, then to Prague and England after the war and finally settling in the US in 1949, eventually to Boston. Mr. Dovek was trained as a Shochet, Mr. Dovek soon realized the city lacked a bookstore that meets the needs of the growing Jewish population. With support from a hard-working family, he opened the Israel Book Shop on Harvard Street in Brookline, MA in 1956. As it grew over the last 60 years to embrace Judaica, gifts, jewelry and music, as well as an expanding selection of sefarim (religious books), the store was destined to not only move across the street to its current locale at 410 Harvard but to expand four more times, taking over five previously separate storefronts over the years. In fact, observers often note that the Israel Book Shop is a sterling example of how family and employees form a cohesive team. The true winners are the customers who consistently receive the expertise and service they need - a rarity in today's automated and impersonal retail world. A trip into Boston's Jewish Advocate archives traces the story of this phenomenal family business.
+        - paragraph [ref=e101]: An early ad in the winter of 1956 "invites everyone to come and choose from the wide selection of Israeli gifts and novelties. "In the winter of 1970, Dovek was quoted as saying how important each customer was to him. "I can help them with some of the most important moments in their lives," he added, including the new bride looking for guidance in creating a Jewish home and the student going off college who needs a mezuzah "to remind him of his sacred religion." Mr. Dovek even foresaw the ba'al teshuvah (religious returnees) movement and spoke of the customers "who missed out as children looking for a book to help them learn Hebrew." In fact, booksellers like Dovek, the article concluded, "are a vital if unsung part of our Jewish communal life."
+        - paragraph [ref=e102]: An article in the summer of 1972 reports on the move across the street to larger quarters at 410 Harvard Street. Another that came out the spring of 1995 quoted founder Eli Dovek as saying "the secret to the store's success is that all the staff works in harmony."
+        - paragraph [ref=e103]: An article published in the fall of 1997 focused on the shop's ongoing expansion and mentioned the sales of Torahs that range into the five figures, as well as the repairs of many Torahs the shop has overseen.
+        - paragraph [ref=e104]: And an update in the spring of 2014 listed sales of everything an astounding variety of merchandise from the thousands of books that form the core of the business to silver ritual items to shemurah matzoh, from textbooks to jewelry, from tallesim to toys and from menorahs to videos> It goes on to call the shop "a clearinghouse for information on Jewish practice and customs."
+        - paragraph [ref=e105]: "\"We're seeing people who've come as children as parents and as grandparents,\" saleswoman Miriam Natan told the paper then. \"Some who have moved away come back and want to know if Mr. Dovek is still here so they can say hello. We have a real sense of family here.\""
+        - paragraph [ref=e106]:
+          - text: For more information on the Israel Book Shop, visit
+          - link "www.israelbookshop.com" [ref=e107] [cursor=pointer]:
+            - /url: https://www.israelbookshop.com/
+          - text: ", email"
+          - link "info@israelbookshop.com" [ref=e108] [cursor=pointer]:
+            - /url: mailto:info@israelbookshop.com
+          - text: or call
+          - link "(617) 566-7113" [ref=e109] [cursor=pointer]:
+            - /url: tel:6175667113
+          - text: .
+    - generic [ref=e115]:
+      - heading "Meet The Team" [level=2] [ref=e116]
+      - link:
+        - /url: /blogs/news/post-test-1
+    - generic [ref=e119]:
+      - heading "Eli Dovek" [level=2] [ref=e120]
+      - generic [ref=e121]:
+        - paragraph [ref=e122]: In 1956, Eli Dovek z"l began making the shidduch (match) between customer and the perfect book or gift, mezuzah, or etrog and lulav set. And no one knows how many tens of thousands of Jewish books he's sent into homes, schools and synagogues.
+        - paragraph [ref=e123]: "But when asked his greatest satisfaction, he quick with an answer:"
+        - paragraph [ref=e124]:
+          - strong [ref=e125]: "\"I've always believed in serving a customer until they're satisfied and pleased because I know that the best customers are those who return again and again because of a positive shopping experience and because they felt that we understood their needs, gave them the information and expertise they were looking for... and that we cared.\""
+        - paragraph
+        - paragraph [ref=e126]: "Some of Mr. Dovek's favorite types of merchandise that he's sold in the last 60 years range from the high-end: tzedaka (charity) boxes that are replicas of famous synagogues around the world, designer silver kiddush (wine) cups and spice boxes, a silver filigree Chanukah menorah featuring nine lively klezmer musicians and woven tallesim imported from Israel, all the way to the just-for-fun items like Patriots and Red Sox caps - in Hebrew - and a wide assortment of silly \"frog\" toys to liven up family seders."
+        - paragraph [ref=e127]:
+          - strong [ref=e128]: "\"Years ago, people treasured and appreciated the antique and classic designs in Judaica,\" he reports. \"Whereas today many customers are choosing more modern and simple designs. Either way, we have always promoted Israeli products as much as we can as we - and many others - want to support their fellow Jews and feel connected to their homeland.\""
+        - paragraph
+        - paragraph [ref=e129]:
+          - text: And, though the founder sees some trends including dropping Hebrew school enrollments, and more people learning online, he also sees day schools growing and an increasing hunger among Jewish adults for conversational and religious Hebrew and Torah learning.
+          - strong [ref=e130]: "\"People may be buying fewer books, but there is nothing like coming into a Jewish store to browse, talk to the staff about the newest titles and see all the latest releases and recent products. Our customers still appreciate hearing what's new from our staff who knows the field so well.\""
+        - paragraph [ref=e131]: Mr. Dovek passed away April 24, 2022, the 23rd of Nissan. The Israel Book Shop family continues his legacy. May his memory be a blessing.
+    - generic [ref=e134]:
+      - heading "Edith Dovek" [level=2] [ref=e135]
+      - paragraph [ref=e137]:
+        - text: Mrs. Dovek, more often known as Edie, has been the First Lady of the shop for 57 years. Beloved for her encyclopedic mind, phenomenal memory, big heart and boundless energy, Edie loves to reminisce and play Jewish geography. Born in Worcester, she grew up in Dorchester and has lived in Brighton for the past half-century. Along with her husband, she is devoted to family, and along with her husband, they bask in the joy of their children, grandchildren and great grandchildren. In the shop, her most gratifying moments
+        - strong [ref=e138]: “are when I can help customers satisfy their needs,”
+        - text: she says.
+        - strong [ref=e139]: “Especially on items that cannot be found anywhere else.”
+    - generic [ref=e142]:
+      - heading "Chaim Naftoly Dovek" [level=2] [ref=e143]
+      - paragraph [ref=e145]: Chaim, the Doveks’ son, joined the business in 1988 after studying for several years in Eretz Yisroel. Married to Leah Stefansky from Toronto, Chaim is the vice president, general manager and executive administrator. With a specialty in Sefrei Kodesh (holy books) and religious Judaics, Chaim’s knowledge, friendly demeanor and listening ear have endeared him to customers for decades and help create a pleasant atmosphere and positive shopping experience.
+    - generic [ref=e148]:
+      - heading "Rivky Dovek" [level=2] [ref=e149]
+      - paragraph [ref=e151]: Having grown up in her parents’ shop, Rivky has become a key player on the Israel Book Shop team. She and her husband, Reb Eliezer Fireman, a prominent maggid shiur (teacher) at the Boston Mesivta, are active in the Boston Jewish community.
+    - generic [ref=e154]:
+      - heading "Miriam" [level=2] [ref=e155]
+      - paragraph [ref=e157]: Miriam has been on the staff of the Book Shop for over 30 years. Born and raised in Kiryat Shmona in the north of Israel, Miriam was a librarian in her hometown prior to coming to the States. Miriam earned a Bachelor's degree from Hebrew College in Boston while teaching in local Hebrew schools. At the book shop, she's been "happy to be able to able to pursue professional interests in bibliophilia, teaching and Jewish community service during my tenure with Mr. Dovek and his staff." And the best part of her job? "Meeting the wonderful people that come into the book shop!"
+    - generic [ref=e160]:
+      - generic [ref=e161]:
+        - heading "Join our Newsletter" [level=2] [ref=e162]
+        - paragraph [ref=e164]: Receive the latest news on Israel Book Shop promotions, exclusive offers, and new arrivals.
+      - generic [ref=e167]:
+        - generic [ref=e168]:
+          - textbox "Email address" [ref=e169]
+          - generic: Email address
+        - button "Sign up" [ref=e171] [cursor=pointer]
+    - generic [ref=e174]:
+      - generic [ref=e177]:
+        - text: Email
+        - paragraph [ref=e178]: orders@israelbookshop.com
+      - generic [ref=e181]:
+        - text: Phone
+        - paragraph [ref=e182]:
+          - text: (617) 566-7113
+          - text: (800) 323-7723
+      - generic [ref=e185]:
+        - text: Office
+        - paragraph [ref=e186]:
+          - text: 410 Harvard Street
+          - text: Brookline, MA 02446
+  - contentinfo "Footer" [ref=e188]:
+    - generic [ref=e189]:
+      - generic [ref=e191]:
+        - generic [ref=e192]:
+          - heading "Israel Book Shop Publications" [level=2] [ref=e193]
+          - paragraph [ref=e195]:
+            - text: Our sister company in Lakewood, NJ. Publisher and distributor of Judaica oriented books and products to wholesale and retail markets.
+            - link "israelbookshoppublications.com" [ref=e196] [cursor=pointer]:
+              - /url: https://israelbookshoppublications.com
+              - strong [ref=e197]: israelbookshoppublications.com
+        - generic [ref=e198]:
+          - heading "Company" [level=2] [ref=e199]
+          - list [ref=e201]:
+            - listitem [ref=e202]:
+              - link "About Us" [ref=e203] [cursor=pointer]:
+                - /url: /pages/about
+            - listitem [ref=e204]:
+              - link "Contact Us" [ref=e205] [cursor=pointer]:
+                - /url: /pages/contact
+            - listitem [ref=e206]:
+              - link "Our Team" [ref=e207] [cursor=pointer]:
+                - /url: /pages/about/#team
+            - listitem [ref=e208]:
+              - link "Testimonials" [ref=e209] [cursor=pointer]:
+                - /url: /#testimonials
+            - listitem [ref=e210]:
+              - link "Account Login" [ref=e211] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e212]:
+              - link "Shipping Policy" [ref=e213] [cursor=pointer]:
+                - /url: /policies/shipping-policy
+            - listitem [ref=e214]:
+              - link "Returns & Refund Policy" [ref=e215] [cursor=pointer]:
+                - /url: /policies/refund-policy
+            - listitem [ref=e216]:
+              - link "Terms of Service" [ref=e217] [cursor=pointer]:
+                - /url: /policies/terms-of-service
+            - listitem [ref=e218]:
+              - link "Privacy Policy" [ref=e219] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e220]:
+              - link "Site Map" [ref=e221] [cursor=pointer]:
+                - /url: /sitemap.xml
+        - generic [ref=e222]:
+          - heading "Israel Book Shop" [level=2] [ref=e223]
+          - generic [ref=e224]:
+            - paragraph [ref=e225]:
+              - text: 410 Harvard Street
+              - text: Brookline, MA 02446
+              - text: 617-566-7113 / 800-323-7723
+              - link "info@israelbookshop.com" [ref=e226] [cursor=pointer]:
+                - /url: /pages/contact
+                - strong [ref=e227]: info@israelbookshop.com
+            - paragraph [ref=e228]:
+              - strong [ref=e229]: "Store Hours:"
+              - text: Sun-Wed 10a - 5pm
+              - text: Thu 10a - 6p
+              - text: Fri 10a - 2p (1:30p in winter)
+      - generic [ref=e230]:
+        - button "Follow on Shop" [ref=e235] [cursor=pointer]:
+          - img [ref=e238]
+          - generic [ref=e240]:
+            - text: Follow on
+            - img "Shop" [ref=e241]
+        - generic [ref=e244]:
+          - paragraph [ref=e245]:
+            - text: Copyright © 2026 IsraelBookShop. Site by
+            - link "Winter Solutions, Inc." [ref=e246] [cursor=pointer]:
+              - /url: https://wintersolutions.com
+            - text: with the Power of Shopify.
+          - paragraph [ref=e247]:
+            - link "Powered by Shopify" [ref=e248] [cursor=pointer]:
+              - /url: https://www.shopify.com?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore
+  - iframe [ref=e250]:
+    - generic [ref=f2e4]:
+      - button [ref=f2e7] [cursor=pointer]:
+        - img [ref=f2e9]
+        - img [ref=f2e12]
+      - generic [ref=f2e15]:
+        - generic [ref=f2e18]:
+          - link "Logo" [ref=f2e19] [cursor=pointer]:
+            - /url: https://admin.shopify.com/store/israelbookshop
+            - img "Logo" [ref=f2e20]
+          - generic [ref=f2e22]:
+            - generic [ref=f2e23]: israelbookshop/main
+            - generic [ref=f2e24]: Draft
+        - generic [ref=f2e26]:
+          - button "Hide bar" [ref=f2e28] [cursor=pointer]:
+            - generic [ref=f2e29]: Hide bar
+          - button "Copy link" [ref=f2e32] [cursor=pointer]:
+            - img [ref=f2e36]
+            - generic [ref=f2e38]: Copy link
+```
+
+# Test source
+
+```ts
+  1  | const { test, expect } = require('@playwright/test');
+  2  | 
+  3  | const paths = [
+  4  |   '/',
+  5  |   '/cart',
+  6  |   '/pages/about',
+  7  |   '/pages/contact',
+  8  |   '/pages/privacy-policy',
+  9  |   '/pages/search-results-page?q=test',
+  10 |   '/policies/shipping-policy',
+  11 |   '/policies/refund-policy',
+  12 |   '/policies/terms-of-service',
+  13 |   '/collections/calendars',
+  14 |   '/collections/educational-resources',
+  15 |   '/collections/calendars/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times'
+  16 | ];
+  17 | 
+  18 | test.describe('Visual Regression Tests', () => {
+  19 |   for (const p of paths) {
+  20 |     const safeName = p === '/' ? 'homepage' : p.replace(/\//g, '_').substring(1);
+  21 | 
+  22 |     test(`should load ${p} successfully and match baseline screenshot`, async ({ page }) => {
+  23 |       test.setTimeout(90000); 
+  24 | 
+  25 |       // Navigate to the page with 'load' instead of 'networkidle' to prevent hanging on tracking pixels
+  26 |       await page.goto(p, { waitUntil: 'load', timeout: 60000 });
+  27 | 
+  28 |       // Wait a moment for dynamic CSS or JS to kick in
+  29 |       await page.waitForTimeout(2000);
+  30 | 
+  31 |       // Smoothly scroll down the page to trigger intersection observers for lazy-loaded images
+  32 |       await page.evaluate(async () => {
+  33 |         await new Promise((resolve) => {
+  34 |           let totalHeight = 0;
+  35 |           const distance = 300; 
+  36 |           const timer = setInterval(() => {
+  37 |             const scrollHeight = document.body.scrollHeight;
+  38 |             window.scrollBy(0, distance);
+  39 |             totalHeight += distance;
+  40 | 
+  41 |             if (totalHeight >= scrollHeight - window.innerHeight) {
+  42 |               clearInterval(timer);
+  43 |               resolve();
+  44 |             }
+  45 |           }, 150); 
+  46 |         });
+  47 |       });
+  48 |       
+  49 |       // Wait for lazy-loaded images to fetch
+  50 |       await page.waitForTimeout(3000);
+  51 |       
+  52 |       // Scroll back to top
+  53 |       await page.evaluate(() => window.scrollTo(0, 0));
+  54 |       await page.waitForTimeout(1000);
+  55 | 
+  56 |       // Full page screenshot assertion
+> 57 |       await expect(page).toHaveScreenshot(`${safeName}.png`, {
+     |                          ^ Error: expect(page).toHaveScreenshot(expected) failed
+  58 |         fullPage: true,
+  59 |         maxDiffPixelRatio: 0.05, // Allow slight differences (5%)
+  60 |         timeout: 60000 
+  61 |       });
+  62 |     });
+  63 |   }
+  64 | });
+  65 | 
+```
