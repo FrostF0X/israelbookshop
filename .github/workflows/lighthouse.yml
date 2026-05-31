@@ -48,6 +48,8 @@ jobs:
         run: |
           mkdir -p public
           cp lighthouse-report.html public/ || true
+          cp lighthouse-report.html public/lighthouse-report-${{ github.run_id }}.html || true
+          cp lighthouse-report.json public/lighthouse-report-${{ github.run_id }}.json || true
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

@@ -34,13 +34,18 @@ async function runLighthouse() {
   console.log('SEO score was', runnerResult.lhr.categories.seo.score * 100);
 
   if (process.env.GITHUB_STEP_SUMMARY) {
+    const runId = process.env.GITHUB_RUN_ID;
+    const reportUrl = runId 
+      ? `https://FrostF0X.github.io/israelbookshop/lighthouse-report-${runId}.html` 
+      : 'https://FrostF0X.github.io/israelbookshop/lighthouse-report.html';
+
     const summary = `### Lighthouse Results for ${runnerResult.lhr.finalDisplayedUrl}
 - **Performance:** ${Math.round(runnerResult.lhr.categories.performance.score * 100)}
 - **Accessibility:** ${Math.round(runnerResult.lhr.categories.accessibility.score * 100)}
 - **Best Practices:** ${Math.round(runnerResult.lhr.categories['best-practices'].score * 100)}
 - **SEO:** ${Math.round(runnerResult.lhr.categories.seo.score * 100)}
 
-🔗 **[View Full HTML Report](https://FrostF0X.github.io/israelbookshop/lighthouse-report.html)**
+🔗 **[View Historical HTML Report for this Run](${reportUrl})**
 `;
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary);
   }
