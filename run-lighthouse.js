@@ -2,10 +2,10 @@ import fs from 'fs';
 import lighthouse from 'lighthouse';
 import puppeteer from 'puppeteer';
 
-const url = 'https://kukr29uk66duhr1k-55888609445.shopifypreview.com/';
+const url = process.argv[2] || 'https://kukr29uk66duhr1k-55888609445.shopifypreview.com/';
 const options = {
   logLevel: 'info',
-  output: 'json',
+  output: ['html', 'json'],
   onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'],
   port: (new URL('http://localhost:8041')).port
 };
@@ -20,8 +20,10 @@ async function runLighthouse() {
   // Run Lighthouse
   const runnerResult = await lighthouse(url, options);
 
-  // `.report` is the HTML report as a string
-  const reportJson = runnerResult.report;
+  // `.report` is an array of reports: [html, json]
+  const reportHtml = runnerResult.report[0];
+  const reportJson = runnerResult.report[1];
+  fs.writeFileSync('lighthouse-report.html', reportHtml);
   fs.writeFileSync('lighthouse-report.json', reportJson);
 
   // Print results
