@@ -1,5 +1,5 @@
 /******/(()=>{// webpackBootstrap
-/******/var __webpack_modules__={};/************************************************************************//******/// The module cache
+/******/var __webpack_modules__={/***/646:/***/function(){},/***/766:/***/function(){},/***/263:/***/function(){},/***/970:/***/function(){},/***/186:/***/function(){},/***/722:/***/function(){},/***/741:/***/function(){},/***/158:/***/function(){},/***/729:/***/function(){},/***/47:/***/function(){},/***/597:/***/function(){},/***/880:/***/function(){},/***/229:/***/function(){},/***/690:/***/function(){},/***/217:/***/function(){},/***/442:/***/function(){},/***/227:/***/function(){},/***/573:/***/function(){},/***/516:/***/function(){},/***/410:/***/function(){},/***/714:/***/function(){},/***/131:/***/function(){},/***/458:/***/function(){},/***/755:/***/function(){},/***/405:/***/function(){},/***/277:/***/function(){},/***/265:/***/function(){},/***/842:/***/function(){},/***/704:/***/function(){},/***/529:/***/function(){}/******/};/************************************************************************//******/// The module cache
 /******/var __webpack_module_cache__={};/******//******/// The require function
 /******/function __webpack_require__(moduleId){/******/// Check if module is in cache
 /******/if(__webpack_module_cache__[moduleId]){/******/return __webpack_module_cache__[moduleId].exports;/******/}/******/// Create a new module (and put it into the cache)
@@ -47,7 +47,31 @@ var script=__webpack_require__(277);var script_default=/*#__PURE__*/__webpack_re
    * Returns target element
    *
    * @return {HTMLElement} Target element
-   */_createClass$1(Animation,[{},{},{},{},{}]);return Animation;}();var justDebounce=debounce;var FAQ=/*#__PURE__*/function(){_createClass(FAQ,[{},{},{},{},{},{},{},{},{},{},{}]);return FAQ;}();/* harmony default export */const index_es=FAQ;;// CONCATENATED MODULE: ./node_modules/@pixelunion/pxs-map/dist/index.es.js
+   */_createClass$1(Animation,[{/**
+     * Check if a state is active
+     * @param {String} state State to compare
+     *
+     * @return {Boolean}
+     */value:function(){}/**
+     * Sequences a change to a new state.
+     * @param {String} state Target state
+     *
+     * @param {Boolean} options.force Switch to final state immediately
+     *
+     * @param {Function} options.onStart Callback to execute immediately after
+     * applying stateChangeAttribute for this state change only.
+     *
+     * @param {Boolean} [options.hold=false] If true, changeAttribute will not be removed until the
+     * next state change.
+     *
+     * @return {Promise} Resolves when endEvent triggered
+     */},{value:function(){}/**
+     * Remove any event listeners
+     */},{value:function(){}},{get:function(){}/**
+     * Returns current state
+     *
+     * @return {String} Current state
+     */},{get:function(){}}]);return Animation;}();var justDebounce=debounce;var FAQ=/*#__PURE__*/function(){_createClass(FAQ,[{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}}]);return FAQ;}();/* harmony default export */const index_es=FAQ;;// CONCATENATED MODULE: ./node_modules/@pixelunion/pxs-map/dist/index.es.js
 /*!
  * @pixelunion/pxs-map v3.2.0
  * (c) 2024 Pixel Union
@@ -63,7 +87,7 @@ var zoom=Number.isNaN(settings.zoom)?13:11+parseInt(settings.zoom,10);if(apiKey)
 /*!
  * @pixelunion/age-gate v1.1.2
  * (c) 2025 Pixel Union
- */var scrollLock=__webpack_require__(265);var isbot=__webpack_require__(458);var SiteAgeGate=/*#__PURE__*/function(){index_es_createClass(SiteAgeGate,[{},{},{}]);return SiteAgeGate;}();var PageAgeGate=/*#__PURE__*/function(){index_es_createClass(PageAgeGate,[{},{},{}]);return PageAgeGate;}();;// CONCATENATED MODULE: ./node_modules/@pixelunion/rimg-shopify/dist/index.es.js
+ */var scrollLock=__webpack_require__(265);var isbot=__webpack_require__(458);var SiteAgeGate=/*#__PURE__*/function(){index_es_createClass(SiteAgeGate,[{value:function(){}},{value:function(){}},{value:function(){}}]);return SiteAgeGate;}();var PageAgeGate=/*#__PURE__*/function(){index_es_createClass(PageAgeGate,[{value:function(){}},{value:function(){}},{value:function(){}}]);return PageAgeGate;}();;// CONCATENATED MODULE: ./node_modules/@pixelunion/rimg-shopify/dist/index.es.js
 /*!
  * @pixelunion/rimg-shopify v2.7.1
  * (c) 2023 Pixel Union
@@ -332,7 +356,12 @@ var NS_XHTML='http://www.w3.org/1999/xhtml';var doc=typeof document==='undefined
  * @return {Element}
  *//**
  * Copies the children of one DOM element to another DOM element
- */var specialElHandlers={};var ELEMENT_NODE=1;var DOCUMENT_FRAGMENT_NODE$1=11;var TEXT_NODE=3;var COMMENT_NODE=8;var morphdom=morphdomFactory(morphAttrs);/* harmony default export */const morphdom_esm=morphdom;;// CONCATENATED MODULE: ./node_modules/@shopify/theme-addresses/theme-addresses.js
+ */var specialElHandlers={OPTION:function(){},/**
+     * The "value" attribute is special for the <input> element since it sets
+     * the initial value. Changing the "value" attribute without changing the
+     * "value" property will have no effect since it is only used to the set the
+     * initial value.  Similar for the "checked" attribute, and "disabled".
+     */INPUT:function(){},TEXTAREA:function(){},SELECT:function(){}};var ELEMENT_NODE=1;var DOCUMENT_FRAGMENT_NODE$1=11;var TEXT_NODE=3;var COMMENT_NODE=8;var morphdom=morphdomFactory(morphAttrs);/* harmony default export */const morphdom_esm=morphdom;;// CONCATENATED MODULE: ./node_modules/@shopify/theme-addresses/theme-addresses.js
 /**
  * CountryProvinceSelector Constructor
  * @param {String} countryOptions the country options in html string
@@ -366,7 +395,16 @@ countryNodeElement.addEventListener('change',function(event){var target=event.ta
 /*!
    * @pixelunion/shopify-asyncview v3.0.0
    * (c) 2020 Pixel Union
-  */var deferred={};var AsyncView=/*#__PURE__*/function(){dist_index_es_createClass(AsyncView,null,[{}]);return AsyncView;}();/* harmony default export */const shopify_asyncview_dist_index_es=AsyncView;// EXTERNAL MODULE: ./node_modules/@pixelunion/events/dist/EventHandler.js
+  */var deferred={};var AsyncView=/*#__PURE__*/function(){dist_index_es_createClass(AsyncView,null,[{/**
+     * Load the template given by the provided URL into the provided
+     * view
+     *
+     * @param {string} url - The url to load
+     * @param {string} sectionId - The ID of the section to load
+     * @param {object} [options] - Configuration options
+     * @param {string} [options.hash] - A hash used to cache content
+     * @param {object} [options.query] - An object containing additional query parameters of the URL
+     */value:function(){}}]);return AsyncView;}();/* harmony default export */const shopify_asyncview_dist_index_es=AsyncView;// EXTERNAL MODULE: ./node_modules/@pixelunion/events/dist/EventHandler.js
 var dist_EventHandler=__webpack_require__(766);;// CONCATENATED MODULE: ./source/scripts/helpers/QuantitySelector.js
 ;// CONCATENATED MODULE: ./node_modules/@pixelunion/animations/dist/animations.es.js
 /*!
@@ -394,7 +432,31 @@ var dist_EventHandler=__webpack_require__(766);;// CONCATENATED MODULE: ./source
    * Returns target element
    *
    * @return {HTMLElement} Target element
-   */animations_es_createClass(Animation,[{},{},{},{},{}]);return Animation;}();/**
+   */animations_es_createClass(Animation,[{/**
+     * Check if a state is active
+     * @param {String} state State to compare
+     *
+     * @return {Boolean}
+     */value:function(){}/**
+     * Sequences a change to a new state.
+     * @param {String} state Target state
+     *
+     * @param {Boolean} options.force Switch to final state immediately
+     *
+     * @param {Function} options.onStart Callback to execute immediately after
+     * applying stateChangeAttribute for this state change only.
+     *
+     * @param {Boolean} [options.hold=false] If true, changeAttribute will not be removed until the
+     * next state change.
+     *
+     * @return {Promise} Resolves when endEvent triggered
+     */},{value:function(){}/**
+     * Remove any event listeners
+     */},{value:function(){}},{get:function(){}/**
+     * Returns current state
+     *
+     * @return {String} Current state
+     */},{get:function(){}}]);return Animation;}();/**
  * Manage state changes for a set of elements
  */var AnimationsManager=/*#__PURE__*//* unused pure expression or super */null&&function(){/**
    * Add a new element and return an animation for that element. If element already has an associated animation, return that animation.
@@ -408,7 +470,12 @@ var dist_EventHandler=__webpack_require__(766);;// CONCATENATED MODULE: ./source
    * @param {Function} [options.onStart] Callback to execute immediate after applying stateChangeAttribute.
    *
    * @return {Animation}
-   */animations_es_createClass(AnimationsManager,[{},{},{}]);return AnimationsManager;}();;// CONCATENATED MODULE: ./source/scripts/components/MessageBanner.js
+   */animations_es_createClass(AnimationsManager,[{value:function(){}/**
+     * Remove a single animation
+     * @param {Animation} animation Animation to remove. Any event listeners will also be removed.
+     */},{value:function(){}/**
+     * Remove all animations, including all event listeners.
+     */},{value:function(){}}]);return AnimationsManager;}();;// CONCATENATED MODULE: ./source/scripts/components/MessageBanner.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/StaticCart.js
 // EXTERNAL MODULE: ./node_modules/@pixelunion/breakpoint/dist/cjs/index.js
 var cjs=__webpack_require__(646);// EXTERNAL MODULE: ./node_modules/flickity/js/index.js
@@ -507,7 +574,31 @@ const LOCAL_STORAGE_KEY='pxu-shopify-surface-pick-up';const loadingClass='surfac
    * Returns target element
    *
    * @return {HTMLElement} Target element
-   */pxs_gift_card_recipient_form_dist_index_es_createClass(Animation,[{},{},{},{},{}]);return Animation;}();/* harmony default export */const pxs_gift_card_recipient_form_dist_index_es=RecipientForm;;// CONCATENATED MODULE: ./source/scripts/helpers/Images.js
+   */pxs_gift_card_recipient_form_dist_index_es_createClass(Animation,[{/**
+     * Check if a state is active
+     * @param {String} state State to compare
+     *
+     * @return {Boolean}
+     */value:function(){}/**
+     * Sequences a change to a new state.
+     * @param {String} state Target state
+     *
+     * @param {Boolean} options.force Switch to final state immediately
+     *
+     * @param {Function} options.onStart Callback to execute immediately after
+     * applying stateChangeAttribute for this state change only.
+     *
+     * @param {Boolean} [options.hold=false] If true, changeAttribute will not be removed until the
+     * next state change.
+     *
+     * @return {Promise} Resolves when endEvent triggered
+     */},{value:function(){}/**
+     * Remove any event listeners
+     */},{value:function(){}},{get:function(){}/**
+     * Returns current state
+     *
+     * @return {String} Current state
+     */},{get:function(){}}]);return Animation;}();/* harmony default export */const pxs_gift_card_recipient_form_dist_index_es=RecipientForm;;// CONCATENATED MODULE: ./source/scripts/helpers/Images.js
 ;// CONCATENATED MODULE: ./node_modules/tslib/tslib.es6.js
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -544,7 +635,7 @@ PERFORMANCE OF THIS SOFTWARE.
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
- */var MDCFoundation=/** @class */function(){Object.defineProperty(MDCFoundation,"cssClasses",{});Object.defineProperty(MDCFoundation,"strings",{});Object.defineProperty(MDCFoundation,"numbers",{});Object.defineProperty(MDCFoundation,"defaultAdapter",{});MDCFoundation.prototype.init=function(){// Subclasses should override this method to perform initialization routines (registering events, etc.)
+ */var MDCFoundation=/** @class */function(){Object.defineProperty(MDCFoundation,"cssClasses",{get:function(){}});Object.defineProperty(MDCFoundation,"strings",{get:function(){}});Object.defineProperty(MDCFoundation,"numbers",{get:function(){}});Object.defineProperty(MDCFoundation,"defaultAdapter",{get:function(){}});MDCFoundation.prototype.init=function(){// Subclasses should override this method to perform initialization routines (registering events, etc.)
 };MDCFoundation.prototype.destroy=function(){// Subclasses should override this method to perform de-initialization routines (de-registering events, etc.)
 };return MDCFoundation;}();// tslint:disable-next-line:no-default-export Needed for backward compatibility with MDC Web v0.44.0 and earlier.
 /* harmony default export */const foundation=/* unused pure expression or super */null&&MDCFoundation;//# sourceMappingURL=foundation.js.map
@@ -701,7 +792,7 @@ this.foundation_.destroy();};MDCComponent.prototype.listen=function(evtType,hand
  */// Activation events registered on the root element of each instance for activation
 var ACTIVATION_EVENT_TYPES=['touchstart','pointerdown','mousedown','keydown'];// Deactivation events registered on documentElement when a pointer-related down event occurs
 var POINTER_DEACTIVATION_EVENT_TYPES=['touchend','pointerup','mouseup','contextmenu'];// simultaneous nested activations
-var activatedTargets=[];var MDCRippleFoundation=/** @class */function(_super){__extends(MDCRippleFoundation,_super);Object.defineProperty(MDCRippleFoundation,"cssClasses",{});Object.defineProperty(MDCRippleFoundation,"strings",{});Object.defineProperty(MDCRippleFoundation,"numbers",{});Object.defineProperty(MDCRippleFoundation,"defaultAdapter",{});MDCRippleFoundation.prototype.init=function(){var _this=this;var supportsPressRipple=this.supportsPressRipple_();this.registerRootHandlers_(supportsPressRipple);if(supportsPressRipple){var _a=MDCRippleFoundation.cssClasses,ROOT_1=_a.ROOT,UNBOUNDED_1=_a.UNBOUNDED;requestAnimationFrame(function(){_this.adapter_.addClass(ROOT_1);if(_this.adapter_.isUnbounded()){_this.adapter_.addClass(UNBOUNDED_1);// Unbounded ripples need layout logic applied immediately to set coordinates for both shade and ripple
+var activatedTargets=[];var MDCRippleFoundation=/** @class */function(_super){__extends(MDCRippleFoundation,_super);Object.defineProperty(MDCRippleFoundation,"cssClasses",{get:function(){}});Object.defineProperty(MDCRippleFoundation,"strings",{get:function(){}});Object.defineProperty(MDCRippleFoundation,"numbers",{get:function(){}});Object.defineProperty(MDCRippleFoundation,"defaultAdapter",{get:function(){}});MDCRippleFoundation.prototype.init=function(){var _this=this;var supportsPressRipple=this.supportsPressRipple_();this.registerRootHandlers_(supportsPressRipple);if(supportsPressRipple){var _a=MDCRippleFoundation.cssClasses,ROOT_1=_a.ROOT,UNBOUNDED_1=_a.UNBOUNDED;requestAnimationFrame(function(){_this.adapter_.addClass(ROOT_1);if(_this.adapter_.isUnbounded()){_this.adapter_.addClass(UNBOUNDED_1);// Unbounded ripples need layout logic applied immediately to set coordinates for both shade and ripple
 _this.layoutInternal_();}});}};MDCRippleFoundation.prototype.destroy=function(){var _this=this;if(this.supportsPressRipple_()){if(this.activationTimer_){clearTimeout(this.activationTimer_);this.activationTimer_=0;this.adapter_.removeClass(MDCRippleFoundation.cssClasses.FG_ACTIVATION);}if(this.fgDeactivationRemovalTimer_){clearTimeout(this.fgDeactivationRemovalTimer_);this.fgDeactivationRemovalTimer_=0;this.adapter_.removeClass(MDCRippleFoundation.cssClasses.FG_DEACTIVATION);}var _a=MDCRippleFoundation.cssClasses,ROOT_2=_a.ROOT,UNBOUNDED_2=_a.UNBOUNDED;requestAnimationFrame(function(){_this.adapter_.removeClass(ROOT_2);_this.adapter_.removeClass(UNBOUNDED_2);_this.removeCssVars_();});}this.deregisterRootHandlers_();this.deregisterDeactivationHandlers_();};/**
      * @param evt Optional event containing position information.
      */MDCRippleFoundation.prototype.activate=function(evt){this.activate_(evt);};MDCRippleFoundation.prototype.deactivate=function(){this.deactivate_();};MDCRippleFoundation.prototype.layout=function(){var _this=this;if(this.layoutFrame_){cancelAnimationFrame(this.layoutFrame_);}this.layoutFrame_=requestAnimationFrame(function(){_this.layoutInternal_();_this.layoutFrame_=0;});};MDCRippleFoundation.prototype.setUnbounded=function(unbounded){var UNBOUNDED=MDCRippleFoundation.cssClasses.UNBOUNDED;if(unbounded){this.adapter_.addClass(UNBOUNDED);}else{this.adapter_.removeClass(UNBOUNDED);}};MDCRippleFoundation.prototype.handleFocus=function(){var _this=this;requestAnimationFrame(function(){return _this.adapter_.addClass(MDCRippleFoundation.cssClasses.BG_FOCUSED);});};MDCRippleFoundation.prototype.handleBlur=function(){var _this=this;requestAnimationFrame(function(){return _this.adapter_.removeClass(MDCRippleFoundation.cssClasses.BG_FOCUSED);});};/**
@@ -762,7 +853,7 @@ if(this.adapter_.isUnbounded()&&initialSize%2!==0){this.initialSize_=initialSize
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */var MDCRipple=/** @class */function(_super){__extends(MDCRipple,_super);MDCRipple.attachTo=function(root,opts){if(opts===void 0){opts={};}var ripple=new MDCRipple(root);// Only override unbounded behavior if option is explicitly specified
-if(opts.isUnbounded!==undefined){ripple.unbounded=opts.isUnbounded;}return ripple;};MDCRipple.createAdapter=function(instance){return{};};Object.defineProperty(MDCRipple.prototype,"unbounded",{});MDCRipple.prototype.activate=function(){this.foundation_.activate();};MDCRipple.prototype.deactivate=function(){this.foundation_.deactivate();};MDCRipple.prototype.layout=function(){this.foundation_.layout();};MDCRipple.prototype.getDefaultFoundation=function(){return new MDCRippleFoundation(MDCRipple.createAdapter(this));};MDCRipple.prototype.initialSyncWithDOM=function(){var root=this.root_;this.unbounded='mdcRippleIsUnbounded'in root.dataset;};/**
+if(opts.isUnbounded!==undefined){ripple.unbounded=opts.isUnbounded;}return ripple;};MDCRipple.createAdapter=function(instance){return{addClass:function(){},browserSupportsCssVars:function(){},computeBoundingRect:function(){},containsEventTarget:function(){},deregisterDocumentInteractionHandler:function(){},deregisterInteractionHandler:function(){},deregisterResizeHandler:function(){},getWindowPageOffset:function(){},isSurfaceActive:function(){},isSurfaceDisabled:function(){},isUnbounded:function(){},registerDocumentInteractionHandler:function(){},registerInteractionHandler:function(){},registerResizeHandler:function(){},removeClass:function(){},updateCssVariable:function(){}};};Object.defineProperty(MDCRipple.prototype,"unbounded",{get:function(){},set:function(){}});MDCRipple.prototype.activate=function(){this.foundation_.activate();};MDCRipple.prototype.deactivate=function(){this.foundation_.deactivate();};MDCRipple.prototype.layout=function(){this.foundation_.layout();};MDCRipple.prototype.getDefaultFoundation=function(){return new MDCRippleFoundation(MDCRipple.createAdapter(this));};MDCRipple.prototype.initialSyncWithDOM=function(){var root=this.root_;this.unbounded='mdcRippleIsUnbounded'in root.dataset;};/**
      * Closure Compiler throws an access control error when directly accessing a
      * protected or private property inside a getter/setter, like unbounded above.
      * By accessing the protected property inside a method, we solve that problem.
@@ -784,7 +875,7 @@ const storageKey='pxuProductCompareV3';const MAX_COMPARE_PRODUCTS=3;/* harmony d
 const makeBlock=el=>({});const setOpenHeight=el=>{el.style.setProperty('--menu-open-height',`${el.scrollHeight}px`);};;// CONCATENATED MODULE: ./source/scripts/components/FilterGroups.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/StaticCollection.js
 ;// CONCATENATED MODULE: ./node_modules/@pixelunion/shopify-cross-border/dist/index.es.js
-var dist_index_es_EventHandler_1=dist_index_es_createCommonjsModule(function(module,exports){exports.__esModule=true;var EventHandler=/** @class */function(){EventHandler.prototype.register=function(el,event,listener){if(!el||!event||!listener)return null;this.events.push({});el.addEventListener(event,listener);return{};};EventHandler.prototype.unregister=function(_a){var el=_a.el,event=_a.event,listener=_a.listener;if(!el||!event||!listener)return null;this.events=this.events.filter(function(e){return el!==e.el||event!==e.event||listener!==e.listener;});el.removeEventListener(event,listener);return{};};EventHandler.prototype.unregisterAll=function(){this.events.forEach(function(_a){var el=_a.el,event=_a.event,listener=_a.listener;return el.removeEventListener(event,listener);});this.events=[];};return EventHandler;}();exports["default"]=EventHandler;});var Events=/*@__PURE__*/getDefaultExportFromCjs(dist_index_es_EventHandler_1);var selectors={};var classes={};var Disclosure=/*#__PURE__*/function(){shopify_cross_border_dist_index_es_createClass(Disclosure,[{},{},{},{},{},{},{}]);return Disclosure;}();if(!Element.prototype.matches){Element.prototype.matches=Element.prototype.msMatchesSelector||Element.prototype.webkitMatchesSelector;}if(!Element.prototype.closest){Element.prototype.closest=function closest(s){var el=this;do{if(el.matches(s))return el;el=el.parentElement||el.parentNode;}while(el!==null&&el.nodeType===1);return null;};}/* harmony default export */const shopify_cross_border_dist_index_es=Disclosure;;// CONCATENATED MODULE: ./source/scripts/sections/StaticFooter.js
+var dist_index_es_EventHandler_1=dist_index_es_createCommonjsModule(function(module,exports){exports.__esModule=true;var EventHandler=/** @class */function(){EventHandler.prototype.register=function(el,event,listener){if(!el||!event||!listener)return null;this.events.push({});el.addEventListener(event,listener);return{};};EventHandler.prototype.unregister=function(_a){var el=_a.el,event=_a.event,listener=_a.listener;if(!el||!event||!listener)return null;this.events=this.events.filter(function(e){return el!==e.el||event!==e.event||listener!==e.listener;});el.removeEventListener(event,listener);return{};};EventHandler.prototype.unregisterAll=function(){this.events.forEach(function(_a){var el=_a.el,event=_a.event,listener=_a.listener;return el.removeEventListener(event,listener);});this.events=[];};return EventHandler;}();exports["default"]=EventHandler;});var Events=/*@__PURE__*/getDefaultExportFromCjs(dist_index_es_EventHandler_1);var selectors={};var classes={};var Disclosure=/*#__PURE__*/function(){shopify_cross_border_dist_index_es_createClass(Disclosure,[{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}}]);return Disclosure;}();if(!Element.prototype.matches){Element.prototype.matches=Element.prototype.msMatchesSelector||Element.prototype.webkitMatchesSelector;}if(!Element.prototype.closest){Element.prototype.closest=function closest(s){var el=this;do{if(el.matches(s))return el;el=el.parentElement||el.parentNode;}while(el!==null&&el.nodeType===1);return null;};}/* harmony default export */const shopify_cross_border_dist_index_es=Disclosure;;// CONCATENATED MODULE: ./source/scripts/sections/StaticFooter.js
 ;// CONCATENATED MODULE: ./source/scripts/components/StickyHeader.js
 ;// CONCATENATED MODULE: ./source/scripts/components/navigation/NavMobileSubMenus.js
 ;// CONCATENATED MODULE: ./source/scripts/components/navigation/NavMobile.js
@@ -808,7 +899,16 @@ const el=document.querySelector('[data-site-main-dimmer]');const site_main_dimme
  */var commonjsGlobal=typeof globalThis!=='undefined'?globalThis:typeof window!=='undefined'?window:typeof __webpack_require__.g!=='undefined'?__webpack_require__.g:typeof self!=='undefined'?self:{};var pxs_complementary_products_dist_index_es_EventHandler_1=pxs_complementary_products_dist_index_es_createCommonjsModule(function(module,exports){exports.__esModule=true;var EventHandler=/** @class */function(){EventHandler.prototype.register=function(el,event,listener){if(!el||!event||!listener)return null;this.events.push({});el.addEventListener(event,listener);return{};};EventHandler.prototype.unregister=function(_a){var el=_a.el,event=_a.event,listener=_a.listener;if(!el||!event||!listener)return null;this.events=this.events.filter(function(e){return el!==e.el||event!==e.event||listener!==e.listener;});el.removeEventListener(event,listener);return{};};EventHandler.prototype.unregisterAll=function(){this.events.forEach(function(_a){var el=_a.el,event=_a.event,listener=_a.listener;return el.removeEventListener(event,listener);});this.events=[];};return EventHandler;}();exports["default"]=EventHandler;});var dist_index_es_EventHandler=dist_index_es_unwrapExports(pxs_complementary_products_dist_index_es_EventHandler_1);/*!
    * @pixelunion/shopify-asyncview v2.0.5
    * (c) 2020 Pixel Union
-  */var index_es_deferred={};var index_es_AsyncView=/*#__PURE__*/function(){index_es_createClass$1(AsyncView,null,[{}]);return AsyncView;}();var evEmitter=pxs_complementary_products_dist_index_es_createCommonjsModule(function(module){/**
+  */var index_es_deferred={};var index_es_AsyncView=/*#__PURE__*/function(){index_es_createClass$1(AsyncView,null,[{/**
+     * Load the template given by the provided URL into the provided
+     * view
+     *
+     * @param {string} url - The url to load
+     * @param {object} query - An object containing additional query parameters of the URL
+     * @param {string} query.view - A required query parameter indicating which view to load
+     * @param {object} [options] - Config options
+     * @param {string} [options.hash] - A hash of the current page content
+     */value:function(){}}]);return AsyncView;}();var evEmitter=pxs_complementary_products_dist_index_es_createCommonjsModule(function(module){/**
  * EvEmitter v1.1.0
  * Lil' event emitter
  * MIT License
@@ -1095,7 +1195,9 @@ proto.watchCSS=function(){var watchOption=this.options.watchCSS;if(!watchOption)
 if(afterContent.indexOf('flickity')!=-1){this.activate();}else{this.deactivate();}};// ----- keydown ----- //
 // go previous/next if left/right keys pressed
 proto.onkeydown=function(event){// only work if element is in focus
-var isNotFocused=document.activeElement&&document.activeElement!=this.element;if(!this.options.accessibility||isNotFocused){return;}var handler=Flickity.keyboardHandlers[event.keyCode];if(handler){handler.call(this);}};Flickity.keyboardHandlers={};// ----- focus ----- //
+var isNotFocused=document.activeElement&&document.activeElement!=this.element;if(!this.options.accessibility||isNotFocused){return;}var handler=Flickity.keyboardHandlers[event.keyCode];if(handler){handler.call(this);}};Flickity.keyboardHandlers={// left arrow
+37:function(){},// right arrow
+39:function(){}};// ----- focus ----- //
 proto.focus=function(){// TODO remove scrollTo once focus options gets more support
 // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus ...
 //    #Browser_compatibility
@@ -1417,7 +1519,7 @@ Flickity.LazyLoader=LazyLoader;return Flickity;});});var index_es_js=pxs_complem
  * Copyright 2015-2021 Metafizzy
  */(function(window,factory){// universal module definition
 if(module.exports){// CommonJS
-module.exports=factory(flickity,drag,prevNextButton,pageDots,player,addRemoveCell,lazyload);}})(window,function factory(Flickity){return Flickity;});});var ComplementaryProducts=/*#__PURE__*/function(){pxs_complementary_products_dist_index_es_createClass(ComplementaryProducts,[{},{}]);return ComplementaryProducts;}();/* harmony default export */const pxs_complementary_products_dist_index_es=ComplementaryProducts;;// CONCATENATED MODULE: ./source/scripts/sections/Product.js
+module.exports=factory(flickity,drag,prevNextButton,pageDots,player,addRemoveCell,lazyload);}})(window,function factory(Flickity){return Flickity;});});var ComplementaryProducts=/*#__PURE__*/function(){pxs_complementary_products_dist_index_es_createClass(ComplementaryProducts,[{value:function(){}},{value:function(){}}]);return ComplementaryProducts;}();/* harmony default export */const pxs_complementary_products_dist_index_es=ComplementaryProducts;;// CONCATENATED MODULE: ./source/scripts/sections/Product.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/StaticProduct.js
 ;// CONCATENATED MODULE: ./source/scripts/helpers/ScrollLink.js
 ;// CONCATENATED MODULE: ./source/scripts/components/ShowMoreToggle.js
@@ -1448,7 +1550,13 @@ const resetHeight=block=>{const $block=jquery_default()(block);const $wrapper=$b
 /*!
  * @pixelunion/pxs-countdown-timer v3.0.1
  * (c) 2025 Pixel Union
- */var CountdownTimer=/*#__PURE__*/function(){pxs_countdown_timer_dist_index_es_createClass(CountdownTimer,[{},{},{},{},{},{}]);return CountdownTimer;}();/* harmony default export */const pxs_countdown_timer_dist_index_es=CountdownTimer;;// CONCATENATED MODULE: ./source/scripts/sections/DynamicCountdownTimer.js
+ */var CountdownTimer=/*#__PURE__*/function(){pxs_countdown_timer_dist_index_es_createClass(CountdownTimer,[{value:function(){}/**
+     * Implements a self-adjusting timer.
+     * 
+     * setTimeout has no guarantees that it will be accurate. Therefore,
+     * we'll calculate how much "drift" (i.e. delay per each iteration of setTimeout)
+     * has occurred and keep adjusting the setTimeout delay accordingly.
+     */},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}}]);return CountdownTimer;}();/* harmony default export */const pxs_countdown_timer_dist_index_es=CountdownTimer;;// CONCATENATED MODULE: ./source/scripts/sections/DynamicCountdownTimer.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/DynamicProduct.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/DynamicRichText.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/DynamicSearch.js
@@ -1462,7 +1570,7 @@ const Vimeo_api='https://player.vimeo.com/api/player.js';let Vimeo_apiLoaded=fal
 /*!
  * @pixelunion/pxs-shoppable-image v1.0.2
  * (c) 2024 Pixel Union
- */var pxs_shoppable_image_dist_index_es_EventHandler_1=pxs_shoppable_image_dist_index_es_createCommonjsModule(function(module,exports){exports.__esModule=true;var EventHandler=/** @class */function(){EventHandler.prototype.register=function(el,event,listener){if(!el||!event||!listener)return null;this.events.push({});el.addEventListener(event,listener);return{};};EventHandler.prototype.unregister=function(_a){var el=_a.el,event=_a.event,listener=_a.listener;if(!el||!event||!listener)return null;this.events=this.events.filter(function(e){return el!==e.el||event!==e.event||listener!==e.listener;});el.removeEventListener(event,listener);return{};};EventHandler.prototype.unregisterAll=function(){this.events.forEach(function(_a){var el=_a.el,event=_a.event,listener=_a.listener;return el.removeEventListener(event,listener);});this.events=[];};return EventHandler;}();exports["default"]=EventHandler;});var pxs_shoppable_image_dist_index_es_EventHandler=pxs_shoppable_image_dist_index_es_unwrapExports(pxs_shoppable_image_dist_index_es_EventHandler_1);var ShoppableImage=/*#__PURE__*/function(){pxs_shoppable_image_dist_index_es_createClass(ShoppableImage,[{},{},{},{},{},{},{},{},{},{},{}]);return ShoppableImage;}();/* harmony default export */const pxs_shoppable_image_dist_index_es=ShoppableImage;;// CONCATENATED MODULE: ./source/scripts/sections/DynamicShoppableImage.js
+ */var pxs_shoppable_image_dist_index_es_EventHandler_1=pxs_shoppable_image_dist_index_es_createCommonjsModule(function(module,exports){exports.__esModule=true;var EventHandler=/** @class */function(){EventHandler.prototype.register=function(el,event,listener){if(!el||!event||!listener)return null;this.events.push({});el.addEventListener(event,listener);return{};};EventHandler.prototype.unregister=function(_a){var el=_a.el,event=_a.event,listener=_a.listener;if(!el||!event||!listener)return null;this.events=this.events.filter(function(e){return el!==e.el||event!==e.event||listener!==e.listener;});el.removeEventListener(event,listener);return{};};EventHandler.prototype.unregisterAll=function(){this.events.forEach(function(_a){var el=_a.el,event=_a.event,listener=_a.listener;return el.removeEventListener(event,listener);});this.events=[];};return EventHandler;}();exports["default"]=EventHandler;});var pxs_shoppable_image_dist_index_es_EventHandler=pxs_shoppable_image_dist_index_es_unwrapExports(pxs_shoppable_image_dist_index_es_EventHandler_1);var ShoppableImage=/*#__PURE__*/function(){pxs_shoppable_image_dist_index_es_createClass(ShoppableImage,[{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}},{value:function(){}}]);return ShoppableImage;}();/* harmony default export */const pxs_shoppable_image_dist_index_es=ShoppableImage;;// CONCATENATED MODULE: ./source/scripts/sections/DynamicShoppableImage.js
 ;// CONCATENATED MODULE: ./source/scripts/sections/DynamicTestimonials.js
 ;// CONCATENATED MODULE: ./source/scripts/templates/Account.js
 ;// CONCATENATED MODULE: ./source/scripts/templates/Contact.js

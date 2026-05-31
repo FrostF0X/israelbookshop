@@ -175,7 +175,12 @@ async function optimizeJS() {
         if (isNodeUnused(node.start, node.end)) {
           removedBytes += (node.end - node.start);
           removedNodes++;
-          path.remove();
+          
+          if (path.isObjectProperty() && path.node.value && (path.node.value.type === 'FunctionExpression' || path.node.value.type === 'ArrowFunctionExpression')) {
+             path.get('value').replaceWith(parser.parseExpression('function(){}'));
+          } else {
+             path.remove();
+          }
         }
       }
     }
