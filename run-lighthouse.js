@@ -39,6 +39,8 @@ async function runLighthouse() {
 - **Accessibility:** ${Math.round(runnerResult.lhr.categories.accessibility.score * 100)}
 - **Best Practices:** ${Math.round(runnerResult.lhr.categories['best-practices'].score * 100)}
 - **SEO:** ${Math.round(runnerResult.lhr.categories.seo.score * 100)}
+
+🔗 **[View Full HTML Report](https://FrostF0X.github.io/israelbookshop/lighthouse-report.html)**
 `;
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary);
   }

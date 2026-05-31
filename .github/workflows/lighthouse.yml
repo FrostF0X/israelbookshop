@@ -11,6 +11,9 @@ on:
     - cron: '0 8 * * *' # Run daily at 8am UTC
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   analyze:
     name: Run Lighthouse Analysis
@@ -44,3 +47,17 @@ jobs:
         with:
           name: lighthouse-report-json
           path: lighthouse-report.json
+
+      - name: Prepare Pages directory
+        if: always()
+        run: |
+          mkdir -p public
+          cp lighthouse-report.html public/ || true
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages
