@@ -1,0 +1,927 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: visual.spec.js >> Visual Regression Tests >> should load /collections/calendars successfully and match baseline screenshot
+- Location: tests/visual.spec.js:22:5
+
+# Error details
+
+```
+Error: expect(page).toHaveScreenshot(expected) failed
+
+  Expected an image 1280px by 4360px, received 1280px by 3992px. 723185 pixels (ratio 0.13 of all image pixels) are different.
+
+  Snapshot: collections_calendars.png
+
+Call log:
+  - Expect "toHaveScreenshot(collections_calendars.png)" with timeout 60000ms
+    - verifying given screenshot expectation
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - Expected an image 1280px by 4360px, received 1280px by 4517px. 723185 pixels (ratio 0.13 of all image pixels) are different.
+  - waiting 100ms before taking screenshot
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - Expected an image 1280px by 4517px, received 1280px by 3992px.
+  - waiting 250ms before taking screenshot
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - captured a stable screenshot
+  - Expected an image 1280px by 4360px, received 1280px by 3992px. 723185 pixels (ratio 0.13 of all image pixels) are different.
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - alertdialog "Cookie consent" [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - heading "Cookie consent" [level=2] [ref=e5]
+        - paragraph [ref=e6]:
+          - text: We and our partners, including Shopify, use cookies and other technologies to personalize your experience, show you ads, and perform analytics, and we will not use cookies or other technologies for these purposes unless you accept them. Learn more in our
+          - link "Privacy Policy" [ref=e7] [cursor=pointer]:
+            - /url: https://www.israelbookshop.com/policies/privacy-policy
+      - generic [ref=e8]:
+        - button "Manage preferences" [ref=e9]
+        - button "Accept" [ref=e10]
+        - button "Decline" [ref=e11]
+  - link "Skip to content" [ref=e12] [cursor=pointer]:
+    - /url: "#site-main"
+  - generic [ref=e14]:
+    - link [ref=e15] [cursor=pointer]:
+      - /url: https://israelbookshop.com/collections/sukkah-depot-decorations
+    - generic [ref=e16]:
+      - text: ☎ Need Help? Call Us
+      - link "617-566-7113" [ref=e17] [cursor=pointer]:
+        - /url: tel:+1-617-566-7113
+      - text: or
+      - link "800-323-7723" [ref=e18] [cursor=pointer]:
+        - /url: +1-800-323-7723
+  - banner [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic:
+          - link:
+            - /url: /
+        - search "Product" [ref=e24]:
+          - generic [ref=e25]:
+            - combobox "Search" [ref=e26]
+            - button "Search" [ref=e27] [cursor=pointer]:
+              - img [ref=e29]
+      - generic [ref=e32]:
+        - list [ref=e33]:
+          - listitem [ref=e34]:
+            - link "My Account" [ref=e35] [cursor=pointer]:
+              - /url: https://www.israelbookshop.com/customer_authentication/redirect?locale=en&region_country=US
+              - img [ref=e37]
+              - generic [ref=e41]: My Account
+        - link "View cart" [ref=e43] [cursor=pointer]:
+          - /url: /cart
+          - img [ref=e46]
+          - generic [ref=e51]: View cart
+    - navigation "Main" [ref=e53]:
+      - list "Main menu" [ref=e54]:
+        - listitem [ref=e55]:
+          - group [ref=e56]:
+            - generic "Categories" [ref=e57] [cursor=pointer]:
+              - text: Categories
+              - img [ref=e59]
+        - listitem [ref=e62]:
+          - link "Calendars" [ref=e63] [cursor=pointer]:
+            - /url: /collections/calendars
+        - listitem [ref=e64]:
+          - link "Education" [ref=e65] [cursor=pointer]:
+            - /url: /collections/educational-resources
+        - listitem [ref=e66]:
+          - link "Literature & Novels" [ref=e67] [cursor=pointer]:
+            - /url: /collections/judaic-literature-novels
+        - listitem [ref=e68]:
+          - link "Synagogue" [ref=e69] [cursor=pointer]:
+            - /url: /collections/synagogue-supply
+        - listitem [ref=e70]:
+          - link "Israel" [ref=e71] [cursor=pointer]:
+            - /url: /collections/israel-educational-resources
+        - listitem [ref=e72]:
+          - link "About Us" [ref=e73] [cursor=pointer]:
+            - /url: /pages/about
+        - listitem [ref=e74]:
+          - link "Contact" [ref=e75] [cursor=pointer]:
+            - /url: /pages/contact
+      - list [ref=e76]:
+        - listitem [ref=e77]:
+          - link "Shipping & Returns" [ref=e78] [cursor=pointer]:
+            - /url: /pages/shipping-return-policy
+        - listitem [ref=e79]:
+          - link "Gift Cards" [ref=e80] [cursor=pointer]:
+            - /url: /products/israel-book-shop-gift-card
+  - main "Main content" [ref=e81]:
+    - heading "Calendars" [level=2] [ref=e85]
+    - generic [ref=e89]:
+      - generic [ref=e90]:
+        - generic [ref=e92]:
+          - text: Showing
+          - generic [ref=e93]: "21"
+          - text: results for "Calendars"
+        - generic [ref=e94]:
+          - button "View grid mode" [pressed] [ref=e95] [cursor=pointer]:
+            - img [ref=e96]
+          - button "View list mode" [ref=e98] [cursor=pointer]:
+            - img [ref=e99]
+          - button "View row mode" [ref=e101] [cursor=pointer]:
+            - img [ref=e102]
+        - button "Sort options" [ref=e105] [cursor=pointer]:
+          - generic [ref=e106]: "Date: New to Old"
+      - generic [ref=e107]:
+        - generic [ref=e110]:
+          - text: Showing
+          - generic [ref=e111]: "21"
+          - text: results for "Calendars"
+        - generic [ref=e112]:
+          - generic [ref=e113]:
+            - button "View grid mode" [pressed] [ref=e114] [cursor=pointer]:
+              - img [ref=e115]
+            - button "View list mode" [ref=e117] [cursor=pointer]:
+              - img [ref=e118]
+          - button "Sort options" [ref=e123] [cursor=pointer]:
+            - generic [ref=e124]: "Date: New to Old"
+      - generic [ref=e125]:
+        - group "Price, $" [ref=e126]:
+          - button "Price, $" [expanded] [ref=e127] [cursor=pointer]:
+            - generic [ref=e129]: Price, $
+          - list [ref=e130]:
+            - listitem [ref=e131]:
+              - generic [ref=e132]:
+                - generic [ref=e133]: Minimum value
+                - spinbutton "Minimum value" [ref=e134]: "2"
+                - generic [ref=e135]: –
+                - generic [ref=e136]: Maximum value
+                - spinbutton "Maximum value" [ref=e137]: "55"
+        - group "Vendor" [ref=e144]:
+          - button "Vendor" [expanded] [ref=e145] [cursor=pointer]:
+            - generic [ref=e147]: Vendor
+          - list [ref=e148]:
+            - listitem [ref=e149]:
+              - generic [ref=e150]:
+                - checkbox "IsraelBookShop" [ref=e152]
+                - generic [ref=e154] [cursor=pointer]:
+                  - text: IsraelBookShop
+                  - generic [ref=e155]: "4"
+            - listitem [ref=e156]:
+              - generic [ref=e157]:
+                - checkbox "Israel Bookshop Publications" [ref=e159]
+                - generic [ref=e161] [cursor=pointer]:
+                  - text: Israel Bookshop Publications
+                  - generic [ref=e162]: "2"
+            - listitem [ref=e163]:
+              - generic [ref=e164]:
+                - checkbox "Mickie Caspi" [ref=e166]
+                - generic [ref=e168] [cursor=pointer]:
+                  - text: Mickie Caspi
+                  - generic [ref=e169]: "2"
+            - listitem [ref=e170]:
+              - generic [ref=e171]:
+                - checkbox "Amber Lotus Publishing" [ref=e173]
+                - generic [ref=e175] [cursor=pointer]:
+                  - text: Amber Lotus Publishing
+                  - generic [ref=e176]: "1"
+            - listitem [ref=e177]:
+              - generic [ref=e178]:
+                - checkbox "Distributed by Feldheim" [ref=e180]
+                - generic [ref=e182] [cursor=pointer]:
+                  - text: Distributed by Feldheim
+                  - generic [ref=e183]: "1"
+            - listitem [ref=e184]:
+              - generic [ref=e185]:
+                - checkbox "FREE" [ref=e187]
+                - generic [ref=e189] [cursor=pointer]:
+                  - text: FREE
+                  - generic [ref=e190]: "1"
+            - listitem [ref=e191]:
+              - generic [ref=e192]:
+                - checkbox "Israel Book Shop" [ref=e194]
+                - generic [ref=e196] [cursor=pointer]:
+                  - text: Israel Book Shop
+                  - generic [ref=e197]: "1"
+            - listitem [ref=e198]:
+              - generic [ref=e199]:
+                - checkbox "Kar-Ben Publishing ®" [ref=e201]
+                - generic [ref=e203] [cursor=pointer]:
+                  - text: Kar-Ben Publishing ®
+                  - generic [ref=e204]: "1"
+            - listitem [ref=e205]:
+              - generic [ref=e206]:
+                - checkbox "Karben" [ref=e208]
+                - generic [ref=e210] [cursor=pointer]:
+                  - text: Karben
+                  - generic [ref=e211]: "1"
+            - listitem [ref=e212]:
+              - generic [ref=e213]:
+                - checkbox "KARBEN" [ref=e215]
+                - generic [ref=e217] [cursor=pointer]:
+                  - text: KARBEN
+                  - generic [ref=e218]: "1"
+            - listitem [ref=e219]:
+              - generic [ref=e220]:
+                - checkbox "Kehot Publication Society" [ref=e222]
+                - generic [ref=e224] [cursor=pointer]:
+                  - text: Kehot Publication Society
+                  - generic [ref=e225]: "1"
+            - listitem [ref=e226]:
+              - generic [ref=e227]:
+                - checkbox "Ktav" [ref=e229]
+                - generic [ref=e231] [cursor=pointer]:
+                  - text: Ktav
+                  - generic [ref=e232]: "1"
+            - listitem [ref=e233]:
+              - generic [ref=e234]:
+                - checkbox "Miles B. Cohen" [ref=e236]
+                - generic [ref=e238] [cursor=pointer]:
+                  - text: Miles B. Cohen
+                  - generic [ref=e239]: "1"
+            - listitem [ref=e240]:
+              - generic [ref=e241]:
+                - checkbox "Pomegranate" [ref=e243]
+                - generic [ref=e245] [cursor=pointer]:
+                  - text: Pomegranate
+                  - generic [ref=e246]: "1"
+            - listitem [ref=e247]:
+              - generic [ref=e248]:
+                - checkbox "TJSSC" [ref=e250]
+                - generic [ref=e252] [cursor=pointer]:
+                  - text: TJSSC
+                  - generic [ref=e253]: "1"
+            - listitem [ref=e254]:
+              - generic [ref=e255]:
+                - checkbox "Woman's league" [ref=e257]
+                - generic [ref=e259] [cursor=pointer]:
+                  - text: Woman's league
+                  - generic [ref=e260]: "1"
+        - group "Tags" [ref=e261]:
+          - button "Tags" [expanded] [ref=e262] [cursor=pointer]:
+            - generic [ref=e264]: Tags
+          - list [ref=e265]:
+            - listitem [ref=e266]:
+              - generic [ref=e267]:
+                - checkbox "Calendars" [ref=e269]
+                - generic [ref=e271] [cursor=pointer]:
+                  - text: Calendars
+                  - generic [ref=e272]: "21"
+            - listitem [ref=e273]:
+              - generic [ref=e274]:
+                - checkbox "Media Mail" [ref=e276]
+                - generic [ref=e278] [cursor=pointer]:
+                  - text: Media Mail
+                  - generic [ref=e279]: "17"
+            - listitem [ref=e280]:
+              - generic [ref=e281]:
+                - checkbox "2025-2026 Jewish Calendar" [ref=e283]
+                - generic [ref=e285] [cursor=pointer]:
+                  - text: 2025-2026 Jewish Calendar
+                  - generic [ref=e286]: "7"
+            - listitem [ref=e287]:
+              - generic [ref=e288]:
+                - checkbox "2025-2026 calendar" [ref=e290]
+                - generic [ref=e292] [cursor=pointer]:
+                  - text: 2025-2026 calendar
+                  - generic [ref=e293]: "6"
+            - listitem [ref=e294]:
+              - generic [ref=e295]:
+                - checkbox "Art Calendars" [ref=e297]
+                - generic [ref=e299] [cursor=pointer]:
+                  - text: Art Calendars
+                  - generic [ref=e300]: "6"
+            - listitem [ref=e301]:
+              - generic [ref=e302]:
+                - checkbox "2026-2027 Calendar" [ref=e304]
+                - generic [ref=e306] [cursor=pointer]:
+                  - text: 2026-2027 Calendar
+                  - generic [ref=e307]: "4"
+            - listitem [ref=e308]:
+              - generic [ref=e309]:
+                - checkbox "Rosh Hashana Gifts for Children and Grown-Ups" [ref=e311]
+                - generic [ref=e313] [cursor=pointer]:
+                  - text: Rosh Hashana Gifts for Children and Grown-Ups
+                  - generic [ref=e314]: "4"
+            - listitem [ref=e315]:
+              - generic [ref=e316]:
+                - checkbox "Women" [ref=e318]
+                - generic [ref=e320] [cursor=pointer]:
+                  - text: Women
+                  - generic [ref=e321]: "3"
+            - listitem [ref=e322]:
+              - generic [ref=e323]:
+                - checkbox "Art & Blessings" [ref=e325]
+                - generic [ref=e327] [cursor=pointer]:
+                  - text: Art & Blessings
+                  - generic [ref=e328]: "2"
+            - listitem [ref=e329]:
+              - generic [ref=e330]:
+                - checkbox "Chassidism and Kabbalah" [ref=e332]
+                - generic [ref=e334] [cursor=pointer]:
+                  - text: Chassidism and Kabbalah
+                  - generic [ref=e335]: "2"
+            - listitem [ref=e336]:
+              - generic [ref=e337]:
+                - checkbox "Adam Rhine" [ref=e339]
+                - generic [ref=e341] [cursor=pointer]:
+                  - text: Adam Rhine
+                  - generic [ref=e342]: "1"
+            - listitem [ref=e343]:
+              - generic [ref=e344]:
+                - checkbox "Alexander" [ref=e346]
+                - generic [ref=e348] [cursor=pointer]:
+                  - text: Alexander
+                  - generic [ref=e349]: "1"
+            - listitem [ref=e350]:
+              - generic [ref=e351]:
+                - checkbox "Amber Lotus Publishing" [ref=e353]
+                - generic [ref=e355] [cursor=pointer]:
+                  - text: Amber Lotus Publishing
+                  - generic [ref=e356]: "1"
+            - listitem [ref=e357]:
+              - generic [ref=e358]:
+                - checkbox "Arts & Photography" [ref=e360]
+                - generic [ref=e362] [cursor=pointer]:
+                  - text: Arts & Photography
+                  - generic [ref=e363]: "1"
+            - listitem [ref=e364]:
+              - generic [ref=e365]:
+                - checkbox "Children's Books" [ref=e367]
+                - generic [ref=e369] [cursor=pointer]:
+                  - text: Children's Books
+                  - generic [ref=e370]: "1"
+            - listitem [ref=e371]:
+              - generic [ref=e372]:
+                - checkbox "Classroom Resources for High Holidays" [ref=e374]
+                - generic [ref=e376] [cursor=pointer]:
+                  - text: Classroom Resources for High Holidays
+                  - generic [ref=e377]: "1"
+            - listitem [ref=e378]:
+              - generic [ref=e379]:
+                - checkbox "Distributed by Feldheim" [ref=e381]
+                - generic [ref=e383] [cursor=pointer]:
+                  - text: Distributed by Feldheim
+                  - generic [ref=e384]: "1"
+            - listitem [ref=e385]:
+              - generic [ref=e386]:
+                - checkbox "Educational Posters" [ref=e388]
+                - generic [ref=e390] [cursor=pointer]:
+                  - text: Educational Posters
+                  - generic [ref=e391]: "1"
+            - listitem [ref=e392]:
+              - generic [ref=e393]:
+                - checkbox "frierdiker Rebbe" [ref=e395]
+                - generic [ref=e397] [cursor=pointer]:
+                  - text: frierdiker Rebbe
+                  - generic [ref=e398]: "1"
+            - listitem [ref=e399]:
+              - generic [ref=e400]:
+                - checkbox "Halachah / Jewish Law" [ref=e402]
+                - generic [ref=e404] [cursor=pointer]:
+                  - text: Halachah / Jewish Law
+                  - generic [ref=e405]: "1"
+            - listitem [ref=e406]:
+              - generic [ref=e407]:
+                - checkbox "Hebrew Language Textbooks for Schools and Colleges" [ref=e409]
+                - generic [ref=e411] [cursor=pointer]:
+                  - text: Hebrew Language Textbooks for Schools and Colleges
+                  - generic [ref=e412]: "1"
+            - listitem [ref=e413]:
+              - generic [ref=e414]:
+                - 'checkbox "High Holidays: Rosh Hashana and Yom Kippur" [ref=e416]'
+                - generic [ref=e418] [cursor=pointer]:
+                  - text: "High Holidays: Rosh Hashana and Yom Kippur"
+                  - generic [ref=e419]: "1"
+            - listitem [ref=e420]:
+              - generic [ref=e421]:
+                - checkbox "Jewish Holidays" [ref=e423]
+                - generic [ref=e425] [cursor=pointer]:
+                  - text: Jewish Holidays
+                  - generic [ref=e426]: "1"
+            - listitem [ref=e427]:
+              - generic [ref=e428]:
+                - checkbox "Jewish Life" [ref=e430]
+                - generic [ref=e432] [cursor=pointer]:
+                  - text: Jewish Life
+                  - generic [ref=e433]: "1"
+            - listitem [ref=e434]:
+              - generic [ref=e435]:
+                - checkbox "Jewish Living" [ref=e437]
+                - generic [ref=e439] [cursor=pointer]:
+                  - text: Jewish Living
+                  - generic [ref=e440]: "1"
+            - listitem [ref=e441]:
+              - generic [ref=e442]:
+                - checkbox "Judaism" [ref=e444]
+                - generic [ref=e446] [cursor=pointer]:
+                  - text: Judaism
+                  - generic [ref=e447]: "1"
+            - listitem [ref=e448]:
+              - generic [ref=e449]:
+                - checkbox "Kar-Ben Publishing ®" [ref=e451]
+                - generic [ref=e453] [cursor=pointer]:
+                  - text: Kar-Ben Publishing ®
+                  - generic [ref=e454]: "1"
+            - listitem [ref=e455]:
+              - generic [ref=e456]:
+                - checkbox "KTAV Publishing House" [ref=e458]
+                - generic [ref=e460] [cursor=pointer]:
+                  - text: KTAV Publishing House
+                  - generic [ref=e461]: "1"
+            - listitem [ref=e462]:
+              - generic [ref=e463]:
+                - checkbox "Luach Luah" [ref=e465]
+                - generic [ref=e467] [cursor=pointer]:
+                  - text: Luach Luah
+                  - generic [ref=e468]: "1"
+            - listitem [ref=e469]:
+              - generic [ref=e470]:
+                - checkbox "Lubavitcher Rebbe" [ref=e472]
+                - generic [ref=e474] [cursor=pointer]:
+                  - text: Lubavitcher Rebbe
+                  - generic [ref=e475]: "1"
+            - listitem [ref=e476]:
+              - generic [ref=e477]:
+                - checkbox "Miles B. Cohen" [ref=e479]
+                - generic [ref=e481] [cursor=pointer]:
+                  - text: Miles B. Cohen
+                  - generic [ref=e482]: "1"
+            - listitem [ref=e483]:
+              - generic [ref=e484]:
+                - checkbox "Nathan Aviezer" [ref=e486]
+                - generic [ref=e488] [cursor=pointer]:
+                  - text: Nathan Aviezer
+                  - generic [ref=e489]: "1"
+            - listitem [ref=e490]:
+              - generic [ref=e491]:
+                - checkbox "Passover Books & Cookbooks" [ref=e493]
+                - generic [ref=e495] [cursor=pointer]:
+                  - text: Passover Books & Cookbooks
+                  - generic [ref=e496]: "1"
+            - listitem [ref=e497]:
+              - generic [ref=e498]:
+                - checkbox "Pirkei Avot / Shavuot / Lag Ba'Omer Books" [ref=e500]
+                - generic [ref=e502] [cursor=pointer]:
+                  - text: Pirkei Avot / Shavuot / Lag Ba'Omer Books
+                  - generic [ref=e503]: "1"
+            - listitem [ref=e504]:
+              - generic [ref=e505]:
+                - checkbox "Pomegranate" [ref=e507]
+                - generic [ref=e509] [cursor=pointer]:
+                  - text: Pomegranate
+                  - generic [ref=e510]: "1"
+            - listitem [ref=e511]:
+              - generic [ref=e512]:
+                - checkbox "Purim Books CD and Videos" [ref=e514]
+                - generic [ref=e516] [cursor=pointer]:
+                  - text: Purim Books CD and Videos
+                  - generic [ref=e517]: "1"
+            - listitem [ref=e518]:
+              - generic [ref=e519]:
+                - checkbox "Rabbi Miles B. Cohen and Leslie Rubin" [ref=e521]
+                - generic [ref=e523] [cursor=pointer]:
+                  - text: Rabbi Miles B. Cohen and Leslie Rubin
+                  - generic [ref=e524]: "1"
+            - listitem [ref=e525]:
+              - generic [ref=e526]:
+                - checkbox "Rebbi Menachem Mendel Shneerson" [ref=e528]
+                - generic [ref=e530] [cursor=pointer]:
+                  - text: Rebbi Menachem Mendel Shneerson
+                  - generic [ref=e531]: "1"
+            - listitem [ref=e532]:
+              - generic [ref=e533]:
+                - checkbox "School Supply" [ref=e535]
+                - generic [ref=e537] [cursor=pointer]:
+                  - text: School Supply
+                  - generic [ref=e538]: "1"
+            - listitem [ref=e539]:
+              - generic [ref=e540]:
+                - checkbox "Science and Judaism" [ref=e542]
+                - generic [ref=e544] [cursor=pointer]:
+                  - text: Science and Judaism
+                  - generic [ref=e545]: "1"
+            - listitem [ref=e546]:
+              - generic [ref=e547]:
+                - checkbox "Tami Lehman-Wilzig" [ref=e549]
+                - generic [ref=e551] [cursor=pointer]:
+                  - text: Tami Lehman-Wilzig
+                  - generic [ref=e552]: "1"
+            - listitem [ref=e553]:
+              - generic [ref=e554]:
+                - checkbox "Textbooks (Special Features Stores)" [ref=e556]
+                - generic [ref=e558] [cursor=pointer]:
+                  - text: Textbooks (Special Features Stores)
+                  - generic [ref=e559]: "1"
+            - listitem [ref=e560]:
+              - generic [ref=e561]:
+                - checkbox "Torah" [ref=e563]
+                - generic [ref=e565] [cursor=pointer]:
+                  - text: Torah
+                  - generic [ref=e566]: "1"
+            - listitem [ref=e567]:
+              - generic [ref=e568]:
+                - checkbox "Tu B'Shvat Books / Gifts / Classroom Resources" [ref=e570]
+                - generic [ref=e572] [cursor=pointer]:
+                  - text: Tu B'Shvat Books / Gifts / Classroom Resources
+                  - generic [ref=e573]: "1"
+            - listitem [ref=e574]:
+              - generic [ref=e575]:
+                - checkbox "Ziskind Scharf" [ref=e577]
+                - generic [ref=e579] [cursor=pointer]:
+                  - text: Ziskind Scharf
+                  - generic [ref=e580]: "1"
+      - list [ref=e583]:
+        - listitem [ref=e584]:
+          - 'link "Hebrew Illuminations 16-Month 2026-2027 Wall Calendar: And Candle Lighting Times" [ref=e585] [cursor=pointer]':
+            - /url: /collections/calendars/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times
+            - generic [ref=e586]:
+              - 'img "Hebrew Illuminations 16-Month 2026-2027 Wall Calendar: And Candle Lighting Times cover image" [ref=e589]'
+              - generic [ref=e590]:
+                - generic [ref=e591]: "Hebrew Illuminations 16-Month 2026-2027 Wall Calendar: And Candle Lighting Times"
+                - generic [ref=e592]: Amber Lotus Publishing
+                - generic [ref=e594]: $17.99
+                - button "Quick shop" [ref=e595]
+        - listitem [ref=e596]:
+          - link "A Simplified Study of the Jewish Calendar Kuntres Ohr Zarua" [ref=e597] [cursor=pointer]:
+            - /url: /collections/calendars/products/a-simplified-study-of-the-jewish-calendar
+            - generic [ref=e601]:
+              - generic [ref=e602]: A Simplified Study of the Jewish Calendar Kuntres Ohr Zarua
+              - generic [ref=e603]: Distributed by Feldheim
+              - generic [ref=e605]: $19.99
+              - button "Quick shop" [ref=e606]
+        - listitem [ref=e607]:
+          - link "THE TORAH CALENDAR Exploring the Festivals By Nathan Aviezer" [ref=e608] [cursor=pointer]:
+            - /url: /collections/calendars/products/the-torah-calendar-exploring-the-festivals-by-nathan-aviezer
+            - generic [ref=e609]:
+              - img "THE TORAH CALENDAR Exploring the Festivals By Nathan Aviezer" [ref=e612]
+              - generic [ref=e613]:
+                - generic [ref=e614]: THE TORAH CALENDAR Exploring the Festivals By Nathan Aviezer
+                - generic [ref=e615]: Ktav
+                - generic [ref=e617]: $20.00
+                - button "Quick shop" [ref=e618]
+        - listitem [ref=e619]:
+          - link "5786 The Jewish Museum Wall Calendar 2025 - 2026 Featuring 12 Artworks from Jewish Museum, New York" [ref=e620] [cursor=pointer]:
+            - /url: /collections/calendars/products/wall-calendar-2026-the-jewish-museum-art-12-months-large-grid-design-featuring-12-artworks
+            - generic [ref=e621]:
+              - generic [ref=e622]:
+                - generic [ref=e623]: 12% off
+                - img "Wall Calendar 2026, The Jewish Museum Art, 12 Months, Large Grid Design Featuring 12 Artworks cover image" [ref=e625]
+              - generic [ref=e626]:
+                - generic [ref=e627]: 5786 The Jewish Museum Wall Calendar 2025 - 2026 Featuring 12 Artworks from Jewish Museum, New York
+                - generic [ref=e628]: Pomegranate
+                - generic [ref=e629]:
+                  - generic [ref=e630]: $15.00
+                  - generic [ref=e631]: Old price
+                  - generic [ref=e632]: $16.99
+                - button "Quick shop" [ref=e633]
+        - listitem [ref=e634]:
+          - link "Luach Conservative 5787 Luach HaShana Calendar 2025-2026" [ref=e635] [cursor=pointer]:
+            - /url: /collections/calendars/products/luah-hashanah-5786
+            - generic [ref=e636]:
+              - img "Luah Hashanah 5786 cover image" [ref=e639]
+              - generic [ref=e640]:
+                - generic [ref=e641]: Luach Conservative 5787 Luach HaShana Calendar 2025-2026
+                - generic [ref=e642]: Miles B. Cohen
+                - generic [ref=e644]: $29.95
+                - button "Quick shop" [ref=e645]
+        - listitem [ref=e646]:
+          - 'link "My Very Own Jewish Calendar 5786: 2025-2026 (Jewish Calendars)" [ref=e647] [cursor=pointer]':
+            - /url: /collections/calendars/products/my-very-own-jewish-calendar-5786-2025-2026-jewish-calendars
+            - generic [ref=e648]:
+              - generic [ref=e649]:
+                - generic [ref=e650]: 17% off
+                - 'img "My Very Own Jewish Calendar 5786: 2025-2026 (Jewish Calendars) cover image" [ref=e652]'
+              - generic [ref=e653]:
+                - generic [ref=e654]: "My Very Own Jewish Calendar 5786: 2025-2026 (Jewish Calendars)"
+                - generic [ref=e655]: Kar-Ben Publishing ®
+                - generic [ref=e656]:
+                  - generic [ref=e657]: $10.00
+                  - generic [ref=e658]: Old price
+                  - generic [ref=e659]: $12.00
+                - button "Quick shop" [ref=e660]
+        - listitem [ref=e661]:
+          - link "Pre-Order 5787 Jewish Art Calendar by Mickie 2026-2027 Available June 1, 2026" [ref=e662] [cursor=pointer]:
+            - /url: /collections/calendars/products/pre-order-5787-jewish-art-calendar-by-mickie-2026-2027
+            - generic [ref=e663]:
+              - img "Pre-Order 5787 Jewish Art Calendar by Mickie 2026-2027 Available June 1, 2026" [ref=e666]
+              - generic [ref=e667]:
+                - generic [ref=e668]: Pre-Order 5787 Jewish Art Calendar by Mickie 2026-2027 Available June 1, 2026
+                - generic [ref=e669]: Mickie Caspi
+                - generic [ref=e671]: $19.95
+                - button "Quick shop" [ref=e672]
+        - listitem [ref=e673]:
+          - link "Hayom Yom Bilingual Hebrew English Edition Large By Lubavitcher Rebbi Rabbi Menachem M. Schneerson" [ref=e674] [cursor=pointer]:
+            - /url: /collections/calendars/products/hayom-yom-bilingual-hebrew-english-edition-large
+            - generic [ref=e675]:
+              - img "Hayom Yom Bilingual Hebrew English Edition Large By Lubavitcher Rebbi Rabbi Menachem M. Schneerson" [ref=e678]
+              - generic [ref=e679]:
+                - generic [ref=e680]: Hayom Yom Bilingual Hebrew English Edition Large By Lubavitcher Rebbi Rabbi Menachem M. Schneerson
+                - generic [ref=e681]: Kehot Publication Society
+                - generic [ref=e683]: $30.95
+                - button "Quick shop" [ref=e684]
+        - listitem [ref=e685]:
+          - link "Jewish Classroom Calendar Kit by Miriam Feldman Made in Israel" [ref=e686] [cursor=pointer]:
+            - /url: /collections/calendars/products/jewish-classroom-calendar-kit-by-miriam-feldman
+            - generic [ref=e690]:
+              - generic [ref=e691]: Jewish Classroom Calendar Kit by Miriam Feldman Made in Israel
+              - generic [ref=e692]: TJSSC
+              - generic [ref=e694]: $32.95
+              - button "Quick shop" [ref=e695]
+        - listitem [ref=e696]:
+          - 'link "Inside Time: A Chassidic Perspective on the Jewish Calendar Set of 3 Volumes By Yanki Tauber" [ref=e697] [cursor=pointer]':
+            - /url: /collections/calendars/products/inside-time-a-chassidic-perspective-on-the-jewish-calendar-set-of-3-volumes-by-yanki-tauber
+            - generic [ref=e701]:
+              - generic [ref=e702]: "Inside Time: A Chassidic Perspective on the Jewish Calendar Set of 3 Volumes By Yanki Tauber"
+              - generic [ref=e703]: IsraelBookShop
+              - generic [ref=e705]: $54.99
+              - button "Quick shop" [ref=e706]
+        - listitem [ref=e707]:
+          - link "My Fun Hebrew Calendar To Fill the Blanks Grades K-2" [ref=e708] [cursor=pointer]:
+            - /url: /collections/calendars/products/my-fun-hebrew-calendar-to-fill-the-blanks-grades-k-2
+            - generic [ref=e712]:
+              - generic [ref=e713]: My Fun Hebrew Calendar To Fill the Blanks Grades K-2
+              - generic [ref=e714]: IsraelBookShop
+              - generic [ref=e716]: $10.50
+              - button "Quick shop" [ref=e717]
+        - listitem [ref=e718]:
+          - link "5786 The Balabusta's Spiral Daily Organizer 2025-2026 Desktop Edition" [ref=e719] [cursor=pointer]:
+            - /url: /collections/calendars/products/5786-the-balabustas-spiral-daily-organizer-2025-2026-desktop-edition
+            - generic [ref=e720]:
+              - generic [ref=e721]:
+                - generic [ref=e722]: 10% off
+                - img "5786 The Balabusta's Spiral Daily Organizer 2025-2026 Desktop Edition" [ref=e724]
+              - generic [ref=e725]:
+                - generic [ref=e726]: 5786 The Balabusta's Spiral Daily Organizer 2025-2026 Desktop Edition
+                - generic [ref=e727]: Israel Bookshop Publications
+                - generic [ref=e728]:
+                  - generic [ref=e729]: $22.49
+                  - generic [ref=e730]: Old price
+                  - generic [ref=e731]: $24.99
+                - button "Quick shop" [ref=e732]
+        - listitem [ref=e733]:
+          - link "5786 The Balabusta's Daily Organizer 2025-26 Pocket Edition Web Price" [ref=e734] [cursor=pointer]:
+            - /url: /collections/calendars/products/5786-the-balabustas-daily-organizer-2025-26-pocket-edition-web-price
+            - generic [ref=e735]:
+              - generic [ref=e736]:
+                - generic [ref=e737]: 10% off
+                - img "5786 The Balabusta's Daily Organizer 2025-26 Pocket Edition Web Price" [ref=e739]
+              - generic [ref=e740]:
+                - generic [ref=e741]: 5786 The Balabusta's Daily Organizer 2025-26 Pocket Edition Web Price
+                - generic [ref=e742]: Israel Bookshop Publications
+                - generic [ref=e743]:
+                  - generic [ref=e744]: $17.99
+                  - generic [ref=e745]: Old price
+                  - generic [ref=e746]: $19.95
+                - button "Quick shop" [ref=e747]
+        - listitem [ref=e748]:
+          - link "5786 Jewish Art Wall Calendar 2025-2026 English Edition" [ref=e749] [cursor=pointer]:
+            - /url: /collections/calendars/products/2025
+            - generic [ref=e750]:
+              - img "5786 Jewish Art Wall Calendar 2025-2026 English Edition" [ref=e753]
+              - generic [ref=e754]:
+                - generic [ref=e755]: 5786 Jewish Art Wall Calendar 2025-2026 English Edition
+                - generic [ref=e756]: FREE
+                - generic [ref=e758]: $3.95
+                - button "Quick shop" [ref=e759]
+        - listitem [ref=e760]:
+          - link "5786 (2025-2026) The Ezras Torah Luach Hebrew Shul Laws and Regulations for Jewish Year" [ref=e761] [cursor=pointer]:
+            - /url: /collections/calendars/products/5783-2023-2023-the-ezras-torah-luach-hebrew-shul-laws-and-regulations-for-jewish-year
+            - generic [ref=e765]:
+              - generic [ref=e766]: 5786 (2025-2026) The Ezras Torah Luach Hebrew Shul Laws and Regulations for Jewish Year
+              - generic [ref=e767]: IsraelBookShop
+              - generic [ref=e769]: $15.95
+              - button "Quick shop" [ref=e770]
+        - listitem [ref=e771]:
+          - link "5786 (2025-2026) The Ezras Torah Pocket Luach English Edited by Rabbi Hillel Litwack" [ref=e772] [cursor=pointer]:
+            - /url: /collections/calendars/products/5783-2022-2023-the-ezras-torah-pocket-luach-english-edited-by-rabbi-hillel-litwack
+            - generic [ref=e776]:
+              - generic [ref=e777]: 5786 (2025-2026) The Ezras Torah Pocket Luach English Edited by Rabbi Hillel Litwack
+              - generic [ref=e778]: IsraelBookShop
+              - generic [ref=e780]: $14.95
+              - button "Quick shop" [ref=e781]
+        - listitem [ref=e782]:
+          - link "5787 The Jewish Art Calendar Full Size by Mickie Caspi 2026-2027 Available June 1, 2026" [ref=e783] [cursor=pointer]:
+            - /url: /collections/calendars/products/5787-the-jewish-art-calendar-full-size-by-mickie-caspi-2026-2027-available-june-1-2026
+            - generic [ref=e784]:
+              - img "5787 The Jewish Art Calendar Full Size by Mickie Caspi 2026-2027 Available June 1, 2026" [ref=e787]
+              - generic [ref=e788]:
+                - generic [ref=e789]: 5787 The Jewish Art Calendar Full Size by Mickie Caspi 2026-2027 Available June 1, 2026
+                - generic [ref=e790]: Mickie Caspi
+                - generic [ref=e792]: $19.99
+                - button "Quick shop" [ref=e793]
+        - listitem [ref=e794]:
+          - link "2026-2027 Israel Book Shop The Mini 5787 Jewish Pocket Calendar" [ref=e795] [cursor=pointer]:
+            - /url: /collections/calendars/products/2022-2023-5783-israel-book-shop-the-mini-jewish-pocket-calendar
+            - generic [ref=e799]:
+              - generic [ref=e800]: 2026-2027 Israel Book Shop The Mini 5787 Jewish Pocket Calendar
+              - generic [ref=e801]: Israel Book Shop
+              - generic [ref=e803]: $2.95
+              - button "Quick shop" [ref=e804]
+        - listitem [ref=e805]:
+          - link "2025-2026 Women's League for Conservative Judaism 5786 Calendar Pocket Diary Plastic Cover" [ref=e806] [cursor=pointer]:
+            - /url: /collections/calendars/products/2025-2026-womens-league-for-conservative-judaism-5786-calendar-pocket-diary-plastic-cover
+            - generic [ref=e807]:
+              - img "2025-2026 Women's League for Conservative Judaism 5786 Calendar Pocket Diary Plastic Cover" [ref=e810]
+              - generic [ref=e811]:
+                - generic [ref=e812]: 2025-2026 Women's League for Conservative Judaism 5786 Calendar Pocket Diary Plastic Cover
+                - generic [ref=e813]: Woman's league
+                - generic [ref=e815]: $14.95
+                - button "Quick shop" [ref=e816]
+        - listitem [ref=e817]:
+          - 'link "Executive Jewish Calendar 5787: 2026-2027 A 17 Month Planner" [ref=e818] [cursor=pointer]':
+            - /url: /collections/calendars/products/2025-2026-the-executive-jewish-calendar-5786-a-17-month-planner
+            - generic [ref=e822]:
+              - generic [ref=e823]: "Executive Jewish Calendar 5787: 2026-2027 A 17 Month Planner"
+              - generic [ref=e824]: KARBEN
+              - generic [ref=e826]: $10.99
+              - button "Quick shop" [ref=e827]
+        - listitem [ref=e828]:
+          - link "2026-2027 Jumbo Jewish Calendar 5787 22\" x 17\" With Candlelighting Chart" [ref=e829] [cursor=pointer]:
+            - /url: /collections/calendars/products/2022-2023-5783-jumbo-jewish-calendar-with-candlelighting-chart
+            - generic [ref=e833]:
+              - generic [ref=e834]: 2026-2027 Jumbo Jewish Calendar 5787 22" x 17" With Candlelighting Chart
+              - generic [ref=e835]: Karben
+              - generic [ref=e837]: $16.99
+              - button "Quick shop" [ref=e838]
+      - navigation "Pagination"
+    - complementary "Recently viewed products" [ref=e840]:
+      - generic [ref=e842]:
+        - heading "You recently viewed" [level=2] [ref=e843]
+        - button "Clear recently viewed" [ref=e844] [cursor=pointer]
+  - contentinfo "Footer" [ref=e846]:
+    - generic [ref=e847]:
+      - generic [ref=e849]:
+        - generic [ref=e850]:
+          - heading "Israel Book Shop Publications" [level=2] [ref=e851]
+          - paragraph [ref=e853]:
+            - text: Our sister company in Lakewood, NJ. Publisher and distributor of Judaica oriented books and products to wholesale and retail markets.
+            - link "israelbookshoppublications.com" [ref=e854] [cursor=pointer]:
+              - /url: https://israelbookshoppublications.com
+              - strong [ref=e855]: israelbookshoppublications.com
+        - generic [ref=e856]:
+          - heading "Company" [level=2] [ref=e857]
+          - list [ref=e859]:
+            - listitem [ref=e860]:
+              - link "About Us" [ref=e861] [cursor=pointer]:
+                - /url: /pages/about
+            - listitem [ref=e862]:
+              - link "Contact Us" [ref=e863] [cursor=pointer]:
+                - /url: /pages/contact
+            - listitem [ref=e864]:
+              - link "Our Team" [ref=e865] [cursor=pointer]:
+                - /url: /pages/about/#team
+            - listitem [ref=e866]:
+              - link "Testimonials" [ref=e867] [cursor=pointer]:
+                - /url: /#testimonials
+            - listitem [ref=e868]:
+              - link "Account Login" [ref=e869] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e870]:
+              - link "Shipping Policy" [ref=e871] [cursor=pointer]:
+                - /url: /policies/shipping-policy
+            - listitem [ref=e872]:
+              - link "Returns & Refund Policy" [ref=e873] [cursor=pointer]:
+                - /url: /policies/refund-policy
+            - listitem [ref=e874]:
+              - link "Terms of Service" [ref=e875] [cursor=pointer]:
+                - /url: /policies/terms-of-service
+            - listitem [ref=e876]:
+              - link "Privacy Policy" [ref=e877] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e878]:
+              - link "Site Map" [ref=e879] [cursor=pointer]:
+                - /url: /sitemap.xml
+        - generic [ref=e880]:
+          - heading "Israel Book Shop" [level=2] [ref=e881]
+          - generic [ref=e882]:
+            - paragraph [ref=e883]:
+              - text: 410 Harvard Street
+              - text: Brookline, MA 02446
+              - text: 617-566-7113 / 800-323-7723
+              - link "info@israelbookshop.com" [ref=e884] [cursor=pointer]:
+                - /url: /pages/contact
+                - strong [ref=e885]: info@israelbookshop.com
+            - paragraph [ref=e886]:
+              - strong [ref=e887]: "Store Hours:"
+              - text: Sun-Wed 10a - 5pm
+              - text: Thu 10a - 6p
+              - text: Fri 10a - 2p (1:30p in winter)
+      - generic [ref=e888]:
+        - button "Follow on Shop" [ref=e893] [cursor=pointer]:
+          - img [ref=e896]
+          - generic [ref=e898]:
+            - text: Follow on
+            - img "Shop" [ref=e899]
+        - generic [ref=e902]:
+          - paragraph [ref=e903]:
+            - text: Copyright © 2026 IsraelBookShop. Site by
+            - link "Winter Solutions, Inc." [ref=e904] [cursor=pointer]:
+              - /url: https://wintersolutions.com
+            - text: with the Power of Shopify.
+          - paragraph [ref=e905]:
+            - link "Powered by Shopify" [ref=e906] [cursor=pointer]:
+              - /url: https://www.shopify.com?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore
+  - iframe [ref=e908]:
+    - generic [ref=f1e4]:
+      - button [ref=f1e7] [cursor=pointer]:
+        - img [ref=f1e9]
+        - img [ref=f1e12]
+      - generic [ref=f1e15]:
+        - generic [ref=f1e18]:
+          - link "Logo" [ref=f1e19] [cursor=pointer]:
+            - /url: https://admin.shopify.com/store/israelbookshop
+            - img "Logo" [ref=f1e20]
+          - generic [ref=f1e22]:
+            - generic [ref=f1e23]: israelbookshop/main
+            - generic [ref=f1e24]: Draft
+        - generic [ref=f1e26]:
+          - button "Hide bar" [ref=f1e28] [cursor=pointer]:
+            - generic [ref=f1e29]: Hide bar
+          - button "Copy link" [ref=f1e32] [cursor=pointer]:
+            - img [ref=f1e36]
+            - generic [ref=f1e38]: Copy link
+```
+
+# Test source
+
+```ts
+  1  | const { test, expect } = require('@playwright/test');
+  2  | 
+  3  | const paths = [
+  4  |   '/',
+  5  |   '/cart',
+  6  |   '/pages/about',
+  7  |   '/pages/contact',
+  8  |   '/pages/privacy-policy',
+  9  |   '/pages/search-results-page?q=test',
+  10 |   '/policies/shipping-policy',
+  11 |   '/policies/refund-policy',
+  12 |   '/policies/terms-of-service',
+  13 |   '/collections/calendars',
+  14 |   '/collections/educational-resources',
+  15 |   '/collections/calendars/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times'
+  16 | ];
+  17 | 
+  18 | test.describe('Visual Regression Tests', () => {
+  19 |   for (const p of paths) {
+  20 |     const safeName = p === '/' ? 'homepage' : p.replace(/\//g, '_').substring(1);
+  21 | 
+  22 |     test(`should load ${p} successfully and match baseline screenshot`, async ({ page }) => {
+  23 |       test.setTimeout(90000); 
+  24 | 
+  25 |       // Navigate to the page with 'load' instead of 'networkidle' to prevent hanging on tracking pixels
+  26 |       await page.goto(p, { waitUntil: 'load', timeout: 60000 });
+  27 | 
+  28 |       // Wait a moment for dynamic CSS or JS to kick in
+  29 |       await page.waitForTimeout(2000);
+  30 | 
+  31 |       // Smoothly scroll down the page to trigger intersection observers for lazy-loaded images
+  32 |       await page.evaluate(async () => {
+  33 |         await new Promise((resolve) => {
+  34 |           let totalHeight = 0;
+  35 |           const distance = 300; 
+  36 |           const timer = setInterval(() => {
+  37 |             const scrollHeight = document.body.scrollHeight;
+  38 |             window.scrollBy(0, distance);
+  39 |             totalHeight += distance;
+  40 | 
+  41 |             if (totalHeight >= scrollHeight - window.innerHeight) {
+  42 |               clearInterval(timer);
+  43 |               resolve();
+  44 |             }
+  45 |           }, 150); 
+  46 |         });
+  47 |       });
+  48 |       
+  49 |       // Wait for lazy-loaded images to fetch
+  50 |       await page.waitForTimeout(3000);
+  51 |       
+  52 |       // Scroll back to top
+  53 |       await page.evaluate(() => window.scrollTo(0, 0));
+  54 |       await page.waitForTimeout(1000);
+  55 | 
+  56 |       // Full page screenshot assertion
+> 57 |       await expect(page).toHaveScreenshot(`${safeName}.png`, {
+     |                          ^ Error: expect(page).toHaveScreenshot(expected) failed
+  58 |         fullPage: true,
+  59 |         maxDiffPixelRatio: 0.05, // Allow slight differences (5%)
+  60 |         timeout: 60000 
+  61 |       });
+  62 |     });
+  63 |   }
+  64 | });
+  65 | 
+```
