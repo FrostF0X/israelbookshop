@@ -67,6 +67,7 @@ jobs:
       - name: Copy latest homepage report to root for GEMINI.md
         run: |
           cp public/lighthouse-reports-${{ github.run_id }}/lighthouse-report-homepage.html public/lighthouse-report.html || true
+          cp public/lighthouse-reports-${{ github.run_id }}/lighthouse-report-homepage.json public/lighthouse-report.json || true
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

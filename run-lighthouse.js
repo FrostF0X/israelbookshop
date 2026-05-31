@@ -37,9 +37,12 @@ async function runLighthouse() {
 
   if (process.env.GITHUB_STEP_SUMMARY) {
     const runId = process.env.GITHUB_RUN_ID;
-    const reportUrl = runId 
+    const reportUrlHtml = runId 
       ? `https://FrostF0X.github.io/israelbookshop/lighthouse-reports-${runId}/lighthouse-report-${safeName}.html` 
       : `https://FrostF0X.github.io/israelbookshop/lighthouse-report-${safeName}.html`;
+    const reportUrlJson = runId 
+      ? `https://FrostF0X.github.io/israelbookshop/lighthouse-reports-${runId}/lighthouse-report-${safeName}.json` 
+      : `https://FrostF0X.github.io/israelbookshop/lighthouse-report-${safeName}.json`;
 
     const summary = `### Lighthouse Results for [${safeName}](${runnerResult.lhr.finalDisplayedUrl})
 - **Performance:** ${Math.round(runnerResult.lhr.categories.performance.score * 100)}
@@ -47,7 +50,8 @@ async function runLighthouse() {
 - **Best Practices:** ${Math.round(runnerResult.lhr.categories['best-practices'].score * 100)}
 - **SEO:** ${Math.round(runnerResult.lhr.categories.seo.score * 100)}
 
-🔗 **[View Historical HTML Report for this Run](${reportUrl})**
+🔗 **[View Historical HTML Report for this Run](${reportUrlHtml})**
+🔗 **[View Historical JSON Report for this Run](${reportUrlJson})**
 `;
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary);
   }
