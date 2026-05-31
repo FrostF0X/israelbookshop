@@ -1,0 +1,1111 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: visual.spec.js >> Visual Regression Tests >> should load /pages/search-results-page?q=test successfully and match baseline screenshot
+- Location: tests/visual.spec.js:22:5
+
+# Error details
+
+```
+Error: expect(page).toHaveScreenshot(expected) failed
+
+  Expected an image 1280px by 25023px, received 1280px by 5065px. 
+
+  Snapshot: pages_search-results-page?q=test.png
+
+Call log:
+  - Expect "toHaveScreenshot(pages_search-results-page?q=test.png)" with timeout 60000ms
+    - verifying given screenshot expectation
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - Expected an image 1280px by 25023px, received 1280px by 5065px.
+  - waiting 100ms before taking screenshot
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - captured a stable screenshot
+  - Expected an image 1280px by 25023px, received 1280px by 5065px.
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - alertdialog "Cookie consent" [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - heading "Cookie consent" [level=2] [ref=e5]
+        - paragraph [ref=e6]:
+          - text: We and our partners, including Shopify, use cookies and other technologies to personalize your experience, show you ads, and perform analytics, and we will not use cookies or other technologies for these purposes unless you accept them. Learn more in our
+          - link "Privacy Policy" [ref=e7] [cursor=pointer]:
+            - /url: https://www.israelbookshop.com/policies/privacy-policy
+      - generic [ref=e8]:
+        - button "Manage preferences" [ref=e9]
+        - button "Accept" [ref=e10]
+        - button "Decline" [ref=e11]
+  - link "Skip to content" [ref=e12] [cursor=pointer]:
+    - /url: "#site-main"
+  - generic [ref=e14]:
+    - link [ref=e15] [cursor=pointer]:
+      - /url: https://israelbookshop.com/collections/sukkah-depot-decorations
+    - generic [ref=e16]:
+      - text: ☎ Need Help? Call Us
+      - link "617-566-7113" [ref=e17] [cursor=pointer]:
+        - /url: tel:+1-617-566-7113
+      - text: or
+      - link "800-323-7723" [ref=e18] [cursor=pointer]:
+        - /url: +1-800-323-7723
+  - banner [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - link [ref=e24] [cursor=pointer]:
+          - /url: /
+        - search "Product" [ref=e26]:
+          - generic [ref=e27]:
+            - combobox "Search" [ref=e28]: test
+            - button "Search" [ref=e29] [cursor=pointer]:
+              - img [ref=e31]
+      - generic [ref=e34]:
+        - list [ref=e35]:
+          - listitem [ref=e36]:
+            - link "My Account" [ref=e37] [cursor=pointer]:
+              - /url: https://www.israelbookshop.com/customer_authentication/redirect?locale=en&region_country=US
+              - img [ref=e39]
+              - generic [ref=e43]: My Account
+        - link "View cart" [ref=e45] [cursor=pointer]:
+          - /url: /cart
+          - img [ref=e48]
+          - generic [ref=e53]: View cart
+    - navigation "Main" [ref=e55]:
+      - list "Main menu" [ref=e56]:
+        - listitem [ref=e57]:
+          - group [ref=e58]:
+            - generic "Categories" [ref=e59] [cursor=pointer]:
+              - text: Categories
+              - img [ref=e61]
+        - listitem [ref=e64]:
+          - link "Calendars" [ref=e65] [cursor=pointer]:
+            - /url: /collections/calendars
+        - listitem [ref=e66]:
+          - link "Education" [ref=e67] [cursor=pointer]:
+            - /url: /collections/educational-resources
+        - listitem [ref=e68]:
+          - link "Literature & Novels" [ref=e69] [cursor=pointer]:
+            - /url: /collections/judaic-literature-novels
+        - listitem [ref=e70]:
+          - link "Synagogue" [ref=e71] [cursor=pointer]:
+            - /url: /collections/synagogue-supply
+        - listitem [ref=e72]:
+          - link "Israel" [ref=e73] [cursor=pointer]:
+            - /url: /collections/israel-educational-resources
+        - listitem [ref=e74]:
+          - link "About Us" [ref=e75] [cursor=pointer]:
+            - /url: /pages/about
+        - listitem [ref=e76]:
+          - link "Contact" [ref=e77] [cursor=pointer]:
+            - /url: /pages/contact
+      - list [ref=e78]:
+        - listitem [ref=e79]:
+          - link "Shipping & Returns" [ref=e80] [cursor=pointer]:
+            - /url: /pages/shipping-return-policy
+        - listitem [ref=e81]:
+          - link "Gift Cards" [ref=e82] [cursor=pointer]:
+            - /url: /products/israel-book-shop-gift-card
+  - main "Main content" [ref=e83]:
+    - generic [ref=e84]:
+      - navigation "Breadcrumbs" [ref=e85]:
+        - link "Home" [ref=e86] [cursor=pointer]:
+          - /url: /
+        - img [ref=e88]
+        - generic [ref=e90]: 56 results for "test"
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - generic [ref=e93]:
+            - heading "Search results for “test”" [level=1] [ref=e94]
+            - search "Product" [ref=e96]:
+              - generic [ref=e97]:
+                - combobox "Search" [ref=e98]: test
+                - button "Search" [ref=e99] [cursor=pointer]:
+                  - img [ref=e101]
+          - generic [ref=e104]:
+            - heading "Filters" [level=2] [ref=e105]
+            - generic [ref=e106]:
+              - generic "Filters" [ref=e107]:
+                - button "Price" [ref=e108] [cursor=pointer]:
+                  - generic: Price
+                  - generic:
+                    - generic:
+                      - img
+                - generic [ref=e110]:
+                  - generic [ref=e111]:
+                    - generic [ref=e112]: $
+                    - spinbutton "From" [ref=e113]
+                    - generic: From
+                  - generic [ref=e114]:
+                    - generic [ref=e115]: $
+                    - spinbutton "To" [ref=e116]
+                    - generic: To
+              - generic "Filters" [ref=e117]:
+                - button "Categories" [ref=e118] [cursor=pointer]:
+                  - generic: Categories
+                  - generic:
+                    - generic:
+                      - img
+                - list [ref=e119]:
+                  - listitem [ref=e120]:
+                    - link "AHAVA Dead Sea Beauty Products (2)" [ref=e121] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=AHAVA+Dead+Sea+Beauty+Products&q=test
+                      - img [ref=e123]
+                      - generic [ref=e125]: AHAVA Dead Sea Beauty Products (2)
+                  - listitem [ref=e126]:
+                    - link "Avid Reader Press / Simon & Schuster (1)" [ref=e127] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Avid+Reader+Press+%2F+Simon+%26+Schuster&q=test
+                      - img [ref=e129]
+                      - generic [ref=e131]: Avid Reader Press / Simon & Schuster (1)
+                  - listitem [ref=e132]:
+                    - link "Baal Teshuvah / Newly Observant (2)" [ref=e133] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Baal+Teshuvah+%2F+Newly+Observant&q=test
+                      - img [ref=e135]
+                      - generic [ref=e137]: Baal Teshuvah / Newly Observant (2)
+                  - listitem [ref=e138]:
+                    - link "Chanukah Gifts Crafts Toys Stickers (1)" [ref=e139] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Chanukah+Gifts+Crafts+Toys+Stickers&q=test
+                      - img [ref=e141]
+                      - generic [ref=e143]: Chanukah Gifts Crafts Toys Stickers (1)
+                  - listitem [ref=e144]:
+                    - link "Chanukah Serveware / Kitchenware (1)" [ref=e145] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Chanukah+Serveware+%2F+Kitchenware&q=test
+                      - img [ref=e147]
+                      - generic [ref=e149]: Chanukah Serveware / Kitchenware (1)
+                  - listitem [ref=e150]:
+                    - link "Chassidism and Kabbalah (1)" [ref=e151] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Chassidism+and+Kabbalah&q=test
+                      - img [ref=e153]
+                      - generic [ref=e155]: Chassidism and Kabbalah (1)
+                  - listitem [ref=e156]:
+                    - link "Chaya Fuchs (1)" [ref=e157] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Chaya+Fuchs&q=test
+                      - img [ref=e159]
+                      - generic [ref=e161]: Chaya Fuchs (1)
+                  - listitem [ref=e162]:
+                    - link "Children's Books (6)" [ref=e163] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Children%27s+Books&q=test
+                      - img [ref=e165]
+                      - generic [ref=e167]: Children's Books (6)
+                  - listitem [ref=e168]:
+                    - link "Children's Gifts (1)" [ref=e169] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Children%27s+Gifts&q=test
+                      - img [ref=e171]
+                      - generic [ref=e173]: Children's Gifts (1)
+                  - listitem [ref=e174]:
+                    - link "Chumash / Gemara Textbooks / Workbooks (2)" [ref=e175] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Chumash+%2F+Gemara+Textbooks+%2F+Workbooks&q=test
+                      - img [ref=e177]
+                      - generic [ref=e179]: Chumash / Gemara Textbooks / Workbooks (2)
+                  - listitem [ref=e180]:
+                    - link "Cookbooks & Health (1)" [ref=e181] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Cookbooks+%26+Health&q=test
+                      - img [ref=e183]
+                      - generic [ref=e185]: Cookbooks & Health (1)
+                  - listitem [ref=e186]:
+                    - link "Educational Toys (1)" [ref=e187] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Educational+Toys&q=test
+                      - img [ref=e189]
+                      - generic [ref=e191]: Educational Toys (1)
+                  - listitem [ref=e192]:
+                    - link "Eliezer Glinert (1)" [ref=e193] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Eliezer+Glinert&q=test
+                      - img [ref=e195]
+                      - generic [ref=e197]: Eliezer Glinert (1)
+                  - listitem [ref=e198]:
+                    - link "Ellen Roteman (1)" [ref=e199] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Ellen+Roteman&q=test
+                      - img [ref=e201]
+                      - generic [ref=e203]: Ellen Roteman (1)
+                  - listitem [ref=e204]:
+                    - link "Esther Jungreis (2)" [ref=e205] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Esther+Jungreis&q=test
+                      - img [ref=e207]
+                      - generic [ref=e209]: Esther Jungreis (2)
+                  - listitem [ref=e210]:
+                    - link "Family and Parenting (3)" [ref=e211] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Family+and+Parenting&q=test
+                      - img [ref=e213]
+                      - generic [ref=e215]: Family and Parenting (3)
+                  - listitem [ref=e216]:
+                    - link "Family Life Fiction (1)" [ref=e217] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Family+Life+Fiction&q=test
+                      - img [ref=e219]
+                      - generic [ref=e221]: Family Life Fiction (1)
+                  - listitem [ref=e222]:
+                    - link "French (1)" [ref=e223] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=French&q=test
+                      - img [ref=e225]
+                      - generic [ref=e227]: French (1)
+                  - listitem [ref=e228]:
+                    - link "HAGGADAHS and Commentaries (1)" [ref=e229] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=HAGGADAHS+and+Commentaries&q=test
+                      - img [ref=e231]
+                      - generic [ref=e233]: HAGGADAHS and Commentaries (1)
+                  - listitem [ref=e234]:
+                    - link "Halachah / Jewish Law (2)" [ref=e235] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Halachah+%2F+Jewish+Law&q=test
+                      - img [ref=e237]
+                      - generic [ref=e239]: Halachah / Jewish Law (2)
+                  - listitem [ref=e240]:
+                    - link "Hebrew and English Textbooks - Tanach for Schools (8)" [ref=e241] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Hebrew+and+English+Textbooks+-+Tanach+for+Schools&q=test
+                      - img [ref=e243]
+                      - generic [ref=e245]: Hebrew and English Textbooks - Tanach for Schools (8)
+                  - listitem [ref=e246]:
+                    - link "Hebrew Language (1)" [ref=e247] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Hebrew+Language&q=test
+                      - img [ref=e249]
+                      - generic [ref=e251]: Hebrew Language (1)
+                  - listitem [ref=e252]:
+                    - link "Hebrew Language Textbooks for Schools and Colleges (15)" [ref=e253] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Hebrew+Language+Textbooks+for+Schools+and+Colleges&q=test
+                      - img [ref=e255]
+                      - generic [ref=e257]: Hebrew Language Textbooks for Schools and Colleges (15)
+                  - listitem [ref=e258]:
+                    - link "Hebrew Textbooks / Audio Sets / English Instruction (1)" [ref=e259] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Hebrew+Textbooks+%2F+Audio+Sets+%2F+English+Instruction&q=test
+                      - img [ref=e261]
+                      - generic [ref=e263]: Hebrew Textbooks / Audio Sets / English Instruction (1)
+                  - listitem [ref=e264]:
+                    - link "Israel Bookshop Publications (1)" [ref=e265] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Israel+Bookshop+Publications&q=test
+                      - img [ref=e267]
+                      - generic [ref=e269]: Israel Bookshop Publications (1)
+                  - listitem [ref=e270]:
+                    - link "Israel Educational Resources (1)" [ref=e271] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Israel+Educational+Resources&q=test
+                      - img [ref=e273]
+                      - generic [ref=e275]: Israel Educational Resources (1)
+                  - listitem [ref=e276]:
+                    - link "Jewish Medicine (1)" [ref=e277] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Jewish+Medicine&q=test
+                      - img [ref=e279]
+                      - generic [ref=e281]: Jewish Medicine (1)
+                  - listitem [ref=e282]:
+                    - link "Jewish Sacred Writings (3)" [ref=e283] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Jewish+Sacred+Writings&q=test
+                      - img [ref=e285]
+                      - generic [ref=e287]: Jewish Sacred Writings (3)
+                  - listitem [ref=e288]:
+                    - link "Jewish Thought and Philosophy (1)" [ref=e289] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Jewish+Thought+and+Philosophy&q=test
+                      - img [ref=e291]
+                      - generic [ref=e293]: Jewish Thought and Philosophy (1)
+                  - listitem [ref=e294]:
+                    - link "Judaic Literature & Novels (2)" [ref=e295] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Judaic+Literature+%26+Novels&q=test
+                      - img [ref=e297]
+                      - generic [ref=e299]: Judaic Literature & Novels (2)
+                  - listitem [ref=e300]:
+                    - link "Judaism (2)" [ref=e301] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Judaism&q=test
+                      - img [ref=e303]
+                      - generic [ref=e305]: Judaism (2)
+                  - listitem [ref=e306]:
+                    - link "Land of Israel (1)" [ref=e307] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Land+of+Israel&q=test
+                      - img [ref=e309]
+                      - generic [ref=e311]: Land of Israel (1)
+                  - listitem [ref=e312]:
+                    - link "Libros en español (Special Features Stores) (1)" [ref=e313] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Libros+en+espa%C3%B1ol+%28Special+Features+Stores%29&q=test
+                      - img [ref=e315]
+                      - generic [ref=e317]: Libros en español (Special Features Stores) (1)
+                  - listitem [ref=e318]:
+                    - link "Lily Art Glass Judaica (1)" [ref=e319] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Lily+Art+Glass+Judaica&q=test
+                      - img [ref=e321]
+                      - generic [ref=e323]: Lily Art Glass Judaica (1)
+                  - listitem [ref=e324]:
+                    - link "Linguistics Reference (1)" [ref=e325] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Linguistics+Reference&q=test
+                      - img [ref=e327]
+                      - generic [ref=e329]: Linguistics Reference (1)
+                  - listitem [ref=e330]:
+                    - link "Literary Fiction (1)" [ref=e331] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Literary+Fiction&q=test
+                      - img [ref=e333]
+                      - generic [ref=e335]: Literary Fiction (1)
+                  - listitem [ref=e336]:
+                    - link "Living Lessons (3)" [ref=e337] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Living+Lessons&q=test
+                      - img [ref=e339]
+                      - generic [ref=e341]: Living Lessons (3)
+                  - listitem [ref=e342]:
+                    - link "Media Mail (43)" [ref=e343] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Media+Mail&q=test
+                      - img [ref=e345]
+                      - generic [ref=e347]: Media Mail (43)
+                  - listitem [ref=e348]:
+                    - link "Medical Law and Business Ethics (1)" [ref=e349] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Medical+Law+and++Business+Ethics&q=test
+                      - img [ref=e351]
+                      - generic [ref=e353]: Medical Law and Business Ethics (1)
+                  - listitem [ref=e354]:
+                    - link "Menorahs (1)" [ref=e355] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Menorahs&q=test
+                      - img [ref=e357]
+                      - generic [ref=e359]: Menorahs (1)
+                  - listitem [ref=e360]:
+                    - link "Menorahs Oil & Candles (1)" [ref=e361] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Menorahs+Oil+%26+Candles&q=test
+                      - img [ref=e363]
+                      - generic [ref=e365]: Menorahs Oil & Candles (1)
+                  - listitem [ref=e366]:
+                    - link "Menucha Publishers (1)" [ref=e367] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Menucha+Publishers&q=test
+                      - img [ref=e369]
+                      - generic [ref=e371]: Menucha Publishers (1)
+                  - listitem [ref=e372]:
+                    - link "Meoros Haksav (1)" [ref=e373] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Meoros+Haksav&q=test
+                      - img [ref=e375]
+                      - generic [ref=e377]: Meoros Haksav (1)
+                  - listitem [ref=e378]:
+                    - link "Mesorah Publications Ltd. (1)" [ref=e379] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Mesorah+Publications+Ltd.&q=test
+                      - img [ref=e381]
+                      - generic [ref=e383]: Mesorah Publications Ltd. (1)
+                  - listitem [ref=e384]:
+                    - link "Mosaica Press (1)" [ref=e385] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Mosaica+Press&q=test
+                      - img [ref=e387]
+                      - generic [ref=e389]: Mosaica Press (1)
+                  - listitem [ref=e390]:
+                    - link "Motion Pictures & TV Series English Hebrew Yiddish (1)" [ref=e391] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Motion+Pictures+%26+TV+Series+English+Hebrew+Yiddish&q=test
+                      - img [ref=e393]
+                      - generic [ref=e395]: Motion Pictures & TV Series English Hebrew Yiddish (1)
+                  - listitem [ref=e396]:
+                    - link "Passover KITCHEN (2)" [ref=e397] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Passover+KITCHEN&q=test
+                      - img [ref=e399]
+                      - generic [ref=e401]: Passover KITCHEN (2)
+                  - listitem [ref=e402]:
+                    - link "Passover TOYS GIFTS & Stickers (1)" [ref=e403] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Passover+TOYS+GIFTS+%26++Stickers&q=test
+                      - img [ref=e405]
+                      - generic [ref=e407]: Passover TOYS GIFTS & Stickers (1)
+                  - listitem [ref=e408]:
+                    - link "Perfumes and Oils from Israel (3)" [ref=e409] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Perfumes+and+Oils+from+Israel&q=test
+                      - img [ref=e411]
+                      - generic [ref=e413]: Perfumes and Oils from Israel (3)
+                  - listitem [ref=e414]:
+                    - link "Pockets of Learning Educational Toys (1)" [ref=e415] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Pockets+of+Learning+Educational+Toys&q=test
+                      - img [ref=e417]
+                      - generic [ref=e419]: Pockets of Learning Educational Toys (1)
+                  - listitem [ref=e420]:
+                    - link "Purim Gifts Accessories & Serveware (1)" [ref=e421] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Purim+Gifts+Accessories+%26+Serveware&q=test
+                      - img [ref=e423]
+                      - generic [ref=e425]: Purim Gifts Accessories & Serveware (1)
+                  - listitem [ref=e426]:
+                    - link "RABBANITE ESTHER JUNGREIS (1)" [ref=e427] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=RABBANITE+ESTHER+JUNGREIS&q=test
+                      - img [ref=e429]
+                      - generic [ref=e431]: RABBANITE ESTHER JUNGREIS (1)
+                  - listitem [ref=e432]:
+                    - link "Rabbi Eliezer Alon (1)" [ref=e433] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Rabbi+Eliezer+Alon&q=test
+                      - img [ref=e435]
+                      - generic [ref=e437]: Rabbi Eliezer Alon (1)
+                  - listitem [ref=e438]:
+                    - link "Rebbetzin Esther Jungreis (3)" [ref=e439] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Rebbetzin+Esther+Jungreis&q=test
+                      - img [ref=e441]
+                      - generic [ref=e443]: Rebbetzin Esther Jungreis (3)
+                  - listitem [ref=e444]:
+                    - link "Rosh Hashana Gifts for Children and Grown-Ups (2)" [ref=e445] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Rosh+Hashana+Gifts+for+Children+and+Grown-Ups&q=test
+                      - img [ref=e447]
+                      - generic [ref=e449]: Rosh Hashana Gifts for Children and Grown-Ups (2)
+                  - listitem [ref=e450]:
+                    - link "Shabbat and Yom Tov Table (1)" [ref=e451] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Shabbat+and+Yom+Tov+Table&q=test
+                      - img [ref=e453]
+                      - generic [ref=e455]: Shabbat and Yom Tov Table (1)
+                  - listitem [ref=e456]:
+                    - link "Shabbat Kitchen (2)" [ref=e457] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Shabbat+Kitchen&q=test
+                      - img [ref=e459]
+                      - generic [ref=e461]: Shabbat Kitchen (2)
+                  - listitem [ref=e462]:
+                    - link "Shavuot Children's Gifts & Videos (1)" [ref=e463] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Shavuot+Children%27s+Gifts+%26+Videos&q=test
+                      - img [ref=e465]
+                      - generic [ref=e467]: Shavuot Children's Gifts & Videos (1)
+                  - listitem [ref=e468]:
+                    - link "Slang & Word Lists (1)" [ref=e469] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Slang+%26+Word+Lists&q=test
+                      - img [ref=e471]
+                      - generic [ref=e473]: Slang & Word Lists (1)
+                  - listitem [ref=e474]:
+                    - link "Spanish Judaica Books (1)" [ref=e475] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Spanish+Judaica+Books&q=test
+                      - img [ref=e477]
+                      - generic [ref=e479]: Spanish Judaica Books (1)
+                  - listitem [ref=e480]:
+                    - link "Specials (1)" [ref=e481] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Specials&q=test
+                      - img [ref=e483]
+                      - generic [ref=e485]: Specials (1)
+                  - listitem [ref=e486]:
+                    - link "Sukkot / Simchat Torah Gifts for Children (1)" [ref=e487] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Sukkot+%2F+Simchat+Torah+Gifts+for+Children&q=test
+                      - img [ref=e489]
+                      - generic [ref=e491]: Sukkot / Simchat Torah Gifts for Children (1)
+                  - listitem [ref=e492]:
+                    - link "Teen & Young Adult Books (1)" [ref=e493] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Teen+%26+Young+Adult+Books&q=test
+                      - img [ref=e495]
+                      - generic [ref=e497]: Teen & Young Adult Books (1)
+                  - listitem [ref=e498]:
+                    - link "Teen & Young Adult Fiction on Girls' & Women's Issues (1)" [ref=e499] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Teen+%26+Young+Adult+Fiction+on+Girls%27+%26+Women%27s+Issues&q=test
+                      - img [ref=e501]
+                      - generic [ref=e503]: Teen & Young Adult Fiction on Girls' & Women's Issues (1)
+                  - listitem [ref=e504]:
+                    - link "Teen & Young Adult Jewish Fiction (1)" [ref=e505] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Teen+%26+Young+Adult+Jewish+Fiction&q=test
+                      - img [ref=e507]
+                      - generic [ref=e509]: Teen & Young Adult Jewish Fiction (1)
+                  - listitem [ref=e510]:
+                    - link "Textbooks & Study Guides (1)" [ref=e511] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Textbooks+%26+Study+Guides&q=test
+                      - img [ref=e513]
+                      - generic [ref=e515]: Textbooks & Study Guides (1)
+                  - listitem [ref=e516]:
+                    - link "Torah (1)" [ref=e517] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Torah&q=test
+                      - img [ref=e519]
+                      - generic [ref=e521]: Torah (1)
+                  - listitem [ref=e522]:
+                    - link "Tova Mirvis (1)" [ref=e523] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Tova+Mirvis&q=test
+                      - img [ref=e525]
+                      - generic [ref=e527]: Tova Mirvis (1)
+                  - listitem [ref=e528]:
+                    - link "Vocabulary (1)" [ref=e529] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Vocabulary&q=test
+                      - img [ref=e531]
+                      - generic [ref=e533]: Vocabulary (1)
+                  - listitem [ref=e534]:
+                    - link "Women (2)" [ref=e535] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Women&q=test
+                      - img [ref=e537]
+                      - generic [ref=e539]: Women (2)
+                  - listitem [ref=e540]:
+                    - link "Women's Domestic Life Fiction (1)" [ref=e541] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Women%27s+Domestic+Life+Fiction&q=test
+                      - img [ref=e543]
+                      - generic [ref=e545]: Women's Domestic Life Fiction (1)
+                  - listitem [ref=e546]:
+                    - link "Workbook (1)" [ref=e547] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Workbook&q=test
+                      - img [ref=e549]
+                      - generic [ref=e551]: Workbook (1)
+                  - listitem [ref=e552]:
+                    - link "Young Adult Books (English or Hebrew) (1)" [ref=e553] [cursor=pointer]:
+                      - /url: /search?filter.p.tag=Young+Adult+Books+%28English+or+Hebrew%29&q=test
+                      - img [ref=e555]
+                      - generic [ref=e557]: Young Adult Books (English or Hebrew) (1)
+              - generic "Filters" [ref=e558]:
+                - button "Vendor" [ref=e559] [cursor=pointer]:
+                  - generic: Vendor
+                  - generic:
+                    - generic:
+                      - img
+                - list [ref=e560]:
+                  - listitem [ref=e561]:
+                    - link "AHAVA (1)" [ref=e562] [cursor=pointer]:
+                      - /url: /search?filter.p.m.global.product-manufacturer=AHAVA&q=test
+                      - img [ref=e564]
+                      - generic [ref=e566]: AHAVA (1)
+                  - listitem [ref=e567]:
+                    - link "Feldheim (3)" [ref=e568] [cursor=pointer]:
+                      - /url: /search?filter.p.m.global.product-manufacturer=Feldheim&q=test
+                      - img [ref=e570]
+                      - generic [ref=e572]: Feldheim (3)
+              - generic "Filters" [ref=e573]:
+                - button "Product type" [ref=e574] [cursor=pointer]:
+                  - generic: Product type
+                  - generic:
+                    - generic:
+                      - img
+                - list [ref=e575]:
+                  - listitem [ref=e576]:
+                    - link "Book (10)" [ref=e577] [cursor=pointer]:
+                      - /url: /search?filter.p.product_type=Book&q=test
+                      - img [ref=e579]
+                      - generic [ref=e581]: Book (10)
+                  - listitem [ref=e582]:
+                    - link "book (1)" [ref=e583] [cursor=pointer]:
+                      - /url: /search?filter.p.product_type=book&q=test
+                      - img [ref=e585]
+                      - generic [ref=e587]: book (1)
+                  - listitem [ref=e588]:
+                    - link "cream (1)" [ref=e589] [cursor=pointer]:
+                      - /url: /search?filter.p.product_type=cream&q=test
+                      - img [ref=e591]
+                      - generic [ref=e593]: cream (1)
+                  - listitem [ref=e594]:
+                    - link "DVD (1)" [ref=e595] [cursor=pointer]:
+                      - /url: /search?filter.p.product_type=DVD&q=test
+                      - img [ref=e597]
+                      - generic [ref=e599]: DVD (1)
+                  - listitem [ref=e600]:
+                    - link "OIL (1)" [ref=e601] [cursor=pointer]:
+                      - /url: /search?filter.p.product_type=OIL&q=test
+                      - img [ref=e603]
+                      - generic [ref=e605]: OIL (1)
+                  - listitem [ref=e606]:
+                    - link "Oversized (1)" [ref=e607] [cursor=pointer]:
+                      - /url: /search?filter.p.product_type=Oversized&q=test
+                      - img [ref=e609]
+                      - generic [ref=e611]: Oversized (1)
+                  - listitem [ref=e612]:
+                    - link "Textbooks (20)" [ref=e613] [cursor=pointer]:
+                      - /url: /search?filter.p.product_type=Textbooks&q=test
+                      - img [ref=e615]
+                      - generic [ref=e617]: Textbooks (20)
+                  - listitem [ref=e618]:
+                    - link "Toy (1)" [ref=e619] [cursor=pointer]:
+                      - /url: /search?filter.p.product_type=Toy&q=test
+                      - img [ref=e621]
+                      - generic [ref=e623]: Toy (1)
+          - heading "Products" [level=2] [ref=e624]
+          - generic [ref=e625]:
+            - generic [ref=e628]:
+              - link [ref=e630] [cursor=pointer]:
+                - /url: /products/mipo-lescham-from-here-to-there-test-and-solutions-hebrew-from-scratch-part-1?_pos=1&_sid=df94f5284&_ss=r
+                - figure [ref=e631]:
+                  - generic [ref=e632]: MiPo LeScham From Here to There Test and Solutions Hebrew from Scratch Part 1
+              - generic [ref=e633]:
+                - generic [ref=e635]: $39.95
+                - heading "MiPo LeScham From Here to There Test and Solutions Hebrew from Scratch Part 1" [level=2] [ref=e636]:
+                  - link "MiPo LeScham From Here to There Test and Solutions Hebrew from Scratch Part 1" [ref=e637] [cursor=pointer]:
+                    - /url: /products/mipo-lescham-from-here-to-there-test-and-solutions-hebrew-from-scratch-part-1?_pos=1&_sid=df94f5284&_ss=r
+                - link "IsraelBookShop" [ref=e639] [cursor=pointer]:
+                  - /url: /collections/vendors?q=IsraelBookShop
+            - generic [ref=e642]:
+              - link [ref=e644] [cursor=pointer]:
+                - /url: /products/life-is-a-test-how-to-meet-lifes-challenges-successfully-by-rebbetzin-esther-jungreis?_pos=2&_sid=df94f5284&_ss=r
+                - figure [ref=e645]:
+                  - generic [ref=e647]: Save 10%
+                  - generic [ref=e648]: Life is a Test How To Meet Life's Challenges Successfully By Rebbetzin Esther Jungreis
+              - generic [ref=e649]:
+                - generic [ref=e650]:
+                  - generic [ref=e651]:
+                    - generic [ref=e652]: Original price
+                    - text: $30.99
+                  - generic [ref=e653]:
+                    - generic [ref=e654]: Current price
+                    - text: $27.89
+                - heading "Life is a Test How To Meet Life's Challenges Successfully By Rebbetzin Esther Jungreis" [level=2] [ref=e655]:
+                  - link "Life is a Test How To Meet Life's Challenges Successfully By Rebbetzin Esther Jungreis" [ref=e656] [cursor=pointer]:
+                    - /url: /products/life-is-a-test-how-to-meet-lifes-challenges-successfully-by-rebbetzin-esther-jungreis?_pos=2&_sid=df94f5284&_ss=r
+                - link "Artscroll / Mesorah" [ref=e658] [cursor=pointer]:
+                  - /url: /collections/vendors?q=Artscroll%20%2F%20Mesorah
+            - generic [ref=e661]:
+              - link [ref=e663] [cursor=pointer]:
+                - /url: /products/life-is-a-test-how-to-meet-lifes-challenges-successfully-by-rebbetzin-esther-jungreis-1?_pos=3&_sid=df94f5284&_ss=r
+                - figure [ref=e664]:
+                  - generic [ref=e666]: Save 10%
+                  - generic [ref=e667]: Life is a Test How To Meet Life's Challenges Successfully By Rebbetzin Esther Jungreis
+              - generic [ref=e668]:
+                - generic [ref=e669]:
+                  - generic [ref=e670]:
+                    - generic [ref=e671]: Original price
+                    - text: $18.99
+                  - generic [ref=e672]:
+                    - generic [ref=e673]: Current price
+                    - text: $17.09
+                - heading "Life is a Test How To Meet Life's Challenges Successfully By Rebbetzin Esther Jungreis" [level=2] [ref=e674]:
+                  - link "Life is a Test How To Meet Life's Challenges Successfully By Rebbetzin Esther Jungreis" [ref=e675] [cursor=pointer]:
+                    - /url: /products/life-is-a-test-how-to-meet-lifes-challenges-successfully-by-rebbetzin-esther-jungreis-1?_pos=3&_sid=df94f5284&_ss=r
+                - link "ArtScroll / Mesorah" [ref=e677] [cursor=pointer]:
+                  - /url: /collections/vendors?q=ArtScroll%20%2F%20Mesorah
+            - generic [ref=e680]:
+              - link [ref=e682] [cursor=pointer]:
+                - /url: /products/life-is-a-test-french-edition-how-to-meet-lifes-challenges-successfully-by-rebbetzin-esther-jungreis?_pos=4&_sid=df94f5284&_ss=r
+                - figure [ref=e683]:
+                  - generic [ref=e685]: Save 10%
+                  - generic [ref=e686]: LA VIE EST UN TEST savoir surmonter les défis de l'existence Life is a Test French Edition By Rebbetzin Esther Jungreis
+              - generic [ref=e687]:
+                - generic [ref=e688]:
+                  - generic [ref=e689]:
+                    - generic [ref=e690]: Original price
+                    - text: $17.99
+                  - generic [ref=e691]:
+                    - generic [ref=e692]: Current price
+                    - text: $16.19
+                - heading "LA VIE EST UN TEST savoir surmonter les défis de l'existence Life is a Test French Edition By Rebbetzin Esther Jungreis" [level=2] [ref=e693]:
+                  - link "LA VIE EST UN TEST savoir surmonter les défis de l'existence Life is a Test French Edition By Rebbetzin Esther Jungreis" [ref=e694] [cursor=pointer]:
+                    - /url: /products/life-is-a-test-french-edition-how-to-meet-lifes-challenges-successfully-by-rebbetzin-esther-jungreis?_pos=4&_sid=df94f5284&_ss=r
+                - link "Artscroll Mesorah" [ref=e696] [cursor=pointer]:
+                  - /url: /collections/vendors?q=Artscroll%20Mesorah
+            - generic [ref=e699]:
+              - link [ref=e701] [cursor=pointer]:
+                - /url: /products/la-vida-es-una-prueba-life-is-a-test-spanish-edition?_pos=5&_sid=df94f5284&_ss=r
+                - figure [ref=e702]:
+                  - img "La Vida Es Una Prueba / Life is a Test - Spanish Edition cover image" [ref=e703]
+                  - generic [ref=e705]: Save 10%
+                  - generic [ref=e706]: La Vida Es Una Prueba / Life is a Test by Rebbetzin Esther Jungreis - Spanish Edition
+              - generic [ref=e707]:
+                - generic [ref=e708]:
+                  - generic [ref=e709]:
+                    - generic [ref=e710]: Original price
+                    - text: $19.99
+                  - generic [ref=e711]:
+                    - generic [ref=e712]: Current price
+                    - text: $17.99
+                - heading "La Vida Es Una Prueba / Life is a Test by Rebbetzin Esther Jungreis - Spanish Edition" [level=2] [ref=e713]:
+                  - link "La Vida Es Una Prueba / Life is a Test by Rebbetzin Esther Jungreis - Spanish Edition" [ref=e714] [cursor=pointer]:
+                    - /url: /products/la-vida-es-una-prueba-life-is-a-test-spanish-edition?_pos=5&_sid=df94f5284&_ss=r
+                - link "Mesorah Publications Ltd." [ref=e716] [cursor=pointer]:
+                  - /url: /collections/vendors?q=Mesorah%20Publications%20Ltd.
+            - generic [ref=e719]:
+              - link [ref=e721] [cursor=pointer]:
+                - /url: /products/the-israel-test-by-george-gilder?_pos=6&_sid=df94f5284&_ss=r
+                - figure [ref=e722]:
+                  - generic [ref=e723]: The Israel Test. By George Gilder
+              - generic [ref=e724]:
+                - generic [ref=e726]: $27.95
+                - heading "The Israel Test. By George Gilder" [level=2] [ref=e727]:
+                  - link "The Israel Test. By George Gilder" [ref=e728] [cursor=pointer]:
+                    - /url: /products/the-israel-test-by-george-gilder?_pos=6&_sid=df94f5284&_ss=r
+                - link "IsraelBookShop" [ref=e730] [cursor=pointer]:
+                  - /url: /collections/vendors?q=IsraelBookShop
+            - generic [ref=e733]:
+              - link [ref=e735] [cursor=pointer]:
+                - /url: /products/shabbat-warming-tray-safe-hot-plate-designed-with-safety-in-mind-for-use-on-shabbos-yom-tov?_pos=7&_sid=df94f5284&_ss=r
+                - figure [ref=e736]:
+                  - generic [ref=e738]: Save 9%
+                  - generic [ref=e739]: TechYid Co Kosher Shabbos Safe Hot Plate Shabbat Warming Tray Designed with Safety in Mind for use on Shabbos Yom Tov
+              - generic [ref=e740]:
+                - generic [ref=e741]:
+                  - generic [ref=e742]:
+                    - generic [ref=e743]: Original price
+                    - text: $132.00
+                  - generic [ref=e744]:
+                    - generic [ref=e745]: Current price
+                    - text: $119.95
+                - heading "TechYid Co Kosher Shabbos Safe Hot Plate Shabbat Warming Tray Designed with Safety in Mind for use on Shabbos Yom Tov" [level=2] [ref=e746]:
+                  - link "TechYid Co Kosher Shabbos Safe Hot Plate Shabbat Warming Tray Designed with Safety in Mind for use on Shabbos Yom Tov" [ref=e747] [cursor=pointer]:
+                    - /url: /products/shabbat-warming-tray-safe-hot-plate-designed-with-safety-in-mind-for-use-on-shabbos-yom-tov?_pos=7&_sid=df94f5284&_ss=r
+                - link "TechYidCo" [ref=e749] [cursor=pointer]:
+                  - /url: /collections/vendors?q=TechYidCo
+            - generic [ref=e752]:
+              - link [ref=e754] [cursor=pointer]:
+                - /url: /products/classic-kitchen-28-cup-stainless-steel-insulated-hot-water-urn-water-boiler-for-instant-hot-water?_pos=8&_sid=df94f5284&_ss=r
+                - figure [ref=e755]:
+                  - generic [ref=e756]: Classic Kitchen 28 Cup Stainless Steel Insulated Hot Water Urn - Water Boiler for Instant Hot Water
+              - generic [ref=e757]:
+                - generic [ref=e759]: $129.95
+                - heading "Classic Kitchen 28 Cup Stainless Steel Insulated Hot Water Urn - Water Boiler for Instant Hot Water" [level=2] [ref=e760]:
+                  - link "Classic Kitchen 28 Cup Stainless Steel Insulated Hot Water Urn - Water Boiler for Instant Hot Water" [ref=e761] [cursor=pointer]:
+                    - /url: /products/classic-kitchen-28-cup-stainless-steel-insulated-hot-water-urn-water-boiler-for-instant-hot-water?_pos=8&_sid=df94f5284&_ss=r
+                - link "IsraelBookShop" [ref=e763] [cursor=pointer]:
+                  - /url: /collections/vendors?q=IsraelBookShop
+            - generic [ref=e766]:
+              - link [ref=e768] [cursor=pointer]:
+                - /url: /products/the-jewish-pregnancy-book-a-resource-for-the-soul-body-mind-during-pregnancy-birth-the-first?_pos=9&_sid=df94f5284&_ss=r
+                - figure [ref=e769]:
+                  - generic [ref=e770]: "The Jewish Pregnancy Book: A Resource for the Soul, Body & Mind during Pregnancy, Birth & the First"
+              - generic [ref=e771]:
+                - generic [ref=e773]: $16.95
+                - 'heading "The Jewish Pregnancy Book: A Resource for the Soul, Body & Mind during Pregnancy, Birth & the First" [level=2] [ref=e774]':
+                  - 'link "The Jewish Pregnancy Book: A Resource for the Soul, Body & Mind during Pregnancy, Birth & the First" [ref=e775] [cursor=pointer]':
+                    - /url: /products/the-jewish-pregnancy-book-a-resource-for-the-soul-body-mind-during-pregnancy-birth-the-first?_pos=9&_sid=df94f5284&_ss=r
+                - link "IsraelBookShop" [ref=e777] [cursor=pointer]:
+                  - /url: /collections/vendors?q=IsraelBookShop
+            - generic [ref=e780]:
+              - link [ref=e782] [cursor=pointer]:
+                - /url: /products/hamikraah-migdalor-migdalor-reader-1?_pos=10&_sid=df94f5284&_ss=r
+                - figure [ref=e783]:
+                  - generic [ref=e784]: HaMikraah Migdalor - Migdalor Reader 1
+              - generic [ref=e785]:
+                - generic [ref=e787]: $21.95
+                - heading "HaMikraah Migdalor - Migdalor Reader 1" [level=2] [ref=e788]:
+                  - link "HaMikraah Migdalor - Migdalor Reader 1" [ref=e789] [cursor=pointer]:
+                    - /url: /products/hamikraah-migdalor-migdalor-reader-1?_pos=10&_sid=df94f5284&_ss=r
+                - link "IsraelBookShop" [ref=e791] [cursor=pointer]:
+                  - /url: /collections/vendors?q=IsraelBookShop
+            - generic [ref=e794]:
+              - link [ref=e796] [cursor=pointer]:
+                - /url: /products/shamor-vzachor-illuminated-a-comprehensive-guide-to-the-39-melachos-by-rabbi-reuven-levine?_pos=11&_sid=df94f5284&_ss=r
+                - figure [ref=e797]:
+                  - generic [ref=e798]: Shamor V'zachor Illuminated A Comprehensive Guide to the 39 Melachos By Rabbi Reuven Levine
+              - generic [ref=e799]:
+                - generic [ref=e801]: $29.69
+                - heading "Shamor V'zachor Illuminated A Comprehensive Guide to the 39 Melachos By Rabbi Reuven Levine" [level=2] [ref=e802]:
+                  - link "Shamor V'zachor Illuminated A Comprehensive Guide to the 39 Melachos By Rabbi Reuven Levine" [ref=e803] [cursor=pointer]:
+                    - /url: /products/shamor-vzachor-illuminated-a-comprehensive-guide-to-the-39-melachos-by-rabbi-reuven-levine?_pos=11&_sid=df94f5284&_ss=r
+                - link "IsraelBookShop" [ref=e805] [cursor=pointer]:
+                  - /url: /collections/vendors?q=IsraelBookShop
+            - generic [ref=e808]:
+              - link [ref=e810] [cursor=pointer]:
+                - /url: /products/im-shmuel-uvnei-doro?_pos=12&_sid=df94f5284&_ss=r
+                - figure [ref=e811]:
+                  - generic [ref=e812]: Im Shmuel U'vnei Doro
+              - generic [ref=e813]:
+                - generic [ref=e815]: $17.95
+                - heading "Im Shmuel U'vnei Doro" [level=2] [ref=e816]:
+                  - link "Im Shmuel U'vnei Doro" [ref=e817] [cursor=pointer]:
+                    - /url: /products/im-shmuel-uvnei-doro?_pos=12&_sid=df94f5284&_ss=r
+                - link "IsraelBookShop" [ref=e819] [cursor=pointer]:
+                  - /url: /collections/vendors?q=IsraelBookShop
+            - generic [ref=e822]:
+              - link [ref=e824] [cursor=pointer]:
+                - /url: /products/vayikra-el-moshe-choveret-ii?_pos=13&_sid=df94f5284&_ss=r
+                - figure [ref=e825]:
+                  - img [ref=e826]
+                  - generic [ref=e830]: Vayikra El Moshe Choveret II
+              - generic [ref=e831]:
+                - generic [ref=e833]: $9.50
+                - heading "Vayikra El Moshe Choveret II" [level=2] [ref=e834]:
+                  - link "Vayikra El Moshe Choveret II" [ref=e835] [cursor=pointer]:
+                    - /url: /products/vayikra-el-moshe-choveret-ii?_pos=13&_sid=df94f5284&_ss=r
+                - link "IsraelBookShop" [ref=e837] [cursor=pointer]:
+                  - /url: /collections/vendors?q=IsraelBookShop
+            - generic [ref=e840]:
+              - link [ref=e842] [cursor=pointer]:
+                - /url: /products/the-third-key-the-jewish-couples-guide-to-fertility-by-by-rabbi-baruch-finkelstein-michal-finkel?_pos=14&_sid=df94f5284&_ss=r
+                - figure [ref=e843]:
+                  - generic [ref=e844]: "The Third Key: The Jewish Couple's Guide to Fertility, By By Rabbi Baruch Finkelstein, Michal Finkel"
+              - generic [ref=e845]:
+                - generic [ref=e847]: $47.99
+                - 'heading "The Third Key: The Jewish Couple''s Guide to Fertility, By By Rabbi Baruch Finkelstein, Michal Finkel" [level=2] [ref=e848]':
+                  - 'link "The Third Key: The Jewish Couple''s Guide to Fertility, By By Rabbi Baruch Finkelstein, Michal Finkel" [ref=e849] [cursor=pointer]':
+                    - /url: /products/the-third-key-the-jewish-couples-guide-to-fertility-by-by-rabbi-baruch-finkelstein-michal-finkel?_pos=14&_sid=df94f5284&_ss=r
+                - link "Feldheim" [ref=e851] [cursor=pointer]:
+                  - /url: /collections/vendors?q=Feldheim
+            - generic [ref=e854]:
+              - link [ref=e856] [cursor=pointer]:
+                - /url: /products/myrrh-anointing-oil-7-5-ml-made-in-israel?_pos=15&_sid=df94f5284&_ss=r
+                - figure [ref=e857]:
+                  - generic [ref=e858]: Myrrh Anointing Oil 7.5 ml Made in Israel
+              - generic [ref=e859]:
+                - generic [ref=e861]: $7.95
+                - heading "Myrrh Anointing Oil 7.5 ml Made in Israel" [level=2] [ref=e862]:
+                  - link "Myrrh Anointing Oil 7.5 ml Made in Israel" [ref=e863] [cursor=pointer]:
+                    - /url: /products/myrrh-anointing-oil-7-5-ml-made-in-israel?_pos=15&_sid=df94f5284&_ss=r
+                - link "IsraelBookShop" [ref=e865] [cursor=pointer]:
+                  - /url: /collections/vendors?q=IsraelBookShop
+            - generic [ref=e868]:
+              - link [ref=e870] [cursor=pointer]:
+                - /url: /products/devarim-lkitah-vav-mamlachti-dati-maalot?_pos=16&_sid=df94f5284&_ss=r
+                - figure [ref=e871]:
+                  - img [ref=e872]
+                  - generic [ref=e876]: Devarim L'Kitah Vav Mamlachti Dati Maalot
+              - generic [ref=e877]:
+                - generic [ref=e879]: $7.95
+                - heading "Devarim L'Kitah Vav Mamlachti Dati Maalot" [level=2] [ref=e880]:
+                  - link "Devarim L'Kitah Vav Mamlachti Dati Maalot" [ref=e881] [cursor=pointer]:
+                    - /url: /products/devarim-lkitah-vav-mamlachti-dati-maalot?_pos=16&_sid=df94f5284&_ss=r
+                - link "IsraelBookShop" [ref=e883] [cursor=pointer]:
+                  - /url: /collections/vendors?q=IsraelBookShop
+            - generic [ref=e886]:
+              - link [ref=e888] [cursor=pointer]:
+                - /url: /products/jewish-holiday-soft-fabric-interactive-book-18-months-up-by-pockets-of-learning?_pos=17&_sid=df94f5284&_ss=r
+                - figure [ref=e889]:
+                  - generic [ref=e890]: Jewish Holiday Soft Fabric Interactive Book 18 Months & up By Pockets of Learning
+              - generic [ref=e891]:
+                - generic [ref=e893]: $39.95
+                - heading "Jewish Holiday Soft Fabric Interactive Book 18 Months & up By Pockets of Learning" [level=2] [ref=e894]:
+                  - link "Jewish Holiday Soft Fabric Interactive Book 18 Months & up By Pockets of Learning" [ref=e895] [cursor=pointer]:
+                    - /url: /products/jewish-holiday-soft-fabric-interactive-book-18-months-up-by-pockets-of-learning?_pos=17&_sid=df94f5284&_ss=r
+                - link "Pockets of Learning" [ref=e897] [cursor=pointer]:
+                  - /url: /collections/vendors?q=Pockets%20of%20Learning
+            - generic [ref=e900]:
+              - link [ref=e902] [cursor=pointer]:
+                - /url: /products/unlocking-leshon-hakodesh-a-guide-to-the-hebrew-language?_pos=18&_sid=df94f5284&_ss=r
+                - figure [ref=e903]:
+                  - 'img "Unlocking Leshon Hakodesh: A guide to the Hebrew language cover image" [ref=e904]'
+                  - generic [ref=e905]: "Unlocking Leshon Hakodesh: A guide to the Hebrew language By Eliezer Glinert"
+              - generic [ref=e906]:
+                - generic [ref=e908]: $27.99
+                - 'heading "Unlocking Leshon Hakodesh: A guide to the Hebrew language By Eliezer Glinert" [level=2] [ref=e909]':
+                  - 'link "Unlocking Leshon Hakodesh: A guide to the Hebrew language By Eliezer Glinert" [ref=e910] [cursor=pointer]':
+                    - /url: /products/unlocking-leshon-hakodesh-a-guide-to-the-hebrew-language?_pos=18&_sid=df94f5284&_ss=r
+                - link "Mosaica Press" [ref=e912] [cursor=pointer]:
+                  - /url: /collections/vendors?q=Mosaica%20Press
+            - generic [ref=e915]:
+              - link [ref=e917] [cursor=pointer]:
+                - /url: /products/sippur-gan-eden-sippur-kayin-vhevel?_pos=19&_sid=df94f5284&_ss=r
+                - figure [ref=e918]:
+                  - img [ref=e919]
+                  - generic [ref=e923]: Sippur Gan Eden Sippur Kayin V'Hevel
+              - generic [ref=e924]:
+                - generic [ref=e926]: $6.00
+                - heading "Sippur Gan Eden Sippur Kayin V'Hevel" [level=2] [ref=e927]:
+                  - link "Sippur Gan Eden Sippur Kayin V'Hevel" [ref=e928] [cursor=pointer]:
+                    - /url: /products/sippur-gan-eden-sippur-kayin-vhevel?_pos=19&_sid=df94f5284&_ss=r
+                - link "IsraelBookShop" [ref=e930] [cursor=pointer]:
+                  - /url: /collections/vendors?q=IsraelBookShop
+            - generic [ref=e933]:
+              - link [ref=e935] [cursor=pointer]:
+                - /url: /products/kidney-donations-in-halachah?_pos=20&_sid=df94f5284&_ss=r
+                - figure [ref=e936]:
+                  - img "Kidney Donations in Halachah cover image" [ref=e937]
+                  - generic [ref=e939]: Save 10%
+                  - generic [ref=e940]: Kidney Donations in Halachah By Rabbi Eliezer Alon
+              - generic [ref=e941]:
+                - generic [ref=e942]:
+                  - generic [ref=e943]:
+                    - generic [ref=e944]: Original price
+                    - text: $29.99
+                  - generic [ref=e945]:
+                    - generic [ref=e946]: Current price
+                    - text: $26.99
+                - heading "Kidney Donations in Halachah By Rabbi Eliezer Alon" [level=2] [ref=e947]:
+                  - link "Kidney Donations in Halachah By Rabbi Eliezer Alon" [ref=e948] [cursor=pointer]:
+                    - /url: /products/kidney-donations-in-halachah?_pos=20&_sid=df94f5284&_ss=r
+                - link "Meoros Haksav" [ref=e950] [cursor=pointer]:
+                  - /url: /collections/vendors?q=Meoros%20Haksav
+            - generic [ref=e953]:
+              - link [ref=e955] [cursor=pointer]:
+                - /url: /products/torah-tots-family-haggadah-by-menachim-shimanowitz-reuven-stone-newly-expanded-edition?_pos=21&_sid=df94f5284&_ss=r
+                - figure [ref=e956]:
+                  - generic [ref=e957]: Torah Tots Family Haggadah by Menachim Shimanowitz & Reuven Stone - Newly Expanded Edition
+              - generic [ref=e958]:
+                - generic [ref=e960]: $19.95
+                - heading "Torah Tots Family Haggadah by Menachim Shimanowitz & Reuven Stone - Newly Expanded Edition" [level=2] [ref=e961]:
+                  - link "Torah Tots Family Haggadah by Menachim Shimanowitz & Reuven Stone - Newly Expanded Edition" [ref=e962] [cursor=pointer]:
+                    - /url: /products/torah-tots-family-haggadah-by-menachim-shimanowitz-reuven-stone-newly-expanded-edition?_pos=21&_sid=df94f5284&_ss=r
+                - link "Feldheim" [ref=e964] [cursor=pointer]:
+                  - /url: /collections/vendors?q=Feldheim
+            - generic [ref=e967]:
+              - link [ref=e969] [cursor=pointer]:
+                - /url: /products/lily-of-valleys-anointing-oil-7-5-ml?_pos=22&_sid=df94f5284&_ss=r
+                - figure [ref=e970]:
+                  - generic [ref=e971]: Lily of Valleys Anointing Oil 7.5 ml
+              - generic [ref=e972]:
+                - generic [ref=e974]: $7.95
+                - heading "Lily of Valleys Anointing Oil 7.5 ml" [level=2] [ref=e975]:
+                  - link "Lily of Valleys Anointing Oil 7.5 ml" [ref=e976] [cursor=pointer]:
+                    - /url: /products/lily-of-valleys-anointing-oil-7-5-ml?_pos=22&_sid=df94f5284&_ss=r
+                - link "IsraelBookShop" [ref=e978] [cursor=pointer]:
+                  - /url: /collections/vendors?q=IsraelBookShop
+            - generic [ref=e981]:
+              - link [ref=e983] [cursor=pointer]:
+                - /url: /products/picnic-at-camp-shalom-by-jacqueline-jules-paperback-or-hardcover?_pos=23&_sid=df94f5284&_ss=r
+                - figure [ref=e984]:
+                  - generic [ref=e985]: Picnic at Camp Shalom. by Jacqueline Jules - Paperback or Hardcover
+              - generic [ref=e986]:
+                - generic [ref=e988]: $7.95 - $17.95
+                - heading "Picnic at Camp Shalom. by Jacqueline Jules - Paperback or Hardcover" [level=2] [ref=e989]:
+                  - link "Picnic at Camp Shalom. by Jacqueline Jules - Paperback or Hardcover" [ref=e990] [cursor=pointer]:
+                    - /url: /products/picnic-at-camp-shalom-by-jacqueline-jules-paperback-or-hardcover?_pos=23&_sid=df94f5284&_ss=r
+                - link "IsraelBookShop" [ref=e992] [cursor=pointer]:
+                  - /url: /collections/vendors?q=IsraelBookShop
+            - generic [ref=e995]:
+              - link [ref=e997] [cursor=pointer]:
+                - /url: /products/chaverim-bivrit-1-volumes-1-10-available?_pos=24&_sid=df94f5284&_ss=r
+                - figure [ref=e998]:
+                  - generic [ref=e999]: Chaverim B'Ivrit 1 - (Volumes 1-10 available)
+              - generic [ref=e1000]:
+                - generic [ref=e1002]: $14.95
+                - heading "Chaverim B'Ivrit 1 - (Volumes 1-10 available)" [level=2] [ref=e1003]:
+                  - link "Chaverim B'Ivrit 1 - (Volumes 1-10 available)" [ref=e1004] [cursor=pointer]:
+                    - /url: /products/chaverim-bivrit-1-volumes-1-10-available?_pos=24&_sid=df94f5284&_ss=r
+                - link "IsraelBookShop" [ref=e1006] [cursor=pointer]:
+                  - /url: /collections/vendors?q=IsraelBookShop
+        - navigation "Pagination" [ref=e1007]:
+          - list [ref=e1008]:
+            - listitem "Page 1" [ref=e1009]:
+              - generic [ref=e1010]: "1"
+            - listitem [ref=e1011]:
+              - link "Go to page 2" [ref=e1012] [cursor=pointer]:
+                - /url: /search?page=2&q=test
+                - text: "2"
+            - listitem [ref=e1013]:
+              - link "Go to page 3" [ref=e1014] [cursor=pointer]:
+                - /url: /search?page=3&q=test
+                - text: "3"
+            - listitem [ref=e1015]:
+              - link "Go to next page" [ref=e1016] [cursor=pointer]:
+                - /url: /search?page=2&q=test
+                - text: Next
+                - img [ref=e1018]
+  - contentinfo "Footer" [ref=e1022]:
+    - generic [ref=e1023]:
+      - generic [ref=e1025]:
+        - generic [ref=e1026]:
+          - heading "Israel Book Shop Publications" [level=2] [ref=e1027]
+          - paragraph [ref=e1029]:
+            - text: Our sister company in Lakewood, NJ. Publisher and distributor of Judaica oriented books and products to wholesale and retail markets.
+            - link "israelbookshoppublications.com" [ref=e1030] [cursor=pointer]:
+              - /url: https://israelbookshoppublications.com
+              - strong [ref=e1031]: israelbookshoppublications.com
+        - generic [ref=e1032]:
+          - heading "Company" [level=2] [ref=e1033]
+          - list [ref=e1035]:
+            - listitem [ref=e1036]:
+              - link "About Us" [ref=e1037] [cursor=pointer]:
+                - /url: /pages/about
+            - listitem [ref=e1038]:
+              - link "Contact Us" [ref=e1039] [cursor=pointer]:
+                - /url: /pages/contact
+            - listitem [ref=e1040]:
+              - link "Our Team" [ref=e1041] [cursor=pointer]:
+                - /url: /pages/about/#team
+            - listitem [ref=e1042]:
+              - link "Testimonials" [ref=e1043] [cursor=pointer]:
+                - /url: /#testimonials
+            - listitem [ref=e1044]:
+              - link "Account Login" [ref=e1045] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1046]:
+              - link "Shipping Policy" [ref=e1047] [cursor=pointer]:
+                - /url: /policies/shipping-policy
+            - listitem [ref=e1048]:
+              - link "Returns & Refund Policy" [ref=e1049] [cursor=pointer]:
+                - /url: /policies/refund-policy
+            - listitem [ref=e1050]:
+              - link "Terms of Service" [ref=e1051] [cursor=pointer]:
+                - /url: /policies/terms-of-service
+            - listitem [ref=e1052]:
+              - link "Privacy Policy" [ref=e1053] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e1054]:
+              - link "Site Map" [ref=e1055] [cursor=pointer]:
+                - /url: /sitemap.xml
+        - generic [ref=e1056]:
+          - heading "Israel Book Shop" [level=2] [ref=e1057]
+          - generic [ref=e1058]:
+            - paragraph [ref=e1059]:
+              - text: 410 Harvard Street
+              - text: Brookline, MA 02446
+              - text: 617-566-7113 / 800-323-7723
+              - link "info@israelbookshop.com" [ref=e1060] [cursor=pointer]:
+                - /url: /pages/contact
+                - strong [ref=e1061]: info@israelbookshop.com
+            - paragraph [ref=e1062]:
+              - strong [ref=e1063]: "Store Hours:"
+              - text: Sun-Wed 10a - 5pm
+              - text: Thu 10a - 6p
+              - text: Fri 10a - 2p (1:30p in winter)
+      - generic [ref=e1064]:
+        - button "Follow on Shop" [ref=e1069] [cursor=pointer]:
+          - img [ref=e1072]
+          - generic [ref=e1074]:
+            - text: Follow on
+            - img "Shop" [ref=e1075]
+        - generic [ref=e1078]:
+          - paragraph [ref=e1079]:
+            - text: Copyright © 2026 IsraelBookShop. Site by
+            - link "Winter Solutions, Inc." [ref=e1080] [cursor=pointer]:
+              - /url: https://wintersolutions.com
+            - text: with the Power of Shopify.
+          - paragraph [ref=e1081]:
+            - link "Powered by Shopify" [ref=e1082] [cursor=pointer]:
+              - /url: https://www.shopify.com?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore
+  - iframe [ref=e1084]:
+    - generic [ref=f5e4]:
+      - button [ref=f5e7] [cursor=pointer]:
+        - img [ref=f5e9]
+        - img [ref=f5e12]
+      - generic [ref=f5e15]:
+        - generic [ref=f5e18]:
+          - link "Logo" [ref=f5e19] [cursor=pointer]:
+            - /url: https://admin.shopify.com/store/israelbookshop
+            - img "Logo" [ref=f5e20]
+          - generic [ref=f5e22]:
+            - generic [ref=f5e23]: israelbookshop/main
+            - generic [ref=f5e24]: Draft
+        - generic [ref=f5e26]:
+          - button "Hide bar" [ref=f5e28] [cursor=pointer]:
+            - generic [ref=f5e29]: Hide bar
+          - button "Copy link" [ref=f5e32] [cursor=pointer]:
+            - img [ref=f5e36]
+            - generic [ref=f5e38]: Copy link
+```
+
+# Test source
+
+```ts
+  1  | const { test, expect } = require('@playwright/test');
+  2  | 
+  3  | const paths = [
+  4  |   '/',
+  5  |   '/cart',
+  6  |   '/pages/about',
+  7  |   '/pages/contact',
+  8  |   '/pages/privacy-policy',
+  9  |   '/pages/search-results-page?q=test',
+  10 |   '/policies/shipping-policy',
+  11 |   '/policies/refund-policy',
+  12 |   '/policies/terms-of-service',
+  13 |   '/collections/calendars',
+  14 |   '/collections/educational-resources',
+  15 |   '/collections/calendars/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times'
+  16 | ];
+  17 | 
+  18 | test.describe('Visual Regression Tests', () => {
+  19 |   for (const p of paths) {
+  20 |     const safeName = p === '/' ? 'homepage' : p.replace(/\//g, '_').substring(1);
+  21 | 
+  22 |     test(`should load ${p} successfully and match baseline screenshot`, async ({ page }) => {
+  23 |       test.setTimeout(90000); 
+  24 | 
+  25 |       // Navigate to the page with 'load' instead of 'networkidle' to prevent hanging on tracking pixels
+  26 |       await page.goto(p, { waitUntil: 'load', timeout: 60000 });
+  27 | 
+  28 |       // Wait a moment for dynamic CSS or JS to kick in
+  29 |       await page.waitForTimeout(2000);
+  30 | 
+  31 |       // Smoothly scroll down the page to trigger intersection observers for lazy-loaded images
+  32 |       await page.evaluate(async () => {
+  33 |         await new Promise((resolve) => {
+  34 |           let totalHeight = 0;
+  35 |           const distance = 300; 
+  36 |           const timer = setInterval(() => {
+  37 |             const scrollHeight = document.body.scrollHeight;
+  38 |             window.scrollBy(0, distance);
+  39 |             totalHeight += distance;
+  40 | 
+  41 |             if (totalHeight >= scrollHeight - window.innerHeight) {
+  42 |               clearInterval(timer);
+  43 |               resolve();
+  44 |             }
+  45 |           }, 150); 
+  46 |         });
+  47 |       });
+  48 |       
+  49 |       // Wait for lazy-loaded images to fetch
+  50 |       await page.waitForTimeout(3000);
+  51 |       
+  52 |       // Scroll back to top
+  53 |       await page.evaluate(() => window.scrollTo(0, 0));
+  54 |       await page.waitForTimeout(1000);
+  55 | 
+  56 |       // Full page screenshot assertion
+> 57 |       await expect(page).toHaveScreenshot(`${safeName}.png`, {
+     |                          ^ Error: expect(page).toHaveScreenshot(expected) failed
+  58 |         fullPage: true,
+  59 |         maxDiffPixelRatio: 0.05, // Allow slight differences (5%)
+  60 |         timeout: 60000 
+  61 |       });
+  62 |     });
+  63 |   }
+  64 | });
+  65 | 
+```
