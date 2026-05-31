@@ -164,6 +164,14 @@ async function optimizeJS() {
         path.isObjectProperty(); 
 
       if (isSafeToRemove) {
+        // Protect webpack internals
+        if (
+          (node.id && node.id.name && node.id.name.startsWith('__webpack_')) ||
+          (node.declarations && node.declarations.some(d => d.id && d.id.name && d.id.name.startsWith('__webpack_')))
+        ) {
+          return;
+        }
+
         if (isNodeUnused(node.start, node.end)) {
           removedBytes += (node.end - node.start);
           removedNodes++;
