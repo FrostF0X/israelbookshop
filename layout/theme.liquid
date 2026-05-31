@@ -88,7 +88,8 @@
 
     <script src="//searchanise-ef84.kxcdn.com/widgets/shopify/init.js?a=3J9h8t6O0V"></script>
     
-    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="{{ 'theme.css' | asset_url }}"></noscript>
     {{ 'style.css' | asset_url | stylesheet_tag }}
 
     {% unless settings.reduce_animations %}
