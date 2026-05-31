@@ -558,6 +558,7 @@ class SearchForm {
 /***/ 8833
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ FacetedFilterSearch)
 /* harmony export */ });
@@ -809,6 +810,7 @@ class FacetedFilterSearch extends _StaticSearch__WEBPACK_IMPORTED_MODULE_2__["de
 /***/ 4675
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ StaticSearch)
 /* harmony export */ });

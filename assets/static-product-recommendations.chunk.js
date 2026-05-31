@@ -39,6 +39,8 @@ class FlickityA11yPatch {
 /***/ 4670
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {

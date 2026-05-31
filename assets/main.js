@@ -13294,6 +13294,17 @@ const setupRippleEffect = rootElement => {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
 /******/ 		var scriptUrl;
@@ -15151,149 +15162,44 @@ const initEmpire = () => {
 
   const sections = new Sections();
   // Static sections
-  sections.register('static-header', async section => {
-    const { default: StaticHeader } = await Promise.all(/* import() | static-header */[__webpack_require__.e(404), __webpack_require__.e(7296), __webpack_require__.e(9825)]).then(__webpack_require__.bind(__webpack_require__, 4524));
-    return new StaticHeader(section);
-  });
-  sections.register('static-announcement', async section => {
-    const { default: StaticAnnouncement } = await __webpack_require__.e(/* import() | static-announcement */ 2347).then(__webpack_require__.bind(__webpack_require__, 3324));
-    return new StaticAnnouncement(section);
-  });
-  sections.register('static-footer', async section => {
-    const { default: StaticFooter } = await __webpack_require__.e(/* import() | static-footer */ 6655).then(__webpack_require__.bind(__webpack_require__, 6232));
-    return new StaticFooter(section);
-  });
-  sections.register('static-article', async section => {
-    const { default: StaticArticle } = await Promise.all(/* import() | static-article */[__webpack_require__.e(6187), __webpack_require__.e(5384)]).then(__webpack_require__.bind(__webpack_require__, 5509));
-    return new StaticArticle(section);
-  });
-  sections.register('static-blog', async section => {
-    const { default: StaticBlog } = await Promise.all(/* import() | static-blog */[__webpack_require__.e(6187), __webpack_require__.e(9110)]).then(__webpack_require__.bind(__webpack_require__, 5283));
-    return new StaticBlog(section);
-  });
-  sections.register('static-cart', async section => {
-    const { default: StaticCart } = await Promise.all(/* import() | static-cart */[__webpack_require__.e(6187), __webpack_require__.e(5153), __webpack_require__.e(7205), __webpack_require__.e(1688)]).then(__webpack_require__.bind(__webpack_require__, 9753));
-    return new StaticCart(section);
-  });
-  sections.register('static-collection', async section => {
-    const { default: StaticCollection } = await Promise.all(/* import() | static-collection */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(2522), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(710)]).then(__webpack_require__.bind(__webpack_require__, 387));
-    return new StaticCollection(section);
-  });
-  sections.register('static-collection-faceted-filters', async section => {
-    const { default: FacetedFilterCollection } = await Promise.all(/* import() | static-collection-faceted-filters */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(2522), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(8957)]).then(__webpack_require__.bind(__webpack_require__, 3465));
-    return new FacetedFilterCollection(section);
-  });
-  sections.register('static-subcollections-menu', async section => {
-    const { default: StaticSubCollectionsMenuList } = await __webpack_require__.e(/* import() | static-subcollections-menu */ 4853).then(__webpack_require__.bind(__webpack_require__, 4859));
-    return new StaticSubCollectionsMenuList(section);
-  });
-  sections.register('static-password', async section => {
-    const { default: StaticPassword } = await Promise.all(/* import() | static-password */[__webpack_require__.e(6144), __webpack_require__.e(1549)]).then(__webpack_require__.bind(__webpack_require__, 1442));
-    return new StaticPassword(section);
-  });
-  sections.register('static-product', async section => {
-    const { default: StaticProduct } = await Promise.all(/* import() | static-product */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(5183), __webpack_require__.e(3099), __webpack_require__.e(1955)]).then(__webpack_require__.bind(__webpack_require__, 5196));
-    return new StaticProduct(section);
-  });
-  sections.register('static-product-compare', async section => {
-    const { default: StaticProductCompare } = await Promise.all(/* import() | static-product-compare */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(8905)]).then(__webpack_require__.bind(__webpack_require__, 7668));
-    return new StaticProductCompare(section);
-  });
-  sections.register('static-product-recommendations', async section => {
-    const { default: StaticProductRecommendations } = await Promise.all(/* import() | static-product-recommendations */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(2522), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(8108)]).then(__webpack_require__.bind(__webpack_require__, 4670));
-    return new StaticProductRecommendations(section);
-  });
-  sections.register('static-recently-viewed', async section => {
-    const { default: StaticRecentlyViewed } = await Promise.all(/* import() | static-recently-viewed */[__webpack_require__.e(2522), __webpack_require__.e(4579)]).then(__webpack_require__.bind(__webpack_require__, 5075));
-    return new StaticRecentlyViewed(section);
-  });
-  sections.register('static-search', async section => {
-    const { default: StaticSearch } = await Promise.all(/* import() | static-search */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(6014)]).then(__webpack_require__.bind(__webpack_require__, 4675));
-    return new StaticSearch(section);
-  });
-  sections.register('static-search-faceted-filters', async section => {
-    const { default: FacetedFilterSearch } = await Promise.all(/* import() | static-search-faceted-filters */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(5045)]).then(__webpack_require__.bind(__webpack_require__, 8833));
-    return new FacetedFilterSearch(section);
-  });
-  sections.register('static-utility-bar', async section => {
-    const { default: StaticUtilityBar } = await __webpack_require__.e(/* import() | static-utility-bar */ 922).then(__webpack_require__.bind(__webpack_require__, 3686));
-    return new StaticUtilityBar(section);
-  });
-  sections.register('static-subcollections-featured-collection', async section => {
-    const { default: StaticSubcollectionsFeaturedCollection } = await Promise.all(/* import() | static-subcollections-featured-collection */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(2522), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(1719)]).then(__webpack_require__.bind(__webpack_require__, 1438));
-    return new StaticSubcollectionsFeaturedCollection(section);
-  });
+  sections.register('static-header', () => Promise.all(/* import() | static-header */[__webpack_require__.e(404), __webpack_require__.e(7296), __webpack_require__.e(9825)]).then(__webpack_require__.bind(__webpack_require__, 4524)));
+  sections.register('static-announcement', () => __webpack_require__.e(/* import() | static-announcement */ 2347).then(__webpack_require__.bind(__webpack_require__, 3324)));
+  sections.register('static-footer', () => __webpack_require__.e(/* import() | static-footer */ 6655).then(__webpack_require__.bind(__webpack_require__, 6232)));
+  sections.register('static-article', () => Promise.all(/* import() | static-article */[__webpack_require__.e(6187), __webpack_require__.e(5384)]).then(__webpack_require__.bind(__webpack_require__, 5509)));
+  sections.register('static-blog', () => Promise.all(/* import() | static-blog */[__webpack_require__.e(6187), __webpack_require__.e(9110)]).then(__webpack_require__.bind(__webpack_require__, 5283)));
+  sections.register('static-cart', () => Promise.all(/* import() | static-cart */[__webpack_require__.e(6187), __webpack_require__.e(5153), __webpack_require__.e(7205), __webpack_require__.e(1688)]).then(__webpack_require__.bind(__webpack_require__, 9753)));
+  sections.register('static-collection', () => Promise.all(/* import() | static-collection */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(2522), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(710)]).then(__webpack_require__.bind(__webpack_require__, 387)));
+  sections.register('static-collection-faceted-filters', () => Promise.all(/* import() | static-collection-faceted-filters */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(2522), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(8957)]).then(__webpack_require__.bind(__webpack_require__, 3465)));
+  sections.register('static-subcollections-menu', () => __webpack_require__.e(/* import() | static-subcollections-menu */ 4853).then(__webpack_require__.bind(__webpack_require__, 4859)));
+  sections.register('static-password', () => Promise.all(/* import() | static-password */[__webpack_require__.e(6144), __webpack_require__.e(1549)]).then(__webpack_require__.bind(__webpack_require__, 1442)));
+  sections.register('static-product', () => Promise.all(/* import() | static-product */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(5183), __webpack_require__.e(3099), __webpack_require__.e(1955)]).then(__webpack_require__.bind(__webpack_require__, 5196)));
+  sections.register('static-product-compare', () => Promise.all(/* import() | static-product-compare */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(8905)]).then(__webpack_require__.bind(__webpack_require__, 7668)));
+  sections.register('static-product-recommendations', () => Promise.all(/* import() | static-product-recommendations */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(2522), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(8108)]).then(__webpack_require__.bind(__webpack_require__, 4670)));
+  sections.register('static-recently-viewed', () => Promise.all(/* import() | static-recently-viewed */[__webpack_require__.e(2522), __webpack_require__.e(4579)]).then(__webpack_require__.bind(__webpack_require__, 5075)));
+  sections.register('static-search', () => Promise.all(/* import() | static-search */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(6014)]).then(__webpack_require__.bind(__webpack_require__, 4675)));
+  sections.register('static-search-faceted-filters', () => Promise.all(/* import() | static-search-faceted-filters */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(5045)]).then(__webpack_require__.bind(__webpack_require__, 8833)));
+  sections.register('static-utility-bar', () => __webpack_require__.e(/* import() | static-utility-bar */ 922).then(__webpack_require__.bind(__webpack_require__, 3686)));
+  sections.register('static-subcollections-featured-collection', () => Promise.all(/* import() | static-subcollections-featured-collection */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(2522), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(1719)]).then(__webpack_require__.bind(__webpack_require__, 1438)));
 
   // Dynamic sections (lazy loaded)
-  sections.register('dynamic-blog-posts', async section => {
-    const { default: DynamicBlogPosts } = await Promise.all(/* import() | dynamic-blog-posts */[__webpack_require__.e(2522), __webpack_require__.e(3297)]).then(__webpack_require__.bind(__webpack_require__, 4721));
-    return new DynamicBlogPosts(section);
-  }, { lazy: true });
-  sections.register('dynamic-promo-mosaic', async section => {
-    const { default: DynamicPromoBlocks } = await __webpack_require__.e(/* import() | dynamic-promo-mosaic */ 7521).then(__webpack_require__.bind(__webpack_require__, 4387));
-    return new DynamicPromoBlocks(section);
-  }, { lazy: true });
-  sections.register('dynamic-menu-list', async section => {
-    const { default: DynamicMenuList } = await __webpack_require__.e(/* import() | dynamic-menu-list */ 9503).then(__webpack_require__.bind(__webpack_require__, 9151));
-    return new DynamicMenuList(section);
-  }, { lazy: true });
-  sections.register('dynamic-collection-list', async section => {
-    const { default: DynamicCollectionList } = await __webpack_require__.e(/* import() | dynamic-collection-list */ 1464).then(__webpack_require__.bind(__webpack_require__, 9492));
-    return new DynamicCollectionList(section);
-  }, { lazy: true });
-  sections.register('dynamic-countdown-timer', async section => {
-    const { default: DynamicCountdownTimer } = await Promise.all(/* import() | dynamic-countdown-timer */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(2248)]).then(__webpack_require__.bind(__webpack_require__, 7233));
-    return new DynamicCountdownTimer(section);
-  }, { lazy: true });
-  sections.register('dynamic-featured-collection', async section => {
-    const { default: DynamicFeaturedCollection } = await Promise.all(/* import() | dynamic-featured-collection */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(2522), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(8986)]).then(__webpack_require__.bind(__webpack_require__, 8218));
-    return new DynamicFeaturedCollection(section);
-  }, { lazy: true });
-  sections.register('dynamic-featured-product', async section => {
-    const { default: DynamicFeaturedProduct } = await Promise.all(/* import() | dynamic-featured-product */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(5183), __webpack_require__.e(3099), __webpack_require__.e(5671)]).then(__webpack_require__.bind(__webpack_require__, 345));
-    return new DynamicFeaturedProduct(section);
-  }, { lazy: true });
-  sections.register('dynamic-rich-text', async section => {
-    const { default: DynamicRichText } = await Promise.all(/* import() | dynamic-rich-text */[__webpack_require__.e(6187), __webpack_require__.e(7108)]).then(__webpack_require__.bind(__webpack_require__, 45));
-    return new DynamicRichText(section);
-  }, { lazy: true });
-  sections.register('dynamic-page', async section => {
-    const { default: DynamicRichText } = await Promise.all(/* import() | dynamic-page */[__webpack_require__.e(6187), __webpack_require__.e(7108)]).then(__webpack_require__.bind(__webpack_require__, 45));
-    return new DynamicRichText(section);
-  }, { lazy: true });
-  sections.register('dynamic-custom-liquid', async section => {
-    const { default: DynamicRichText } = await Promise.all(/* import() | dynamic-custom-liquid */[__webpack_require__.e(6187), __webpack_require__.e(7108)]).then(__webpack_require__.bind(__webpack_require__, 45));
-    return new DynamicRichText(section);
-  }, { lazy: true });
-  sections.register('dynamic-html', async section => {
-    const { default: DynamicRichText } = await Promise.all(/* import() | dynamic-html */[__webpack_require__.e(6187), __webpack_require__.e(7108)]).then(__webpack_require__.bind(__webpack_require__, 45));
-    return new DynamicRichText(section);
-  }, { lazy: true });
-  sections.register('dynamic-search', async section => {
-    const { default: DynamicSearch } = await Promise.all(/* import() | dynamic-search */[__webpack_require__.e(7296), __webpack_require__.e(4159)]).then(__webpack_require__.bind(__webpack_require__, 8716));
-    return new DynamicSearch(section);
-  }, { lazy: true });
-  sections.register('dynamic-highlights-banner', async section => {
-    const { default: DynamicHighlightsBanner } = await Promise.all(/* import() | dynamic-highlights-banner */[__webpack_require__.e(2522), __webpack_require__.e(9091)]).then(__webpack_require__.bind(__webpack_require__, 1967));
-    return new DynamicHighlightsBanner(section);
-  });
-  sections.register('dynamic-video', async section => {
-    const { default: DynamicVideo } = await __webpack_require__.e(/* import() | dynamic-video */ 5512).then(__webpack_require__.bind(__webpack_require__, 3309));
-    return new DynamicVideo(section);
-  }, { lazy: true });
-  sections.register('pxs-newsletter', async section => {
-    const { default: DynamicNewsletter } = await __webpack_require__.e(/* import() | pxs-newsletter */ 8678).then(__webpack_require__.bind(__webpack_require__, 9035));
-    return new DynamicNewsletter(section);
-  }, { lazy: true });
+  sections.register('dynamic-blog-posts', () => Promise.all(/* import() | dynamic-blog-posts */[__webpack_require__.e(2522), __webpack_require__.e(3297)]).then(__webpack_require__.bind(__webpack_require__, 4721)), { lazy: true });
+  sections.register('dynamic-promo-mosaic', () => __webpack_require__.e(/* import() | dynamic-promo-mosaic */ 7521).then(__webpack_require__.bind(__webpack_require__, 4387)), { lazy: true });
+  sections.register('dynamic-menu-list', () => __webpack_require__.e(/* import() | dynamic-menu-list */ 9503).then(__webpack_require__.bind(__webpack_require__, 9151)), { lazy: true });
+  sections.register('dynamic-collection-list', () => __webpack_require__.e(/* import() | dynamic-collection-list */ 1464).then(__webpack_require__.bind(__webpack_require__, 9492)), { lazy: true });
+  sections.register('dynamic-countdown-timer', () => Promise.all(/* import() | dynamic-countdown-timer */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(2248)]).then(__webpack_require__.bind(__webpack_require__, 7233)), { lazy: true });
+  sections.register('dynamic-featured-collection', () => Promise.all(/* import() | dynamic-featured-collection */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(2522), __webpack_require__.e(3099), __webpack_require__.e(9441), __webpack_require__.e(8986)]).then(__webpack_require__.bind(__webpack_require__, 8218)), { lazy: true });
+  sections.register('dynamic-featured-product', () => Promise.all(/* import() | dynamic-featured-product */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(5183), __webpack_require__.e(3099), __webpack_require__.e(5671)]).then(__webpack_require__.bind(__webpack_require__, 345)), { lazy: true });
+  sections.register('dynamic-rich-text', () => Promise.all(/* import() | dynamic-rich-text */[__webpack_require__.e(6187), __webpack_require__.e(7108)]).then(__webpack_require__.bind(__webpack_require__, 45)), { lazy: true });
+  sections.register('dynamic-page', () => Promise.all(/* import() | dynamic-page */[__webpack_require__.e(6187), __webpack_require__.e(7108)]).then(__webpack_require__.bind(__webpack_require__, 45)), { lazy: true });
+  sections.register('dynamic-custom-liquid', () => Promise.all(/* import() | dynamic-custom-liquid */[__webpack_require__.e(6187), __webpack_require__.e(7108)]).then(__webpack_require__.bind(__webpack_require__, 45)), { lazy: true });
+  sections.register('dynamic-html', () => Promise.all(/* import() | dynamic-html */[__webpack_require__.e(6187), __webpack_require__.e(7108)]).then(__webpack_require__.bind(__webpack_require__, 45)), { lazy: true });
+  sections.register('dynamic-search', () => Promise.all(/* import() | dynamic-search */[__webpack_require__.e(7296), __webpack_require__.e(4159)]).then(__webpack_require__.bind(__webpack_require__, 8716)), { lazy: true });
+  sections.register('dynamic-highlights-banner', () => Promise.all(/* import() | dynamic-highlights-banner */[__webpack_require__.e(2522), __webpack_require__.e(9091)]).then(__webpack_require__.bind(__webpack_require__, 1967)));
+  sections.register('dynamic-video', () => __webpack_require__.e(/* import() | dynamic-video */ 5512).then(__webpack_require__.bind(__webpack_require__, 3309)), { lazy: true });
+  sections.register('pxs-newsletter', () => __webpack_require__.e(/* import() | pxs-newsletter */ 8678).then(__webpack_require__.bind(__webpack_require__, 9035)), { lazy: true });
   sections.register('pxs-map', section => new dist_index_es(section), { lazy: true });
-  sections.register('pxs-shoppable-image', async section => {
-    const { default: DynamicShoppableImage } = await Promise.all(/* import() | pxs-shoppable-image */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(3099), __webpack_require__.e(9729)]).then(__webpack_require__.bind(__webpack_require__, 5835));
-    return new DynamicShoppableImage(section);
-  }, { lazy: false });
-  sections.register('dynamic-testimonials', async section => {
-    const { default: DynamicTestimonials } = await Promise.all(/* import() | dynamic-testimonials */[__webpack_require__.e(2522), __webpack_require__.e(4215)]).then(__webpack_require__.bind(__webpack_require__, 3704));
-    return new DynamicTestimonials(section);
-  }, { lazy: true });
+  sections.register('pxs-shoppable-image', () => Promise.all(/* import() | pxs-shoppable-image */[__webpack_require__.e(6187), __webpack_require__.e(6144), __webpack_require__.e(5153), __webpack_require__.e(2624), __webpack_require__.e(3099), __webpack_require__.e(9729)]).then(__webpack_require__.bind(__webpack_require__, 5835)), { lazy: false });
+  sections.register('dynamic-testimonials', () => Promise.all(/* import() | dynamic-testimonials */[__webpack_require__.e(2522), __webpack_require__.e(4215)]).then(__webpack_require__.bind(__webpack_require__, 3704)), { lazy: true });
   sections.register('age-gate', section => new PageAgeGate(section));
   sections.register('pxs-faq', section => new index_es(section));
 
