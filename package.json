@@ -10,6 +10,9 @@
     "test:e2e:update-snapshots": "playwright test --update-snapshots"
   },
   "dependencies": {
+    "@babel/generator": "^7.29.7",
+    "@babel/parser": "^7.29.7",
+    "@babel/traverse": "^7.29.7",
     "lighthouse": "^11.5.0",
     "puppeteer": "^22.4.0"
   },
