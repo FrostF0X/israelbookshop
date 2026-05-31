@@ -25,8 +25,8 @@ const viewports = [
 ];
 
 async function run() {
-  console.log('Connecting to Browserless...');
-  const browser = await chromium.connectOverCDP('wss://chrome.browserless.io?token=2UcBGAA9ENAL1nZ54f87ae74b491a891b674b46c1802f0ef9');
+  console.log('Launching local Playwright browser...');
+  const browser = await chromium.launch({ headless: true });
   let allRanges = [];
   let originalCssText = '';
 
@@ -129,7 +129,8 @@ async function run() {
   console.log(`Final Optimized Size: ${finalCss.length} bytes`);
 
   fs.writeFileSync('assets/theme.css.liquid', finalCss);
-  console.log('Successfully overwrote assets/theme.css.liquid');
+  fs.writeFileSync('assets/theme.css', finalCss);
+  console.log('Successfully overwrote assets/theme.css.liquid and assets/theme.css');
 }
 
 run().catch(console.error);
