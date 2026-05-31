@@ -14,7 +14,6 @@ import PXSMap from '@pixelunion/pxs-map';
 import { SiteAgeGate, PageAgeGate } from '@pixelunion/age-gate';
 
 // Responsive Images
-import rimg from '@pixelunion/rimg-shopify'; // eslint-disable-line
 
 // Section Manager
 import Sections from './Sections';
@@ -77,7 +76,6 @@ import { initLoadInAnimationsAutoplay } from './helpers/LoadInAnimations';
 
 const initEmpire = () => {
   initLoadInAnimationsAutoplay();
-  rimg.init('[data-rimg="lazy"]', { round: 1 });
 
   const initRipple = () => setupRippleEffect(document);
 
