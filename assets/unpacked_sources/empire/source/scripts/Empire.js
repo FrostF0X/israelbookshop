@@ -94,7 +94,7 @@ const initEmpire = () => {
 
   const sections = new Sections();
   // Static sections
-  sections.register('static-header', section => new StaticHeader(section));
+  // sections.register('static-header', section => new StaticHeader(section));
   sections.register('static-announcement', section => new StaticAnnouncement(section));
   sections.register('static-footer', section => new StaticFooter(section));
   sections.register('static-article', () => import(/* webpackChunkName: "static-article" */ './sections/StaticArticle'));
