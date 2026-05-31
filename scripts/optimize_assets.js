@@ -165,10 +165,22 @@ async function optimizeJS() {
 
       if (isSafeToRemove) {
         // Protect webpack internals
-        if (
-          (node.id && node.id.name && node.id.name.startsWith('__webpack_')) ||
-          (node.declarations && node.declarations.some(d => d.id && d.id.name && d.id.name.startsWith('__webpack_')))
-        ) {
+        const protectPatterns = [
+          /^__webpack_/,
+          /createCommonjsModule/i,
+          /unwrapExports/i,
+          /getDefaultExport/i,
+          /^commonjsGlobal$/i
+        ];
+
+        let shouldProtect = false;
+        if (node.id && node.id.name) {
+          shouldProtect = protectPatterns.some(p => p.test(node.id.name));
+        } else if (node.declarations) {
+          shouldProtect = node.declarations.some(d => d.id && d.id.name && protectPatterns.some(p => p.test(d.id.name)));
+        }
+
+        if (shouldProtect) {
           return;
         }
 
