@@ -86,14 +86,7 @@
 
     {{ content_for_header }}
 
-    <script>
-      window.addEventListener('load', function() {
-        var script = document.createElement('script');
-        script.src = "//searchanise-ef84.kxcdn.com/widgets/shopify/init.js?a=3J9h8t6O0V";
-        script.defer = true;
-        document.head.appendChild(script);
-      });
-    </script>
+    <script src="//searchanise-ef84.kxcdn.com/widgets/shopify/init.js?a=3J9h8t6O0V" defer></script>
     
     {{ 'theme.css' | asset_url | stylesheet_tag }}
     {{ 'style.css' | asset_url | stylesheet_tag }}

@@ -347,18 +347,24 @@
           >
             {% if initial_image %}
               {% if product_grid_show_second_image and product.media.size > 1 %}
-                {% assign second_image = product.media[1].preview_image %}
-                {% if performance_lazyload %}
-                  {{ second_image | image_url: width: 512 | image_tag: class: 'productitem--image-alternate', loading: 'lazy' }}
-                {% else %}
-                  {{ second_image | image_url: width: 512 | image_tag: class: 'productitem--image-alternate', loading: 'eager' }}
-                {% endif %}
+                {% assign second_image = product.media[1].preview_image.src %}
+                {%
+                  render 'rimg',
+                  img: second_image,
+                  size: '512x',
+                  lazy: true,
+                  class: 'productitem--image-alternate',
+                  canvas: true
+                %}
               {% endif %}
-              {% if performance_lazyload %}
-                {{ initial_image | image_url: width: 512 | image_tag: class: 'productitem--image-primary', loading: 'lazy' }}
-              {% else %}
-                {{ initial_image | image_url: width: 512 | image_tag: class: 'productitem--image-primary', loading: 'eager', fetchpriority: 'high' }}
-              {% endif %}
+              {%
+                render 'rimg',
+                img: initial_image
+                size: '512x',
+                lazy: performance_lazyload,
+                class: 'productitem--image-primary',
+                canvas: performance_lazyload,
+              %}
             {% else %}
               {% if product %}
                 {{ 'image' | placeholder_svg_tag: 'placeholder--image' }}
