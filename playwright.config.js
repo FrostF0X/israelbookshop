@@ -17,6 +17,10 @@ module.exports = defineConfig({
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
+    /* Route tests through Browserless */
+    connectOptions: {
+      wsEndpoint: 'wss://chrome.browserless.io?token=2UcBGAA9ENAL1nZ54f87ae74b491a891b674b46c1802f0ef9'
+    },
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: 'https://kukr29uk66duhr1k-55888609445.shopifypreview.com/',
 
