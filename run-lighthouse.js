@@ -2,7 +2,9 @@ import fs from 'fs';
 import lighthouse from 'lighthouse';
 import puppeteer from 'puppeteer';
 
-const url = process.argv[2] || 'https://kukr29uk66duhr1k-55888609445.shopifypreview.com/';
+const path = process.argv[2] || '/';
+const safeName = process.argv[3] || 'homepage';
+const url = `https://kukr29uk66duhr1k-55888609445.shopifypreview.com${path}`;
 const options = {
   logLevel: 'info',
   output: ['html', 'json'],
@@ -23,8 +25,8 @@ async function runLighthouse() {
   // `.report` is an array of reports: [html, json]
   const reportHtml = runnerResult.report[0];
   const reportJson = runnerResult.report[1];
-  fs.writeFileSync('lighthouse-report.html', reportHtml);
-  fs.writeFileSync('lighthouse-report.json', reportJson);
+  fs.writeFileSync(`lighthouse-report-${safeName}.html`, reportHtml);
+  fs.writeFileSync(`lighthouse-report-${safeName}.json`, reportJson);
 
   // Print results
   console.log('Report is done for', runnerResult.lhr.finalDisplayedUrl);
@@ -36,10 +38,10 @@ async function runLighthouse() {
   if (process.env.GITHUB_STEP_SUMMARY) {
     const runId = process.env.GITHUB_RUN_ID;
     const reportUrl = runId 
-      ? `https://FrostF0X.github.io/israelbookshop/lighthouse-report-${runId}.html` 
-      : 'https://FrostF0X.github.io/israelbookshop/lighthouse-report.html';
+      ? `https://FrostF0X.github.io/israelbookshop/lighthouse-reports-${runId}/lighthouse-report-${safeName}.html` 
+      : `https://FrostF0X.github.io/israelbookshop/lighthouse-report-${safeName}.html`;
 
-    const summary = `### Lighthouse Results for ${runnerResult.lhr.finalDisplayedUrl}
+    const summary = `### Lighthouse Results for [${safeName}](${runnerResult.lhr.finalDisplayedUrl})
 - **Performance:** ${Math.round(runnerResult.lhr.categories.performance.score * 100)}
 - **Accessibility:** ${Math.round(runnerResult.lhr.categories.accessibility.score * 100)}
 - **Best Practices:** ${Math.round(runnerResult.lhr.categories['best-practices'].score * 100)}

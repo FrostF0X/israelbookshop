@@ -13,6 +13,16 @@ jobs:
   analyze:
     name: Run Lighthouse Analysis
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - pageName: 'homepage'
+            path: '/'
+          - pageName: 'category'
+            path: '/collections/calendars'
+          - pageName: 'product'
+            path: '/collections/calendars/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -27,29 +37,36 @@ jobs:
         run: npm ci || npm install
 
       - name: Run Lighthouse Analysis
-        run: node run-lighthouse.js
+        run: node run-lighthouse.js "${{ matrix.path }}" "${{ matrix.pageName }}"
 
-      - name: Upload Lighthouse HTML Report
+      - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: lighthouse-report-html
-          path: lighthouse-report.html
+          name: lighthouse-${{ matrix.pageName }}
+          path: |
+            lighthouse-report-${{ matrix.pageName }}.html
+            lighthouse-report-${{ matrix.pageName }}.json
+          retention-days: 1
 
-      - name: Upload Lighthouse JSON Report
-        uses: actions/upload-artifact@v4
-        if: always()
+  merge-and-deploy:
+    needs: analyze
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download all Lighthouse artifacts
+        uses: actions/download-artifact@v4
         with:
-          name: lighthouse-report-json
-          path: lighthouse-report.json
+          pattern: lighthouse-*
+          path: public/lighthouse-reports-${{ github.run_id }}
+          merge-multiple: true
 
-      - name: Prepare Pages directory
-        if: always()
+      - name: Copy latest homepage report to root for GEMINI.md
         run: |
-          mkdir -p public
-          cp lighthouse-report.html public/ || true
-          cp lighthouse-report.html public/lighthouse-report-${{ github.run_id }}.html || true
-          cp lighthouse-report.json public/lighthouse-report-${{ github.run_id }}.json || true
+          cp public/lighthouse-reports-${{ github.run_id }}/lighthouse-report-homepage.html public/lighthouse-report.html || true
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
