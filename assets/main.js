@@ -17318,6 +17318,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -17343,6 +17346,28 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/ensure chunk */
+/******/ 	(() => {
+/******/ 		__webpack_require__.f = {};
+/******/ 		// This file contains only the entry chunk.
+/******/ 		// The chunk loading function for additional chunks
+/******/ 		__webpack_require__.e = (chunkId) => {
+/******/ 			return Promise.all(Object.keys(__webpack_require__.f).reduce((promises, key) => {
+/******/ 				__webpack_require__.f[key](chunkId, promises);
+/******/ 				return promises;
+/******/ 			}, []));
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get javascript chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.u = (chunkId) => {
+/******/ 			// return url for filenames based on template
+/******/ 			return "" + "dynamic-video" + ".chunk.js";
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -17358,6 +17383,164 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/load script */
+/******/ 	(() => {
+/******/ 		var inProgress = {};
+/******/ 		// data-webpack is not used as build has no uniqueName
+/******/ 		// loadScript function to load a script via script tag
+/******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
+/******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
+/******/ 			var script, needAttach;
+/******/ 			if(key !== undefined) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				for(var i = 0; i < scripts.length; i++) {
+/******/ 					var s = scripts[i];
+/******/ 					if(s.getAttribute("src") == url) { script = s; break; }
+/******/ 				}
+/******/ 			}
+/******/ 			if(!script) {
+/******/ 				needAttach = true;
+/******/ 				script = document.createElement('script');
+/******/ 		
+/******/ 				script.charset = 'utf-8';
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 		
+/******/ 		
+/******/ 				script.src = url;
+/******/ 			}
+/******/ 			inProgress[url] = [done];
+/******/ 			var onScriptComplete = (prev, event) => {
+/******/ 				// avoid mem leaks in IE.
+/******/ 				script.onerror = script.onload = null;
+/******/ 				clearTimeout(timeout);
+/******/ 				var doneFns = inProgress[url];
+/******/ 				delete inProgress[url];
+/******/ 				script.parentNode && script.parentNode.removeChild(script);
+/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
+/******/ 				if(prev) return prev(event);
+/******/ 			}
+/******/ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
+/******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
+/******/ 			script.onload = onScriptComplete.bind(null, script.onload);
+/******/ 			needAttach && document.head.appendChild(script);
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript && document.currentScript.tagName.toUpperCase() === 'SCRIPT')
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) {
+/******/ 					var i = scripts.length - 1;
+/******/ 					while (i > -1 && (!scriptUrl || !/^http(s?):/.test(scriptUrl))) scriptUrl = scripts[i--].src;
+/******/ 				}
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			792: 0
+/******/ 		};
+/******/ 		
+/******/ 		__webpack_require__.f.j = (chunkId, promises) => {
+/******/ 				// JSONP chunk loading for javascript
+/******/ 				var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
+/******/ 				if(installedChunkData !== 0) { // 0 means "already installed".
+/******/ 		
+/******/ 					// a Promise means "currently loading".
+/******/ 					if(installedChunkData) {
+/******/ 						promises.push(installedChunkData[2]);
+/******/ 					} else {
+/******/ 						if(true) { // all chunks have JS
+/******/ 							// setup Promise in chunk cache
+/******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
+/******/ 							promises.push(installedChunkData[2] = promise);
+/******/ 		
+/******/ 							// start chunk loading
+/******/ 							var url = __webpack_require__.p + __webpack_require__.u(chunkId);
+/******/ 							// create error before stack unwound to get useful stacktrace later
+/******/ 							var error = new Error();
+/******/ 							var loadingEnded = (event) => {
+/******/ 								if(__webpack_require__.o(installedChunks, chunkId)) {
+/******/ 									installedChunkData = installedChunks[chunkId];
+/******/ 									if(installedChunkData !== 0) installedChunks[chunkId] = undefined;
+/******/ 									if(installedChunkData) {
+/******/ 										var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 										var realSrc = event && event.target && event.target.src;
+/******/ 										error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 										error.name = 'ChunkLoadError';
+/******/ 										error.type = errorType;
+/******/ 										error.request = realSrc;
+/******/ 										installedChunkData[1](error);
+/******/ 									}
+/******/ 								}
+/******/ 							};
+/******/ 							__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
+/******/ 						}
+/******/ 					}
+/******/ 				}
+/******/ 		};
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 		
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
 /******/ 	
 /************************************************************************/
@@ -36720,400 +36903,6 @@ class DynamicSearch {
   }
 }
 
-;// ./source/scripts/components/Youtube.js
-
-
-const api = 'https://www.youtube.com/iframe_api';
-let apiLoadedCallbacks = [];
-let apiLoaded = false;
-
-window.onYouTubeIframeAPIReady = () => {
-  apiLoadedCallbacks.forEach(apiLoadedCallback => apiLoadedCallback());
-  apiLoadedCallbacks = [];
-  apiLoaded = true;
-};
-
-class Youtube {
-  constructor({ el, videoUrl, loop }) {
-    const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i; // eslint-disable-line no-useless-escape
-
-    this.el = el;
-    this.id = videoUrl.match(regex)[1] || null;
-
-    this.onApiLoaded = this._onApiLoaded.bind(this);
-
-    this.isReady = false;
-    this.onReady = this._onReady.bind(this);
-    this.onReadyCallback = null;
-    this.loop = loop ? 1 : 0;
-
-    this.onStateChange = this._onStateChange.bind(this);
-    this.onPlayCallback = null;
-
-    if (apiLoaded) {
-      this._onApiLoaded();
-    } else {
-      apiLoadedCallbacks.push(this.onApiLoaded);
-      debugger
-      script_default()(api);
-    }
-  }
-
-  play() {
-    return new Promise(resolve => {
-      this.onPlayCallback = resolve;
-
-      if (this.isReady) {
-        this.player.playVideo();
-      } else {
-        this.onReadyCallback = () => { this.player.playVideo(); };
-      }
-    });
-  }
-
-  pause() {
-    return new Promise(resolve => {
-      this.onPlayCallback = resolve;
-
-      if (this.isReady) {
-        this.player.pauseVideo();
-      } else {
-        this.onReadyCallback = () => { this.player.pauseVideo(); };
-      }
-    });
-  }
-
-  autoplay() {
-    return new Promise(resolve => {
-      this.onPlayCallback = resolve;
-
-      if (this.isReady) {
-        this.player.playVideo();
-        this.player.mute();
-      } else {
-        this.onReadyCallback = () => {
-          this.player.playVideo();
-          this.player.mute();
-        };
-      }
-    });
-  }
-
-  unload() {
-    this.player.destroy();
-  }
-
-  _onApiLoaded() {
-    const playerVars = {
-      modestbranding: true,
-      showinfo: false,
-      controls: false,
-      loop: this.loop,
-      rel: 0,
-    };
-
-    if (this.loop) {
-      // This is required to allow 'loop' to work based on the YouTube api
-      playerVars.playlist = this.id;
-    }
-
-    this.player = new YT.Player(this.el, {
-      videoId: this.id,
-      playerVars,
-      events: {
-        onReady: this.onReady,
-        onStateChange: this.onStateChange,
-      },
-    });
-  }
-
-  _onReady() {
-    this.isReady = true;
-
-    if (this.onReadyCallback) {
-      this.onReadyCallback();
-    }
-  }
-
-  _onStateChange(event) {
-    const state = event.data;
-    if (
-      this.onPlayCallback
-      && state === YT.PlayerState.BUFFERING
-    ) {
-      this.onPlayCallback();
-      this.onPlayCallback = null;
-    }
-  }
-}
-
-;// ./source/scripts/components/Vimeo.js
-
-
-const Vimeo_api = 'https://player.vimeo.com/api/player.js';
-let Vimeo_apiLoaded = false;
-
-class VimeoPlayer {
-  constructor({ el, videoUrl }) {
-    this.el = el;
-    const urlParts = videoUrl.split('/');
-
-    this.id = urlParts[urlParts.length - 1].split('?')[0];
-
-    this.onReadyCallback = null;
-
-    this.onApiLoaded = this._onApiLoaded.bind(this);
-
-    this.onProgress = this._onProgress.bind(this);
-    this.onProgressCallback = null;
-
-    if (Vimeo_apiLoaded) {
-      this._onApiLoaded();
-    } else {
-      script_default()(Vimeo_api, this.onApiLoaded);
-    }
-  }
-
-  play() {
-    return new Promise(resolve => {
-      this.onProgressCallback = resolve;
-
-      if (Vimeo_apiLoaded) {
-        this.player.on('play', this.onProgress);
-        this.player.play();
-      } else {
-        this.onReadyCallback = () => {
-          this.player.on('play', this.onProgress);
-          this.player.play();
-        };
-      }
-    });
-  }
-
-  pause() {
-    return new Promise(resolve => {
-      this.onProgressCallback = resolve;
-
-      if (Vimeo_apiLoaded) {
-        this.player.on('pause', this.onProgress);
-        this.player.pause();
-      } else {
-        this.onReadyCallback = () => {
-          this.player.on('pause', this.onProgress);
-          this.player.pause();
-        };
-      }
-    });
-  }
-
-  autoplay() {
-    return new Promise(resolve => {
-      this.onProgressCallback = resolve;
-
-      if (Vimeo_apiLoaded) {
-        this.player.on('play', this.onProgress);
-        this.player.setVolume(0);
-        this.player.play();
-      } else {
-        this.onReadyCallback = () => {
-          this.player.on('play', this.onProgress);
-          this.player.setVolume(0);
-          this.player.play();
-        };
-      }
-    });
-  }
-
-  unload() {
-    this.player
-      .unload()
-      .catch();
-  }
-
-  _onApiLoaded() {
-    this.player = new window.Vimeo.Player(this.el, { id: this.id });
-
-    this.player
-      .ready()
-      .then()
-      .catch();
-
-    Vimeo_apiLoaded = true;
-
-    if (this.onReadyCallback) {
-      this.onReadyCallback();
-    }
-  }
-
-  _onProgress() {
-    this.player.off('play', this.onProgress);
-    this.player.off('pause', this.onProgress);
-
-    if (this.onProgressCallback) {
-      this.onProgressCallback();
-      this.onProgressCallback = null;
-    }
-  }
-}
-
-;// ./source/scripts/components/Video.js
-
-
-
-class Video {
-  constructor(el, options) {
-    this.el = el;
-    this.options = options;
-    this.platform = el.getAttribute('data-video').trim();
-    this.playButton = el.querySelector('[data-video-play-button]');
-    this.videoEl = el.querySelector('[data-video-element]');
-
-    this.onPlayClick = this._onPlayClick.bind(this);
-    this.onPauseClick = this._onPauseClick.bind(this);
-    this.autoplay = this._autoplay.bind(this);
-
-    this.video = null;
-
-    this.videoData = {
-      el: this.videoEl.childNodes[0],
-      videoUrl: this.videoEl.getAttribute('data-video-url'),
-      loop: this.options && this.options.loop,
-    };
-
-    switch (this.platform) {
-      case 'youtube':
-        this.video = new Youtube(this.videoData);
-        break;
-      case 'vimeo':
-        this.video = new VimeoPlayer(this.videoData);
-        break;
-      default:
-        this.video = null;
-        break;
-    }
-
-    this.el.addEventListener('click', this.onPlayClick);
-
-    if (this.playButton) {
-      if (this.options && this.options.autoplay) {
-        this.autoplay();
-      }
-
-      this.playButton.addEventListener('click', this.onPlayClick);
-    }
-  }
-
-  _onPlayClick() {
-    this.el.classList.add('video-loading');
-
-    this.video.play()
-      .then(() => {
-        this.el.classList.add('video-transitioning');
-
-        setTimeout(() => {
-          this.el.classList.remove('video-loading');
-          this.el.classList.remove('video-transitioning');
-          this.el.classList.add('video-playing');
-        }, 200);
-      });
-  }
-
-  _onPauseClick() {
-    this.video.pause();
-  }
-
-  _autoplay() {
-    this.el.classList.add('video-loading');
-
-    this.video.autoplay()
-      .then(() => {
-        this.el.classList.add('video-transitioning');
-
-        setTimeout(() => {
-          this.el.classList.remove('video-loading');
-          this.el.classList.remove('video-transitioning');
-          this.el.classList.add('video-playing');
-        }, 200);
-      });
-  }
-
-  play() {
-    this._onPlayClick();
-  }
-
-  pause() {
-    this._onPauseClick();
-  }
-
-  unload() {
-    this.el.removeEventListener('click', this.onPlayClick);
-
-    if (this.playButton) {
-      this.playButton.removeEventListener('click', this.onPlayClick);
-    }
-
-    if (this.video) {
-      this.video.unload();
-    }
-  }
-
-  destroy() {
-    this.unload();
-  }
-}
-
-;// ./source/scripts/sections/DynamicVideo.js
-
-
-class DynamicVideo {
-  constructor(section) {
-    this.el = section.el;
-    this.autoplay = section.data.autoplay;
-    this.init();
-  }
-
-  init() {
-    const videoEl = this.el.querySelector('[data-video]');
-    this.hasPlayed = false;
-
-    if (videoEl) {
-      this.video = new Video(videoEl);
-    }
-
-    if (this.video && this.autoplay) {
-      const thresholds = { play: 0.5, pause: 0.2 };
-
-      this.playPauseObserver = new IntersectionObserver(entries => {
-        const { intersectionRatio, isIntersecting } = entries[0];
-
-        if (intersectionRatio >= thresholds.play && isIntersecting && !this.hasPlayed) {
-          // videoEl has just scrolled into view and is at least 50% visible: play video
-          this.video._autoplay();
-          this.hasPlayed = true;
-        } else if (intersectionRatio <= thresholds.pause && isIntersecting === false) {
-          // videoEl has scrolled out of view and is less than 20% visible: pause video
-          this.video._onPauseClick();
-        }
-      },
-      {
-        threshold: [thresholds.pause, thresholds.play],
-      });
-
-      this.playPauseObserver.observe(videoEl);
-    }
-  }
-
-  onSectionUnload() {
-    if (this.video) {
-      this.video.unload();
-    }
-
-    if (this.playPauseObserver) {
-      this.playPauseObserver.disconnect();
-    }
-  }
-}
-
 ;// ./source/scripts/sections/DynamicNewsletter.js
 
 
@@ -38774,6 +38563,8 @@ const initLoadInAnimationsAutoplay = () => {
 
 
 ;// ./source/scripts/Empire.js
+__webpack_require__.p = window.__theme_asset_url__;
+
 // jQuery plugins
 
  // eslint-disable-line
@@ -38817,7 +38608,6 @@ const initLoadInAnimationsAutoplay = () => {
 
 
 // Dynamic sections
-
 
 
 
@@ -38897,7 +38687,10 @@ const initEmpire = () => {
   sections.register('dynamic-html', section => new DynamicRichText(section), { lazy: true });
   sections.register('dynamic-search', section => new DynamicSearch(section), { lazy: true });
   sections.register('dynamic-highlights-banner', section => new DynamicHighlightsBanner(section));
-  sections.register('dynamic-video', section => new DynamicVideo(section), { lazy: true });
+  sections.register('dynamic-video', async section => {
+    const { default: DynamicVideo } = await __webpack_require__.e(/* import() | dynamic-video */ 512).then(__webpack_require__.bind(__webpack_require__, 309));
+    return new DynamicVideo(section);
+  }, { lazy: true });
   sections.register('pxs-newsletter', section => new DynamicNewsletter(section), { lazy: true });
   sections.register('pxs-map', section => new dist_index_es(section), { lazy: true });
   sections.register('pxs-shoppable-image', section => new DynamicShoppableImage(section), { lazy: false });

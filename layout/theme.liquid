@@ -489,6 +489,9 @@
       </script>
     {% endunless %}
 
+    <script>
+      window.__theme_asset_url__ = "{{ 'main.js' | asset_url | split: 'main.js' | first }}";
+    </script>
     {%- if settings.minify_scripts -%}
       <script
         src="{{ 'empire.min.js' | asset_url }}"

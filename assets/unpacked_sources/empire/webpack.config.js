@@ -24,6 +24,7 @@ module.exports = {
   entry: './source/scripts/Empire.js',
   output: {
     filename: 'main.js',
+    chunkFilename: '[name].chunk.js',
     path: path.resolve(__dirname, '../../'),
   },
   mode: 'production',
