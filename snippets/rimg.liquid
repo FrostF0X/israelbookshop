@@ -277,6 +277,7 @@
 
 {%- endcapture -%}
 
+{% comment %}
 {% comment %} Background image {% endcomment %}
 {% if background %}
   {% if class != blank %}class="{{ class }}"{% endif %}
@@ -309,6 +310,7 @@
     {% if attr != blank %}{{ attr }}{% endif %}
   >
 {% endif %}
+{% endcomment %}
 
 {% if canvas %}
   <div data-rimg-canvas></div>
