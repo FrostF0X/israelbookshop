@@ -38852,7 +38852,7 @@ const initLoadInAnimationsAutoplay = () => {
 
 const initEmpire = () => {
   initLoadInAnimationsAutoplay();
-  rimg_shopify_dist_index_es.init('[data-rimg="lazy"]', { round: 1 });
+  rimg_shopify_dist_index/* _es.init('[data-rimg="lazy"]', { round: 1 }); */
 
   const initRipple = () => setupRippleEffect(document);
 
