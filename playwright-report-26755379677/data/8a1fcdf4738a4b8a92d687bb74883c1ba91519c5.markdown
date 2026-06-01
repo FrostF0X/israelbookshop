@@ -1,0 +1,416 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: e2e.spec.js >> E2E Flows with Coverage >> Add to cart from nested category
+- Location: tests/e2e.spec.js:38:7
+
+# Error details
+
+```
+Error: expect(page).toHaveScreenshot(expected) failed
+
+  1615 pixels (ratio 0.01 of all image pixels) are different.
+
+  Snapshot: cart-comparison.png
+
+Call log:
+  - Expect "toHaveScreenshot(cart-comparison.png)" with timeout 15000ms
+    - verifying given screenshot expectation
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - 1615 pixels (ratio 0.01 of all image pixels) are different.
+  - waiting 100ms before taking screenshot
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - captured a stable screenshot
+  - 1615 pixels (ratio 0.01 of all image pixels) are different.
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - alertdialog "Cookie consent" [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - heading "Cookie consent" [level=2] [ref=e5]
+        - paragraph [ref=e6]:
+          - text: We and our partners, including Shopify, use cookies and other technologies to personalize your experience, show you ads, and perform analytics, and we will not use cookies or other technologies for these purposes unless you accept them. Learn more in our
+          - link "Privacy Policy" [ref=e7] [cursor=pointer]:
+            - /url: https://www.israelbookshop.com/policies/privacy-policy
+      - generic [ref=e8]:
+        - button "Manage preferences" [ref=e9]
+        - button "Accept" [ref=e10]
+        - button "Decline" [ref=e11]
+  - link "Skip to content" [ref=e12] [cursor=pointer]:
+    - /url: "#site-main"
+  - generic [ref=e14]:
+    - link [ref=e15] [cursor=pointer]:
+      - /url: https://israelbookshop.com/collections/sukkah-depot-decorations
+    - generic [ref=e16]:
+      - text: ☎ Need Help? Call Us
+      - link "617-566-7113" [ref=e17] [cursor=pointer]:
+        - /url: tel:+1-617-566-7113
+      - text: or
+      - link "800-323-7723" [ref=e18] [cursor=pointer]:
+        - /url: +1-800-323-7723
+  - banner [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - link [ref=e24] [cursor=pointer]:
+          - /url: /
+        - search "Product" [ref=e26]:
+          - generic [ref=e27]:
+            - combobox "Search" [ref=e28]
+            - button "Search" [ref=e29] [cursor=pointer]:
+              - img [ref=e31]
+      - generic [ref=e34]:
+        - list [ref=e35]:
+          - listitem [ref=e36]:
+            - link "My Account" [ref=e37] [cursor=pointer]:
+              - /url: https://www.israelbookshop.com/customer_authentication/redirect?locale=en&region_country=US
+              - img [ref=e39]
+              - generic [ref=e43]: My Account
+        - link "1 View cart" [ref=e45] [cursor=pointer]:
+          - /url: /cart
+          - generic [ref=e46]: "1"
+          - img [ref=e48]
+          - generic [ref=e53]: View cart
+    - navigation "Main" [ref=e55]:
+      - list "Main menu" [ref=e56]:
+        - listitem [ref=e57]:
+          - group [ref=e58]:
+            - generic "Categories" [ref=e59] [cursor=pointer]:
+              - text: Categories
+              - img [ref=e61]
+        - listitem [ref=e64]:
+          - link "Calendars" [ref=e65] [cursor=pointer]:
+            - /url: /collections/calendars
+        - listitem [ref=e66]:
+          - link "Education" [ref=e67] [cursor=pointer]:
+            - /url: /collections/educational-resources
+        - listitem [ref=e68]:
+          - link "Literature & Novels" [ref=e69] [cursor=pointer]:
+            - /url: /collections/judaic-literature-novels
+        - listitem [ref=e70]:
+          - link "Synagogue" [ref=e71] [cursor=pointer]:
+            - /url: /collections/synagogue-supply
+        - listitem [ref=e72]:
+          - link "Israel" [ref=e73] [cursor=pointer]:
+            - /url: /collections/israel-educational-resources
+        - listitem [ref=e74]:
+          - link "About Us" [ref=e75] [cursor=pointer]:
+            - /url: /pages/about
+        - listitem [ref=e76]:
+          - link "Contact" [ref=e77] [cursor=pointer]:
+            - /url: /pages/contact
+      - list [ref=e78]:
+        - listitem [ref=e79]:
+          - link "Shipping & Returns" [ref=e80] [cursor=pointer]:
+            - /url: /pages/shipping-return-policy
+        - listitem [ref=e81]:
+          - link "Gift Cards" [ref=e82] [cursor=pointer]:
+            - /url: /products/israel-book-shop-gift-card
+  - main "Main content" [ref=e83]:
+    - form "cart checkout" [ref=e85]:
+      - generic [ref=e86]:
+        - heading "Your cart" [level=1] [ref=e88]
+        - generic [ref=e89]:
+          - generic [ref=e91]:
+            - text: Subtotal
+            - generic [ref=e92]: $10.00
+          - button "Check out" [ref=e93] [cursor=pointer]:
+            - img [ref=e94]
+            - text: Check out
+      - generic [ref=e100]:
+        - list [ref=e101]:
+          - listitem [ref=e102]:
+            - figure [ref=e103]:
+              - link "Israel Book Shop Gift Card - $10.00" [ref=e104] [cursor=pointer]:
+                - /url: /products/israel-book-shop-gift-card?variant=42666086891685
+                - img "Israel Book Shop Gift Card - $10.00" [ref=e105]
+            - generic [ref=e106]:
+              - generic [ref=e107]:
+                - heading "Israel Book Shop Gift Card" [level=2] [ref=e108]:
+                  - link "Israel Book Shop Gift Card" [ref=e109] [cursor=pointer]:
+                    - /url: /products/israel-book-shop-gift-card?variant=42666086891685
+                - generic [ref=e111]:
+                  - term [ref=e112]: "Denominations:"
+                  - definition [ref=e113]: $10.00
+                - generic [ref=e114]: Price $10.00
+              - generic [ref=e115]:
+                - generic [ref=e117]:
+                  - generic [ref=e118]: Quantity
+                  - generic [ref=e119]:
+                    - generic [ref=e120]:
+                      - button "Decrease quantity by 1":
+                        - img
+                    - spinbutton "Quantity" [ref=e121] [cursor=pointer]: "1"
+                    - button "Increase quantity by 1" [ref=e123] [cursor=pointer]:
+                      - img [ref=e124]
+                - generic [ref=e126]:
+                  - generic [ref=e127]: "Translation missing: en.cart.general.total_line_price"
+                  - generic [ref=e128]: $10.00
+                - link "remove Israel Book Shop Gift Card" [ref=e130] [cursor=pointer]:
+                  - /url: /cart/change?line=1&quantity=0
+                  - img [ref=e131]
+        - generic [ref=e133]:
+          - generic [ref=e134]:
+            - list "Discounts"
+            - generic [ref=e135]:
+              - generic [ref=e136]: Subtotal
+              - generic [ref=e137]: $10.00
+          - generic [ref=e138]:
+            - paragraph [ref=e139]:
+              - text: Taxes and
+              - link "shipping" [ref=e140] [cursor=pointer]:
+                - /url: /policies/shipping-policy
+              - text: calculated at checkout
+            - paragraph [ref=e141]: Your cart does not require shipping.
+          - generic [ref=e142]:
+            - button "Check out" [ref=e143] [cursor=pointer]:
+              - img [ref=e144]
+              - text: Check out
+            - iframe [ref=e156]:
+              - generic "PayPal" [ref=f34e2]:
+                - link "PayPal" [ref=f34e5] [cursor=pointer]
+            - link "Continue shopping" [ref=e157] [cursor=pointer]:
+              - /url: /collections/all
+              - text: Continue shopping
+              - img [ref=e158]
+  - contentinfo "Footer" [ref=e162]:
+    - generic [ref=e163]:
+      - generic [ref=e165]:
+        - generic [ref=e166]:
+          - heading "Israel Book Shop Publications" [level=2] [ref=e167]
+          - paragraph [ref=e169]:
+            - text: Our sister company in Lakewood, NJ. Publisher and distributor of Judaica oriented books and products to wholesale and retail markets.
+            - link "israelbookshoppublications.com" [ref=e170] [cursor=pointer]:
+              - /url: https://israelbookshoppublications.com
+              - strong [ref=e171]: israelbookshoppublications.com
+        - generic [ref=e172]:
+          - heading "Company" [level=2] [ref=e173]
+          - list [ref=e175]:
+            - listitem [ref=e176]:
+              - link "About Us" [ref=e177] [cursor=pointer]:
+                - /url: /pages/about
+            - listitem [ref=e178]:
+              - link "Contact Us" [ref=e179] [cursor=pointer]:
+                - /url: /pages/contact
+            - listitem [ref=e180]:
+              - link "Our Team" [ref=e181] [cursor=pointer]:
+                - /url: /pages/about/#team
+            - listitem [ref=e182]:
+              - link "Testimonials" [ref=e183] [cursor=pointer]:
+                - /url: /#testimonials
+            - listitem [ref=e184]:
+              - link "Account Login" [ref=e185] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e186]:
+              - link "Shipping Policy" [ref=e187] [cursor=pointer]:
+                - /url: /policies/shipping-policy
+            - listitem [ref=e188]:
+              - link "Returns & Refund Policy" [ref=e189] [cursor=pointer]:
+                - /url: /policies/refund-policy
+            - listitem [ref=e190]:
+              - link "Terms of Service" [ref=e191] [cursor=pointer]:
+                - /url: /policies/terms-of-service
+            - listitem [ref=e192]:
+              - link "Privacy Policy" [ref=e193] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e194]:
+              - link "Site Map" [ref=e195] [cursor=pointer]:
+                - /url: /sitemap.xml
+        - generic [ref=e196]:
+          - heading "Israel Book Shop" [level=2] [ref=e197]
+          - generic [ref=e198]:
+            - paragraph [ref=e199]:
+              - text: 410 Harvard Street
+              - text: Brookline, MA 02446
+              - text: 617-566-7113 / 800-323-7723
+              - link "info@israelbookshop.com" [ref=e200] [cursor=pointer]:
+                - /url: /pages/contact
+                - strong [ref=e201]: info@israelbookshop.com
+            - paragraph [ref=e202]:
+              - strong [ref=e203]: "Store Hours:"
+              - text: Sun-Wed 10a - 5pm
+              - text: Thu 10a - 6p
+              - text: Fri 10a - 2p (1:30p in winter)
+      - generic [ref=e204]:
+        - button "Follow on Shop" [ref=e209] [cursor=pointer]:
+          - img [ref=e212]
+          - generic [ref=e214]:
+            - text: Follow on
+            - img "Shop" [ref=e215]
+        - generic [ref=e218]:
+          - paragraph [ref=e219]:
+            - text: Copyright © 2026 IsraelBookShop. Site by
+            - link "Winter Solutions, Inc." [ref=e220] [cursor=pointer]:
+              - /url: https://wintersolutions.com
+            - text: with the Power of Shopify.
+          - paragraph [ref=e221]:
+            - link "Powered by Shopify" [ref=e222] [cursor=pointer]:
+              - /url: https://www.shopify.com?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore
+  - iframe [ref=e224]:
+    - generic [ref=f19e4]:
+      - button [ref=f19e7] [cursor=pointer]:
+        - img [ref=f19e9]
+        - img [ref=f19e12]
+      - generic [ref=f19e15]:
+        - generic [ref=f19e18]:
+          - link "Logo" [ref=f19e19] [cursor=pointer]:
+            - /url: https://admin.shopify.com/store/israelbookshop
+            - img "Logo" [ref=f19e20]
+          - generic [ref=f19e22]:
+            - generic [ref=f19e23]: israelbookshop/main
+            - generic [ref=f19e24]: Draft
+        - button "Hide bar" [ref=f19e28] [cursor=pointer]:
+          - generic [ref=f19e29]: Hide bar
+```
+
+# Test source
+
+```ts
+  1   | import { test, expect } from '@playwright/test';
+  2   | import fs from 'fs';
+  3   | import path from 'path';
+  4   | 
+  5   | test.describe('E2E Flows with Coverage', () => {
+  6   | 
+  7   |   test.beforeEach(async ({ page }) => {
+  8   |     // Start coverage for dead code reduction integration
+  9   |     // Enabling JS and CSS coverage
+  10  |     await page.coverage.startJSCoverage();
+  11  |     await page.coverage.startCSSCoverage();
+  12  |   });
+  13  | 
+  14  |   test.afterEach(async ({ page }, testInfo) => {
+  15  |     // Stop coverage
+  16  |     const jsCoverage = await page.coverage.stopJSCoverage();
+  17  |     const cssCoverage = await page.coverage.stopCSSCoverage();
+  18  | 
+  19  |     const safeTitle = testInfo.title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+  20  |     const coverageDir = path.join(__dirname, '..', 'coverage-data');
+  21  |     if (!fs.existsSync(coverageDir)) {
+  22  |       fs.mkdirSync(coverageDir, { recursive: true });
+  23  |     }
+  24  | 
+  25  |     // Filter and save JS coverage (empire.js)
+  26  |     const empireCoverage = jsCoverage.find(entry => entry.url.includes('empire.js'));
+  27  |     if (empireCoverage) {
+  28  |       fs.writeFileSync(path.join(coverageDir, `js_coverage_${safeTitle}.json`), JSON.stringify(empireCoverage, null, 2));
+  29  |     }
+  30  | 
+  31  |     // Filter and save CSS coverage (theme.css)
+  32  |     const themeCoverage = cssCoverage.filter(entry => entry.url.includes('theme.css'));
+  33  |     if (themeCoverage.length > 0) {
+  34  |       fs.writeFileSync(path.join(coverageDir, `css_coverage_${safeTitle}.json`), JSON.stringify(themeCoverage, null, 2));
+  35  |     }
+  36  |   });
+  37  | 
+  38  |   test('Add to cart from nested category', async ({ page }) => {
+  39  |     // Navigate to homepage
+  40  |     await page.goto('/');
+  41  | 
+  42  |     // Go to a category (e.g., Calendars)
+  43  |     // Hover on 'Categories' menu to open dropdown
+  44  |     await page.locator('text=Categories >> visible=true').first().hover();
+  45  |     await page.waitForTimeout(500); // Give dropdown time to animate
+  46  | 
+  47  |     // Click on a visible 'Calendars' element in the dropdown
+  48  |     await page.locator('a:has-text("Calendars"):visible').first().click();
+  49  |     
+  50  |     // Wait for product grid and click on the first product
+  51  |     const productSelector = 'a.snize-view-link, a[href*="/products/"]';
+  52  |     await page.waitForSelector(productSelector, { state: 'visible' });
+  53  |     await page.locator(productSelector).first().click();
+  54  | 
+  55  |     // Click "Add to cart" and wait for the AJAX request to complete
+  56  |     await Promise.all([
+  57  |       page.waitForResponse(res => res.url().includes('/cart/add')),
+  58  |       page.click('button:has-text("Add to cart"), button:has-text("Add to Cart")')
+  59  |     ]);
+  60  | 
+  61  |     // Wait briefly for the ATC drawer/scripts to stabilize, then force navigate to the cart page
+  62  |     await page.waitForTimeout(2000);
+  63  |     try {
+  64  |       await page.goto('/cart');
+  65  |     } catch (e) {
+  66  |       // Ignore navigation aborts if the theme already started redirecting
+  67  |     }
+  68  |     await page.waitForLoadState('networkidle');
+  69  |     
+  70  |     // Take a screenshot of the cart to compare
+  71  |     // Note: The first time this runs, it will fail and create a baseline screenshot.
+> 72  |     await expect(page).toHaveScreenshot('cart-comparison.png', { fullPage: true, timeout: 15000 });
+      |                        ^ Error: expect(page).toHaveScreenshot(expected) failed
+  73  |   });
+  74  | 
+  75  |   test('Scroll main page to bottom', async ({ page }) => {
+  76  |     // Open main page
+  77  |     await page.goto('/');
+  78  | 
+  79  |     // Scroll it to bottom
+  80  |     await page.evaluate(async () => {
+  81  |       await new Promise((resolve) => {
+  82  |         let totalHeight = 0;
+  83  |         const distance = 100; // Smaller distance for gradual scrolling
+  84  |         const timer = setInterval(() => {
+  85  |           const scrollHeight = document.body.scrollHeight;
+  86  |           window.scrollBy(0, distance);
+  87  |           totalHeight += distance;
+  88  | 
+  89  |           // Stop scrolling when we reach the bottom or a max height to prevent infinite loops
+  90  |           if (totalHeight >= scrollHeight || totalHeight > 20000) {
+  91  |             clearInterval(timer);
+  92  |             resolve();
+  93  |           }
+  94  |         }, 30); // Faster interval but much smaller steps
+  95  |       });
+  96  |     });
+  97  | 
+  98  |     // Give it a brief moment for any lazy loaded elements at the bottom to render
+  99  |     await page.waitForTimeout(1000);
+  100 | 
+  101 |     // Verify we reached the bottom (footer is visible)
+  102 |     await expect(page.locator('footer').first()).toBeVisible();
+  103 | 
+  104 |     // No screenshot assertion here as full-page scrolled screenshots are extremely flaky on Shopify themes
+  105 |     // The scroll was performed successfully and coverage is captured.
+  106 |   });
+  107 | 
+  108 |   test('Add to cart directly from product page', async ({ page }) => {
+  109 |     // Go directly to a product page
+  110 |     await page.goto('/collections/calendars/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times');
+  111 |     
+  112 |     // Click "Add to cart" and wait for the AJAX request to complete
+  113 |     await Promise.all([
+  114 |       page.waitForResponse(res => res.url().includes('/cart/add')),
+  115 |       page.click('button:has-text("Add to cart"), button:has-text("Add to Cart")')
+  116 |     ]);
+  117 | 
+  118 |     // Wait briefly for the ATC drawer/scripts to stabilize, then force navigate to the cart page
+  119 |     await page.waitForTimeout(2000);
+  120 |     try {
+  121 |       await page.goto('/cart');
+  122 |     } catch (e) {
+  123 |       // Ignore navigation aborts if the theme already started redirecting
+  124 |     }
+  125 |     await page.waitForLoadState('networkidle');
+  126 |     
+  127 |     // Take a screenshot of the cart to compare
+  128 |     await expect(page).toHaveScreenshot('cart-comparison-direct.png', { fullPage: true, timeout: 15000 });
+  129 |   });
+  130 | });
+  131 | 
+```

@@ -1,0 +1,1363 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: visual.spec.js >> Visual Regression Tests >> should load / successfully and match baseline screenshot
+- Location: tests/visual.spec.js:22:5
+
+# Error details
+
+```
+Error: expect(page).toHaveScreenshot(expected) failed
+
+  732218 pixels (ratio 0.06 of all image pixels) are different.
+
+  Snapshot: homepage.png
+
+Call log:
+  - Expect "toHaveScreenshot(homepage.png)" with timeout 60000ms
+    - verifying given screenshot expectation
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - 732218 pixels (ratio 0.06 of all image pixels) are different.
+  - waiting 100ms before taking screenshot
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - captured a stable screenshot
+  - 732218 pixels (ratio 0.06 of all image pixels) are different.
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - alertdialog "Cookie consent" [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - heading "Cookie consent" [level=2] [ref=e5]
+        - paragraph [ref=e6]:
+          - text: We and our partners, including Shopify, use cookies and other technologies to personalize your experience, show you ads, and perform analytics, and we will not use cookies or other technologies for these purposes unless you accept them. Learn more in our
+          - link "Privacy Policy" [ref=e7] [cursor=pointer]:
+            - /url: https://www.israelbookshop.com/policies/privacy-policy
+      - generic [ref=e8]:
+        - button "Manage preferences" [ref=e9]
+        - button "Accept" [ref=e10]
+        - button "Decline" [ref=e11]
+  - link "Skip to content" [ref=e12] [cursor=pointer]:
+    - /url: "#site-main"
+  - generic [ref=e14]:
+    - link [ref=e15] [cursor=pointer]:
+      - /url: https://israelbookshop.com/collections/sukkah-depot-decorations
+    - generic [ref=e16]:
+      - text: ☎ Need Help? Call Us
+      - link "617-566-7113" [ref=e17] [cursor=pointer]:
+        - /url: tel:+1-617-566-7113
+      - text: or
+      - link "800-323-7723" [ref=e18] [cursor=pointer]:
+        - /url: +1-800-323-7723
+  - banner [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - link [ref=e24] [cursor=pointer]:
+          - /url: /
+        - search "Product" [ref=e26]:
+          - generic [ref=e27]:
+            - combobox "Search" [ref=e28]
+            - button "Search" [ref=e29] [cursor=pointer]:
+              - img [ref=e31]
+      - generic [ref=e34]:
+        - list [ref=e35]:
+          - listitem [ref=e36]:
+            - link "My Account" [ref=e37] [cursor=pointer]:
+              - /url: https://www.israelbookshop.com/customer_authentication/redirect?locale=en&region_country=US
+              - img [ref=e39]
+              - generic [ref=e43]: My Account
+        - link "View cart" [ref=e45] [cursor=pointer]:
+          - /url: /cart
+          - img [ref=e48]
+          - generic [ref=e53]: View cart
+    - navigation "Main" [ref=e55]:
+      - list "Main menu" [ref=e56]:
+        - listitem [ref=e57]:
+          - group [ref=e58]:
+            - generic "Categories" [ref=e59] [cursor=pointer]:
+              - text: Categories
+              - img [ref=e61]
+        - listitem [ref=e64]:
+          - link "Calendars" [ref=e65] [cursor=pointer]:
+            - /url: /collections/calendars
+        - listitem [ref=e66]:
+          - link "Education" [ref=e67] [cursor=pointer]:
+            - /url: /collections/educational-resources
+        - listitem [ref=e68]:
+          - link "Literature & Novels" [ref=e69] [cursor=pointer]:
+            - /url: /collections/judaic-literature-novels
+        - listitem [ref=e70]:
+          - link "Synagogue" [ref=e71] [cursor=pointer]:
+            - /url: /collections/synagogue-supply
+        - listitem [ref=e72]:
+          - link "Israel" [ref=e73] [cursor=pointer]:
+            - /url: /collections/israel-educational-resources
+        - listitem [ref=e74]:
+          - link "About Us" [ref=e75] [cursor=pointer]:
+            - /url: /pages/about
+        - listitem [ref=e76]:
+          - link "Contact" [ref=e77] [cursor=pointer]:
+            - /url: /pages/contact
+      - list [ref=e78]:
+        - listitem [ref=e79]:
+          - link "Shipping & Returns" [ref=e80] [cursor=pointer]:
+            - /url: /pages/shipping-return-policy
+        - listitem [ref=e81]:
+          - link "Gift Cards" [ref=e82] [cursor=pointer]:
+            - /url: /products/israel-book-shop-gift-card
+  - main "Main content" [ref=e83]:
+    - generic "Slideshow" [ref=e85]:
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - group "1 / 4" [ref=e88]:
+            - link "Education Superstore" [ref=e89] [cursor=pointer]:
+              - /url: /collections/educational-resources
+            - generic [ref=e92]:
+              - link:
+                - /url: /collections/educational-resources
+              - generic [ref=e93]:
+                - heading "Education Superstore" [level=2] [ref=e94]
+                - generic [ref=e95]: Textbooks, crafts, classroom decor and supplies. Everything a teacher needs in one stop!
+              - generic [ref=e96] [cursor=pointer]: Shop Classroom Essentials
+          - group "2 / 4" [ref=e97]:
+            - link "Dead Sea Beauty" [ref=e98] [cursor=pointer]:
+              - /url: /collections/jewelry-cosmetics
+            - generic [ref=e100]:
+              - link:
+                - /url: /collections/jewelry-cosmetics
+              - generic [ref=e101]:
+                - heading "Dead Sea Beauty" [level=2] [ref=e102]
+                - generic [ref=e103]: Shop Jewelry, Oils, Perfumes & Cosmetics
+              - link "Shop Now" [ref=e104] [cursor=pointer]:
+                - /url: /collections/ahava-dead-sea-beauty-products
+          - group "3 / 4" [ref=e105]:
+            - link "Tallit. Tallis and Tefillin." [ref=e106] [cursor=pointer]:
+              - /url: /collections/tallit-tallis-and-tefillin
+            - generic [ref=e108]:
+              - link:
+                - /url: /collections/tallit-tallis-and-tefillin
+              - generic [ref=e109]:
+                - heading "Tallit. Tallis and Tefillin." [level=2] [ref=e110]
+                - generic [ref=e111]: Many styles to choose from including complete sets, clips, bags, atarahs and more.
+              - link "Shop Tallit and Tefillin" [ref=e112] [cursor=pointer]:
+                - /url: /collections/tallit-tallis-and-tefillin
+          - group "4 / 4" [ref=e113]:
+            - link "Find the perfect gift!" [ref=e114] [cursor=pointer]:
+              - /url: /collections/judaica-gifts
+            - generic [ref=e116]:
+              - link:
+                - /url: /collections/judaica-gifts
+              - generic [ref=e117]:
+                - heading "Find the perfect gift!" [level=2] [ref=e118]
+                - generic [ref=e119]: We have the perfect item for that special occasion or just someone you love.
+              - link "Shop Judaica and Gifts" [ref=e120] [cursor=pointer]:
+                - /url: /collections/judaica-gifts
+        - button "Previous slide" [ref=e121] [cursor=pointer]
+        - button "Next slide" [ref=e122] [cursor=pointer]
+      - list [ref=e124]:
+        - listitem [ref=e125]:
+          - button "Slide 1" [ref=e126] [cursor=pointer]:
+            - generic [ref=e127]: Slide 1
+        - listitem [ref=e128]:
+          - button "Slide 2" [ref=e129] [cursor=pointer]:
+            - img [ref=e131]
+            - generic [ref=e134]: Slide 2
+        - listitem [ref=e135]:
+          - button "Slide 3" [ref=e136] [cursor=pointer]:
+            - generic [ref=e137]: Slide 3
+        - listitem [ref=e138]:
+          - button "Slide 4" [ref=e139] [cursor=pointer]:
+            - generic [ref=e140]: Slide 4
+    - generic [ref=e142]:
+      - text: Recent Arrivals
+      - generic [ref=e143]:
+        - generic [ref=e145]:
+          - link [ref=e150] [cursor=pointer]:
+            - /url: /products/%D7%A9%D7%A2%D7%A8%D7%99-%D7%90%D7%94%D7%A8%D7%9F-%D7%A2%D7%9C-%D7%94%D7%AA%D7%95%D7%A8%D7%94-19-%D7%9B%D7%A8%D7%9B%D7%9D-sharei-aaron-al-hatorah-19-volume-set
+            - figure [ref=e151]:
+              - generic [ref=e152]: שערי אהרן על התורה - 19 כרכם Sharei Aaron Al HaTorah 19 Volume set Hebrew Editon
+          - link [ref=e157] [cursor=pointer]:
+            - /url: /products/forty-years-by-rabbi-meir-kahane
+            - figure [ref=e158]:
+              - generic [ref=e160]: Save 50%
+              - generic [ref=e161]: FORTY YEARS By Rabbi Meir Kahane
+          - link [ref=e166] [cursor=pointer]:
+            - /url: /products/vehagita-wood-tabletop-shtender-orange-leaves-mc-52833
+            - figure [ref=e167]:
+              - generic [ref=e168]: Vehagita Wooden Table Top Book Shtender Design Orange Leaves
+          - link [ref=e173] [cursor=pointer]:
+            - /url: /products/yossi-and-laibel-hot-on-the-trail
+            - figure [ref=e174]:
+              - img "Yossi and Laibel Hot on the Trail cover image" [ref=e175]
+              - generic [ref=e176]: Yossi and Laibel Hot on the Trail A Laminated Children's Book by Dina Rosenfeld Ages 3 – 6
+          - link [ref=e181] [cursor=pointer]:
+            - /url: /products/on-the-ball-yossi-and-laibel
+            - figure [ref=e182]:
+              - img "On the Ball (Yossi and Laibel) cover image" [ref=e183]
+              - generic [ref=e184]: On the Ball Yossi and Laibel A Children's Book with Laminated Pages By Dina Rosenfeld
+          - link [ref=e189] [cursor=pointer]:
+            - /url: /products/touch-of-the-high-holidays-french-les-fetes-de-tichri
+            - figure [ref=e190]:
+              - img "Touch of the High Holidays - French (Les Fetes de Tichri) cover image" [ref=e191]
+              - generic [ref=e192]: Les Fetes de Tichri Un Livre Pour Toucher Et Sentir Touch of the High Holidays By Devorah Glazer - French Edition
+          - link [ref=e197] [cursor=pointer]:
+            - /url: /products/spare-the-child-by-rabbi-yechiel-yaakovson
+            - figure [ref=e198]:
+              - generic [ref=e200]: Save 10%
+              - generic [ref=e201]: Spare the Child by Rabbi Yechiel Yaakovson אל תחטאו בילד English Editiion
+          - link [ref=e206] [cursor=pointer]:
+            - /url: /products/yahadus-curriculum-workbook-3
+            - figure [ref=e207]:
+              - img "Yahadus Curriculum Workbook 3 cover image" [ref=e208]
+              - generic [ref=e209]: Yahadus Curriculum Workbook 3
+          - link [ref=e214] [cursor=pointer]:
+            - /url: /products/yahadus-curriculum-workbook-2
+            - figure [ref=e215]:
+              - img "Yahadus Curriculum Workbook 2 cover image" [ref=e216]
+              - generic [ref=e217]: Yahadus Curriculum Textbook Workbook 2
+          - link [ref=e222] [cursor=pointer]:
+            - /url: /products/yahadus-curriculum-workbook-1
+            - figure [ref=e223]:
+              - img "Yahadus Curriculum Workbook 1 cover image" [ref=e224]
+              - generic [ref=e225]: Yahadus Curriculum Workbook 1
+          - link [ref=e230] [cursor=pointer]:
+            - /url: /products/the-rebbe-speaks-to-children-english-6-volume-set
+            - figure [ref=e231]:
+              - generic [ref=e233]: Save 17%
+              - generic [ref=e234]: The Rebbe Speaks to Children English Edition Ages 4-12 6 Volume set
+          - link [ref=e239] [cursor=pointer]:
+            - /url: /products/the-passover-haggadah-of-the-jewish-idea-by-rabbi-binyamin-zev-kahane-copy
+            - figure [ref=e240]:
+              - generic [ref=e241]: Sold out
+              - generic [ref=e242]: Haggadat HaRa'ayon The Passover Haggadah of the Jewish Idea By Rabbi Binyamin Zev Kahane Hebrew Edition
+        - button "Previous" [disabled]:
+          - img
+        - button "Next" [ref=e243] [cursor=pointer]:
+          - img [ref=e244]
+      - link "View All" [ref=e246] [cursor=pointer]:
+        - /url: /collections/books
+    - generic [ref=e250]:
+      - article [ref=e251]:
+        - link "Educational Resources Jewish educational books, games, crafts, Hebrew/Israel materials, and teacher resources. Shop Now" [ref=e252] [cursor=pointer]:
+          - /url: /collections/educational-resources
+          - generic [ref=e253]:
+            - heading "Educational Resources" [level=2] [ref=e254]
+            - paragraph [ref=e255]: Jewish educational books, games, crafts, Hebrew/Israel materials, and teacher resources.
+            - generic [ref=e256]: Shop Now
+      - article [ref=e257]:
+        - link "For Your Shul A collection of Judaica and meaningful gifts that celebrate Jewish culture, spirituality, and tradition. Shop Now" [ref=e258] [cursor=pointer]:
+          - /url: /collections/synagogue-supply
+          - generic [ref=e259]:
+            - heading "For Your Shul" [level=2] [ref=e260]
+            - paragraph [ref=e261]: A collection of Judaica and meaningful gifts that celebrate Jewish culture, spirituality, and tradition.
+            - generic [ref=e262]: Shop Now
+      - article [ref=e263]:
+        - link "Hebrew Language Textbooks hard to find textbooks straight from israel. Shop Now" [ref=e264] [cursor=pointer]:
+          - /url: /collections/hebrew-language-textbooks-for-schools-and-colleges
+          - generic [ref=e265]:
+            - heading "Hebrew Language Textbooks" [level=2] [ref=e266]
+            - paragraph [ref=e267]: hard to find textbooks straight from israel.
+            - generic [ref=e268]: Shop Now
+    - generic [ref=e270]:
+      - heading "Gifts By Price" [level=2] [ref=e271]
+      - list [ref=e272]:
+        - listitem [ref=e273]:
+          - link "Gift Cards" [ref=e274] [cursor=pointer]:
+            - /url: /collections/gift-cards
+            - figure [ref=e275]:
+              - img "Gift Cards" [ref=e276]
+            - generic [ref=e277]: Gift Cards
+        - listitem [ref=e278]:
+          - link "Under $25" [ref=e279] [cursor=pointer]:
+            - /url: /collections/under-25
+            - figure [ref=e280]:
+              - img "Under $25" [ref=e281]
+            - generic [ref=e282]: Under $25
+        - listitem [ref=e283]:
+          - link "Under $50" [ref=e284] [cursor=pointer]:
+            - /url: /collections/under-50
+            - figure [ref=e285]:
+              - img "Under $50" [ref=e286]
+            - generic [ref=e287]: Under $50
+        - listitem [ref=e288]:
+          - link "Under $75" [ref=e289] [cursor=pointer]:
+            - /url: /collections/under-75
+            - figure [ref=e290]:
+              - img "Under $75" [ref=e291]
+            - generic [ref=e292]: Under $75
+        - listitem [ref=e293]:
+          - link "Under $100" [ref=e294] [cursor=pointer]:
+            - /url: /collections/under-100
+            - figure [ref=e295]:
+              - img "Under $100" [ref=e296]
+            - generic [ref=e297]: Under $100
+      - link "All Gifts" [ref=e298] [cursor=pointer]:
+        - /url: /collections
+    - generic [ref=e302]:
+      - article [ref=e303]:
+        - link "Judaica & Gifts A collection of Judaica and meaningful gifts that celebrate Jewish culture, spirituality, and tradition. Shop now" [ref=e304] [cursor=pointer]:
+          - /url: /collections/judaica-gifts
+          - generic [ref=e305]:
+            - heading "Judaica & Gifts" [level=2] [ref=e306]
+            - paragraph [ref=e307]: A collection of Judaica and meaningful gifts that celebrate Jewish culture, spirituality, and tradition.
+            - generic [ref=e308]: Shop now
+      - article [ref=e309]:
+        - link "Jewelry & Cosmetics A stunning collection of Judaica-themed jewelry and Israeli beauty products. Shop Now" [ref=e310] [cursor=pointer]:
+          - /url: /collections/jewelry-cosmetics
+          - generic [ref=e311]:
+            - heading "Jewelry & Cosmetics" [level=2] [ref=e312]
+            - paragraph [ref=e313]: A stunning collection of Judaica-themed jewelry and Israeli beauty products.
+            - generic [ref=e314]: Shop Now
+      - article [ref=e315]:
+        - link "Seforim Essential seforim sets for every Jewish home. Shop Now" [ref=e316] [cursor=pointer]:
+          - /url: /collections/seforim
+          - generic [ref=e317]:
+            - heading "Seforim" [level=2] [ref=e318]
+            - paragraph [ref=e319]: Essential seforim sets for every Jewish home.
+            - generic [ref=e320]: Shop Now
+    - generic [ref=e322]:
+      - text: 5786 Calendars
+      - generic [ref=e323]:
+        - generic [ref=e325]:
+          - link [ref=e330] [cursor=pointer]:
+            - /url: /products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times
+            - figure [ref=e331]:
+              - 'img "Hebrew Illuminations 16-Month 2026-2027 Wall Calendar: And Candle Lighting Times cover image" [ref=e332]'
+              - generic [ref=e333]: "Hebrew Illuminations 16-Month 2026-2027 Wall Calendar: And Candle Lighting Times"
+          - link [ref=e338] [cursor=pointer]:
+            - /url: /products/a-simplified-study-of-the-jewish-calendar
+            - figure [ref=e339]:
+              - generic [ref=e340]: A Simplified Study of the Jewish Calendar Kuntres Ohr Zarua
+          - link [ref=e345] [cursor=pointer]:
+            - /url: /products/the-torah-calendar-exploring-the-festivals-by-nathan-aviezer
+            - figure [ref=e346]:
+              - generic [ref=e347]: THE TORAH CALENDAR Exploring the Festivals By Nathan Aviezer
+          - link [ref=e352] [cursor=pointer]:
+            - /url: /products/wall-calendar-2026-the-jewish-museum-art-12-months-large-grid-design-featuring-12-artworks
+            - figure [ref=e353]:
+              - img "Wall Calendar 2026, The Jewish Museum Art, 12 Months, Large Grid Design Featuring 12 Artworks cover image" [ref=e354]
+              - generic [ref=e356]: Save 12%
+              - generic [ref=e357]: 5786 The Jewish Museum Wall Calendar 2025 - 2026 Featuring 12 Artworks from Jewish Museum, New York
+          - link [ref=e362] [cursor=pointer]:
+            - /url: /products/luah-hashanah-5786
+            - figure [ref=e363]:
+              - img "Luah Hashanah 5786 cover image" [ref=e364]
+              - generic [ref=e365]: Sold out
+              - generic [ref=e366]: Luach Conservative 5787 Luach HaShana Calendar 2025-2026
+          - link [ref=e371] [cursor=pointer]:
+            - /url: /products/my-very-own-jewish-calendar-5786-2025-2026-jewish-calendars
+            - figure [ref=e372]:
+              - 'img "My Very Own Jewish Calendar 5786: 2025-2026 (Jewish Calendars) cover image" [ref=e373]'
+              - generic [ref=e375]: Save 17%
+              - generic [ref=e376]: "My Very Own Jewish Calendar 5786: 2025-2026 (Jewish Calendars)"
+          - link [ref=e381] [cursor=pointer]:
+            - /url: /products/pre-order-5787-jewish-art-calendar-by-mickie-2026-2027
+            - figure [ref=e382]:
+              - generic [ref=e383]: Pre-Order 5787 Jewish Art Calendar by Mickie 2026-2027 Available June 1, 2026
+          - link [ref=e388] [cursor=pointer]:
+            - /url: /products/hayom-yom-bilingual-hebrew-english-edition-large
+            - figure [ref=e389]:
+              - generic [ref=e390]: Hayom Yom Bilingual Hebrew English Edition Large By Lubavitcher Rebbi Rabbi Menachem M. Schneerson
+          - link [ref=e395] [cursor=pointer]:
+            - /url: /products/jewish-classroom-calendar-kit-by-miriam-feldman
+            - figure [ref=e396]:
+              - generic [ref=e397]: Jewish Classroom Calendar Kit by Miriam Feldman Made in Israel
+          - link [ref=e402] [cursor=pointer]:
+            - /url: /products/inside-time-a-chassidic-perspective-on-the-jewish-calendar-set-of-3-volumes-by-yanki-tauber
+            - figure [ref=e403]:
+              - generic [ref=e404]: "Inside Time: A Chassidic Perspective on the Jewish Calendar Set of 3 Volumes By Yanki Tauber"
+          - link [ref=e409] [cursor=pointer]:
+            - /url: /products/my-fun-hebrew-calendar-to-fill-the-blanks-grades-k-2
+            - figure [ref=e410]:
+              - generic [ref=e411]: My Fun Hebrew Calendar To Fill the Blanks Grades K-2
+          - link [ref=e416] [cursor=pointer]:
+            - /url: /products/5786-the-balabustas-spiral-daily-organizer-2025-2026-desktop-edition
+            - figure [ref=e417]:
+              - generic [ref=e419]: Save 10%
+              - generic [ref=e420]: 5786 The Balabusta's Spiral Daily Organizer 2025-2026 Desktop Edition
+        - button "Previous" [disabled]:
+          - img
+        - button "Next" [ref=e421] [cursor=pointer]:
+          - img [ref=e422]
+      - link "View All" [ref=e424] [cursor=pointer]:
+        - /url: /collections/calendars
+    - generic [ref=e428]:
+      - link "Marriage Shop Now" [ref=e430] [cursor=pointer]:
+        - /url: /collections/wedding-and-marriage
+        - generic [ref=e431]:
+          - heading "Marriage" [level=2] [ref=e432]
+          - generic [ref=e433]: Shop Now
+      - link "Birth Shop Now" [ref=e435] [cursor=pointer]:
+        - /url: /collections/birth
+        - generic [ref=e436]:
+          - heading "Birth" [level=2] [ref=e437]
+          - generic [ref=e438]: Shop Now
+      - link "Bris Milah Shop Now" [ref=e440] [cursor=pointer]:
+        - /url: /collections/bris-milah
+        - generic [ref=e441]:
+          - heading "Bris Milah" [level=2] [ref=e442]
+          - generic [ref=e443]: Shop Now
+    - generic [ref=e447]:
+      - link "Bar / Bas Mitzvah Shop Now" [ref=e449] [cursor=pointer]:
+        - /url: /collections/bar-bat-mitzvah
+        - generic [ref=e450]:
+          - heading "Bar / Bas Mitzvah" [level=2] [ref=e451]
+          - generic [ref=e452]: Shop Now
+      - link "Bereavement Shop Now" [ref=e454] [cursor=pointer]:
+        - /url: /collections/death-bereavement
+        - generic [ref=e455]:
+          - heading "Bereavement" [level=2] [ref=e456]
+          - generic [ref=e457]: Shop Now
+      - link "Childhood Shop Now" [ref=e459] [cursor=pointer]:
+        - /url: /collections/children
+        - generic [ref=e460]:
+          - heading "Childhood" [level=2] [ref=e461]
+          - generic [ref=e462]: Shop Now
+    - generic [ref=e464]:
+      - heading "What is everyone saying?" [level=2] [ref=e465]
+      - generic [ref=e466]:
+        - generic [ref=e468]:
+          - generic [ref=e470]:
+            - generic [ref=e471]:
+              - img [ref=e472]
+              - img [ref=e474]
+              - img [ref=e476]
+              - img [ref=e478]
+              - img [ref=e480]
+            - blockquote [ref=e482]:
+              - paragraph [ref=e483]: "\"Super nice and helpful staff. Wide variety of kippot and sefarim.\""
+            - paragraph [ref=e485]: Daniel
+          - generic [ref=e487]:
+            - generic [ref=e488]:
+              - img [ref=e489]
+              - img [ref=e491]
+              - img [ref=e493]
+              - img [ref=e495]
+              - img [ref=e497]
+            - blockquote [ref=e499]:
+              - paragraph [ref=e500]: "\"Great selection of kippot, tzitzit, books, DVDs, chocolate, and other fun stuff!\""
+            - paragraph [ref=e502]: Yosef R.
+          - generic [ref=e504]:
+            - generic [ref=e505]:
+              - img [ref=e506]
+              - img [ref=e508]
+              - img [ref=e510]
+              - img [ref=e512]
+              - img [ref=e514]
+            - blockquote [ref=e516]:
+              - paragraph [ref=e517]: "\"Brimming with Chanukah items!\""
+            - paragraph [ref=e519]: Myrna J.
+          - generic [ref=e521]:
+            - generic [ref=e522]:
+              - img [ref=e523]
+              - img [ref=e525]
+              - img [ref=e527]
+              - img [ref=e529]
+              - img [ref=e531]
+            - blockquote [ref=e533]:
+              - paragraph [ref=e534]: "\"I deal with them regularly and they have never been anything but heimisher, very knowledgeable and always helpful\""
+            - paragraph [ref=e536]: Robert T.
+          - generic [ref=e538]:
+            - generic [ref=e539]:
+              - img [ref=e540]
+              - img [ref=e542]
+              - img [ref=e544]
+              - img [ref=e546]
+              - img [ref=e548]
+            - blockquote [ref=e550]:
+              - paragraph [ref=e551]: "\"One of my favorite bookstores, I never go to Brookline without stopping in here!\""
+            - paragraph [ref=e553]: Alyson P.
+          - generic [ref=e555]:
+            - generic [ref=e556]:
+              - img [ref=e557]
+              - img [ref=e559]
+              - img [ref=e561]
+              - img [ref=e563]
+              - img [ref=e565]
+            - blockquote [ref=e567]:
+              - paragraph [ref=e568]: "\"Excellent charming booksore One of my favorites 📚\""
+            - paragraph [ref=e570]: Alyson F.
+          - generic [ref=e572]:
+            - generic [ref=e573]:
+              - img [ref=e574]
+              - img [ref=e576]
+              - img [ref=e578]
+              - img [ref=e580]
+              - img [ref=e582]
+            - blockquote [ref=e584]:
+              - paragraph [ref=e585]: "\"Excellent selection of judacia products. Helpful friendly staff. Highly recommend. I make the trip from maine. Worth the trip.\""
+            - paragraph [ref=e587]: David S.
+          - generic [ref=e589]:
+            - generic [ref=e590]:
+              - img [ref=e591]
+              - img [ref=e593]
+              - img [ref=e595]
+              - img [ref=e597]
+              - img [ref=e599]
+            - blockquote [ref=e601]:
+              - paragraph [ref=e602]: "\"Wonderful caring customer service and an amazing selection of judaica and educational materials. No other source like this...\""
+            - paragraph [ref=e604]: Tovah A.
+          - generic [ref=e606]:
+            - generic [ref=e607]:
+              - img [ref=e608]
+              - img [ref=e610]
+              - img [ref=e612]
+              - img [ref=e614]
+              - img [ref=e616]
+            - blockquote [ref=e618]:
+              - paragraph [ref=e619]: "\"Great store with a wide selection of gifts and books. I purchased two wonderful books and an adorable plush toy for my grandson.\""
+            - paragraph [ref=e621]: Karen B.
+          - generic [ref=e623]:
+            - generic [ref=e624]:
+              - img [ref=e625]
+              - img [ref=e627]
+              - img [ref=e629]
+              - img [ref=e631]
+              - img [ref=e633]
+            - blockquote [ref=e635]:
+              - paragraph [ref=e636]: "\"Best place in Brookline 🙏🙏\""
+            - paragraph [ref=e638]: Simon C.
+          - generic [ref=e640]:
+            - generic [ref=e641]:
+              - img [ref=e642]
+              - img [ref=e644]
+              - img [ref=e646]
+              - img [ref=e648]
+              - img [ref=e650]
+            - blockquote [ref=e652]:
+              - paragraph [ref=e653]: "\"Love shopping here for Judaica. The staff is always helpful but not pushy and they have a huge inventory.\""
+            - paragraph [ref=e655]: Rebecca N. M.
+          - generic [ref=e657]:
+            - generic [ref=e658]:
+              - img [ref=e659]
+              - img [ref=e661]
+              - img [ref=e663]
+              - img [ref=e665]
+              - img [ref=e667]
+            - blockquote [ref=e669]:
+              - paragraph [ref=e670]: "\"Thank you for your quick shipping! Your dedication to providing quality books and excellent service is truly appreciated!\""
+            - paragraph [ref=e672]: Shabsi
+          - generic [ref=e674]:
+            - generic [ref=e675]:
+              - img [ref=e676]
+              - img [ref=e678]
+              - img [ref=e680]
+              - img [ref=e682]
+              - img [ref=e684]
+            - blockquote [ref=e686]:
+              - paragraph [ref=e687]: "\"Nice selection of seferim and judaica. Kind, helpful, welcoming owners.\""
+            - paragraph [ref=e689]: Ellis C.
+          - generic [ref=e691]:
+            - generic [ref=e692]:
+              - img [ref=e693]
+              - img [ref=e695]
+              - img [ref=e697]
+              - img [ref=e699]
+              - img [ref=e701]
+            - blockquote [ref=e703]:
+              - paragraph [ref=e704]: "\"There's no better Judaica shop with a rich variety... Jewish texts, gifts, advice, & helpful attention...\""
+            - paragraph [ref=e706]: Steven D.
+          - generic [ref=e708]:
+            - generic [ref=e709]:
+              - img [ref=e710]
+              - img [ref=e712]
+              - img [ref=e714]
+              - img [ref=e716]
+              - img [ref=e718]
+            - blockquote [ref=e720]:
+              - paragraph [ref=e721]: "\"Great store! Friendly staff\""
+            - paragraph [ref=e723]: Tina M.
+          - generic [ref=e725]:
+            - generic [ref=e726]:
+              - img [ref=e727]
+              - img [ref=e729]
+              - img [ref=e731]
+              - img [ref=e733]
+              - img [ref=e735]
+            - blockquote [ref=e737]:
+              - paragraph [ref=e738]: "\"LOTS of selection ... Judaica, wall art, Jewish jewelry styles, cookbooks, games, puzzles, music\""
+            - paragraph [ref=e740]: Toby T.
+          - generic [ref=e742]:
+            - generic [ref=e743]:
+              - img [ref=e744]
+              - img [ref=e746]
+              - img [ref=e748]
+              - img [ref=e750]
+              - img [ref=e752]
+            - blockquote [ref=e754]:
+              - paragraph [ref=e755]: "\"Great opportunity in Boston to get Hebrew children’s books and klafim for Mezuzot\""
+            - paragraph [ref=e757]: Natalie Y.
+          - generic [ref=e759]:
+            - generic [ref=e760]:
+              - img [ref=e761]
+              - img [ref=e763]
+              - img [ref=e765]
+              - img [ref=e767]
+              - img [ref=e769]
+            - blockquote [ref=e771]:
+              - paragraph [ref=e772]: "\"Great on sale prices, delivery and customer service. A great online place to shop.\""
+            - paragraph [ref=e774]: Stephanie S.
+          - generic [ref=e776]:
+            - generic [ref=e777]:
+              - img [ref=e778]
+              - img [ref=e780]
+              - img [ref=e782]
+              - img [ref=e784]
+              - img [ref=e786]
+            - blockquote [ref=e788]:
+              - paragraph [ref=e789]: "\"This is a go to spot for sefarim and an array of other essential Judaica\""
+            - paragraph [ref=e791]: Matt S.
+          - generic [ref=e793]:
+            - generic [ref=e794]:
+              - img [ref=e795]
+              - img [ref=e797]
+              - img [ref=e799]
+              - img [ref=e801]
+              - img [ref=e803]
+            - blockquote [ref=e805]:
+              - paragraph [ref=e806]: "\"Has a huge selection of gifts, books, ritual objects and more. Special T-shirts are a great gift!\""
+            - paragraph [ref=e808]: Monica R. B.
+          - generic [ref=e810]:
+            - generic [ref=e811]:
+              - img [ref=e812]
+              - img [ref=e814]
+              - img [ref=e816]
+              - img [ref=e818]
+              - img [ref=e820]
+            - blockquote [ref=e822]:
+              - paragraph [ref=e823]: "\"I bought a beautiful lulav, etrog, haddasim, and aravos that stayed green...throughout all the days of Sukkot.\""
+            - paragraph [ref=e825]: Hasdai H.
+          - generic [ref=e827]:
+            - generic [ref=e828]:
+              - img [ref=e829]
+              - img [ref=e831]
+              - img [ref=e833]
+              - img [ref=e835]
+              - img [ref=e837]
+            - blockquote [ref=e839]:
+              - paragraph [ref=e840]: "\"This place was really great. Had everything you could want in a large range of pricing...\""
+            - paragraph [ref=e842]: Caleb H.
+          - generic [ref=e844]:
+            - generic [ref=e845]:
+              - img [ref=e846]
+              - img [ref=e848]
+              - img [ref=e850]
+              - img [ref=e852]
+              - img [ref=e854]
+            - blockquote [ref=e856]:
+              - paragraph [ref=e857]: "\"The experience very nice and welcoming. They have a large selection... Good service and prices too. Nice place\""
+            - paragraph [ref=e859]: John D.
+          - generic [ref=e861]:
+            - generic [ref=e862]:
+              - img [ref=e863]
+              - img [ref=e865]
+              - img [ref=e867]
+              - img [ref=e869]
+              - img [ref=e871]
+            - blockquote [ref=e873]:
+              - paragraph [ref=e874]: אז באתי לכאן וגיליתי שיש להם כל מה שאני צריך עם שירות לקוחות מעולה
+            - paragraph [ref=e876]: Jeff K.
+          - generic [ref=e878]:
+            - generic [ref=e879]:
+              - img [ref=e880]
+              - img [ref=e882]
+              - img [ref=e884]
+              - img [ref=e886]
+              - img [ref=e888]
+            - blockquote [ref=e890]:
+              - paragraph [ref=e891]: "\"Fantastic customer service! I mail ordered Hanukkah candles very close to the start of the holiday and they delivered them to me fast....\""
+            - paragraph [ref=e893]: Julia R.
+          - generic [ref=e895]:
+            - generic [ref=e896]:
+              - img [ref=e897]
+              - img [ref=e899]
+              - img [ref=e901]
+              - img [ref=e903]
+              - img [ref=e905]
+            - blockquote [ref=e907]:
+              - paragraph [ref=e908]: "\"Wonderful customer service! I was looking for an odd size havdalah candle to fit a nonstandard (but lovely!) holder. ....\""
+            - paragraph [ref=e910]: Inge F.
+          - generic [ref=e912]:
+            - generic [ref=e913]:
+              - img [ref=e914]
+              - img [ref=e916]
+              - img [ref=e918]
+              - img [ref=e920]
+              - img [ref=e922]
+            - blockquote [ref=e924]:
+              - paragraph [ref=e925]: Staff welcoming, large selection of gift items, books, dead sea products, jewelry, beautiful menorahs and much much more...."
+            - paragraph [ref=e927]: GASB NYC
+          - generic [ref=e929]:
+            - generic [ref=e930]:
+              - img [ref=e931]
+              - img [ref=e933]
+              - img [ref=e935]
+              - img [ref=e937]
+              - img [ref=e939]
+            - blockquote [ref=e941]:
+              - paragraph [ref=e942]: "\"Gratitude to Israel Book Shop Inc again today. We broke yet another panel ... Chaim delivered a replacement to us after they closed....\""
+            - paragraph [ref=e944]: Louise M.
+          - generic [ref=e946]:
+            - generic [ref=e947]:
+              - img [ref=e948]
+              - img [ref=e950]
+              - img [ref=e952]
+              - img [ref=e954]
+              - img [ref=e956]
+            - blockquote [ref=e958]:
+              - paragraph [ref=e959]: "\"The best place to purchase a Ketubah! Beautiful designs, great prices, and the staff is beyond fantastic to work with. Thank you for all of your help!\""
+            - paragraph [ref=e961]: Michael A.
+          - generic [ref=e963]:
+            - generic [ref=e964]:
+              - img [ref=e965]
+              - img [ref=e967]
+              - img [ref=e969]
+              - img [ref=e971]
+              - img [ref=e973]
+            - blockquote [ref=e975]:
+              - paragraph [ref=e976]: "\"Excellent selection. Store is light, bright and airy. Salespeople are knowledgeable and helpful. Lovely Judaica; colorful kippot; and large variety...\""
+            - paragraph [ref=e978]: Deborah R.
+          - generic [ref=e980]:
+            - generic [ref=e981]:
+              - img [ref=e982]
+              - img [ref=e984]
+              - img [ref=e986]
+              - img [ref=e988]
+              - img [ref=e990]
+            - blockquote [ref=e992]:
+              - paragraph [ref=e993]: "\"My first time in the Israel Book Shops. Everyone was very helpful and informative. ... They also have an amazing assortment of religious books, kippas and other items....\""
+            - paragraph [ref=e995]: Gregg C.
+          - generic [ref=e997]:
+            - generic [ref=e998]:
+              - img [ref=e999]
+              - img [ref=e1001]
+              - img [ref=e1003]
+              - img [ref=e1005]
+              - img [ref=e1007]
+            - blockquote [ref=e1009]:
+              - paragraph [ref=e1010]: "\"I've been shopping here for over 15 years and have never had a bad experience. The staff is friendly and helpful, the store has great selection...\""
+            - paragraph [ref=e1012]: Benjamin M.
+          - generic [ref=e1014]:
+            - generic [ref=e1015]:
+              - img [ref=e1016]
+              - img [ref=e1018]
+              - img [ref=e1020]
+              - img [ref=e1022]
+              - img [ref=e1024]
+            - blockquote [ref=e1026]:
+              - paragraph [ref=e1027]: "\"Great selection of kippot, tzitzit, books, DVDs, chocolate, and other fun stuff!\""
+            - paragraph [ref=e1029]: Yosef R.
+          - generic [ref=e1031]:
+            - generic [ref=e1032]:
+              - img [ref=e1033]
+              - img [ref=e1035]
+              - img [ref=e1037]
+              - img [ref=e1039]
+              - img [ref=e1041]
+            - blockquote [ref=e1043]:
+              - paragraph [ref=e1044]: "\"Love it. They always offer a helping hand and they have everything that you need in stock. ... Great place to get a gift for family and friends.\""
+            - paragraph [ref=e1046]: Andrew K.
+          - generic [ref=e1048]:
+            - generic [ref=e1049]:
+              - img [ref=e1050]
+              - img [ref=e1052]
+              - img [ref=e1054]
+              - img [ref=e1056]
+              - img [ref=e1058]
+            - blockquote [ref=e1060]:
+              - paragraph [ref=e1061]: "\"Nice variety; friendly staff; competitive prices; metered street parking in front and behind in lot, free parking 1 block away.\""
+            - paragraph [ref=e1063]: Jesse H.
+          - generic [ref=e1065]:
+            - generic [ref=e1066]:
+              - img [ref=e1067]
+              - img [ref=e1069]
+              - img [ref=e1071]
+              - img [ref=e1073]
+              - img [ref=e1075]
+            - blockquote [ref=e1077]:
+              - paragraph [ref=e1078]: "\"The best place in the Boston area for anything Jewish. Helpful staff awesome inventory and if they don't have it, they will get it.\""
+            - paragraph [ref=e1080]: Robert P.
+          - generic [ref=e1082]:
+            - generic [ref=e1083]:
+              - img [ref=e1084]
+              - img [ref=e1086]
+              - img [ref=e1088]
+              - img [ref=e1090]
+              - img [ref=e1092]
+            - blockquote [ref=e1094]:
+              - paragraph [ref=e1095]: "\"Wonderful family business with a wide range of Judica. The only place in Boston that has such a large selection of Jewish books.\""
+            - paragraph [ref=e1097]: Gershon B.
+          - generic [ref=e1099]:
+            - generic [ref=e1100]:
+              - img [ref=e1101]
+              - img [ref=e1103]
+              - img [ref=e1105]
+              - img [ref=e1107]
+              - img [ref=e1109]
+            - blockquote [ref=e1111]:
+              - paragraph [ref=e1112]: "\"Super nice and helpful staff. Wide variety of kippot and sefarim.\""
+            - paragraph [ref=e1114]: Daniel
+          - generic [ref=e1116]:
+            - generic [ref=e1117]:
+              - img [ref=e1118]
+              - img [ref=e1120]
+              - img [ref=e1122]
+              - img [ref=e1124]
+              - img [ref=e1126]
+            - blockquote [ref=e1128]:
+              - paragraph [ref=e1129]: "\"Wonderful store! Big and nice, has a great variety of books and souvenirs. Helpful and friendly staff.\""
+            - paragraph [ref=e1131]: Darya D.
+          - generic [ref=e1133]:
+            - generic [ref=e1134]:
+              - img [ref=e1135]
+              - img [ref=e1137]
+              - img [ref=e1139]
+              - img [ref=e1141]
+              - img [ref=e1143]
+            - blockquote [ref=e1145]:
+              - paragraph [ref=e1146]: "\"Large selection of Jewish books and items. Nothing else like it in the area. Good to see in person instead of ordering online.\""
+            - paragraph [ref=e1148]: Donna C.
+          - generic [ref=e1150]:
+            - generic [ref=e1151]:
+              - img [ref=e1152]
+              - img [ref=e1154]
+              - img [ref=e1156]
+              - img [ref=e1158]
+              - img [ref=e1160]
+            - blockquote [ref=e1162]:
+              - paragraph [ref=e1163]: "\"Great selection of Judaica with helpful and informative staff. Great place to get gifts.\""
+            - paragraph [ref=e1165]: Yoel K.
+          - generic [ref=e1167]:
+            - generic [ref=e1168]:
+              - img [ref=e1169]
+              - img [ref=e1171]
+              - img [ref=e1173]
+              - img [ref=e1175]
+              - img [ref=e1177]
+            - blockquote [ref=e1179]:
+              - paragraph [ref=e1180]: "\"This is a nice spot for all of your Judaica needs. They have a huge assortment of books, kippot and jewelry.\""
+            - paragraph [ref=e1182]: Manuel C.
+          - generic [ref=e1184]:
+            - generic [ref=e1185]:
+              - img [ref=e1186]
+              - img [ref=e1188]
+              - img [ref=e1190]
+              - img [ref=e1192]
+              - img [ref=e1194]
+            - blockquote [ref=e1196]:
+              - paragraph [ref=e1197]: "\"Best seforim store in the world! Organized beautifully by topic, with both old classics and new stuff.\""
+            - paragraph [ref=e1199]: Avraham K.
+          - generic [ref=e1201]:
+            - generic [ref=e1202]:
+              - img [ref=e1203]
+              - img [ref=e1205]
+              - img [ref=e1207]
+              - img [ref=e1209]
+              - img [ref=e1211]
+            - blockquote [ref=e1213]:
+              - paragraph [ref=e1214]: "\"Best Jewish bookstore in New England and if you're an educator, best everywhere. Even Brooklyn.\""
+            - paragraph [ref=e1216]: Yael A.
+          - generic [ref=e1218]:
+            - generic [ref=e1219]:
+              - img [ref=e1220]
+              - img [ref=e1222]
+              - img [ref=e1224]
+              - img [ref=e1226]
+              - img [ref=e1228]
+            - blockquote [ref=e1230]:
+              - paragraph [ref=e1231]: "\"Excellent place for Jewish books and other Judaica, very knowledgeable and helpful staff.\""
+            - paragraph [ref=e1233]: Peter S.
+          - generic [ref=e1235]:
+            - generic [ref=e1236]:
+              - img [ref=e1237]
+              - img [ref=e1239]
+              - img [ref=e1241]
+              - img [ref=e1243]
+              - img [ref=e1245]
+            - blockquote [ref=e1247]:
+              - paragraph [ref=e1248]: "\"Excellent store.excellent customer service INVENTORY is excellent..you can find what looking for and want ..if not.. they will and can order it for you.\""
+            - paragraph [ref=e1250]: Kat M.
+          - generic [ref=e1252]:
+            - generic [ref=e1253]:
+              - img [ref=e1254]
+              - img [ref=e1256]
+              - img [ref=e1258]
+              - img [ref=e1260]
+              - img [ref=e1262]
+            - blockquote [ref=e1264]:
+              - paragraph [ref=e1265]: "\"Excellent selection of unique Judaica. Friendly staff is very helpful.\""
+            - paragraph [ref=e1267]: Barbara W.
+          - generic [ref=e1269]:
+            - generic [ref=e1270]:
+              - img [ref=e1271]
+              - img [ref=e1273]
+              - img [ref=e1275]
+              - img [ref=e1277]
+              - img [ref=e1279]
+            - blockquote [ref=e1281]:
+              - paragraph [ref=e1282]: "\"Great place to shop! Very friendly & helpful workers.\""
+            - paragraph [ref=e1284]: Diamond Team
+          - generic [ref=e1286]:
+            - generic [ref=e1287]:
+              - img [ref=e1288]
+              - img [ref=e1290]
+              - img [ref=e1292]
+              - img [ref=e1294]
+              - img [ref=e1296]
+            - blockquote [ref=e1298]:
+              - paragraph [ref=e1299]: "\"They have whatever you need in the way of Jewish sources and they are very hospitable and helpful.\""
+            - paragraph [ref=e1301]: Rahel
+          - generic [ref=e1303]:
+            - generic [ref=e1304]:
+              - img [ref=e1305]
+              - img [ref=e1307]
+              - img [ref=e1309]
+              - img [ref=e1311]
+              - img [ref=e1313]
+            - blockquote [ref=e1315]:
+              - paragraph [ref=e1316]: "\"Brimming with Chanukah items!\""
+            - paragraph [ref=e1318]: Myrna J.
+          - generic [ref=e1320]:
+            - generic [ref=e1321]:
+              - img [ref=e1322]
+              - img [ref=e1324]
+              - img [ref=e1326]
+              - img [ref=e1328]
+              - img [ref=e1330]
+            - blockquote [ref=e1332]:
+              - paragraph [ref=e1333]: "\"Great place to get a lulav and etrog and other Judaica in Boston.\""
+            - paragraph [ref=e1335]: Joshua M.
+          - generic [ref=e1337]:
+            - generic [ref=e1338]:
+              - img [ref=e1339]
+              - img [ref=e1341]
+              - img [ref=e1343]
+              - img [ref=e1345]
+              - img [ref=e1347]
+            - blockquote [ref=e1349]:
+              - paragraph [ref=e1350]: "\"Best source for Jewish books in Boston. Great selection of judaica as well.\""
+            - paragraph [ref=e1352]: Zachary K.
+          - generic [ref=e1354]:
+            - generic [ref=e1355]:
+              - img [ref=e1356]
+              - img [ref=e1358]
+              - img [ref=e1360]
+              - img [ref=e1362]
+              - img [ref=e1364]
+            - blockquote [ref=e1366]:
+              - paragraph [ref=e1367]: "\"Always found what I was looking for and more! As an educator, I found it to be a great resource!\""
+            - paragraph [ref=e1369]: Shoshana Y.
+          - generic [ref=e1371]:
+            - generic [ref=e1372]:
+              - img [ref=e1373]
+              - img [ref=e1375]
+              - img [ref=e1377]
+              - img [ref=e1379]
+              - img [ref=e1381]
+            - blockquote [ref=e1383]:
+              - paragraph [ref=e1384]: "\"Our go to place for Jewish learning and Judaica! Great!\""
+            - paragraph [ref=e1386]: Joyce B.
+          - generic [ref=e1388]:
+            - generic [ref=e1389]:
+              - img [ref=e1390]
+              - img [ref=e1392]
+              - img [ref=e1394]
+              - img [ref=e1396]
+              - img [ref=e1398]
+            - blockquote [ref=e1400]:
+              - paragraph [ref=e1401]: "\"Best place to find what I need and the staff are the best.\""
+            - paragraph [ref=e1403]: Josh C.
+          - generic [ref=e1405]:
+            - generic [ref=e1406]:
+              - img [ref=e1407]
+              - img [ref=e1409]
+              - img [ref=e1411]
+              - img [ref=e1413]
+              - img [ref=e1415]
+            - blockquote [ref=e1417]:
+              - paragraph [ref=e1418]: "\"Best Jewish bookstore in Boston!\""
+            - paragraph [ref=e1420]: Igor D.
+          - generic [ref=e1422]:
+            - generic [ref=e1423]:
+              - img [ref=e1424]
+              - img [ref=e1426]
+              - img [ref=e1428]
+              - img [ref=e1430]
+              - img [ref=e1432]
+            - blockquote [ref=e1434]:
+              - paragraph [ref=e1435]: "\"Fantastic place, great people.\""
+            - paragraph [ref=e1437]: Saadia W.
+          - generic [ref=e1439]:
+            - generic [ref=e1440]:
+              - img [ref=e1441]
+              - img [ref=e1443]
+              - img [ref=e1445]
+              - img [ref=e1447]
+              - img [ref=e1449]
+            - blockquote [ref=e1451]:
+              - paragraph [ref=e1452]: "\"Very nice shop!\""
+            - paragraph [ref=e1454]: Mark S.
+          - generic [ref=e1456]:
+            - generic [ref=e1457]:
+              - img [ref=e1458]
+              - img [ref=e1460]
+              - img [ref=e1462]
+              - img [ref=e1464]
+              - img [ref=e1466]
+            - blockquote [ref=e1468]:
+              - paragraph [ref=e1469]: "\"Incredibly friendly and helpful.\""
+            - paragraph [ref=e1471]: Naomi H.
+          - generic [ref=e1473]:
+            - generic [ref=e1474]:
+              - img [ref=e1475]
+              - img [ref=e1477]
+              - img [ref=e1479]
+              - img [ref=e1481]
+              - img [ref=e1483]
+            - blockquote [ref=e1485]:
+              - paragraph [ref=e1486]: "\"Great selection and service.\""
+            - paragraph [ref=e1488]: Noam W.
+          - generic [ref=e1490]:
+            - generic [ref=e1491]:
+              - img [ref=e1492]
+              - img [ref=e1494]
+              - img [ref=e1496]
+              - img [ref=e1498]
+              - img [ref=e1500]
+            - blockquote [ref=e1502]:
+              - paragraph [ref=e1503]: "\"Better than NY!!\""
+            - paragraph [ref=e1505]: Avraham K.
+          - generic [ref=e1507]:
+            - generic [ref=e1508]:
+              - img [ref=e1509]
+              - img [ref=e1511]
+              - img [ref=e1513]
+              - img [ref=e1515]
+              - img [ref=e1517]
+            - blockquote [ref=e1519]:
+              - paragraph [ref=e1520]: "\"LOVE LOVE LOVE this place!\""
+            - paragraph [ref=e1522]: Anonymous
+          - generic [ref=e1524]:
+            - generic [ref=e1525]:
+              - img [ref=e1526]
+              - img [ref=e1528]
+              - img [ref=e1530]
+              - img [ref=e1532]
+              - img [ref=e1534]
+            - blockquote [ref=e1536]:
+              - paragraph [ref=e1537]: "\"Great place!\""
+            - paragraph [ref=e1539]: Gary S.
+          - generic [ref=e1541]:
+            - generic [ref=e1542]:
+              - img [ref=e1543]
+              - img [ref=e1545]
+              - img [ref=e1547]
+              - img [ref=e1549]
+              - img [ref=e1551]
+            - blockquote [ref=e1553]:
+              - paragraph [ref=e1554]: "\"THE place to go for Jewish books.\""
+            - paragraph [ref=e1556]: Lise S.
+          - generic [ref=e1558]:
+            - generic [ref=e1559]:
+              - img [ref=e1560]
+              - img [ref=e1562]
+              - img [ref=e1564]
+              - img [ref=e1566]
+              - img [ref=e1568]
+            - blockquote [ref=e1570]:
+              - paragraph [ref=e1571]: "\"Always has it!\""
+            - paragraph [ref=e1573]: Alese C.
+          - generic [ref=e1575]:
+            - generic [ref=e1576]:
+              - img [ref=e1577]
+              - img [ref=e1579]
+              - img [ref=e1581]
+              - img [ref=e1583]
+              - img [ref=e1585]
+            - blockquote [ref=e1587]:
+              - paragraph [ref=e1588]: 👍👍👍
+            - paragraph [ref=e1590]: Steve Y.
+          - generic [ref=e1592]:
+            - generic [ref=e1593]:
+              - img [ref=e1594]
+              - img [ref=e1596]
+              - img [ref=e1598]
+              - img [ref=e1600]
+              - img [ref=e1602]
+            - blockquote [ref=e1604]:
+              - paragraph [ref=e1605]: One of my favorite bookstores, I never go to Brookline without stopping in here!
+            - paragraph [ref=e1607]: Alyson P.
+          - generic [ref=e1609]:
+            - generic [ref=e1610]:
+              - img [ref=e1611]
+              - img [ref=e1613]
+              - img [ref=e1615]
+              - img [ref=e1617]
+              - img [ref=e1619]
+            - blockquote [ref=e1621]:
+              - paragraph [ref=e1622]: Excellent charming booksore One of my favorites 📚
+            - paragraph [ref=e1624]: Alyson F.
+          - generic [ref=e1626]:
+            - generic [ref=e1627]:
+              - img [ref=e1628]
+              - img [ref=e1630]
+              - img [ref=e1632]
+              - img [ref=e1634]
+              - img [ref=e1636]
+            - blockquote [ref=e1638]:
+              - paragraph [ref=e1639]: Excellent selection of judaica products. Helpful friendly staff. Highly recommend. I make the trip from Maine. Worth the trip
+            - paragraph [ref=e1641]: David S.
+          - generic [ref=e1643]:
+            - generic [ref=e1644]:
+              - img [ref=e1645]
+              - img [ref=e1647]
+              - img [ref=e1649]
+              - img [ref=e1651]
+              - img [ref=e1653]
+            - blockquote [ref=e1655]:
+              - paragraph [ref=e1656]: Wonderful caring customer service and an amazing selection of judaica and educational materials. No other source like this for Hebrew language books at all levels and for all ages.
+            - paragraph [ref=e1658]: Tovah A.
+          - generic [ref=e1660]:
+            - generic [ref=e1661]:
+              - img [ref=e1662]
+              - img [ref=e1664]
+              - img [ref=e1666]
+              - img [ref=e1668]
+              - img [ref=e1670]
+            - blockquote [ref=e1672]:
+              - paragraph [ref=e1673]: Great store with a wide selection of gifts and books. I purchased two wonderful books and an adorable plush toy for my...
+            - paragraph [ref=e1675]: Karen B.
+          - generic [ref=e1677]:
+            - generic [ref=e1678]:
+              - img [ref=e1679]
+              - img [ref=e1681]
+              - img [ref=e1683]
+              - img [ref=e1685]
+              - img [ref=e1687]
+            - blockquote [ref=e1689]:
+              - paragraph [ref=e1690]: Best place in Brookline 🙏🙏💙
+            - paragraph [ref=e1692]: Simon C.
+          - generic [ref=e1694]:
+            - generic [ref=e1695]:
+              - img [ref=e1696]
+              - img [ref=e1698]
+              - img [ref=e1700]
+              - img [ref=e1702]
+              - img [ref=e1704]
+            - blockquote [ref=e1706]:
+              - paragraph [ref=e1707]: Love shopping here for judaica. The staff is always helpful but not pushy and they have a huge inventory.
+            - paragraph [ref=e1709]: Rebecca N.
+        - button "Previous" [disabled]:
+          - img
+        - button "Next" [ref=e1710] [cursor=pointer]:
+          - img [ref=e1711]
+        - list [ref=e1713]:
+          - listitem "Page dot 1" [ref=e1714] [cursor=pointer]
+          - listitem "Page dot 2" [ref=e1715] [cursor=pointer]
+          - listitem "Page dot 3" [ref=e1716] [cursor=pointer]
+          - listitem "Page dot 4" [ref=e1717] [cursor=pointer]
+          - listitem "Page dot 5" [ref=e1718] [cursor=pointer]
+          - listitem "Page dot 6" [ref=e1719] [cursor=pointer]
+          - listitem "Page dot 7" [ref=e1720] [cursor=pointer]
+          - listitem "Page dot 8" [ref=e1721] [cursor=pointer]
+          - listitem "Page dot 9" [ref=e1722] [cursor=pointer]
+          - listitem "Page dot 10" [ref=e1723] [cursor=pointer]
+          - listitem "Page dot 11" [ref=e1724] [cursor=pointer]
+          - listitem "Page dot 12" [ref=e1725] [cursor=pointer]
+          - listitem "Page dot 13" [ref=e1726] [cursor=pointer]
+          - listitem "Page dot 14" [ref=e1727] [cursor=pointer]
+          - listitem "Page dot 15" [ref=e1728] [cursor=pointer]
+          - listitem "Page dot 16" [ref=e1729] [cursor=pointer]
+          - listitem "Page dot 17" [ref=e1730] [cursor=pointer]
+          - listitem "Page dot 18" [ref=e1731] [cursor=pointer]
+          - listitem "Page dot 19" [ref=e1732] [cursor=pointer]
+          - listitem "Page dot 20" [ref=e1733] [cursor=pointer]
+          - listitem "Page dot 21" [ref=e1734] [cursor=pointer]
+          - listitem "Page dot 22" [ref=e1735] [cursor=pointer]
+          - listitem "Page dot 23" [ref=e1736] [cursor=pointer]
+          - listitem "Page dot 24" [ref=e1737] [cursor=pointer]
+          - listitem "Page dot 25" [ref=e1738] [cursor=pointer]
+    - generic [ref=e1741]:
+      - generic [ref=e1742]:
+        - heading "Join our Newsletter" [level=2] [ref=e1743]
+        - paragraph [ref=e1745]: Receive the latest news on Israel Book Shop promotions, exclusive offers, and new arrivals.
+      - generic [ref=e1748]:
+        - generic [ref=e1749]:
+          - textbox "Email address" [ref=e1750]
+          - generic: Email address
+        - button "Sign up" [ref=e1752] [cursor=pointer]
+  - contentinfo "Footer" [ref=e1754]:
+    - generic [ref=e1755]:
+      - generic [ref=e1757]:
+        - generic [ref=e1758]:
+          - heading "Israel Book Shop Publications" [level=2] [ref=e1759]
+          - paragraph [ref=e1761]:
+            - text: Our sister company in Lakewood, NJ. Publisher and distributor of Judaica oriented books and products to wholesale and retail markets.
+            - link "israelbookshoppublications.com" [ref=e1762] [cursor=pointer]:
+              - /url: https://israelbookshoppublications.com
+              - strong [ref=e1763]: israelbookshoppublications.com
+        - generic [ref=e1764]:
+          - heading "Company" [level=2] [ref=e1765]
+          - list [ref=e1767]:
+            - listitem [ref=e1768]:
+              - link "About Us" [ref=e1769] [cursor=pointer]:
+                - /url: /pages/about
+            - listitem [ref=e1770]:
+              - link "Contact Us" [ref=e1771] [cursor=pointer]:
+                - /url: /pages/contact
+            - listitem [ref=e1772]:
+              - link "Our Team" [ref=e1773] [cursor=pointer]:
+                - /url: /pages/about/#team
+            - listitem [ref=e1774]:
+              - link "Testimonials" [ref=e1775] [cursor=pointer]:
+                - /url: /#testimonials
+            - listitem [ref=e1776]:
+              - link "Account Login" [ref=e1777] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1778]:
+              - link "Shipping Policy" [ref=e1779] [cursor=pointer]:
+                - /url: /policies/shipping-policy
+            - listitem [ref=e1780]:
+              - link "Returns & Refund Policy" [ref=e1781] [cursor=pointer]:
+                - /url: /policies/refund-policy
+            - listitem [ref=e1782]:
+              - link "Terms of Service" [ref=e1783] [cursor=pointer]:
+                - /url: /policies/terms-of-service
+            - listitem [ref=e1784]:
+              - link "Privacy Policy" [ref=e1785] [cursor=pointer]:
+                - /url: /pages/privacy-policy
+            - listitem [ref=e1786]:
+              - link "Site Map" [ref=e1787] [cursor=pointer]:
+                - /url: /sitemap.xml
+        - generic [ref=e1788]:
+          - heading "Israel Book Shop" [level=2] [ref=e1789]
+          - generic [ref=e1790]:
+            - paragraph [ref=e1791]:
+              - text: 410 Harvard Street
+              - text: Brookline, MA 02446
+              - text: 617-566-7113 / 800-323-7723
+              - link "info@israelbookshop.com" [ref=e1792] [cursor=pointer]:
+                - /url: /pages/contact
+                - strong [ref=e1793]: info@israelbookshop.com
+            - paragraph [ref=e1794]:
+              - strong [ref=e1795]: "Store Hours:"
+              - text: Sun-Wed 10a - 5pm
+              - text: Thu 10a - 6p
+              - text: Fri 10a - 2p (1:30p in winter)
+      - generic [ref=e1796]:
+        - button "Follow on Shop" [ref=e1801] [cursor=pointer]:
+          - img [ref=e1804]
+          - generic [ref=e1806]:
+            - text: Follow on
+            - img "Shop" [ref=e1807]
+        - generic [ref=e1810]:
+          - paragraph [ref=e1811]:
+            - text: Copyright © 2026 IsraelBookShop. Site by
+            - link "Winter Solutions, Inc." [ref=e1812] [cursor=pointer]:
+              - /url: https://wintersolutions.com
+            - text: with the Power of Shopify.
+          - paragraph [ref=e1813]:
+            - link "Powered by Shopify" [ref=e1814] [cursor=pointer]:
+              - /url: https://www.shopify.com?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore
+  - iframe [ref=e1816]:
+    - generic [ref=f2e4]:
+      - button [ref=f2e7] [cursor=pointer]:
+        - img [ref=f2e9]
+        - img [ref=f2e12]
+      - generic [ref=f2e15]:
+        - generic [ref=f2e18]:
+          - link "Logo" [ref=f2e19] [cursor=pointer]:
+            - /url: https://admin.shopify.com/store/israelbookshop
+            - img "Logo" [ref=f2e20]
+          - generic [ref=f2e22]:
+            - generic [ref=f2e23]: israelbookshop/main
+            - generic [ref=f2e24]: Draft
+        - button "Hide bar" [ref=f2e28] [cursor=pointer]:
+          - generic [ref=f2e29]: Hide bar
+```
+
+# Test source
+
+```ts
+  1  | const { test, expect } = require('@playwright/test');
+  2  | 
+  3  | const paths = [
+  4  |   '/',
+  5  |   '/cart',
+  6  |   '/pages/about',
+  7  |   '/pages/contact',
+  8  |   '/pages/privacy-policy',
+  9  |   '/pages/search-results-page?q=test',
+  10 |   '/policies/shipping-policy',
+  11 |   '/policies/refund-policy',
+  12 |   '/policies/terms-of-service',
+  13 |   '/collections/calendars',
+  14 |   '/collections/educational-resources',
+  15 |   '/collections/calendars/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times'
+  16 | ];
+  17 | 
+  18 | test.describe('Visual Regression Tests', () => {
+  19 |   for (const p of paths) {
+  20 |     const safeName = p === '/' ? 'homepage' : p.replace(/\//g, '_').substring(1);
+  21 | 
+  22 |     test(`should load ${p} successfully and match baseline screenshot`, async ({ page }) => {
+  23 |       test.setTimeout(90000); 
+  24 | 
+  25 |       // Navigate to the page with 'load' instead of 'networkidle' to prevent hanging on tracking pixels
+  26 |       await page.goto(p, { waitUntil: 'load', timeout: 60000 });
+  27 | 
+  28 |       // Wait a moment for dynamic CSS or JS to kick in
+  29 |       await page.waitForTimeout(2000);
+  30 | 
+  31 |       // Smoothly scroll down the page to trigger intersection observers for lazy-loaded images
+  32 |       await page.evaluate(async () => {
+  33 |         await new Promise((resolve) => {
+  34 |           let totalHeight = 0;
+  35 |           const distance = 300; 
+  36 |           const timer = setInterval(() => {
+  37 |             const scrollHeight = document.body.scrollHeight;
+  38 |             window.scrollBy(0, distance);
+  39 |             totalHeight += distance;
+  40 | 
+  41 |             if (totalHeight >= scrollHeight - window.innerHeight) {
+  42 |               clearInterval(timer);
+  43 |               resolve();
+  44 |             }
+  45 |           }, 150); 
+  46 |         });
+  47 |       });
+  48 |       
+  49 |       // Wait for lazy-loaded images to fetch
+  50 |       await page.waitForTimeout(3000);
+  51 |       
+  52 |       // Scroll back to top
+  53 |       await page.evaluate(() => window.scrollTo(0, 0));
+  54 |       await page.waitForTimeout(1000);
+  55 | 
+  56 |       // Full page screenshot assertion
+> 57 |       await expect(page).toHaveScreenshot(`${safeName}.png`, {
+     |                          ^ Error: expect(page).toHaveScreenshot(expected) failed
+  58 |         fullPage: true,
+  59 |         maxDiffPixelRatio: 0.05, // Allow slight differences (5%)
+  60 |         timeout: 60000 
+  61 |       });
+  62 |     });
+  63 |   }
+  64 | });
+  65 | 
+```
