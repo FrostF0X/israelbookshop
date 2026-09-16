@@ -1,0 +1,108 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: visual.spec.js >> Visual Regression Tests >> should load /collections/calendars/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times successfully and match baseline screenshot
+- Location: tests/visual.spec.js:22:5
+
+# Error details
+
+```
+Error: expect(page).toHaveScreenshot(expected) failed
+
+  Expected an image 1280px by 2986px, received 1280px by 720px. 587622 pixels (ratio 0.16 of all image pixels) are different.
+
+  Snapshot: collections_calendars_products_hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times.png
+
+Call log:
+  - Expect "toHaveScreenshot(collections_calendars_products_hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times.png)" with timeout 60000ms
+    - verifying given screenshot expectation
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - Expected an image 1280px by 2986px, received 1280px by 720px. 587622 pixels (ratio 0.16 of all image pixels) are different.
+  - waiting 100ms before taking screenshot
+  - taking page screenshot
+    - disabled all CSS animations
+  - waiting for fonts to load...
+  - fonts loaded
+  - captured a stable screenshot
+  - Expected an image 1280px by 2986px, received 1280px by 720px. 587622 pixels (ratio 0.16 of all image pixels) are different.
+
+```
+
+# Test source
+
+```ts
+  1  | const { test, expect } = require('@playwright/test');
+  2  | 
+  3  | const paths = [
+  4  |   '/',
+  5  |   '/cart',
+  6  |   '/pages/about',
+  7  |   '/pages/contact',
+  8  |   '/pages/privacy-policy',
+  9  |   '/pages/search-results-page?q=test',
+  10 |   '/policies/shipping-policy',
+  11 |   '/policies/refund-policy',
+  12 |   '/policies/terms-of-service',
+  13 |   '/collections/calendars',
+  14 |   '/collections/educational-resources',
+  15 |   '/collections/calendars/products/hebrew-illuminations-16-month-2026-2027-wall-calendar-and-candle-lighting-times'
+  16 | ];
+  17 | 
+  18 | test.describe('Visual Regression Tests', () => {
+  19 |   for (const p of paths) {
+  20 |     const safeName = p === '/' ? 'homepage' : p.replace(/\//g, '_').substring(1);
+  21 | 
+  22 |     test(`should load ${p} successfully and match baseline screenshot`, async ({ page }) => {
+  23 |       test.setTimeout(90000); 
+  24 | 
+  25 |       // Navigate to the page with 'load' instead of 'networkidle' to prevent hanging on tracking pixels
+  26 |       await page.goto(p, { waitUntil: 'load', timeout: 60000 });
+  27 | 
+  28 |       // Wait a moment for dynamic CSS or JS to kick in
+  29 |       await page.waitForTimeout(2000);
+  30 | 
+  31 |       // Smoothly scroll down the page to trigger intersection observers for lazy-loaded images
+  32 |       await page.evaluate(async () => {
+  33 |         await new Promise((resolve) => {
+  34 |           let totalHeight = 0;
+  35 |           const distance = 300; 
+  36 |           const timer = setInterval(() => {
+  37 |             const scrollHeight = document.body.scrollHeight;
+  38 |             window.scrollBy(0, distance);
+  39 |             totalHeight += distance;
+  40 | 
+  41 |             if (totalHeight >= scrollHeight - window.innerHeight) {
+  42 |               clearInterval(timer);
+  43 |               resolve();
+  44 |             }
+  45 |           }, 150); 
+  46 |         });
+  47 |       });
+  48 |       
+  49 |       // Wait for lazy-loaded images to fetch
+  50 |       await page.waitForTimeout(3000);
+  51 |       
+  52 |       // Scroll back to top
+  53 |       await page.evaluate(() => window.scrollTo(0, 0));
+  54 |       await page.waitForTimeout(1000);
+  55 | 
+  56 |       // Full page screenshot assertion
+> 57 |       await expect(page).toHaveScreenshot(`${safeName}.png`, {
+     |                          ^ Error: expect(page).toHaveScreenshot(expected) failed
+  58 |         fullPage: true,
+  59 |         maxDiffPixelRatio: 0.05, // Allow slight differences (5%)
+  60 |         timeout: 60000 
+  61 |       });
+  62 |     });
+  63 |   }
+  64 | });
+  65 | 
+```
