@@ -1450,7 +1450,7 @@
               {{ custom_pagination }}
             {% endif %}
             <span class="visually-hidden">
-              {% render 'utility.translate', key: 'sections.slideshow.slide_index', t: count: forloop.index, fallback: slide_index_label %}
+              {% render 'utility.translate', key: 'sections.slideshow.slide_index', t: count, fallback: slide_index_label %}
             </span>
           </button>
         </li>
@@ -1470,3 +1470,15 @@
 <script type="module">
   import 'section.slideshow';
 </script>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'utility.translate', key: 'sections.slideshow.slide_index', t:
+    count: forloop.index, fallback: slide_index_label %}"
+  to: "{% render 'utility.translate', key: 'sections.slideshow.slide_index', t: count,
+    fallback: slide_index_label %}"
+  position: 45539..45649
+{% endcomment %}

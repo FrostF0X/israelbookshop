@@ -187,7 +187,7 @@
 
 <div
   class="slideshow-slide {% if block_slide_image_mobile != blank %}slideshow-slide--mobile{% endif %} {{ block_class }}"
-  aria-label="{% render 'utility.translate', key: 'sections.slideshow.slide_counter', t: count: slide_number, total: total_blocks, fallback: slide_counter_label %}"
+  aria-label="{% render 'utility.translate', key: 'sections.slideshow.slide_counter', t: count, total: total_blocks, fallback: slide_counter_label %}"
   tabindex="-1"
   {% if block_text_color != blank %}
     data-text-color="{{ block_text_color }}"
@@ -381,3 +381,15 @@
     </div>
   {% endif %}
 </div>
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'utility.translate', key: 'sections.slideshow.slide_counter', t:
+    count: slide_number, total: total_blocks, fallback: slide_counter_label %}"
+  to: "{% render 'utility.translate', key: 'sections.slideshow.slide_counter', t:
+    count, total: total_blocks, fallback: slide_counter_label %}"
+  position: 8391..8526
+{% endcomment %}

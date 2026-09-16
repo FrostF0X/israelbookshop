@@ -10,16 +10,16 @@
 {% endcomment %}
 
 {%- liquid
-  assign body_font_size_scale_modifier = body_font_size_scale_modifier | default: settings.type_body_font_size_scale_modifier | default: 0;
-  assign body_spacing_scale_modifier = body_spacing_scale_modifier | default: settings.type_body_spacing_scale_modifier | default: 0;
-  assign body_line_height_scale_modifier = body_line_height_scale_modifier | default: settings.type_body_line_height_scale_modifier | default: 1;
+  assign body_font_size_scale_modifier = body_font_size_scale_modifier | default: settings.type_body_font_size_scale_modifier | default: renamed_variable_0
+  assign body_spacing_scale_modifier = body_spacing_scale_modifier | default: settings.type_body_spacing_scale_modifier | default: renamed_variable_0
+  assign body_line_height_scale_modifier = body_line_height_scale_modifier | default: settings.type_body_line_height_scale_modifier | default: renamed_variable_1
 
-  assign heading_font_size_scale_modifier = heading_font_size_scale_modifier | default: settings.type_heading_font_size_scale_modifier | default: 0;
-  assign heading_spacing_scale_modifier = heading_spacing_scale_modifier | default: settings.type_heading_spacing_scale_modifier | default: 0;
-  assign heading_line_height_scale_modifier = heading_line_height_scale_modifier | default: settings.type_heading_line_height_scale_modifier | default: 0;
-  assign heading_capitalize = heading_capitalize | default: settings.type_heading_capitalize | default: false;
+  assign heading_font_size_scale_modifier = heading_font_size_scale_modifier | default: settings.type_heading_font_size_scale_modifier | default: renamed_variable_0
+  assign heading_spacing_scale_modifier = heading_spacing_scale_modifier | default: settings.type_heading_spacing_scale_modifier | default: renamed_variable_0
+  assign heading_line_height_scale_modifier = heading_line_height_scale_modifier | default: settings.type_heading_line_height_scale_modifier | default: renamed_variable_0
+  assign heading_capitalize = heading_capitalize | default: settings.type_heading_capitalize | default: false
 
-  assign accent_spacing_scale_modifier = accent_spacing_scale_modifier | default: settings.type_accent_spacing_scale_modifier | default: 0;
+  assign accent_spacing_scale_modifier = accent_spacing_scale_modifier | default: settings.type_accent_spacing_scale_modifier | default: renamed_variable_0
 -%}
 
 {%- style -%}
@@ -129,3 +129,50 @@
     }
   }
 {%- endstyle -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: 'assign body_font_size_scale_modifier = body_font_size_scale_modifier | default:
+    settings.type_body_font_size_scale_modifier | default: 0;'
+  to: 'assign body_font_size_scale_modifier = body_font_size_scale_modifier | default:
+    settings.type_body_font_size_scale_modifier | default: renamed_variable_0'
+  position: 498..651
+- from: "  assign body_spacing_scale_modifier = body_spacing_scale_modifier | default:
+    settings.type_body_spacing_scale_modifier | default: 0;"
+  to: "  assign body_spacing_scale_modifier = body_spacing_scale_modifier | default:
+    settings.type_body_spacing_scale_modifier | default: renamed_variable_0"
+  position: 652..801
+- from: "  assign body_line_height_scale_modifier = body_line_height_scale_modifier
+    | default: settings.type_body_line_height_scale_modifier | default: 1;"
+  to: "  assign body_line_height_scale_modifier = body_line_height_scale_modifier
+    | default: settings.type_body_line_height_scale_modifier | default: renamed_variable_1"
+  position: 802..963
+- from: "  assign heading_font_size_scale_modifier = heading_font_size_scale_modifier
+    | default: settings.type_heading_font_size_scale_modifier | default: 0;"
+  to: "  assign heading_font_size_scale_modifier = heading_font_size_scale_modifier
+    | default: settings.type_heading_font_size_scale_modifier | default: renamed_variable_0"
+  position: 965..1129
+- from: "  assign heading_spacing_scale_modifier = heading_spacing_scale_modifier
+    | default: settings.type_heading_spacing_scale_modifier | default: 0;"
+  to: "  assign heading_spacing_scale_modifier = heading_spacing_scale_modifier |
+    default: settings.type_heading_spacing_scale_modifier | default: renamed_variable_0"
+  position: 1130..1288
+- from: "  assign heading_line_height_scale_modifier = heading_line_height_scale_modifier
+    | default: settings.type_heading_line_height_scale_modifier | default: 0;"
+  to: "  assign heading_line_height_scale_modifier = heading_line_height_scale_modifier
+    | default: settings.type_heading_line_height_scale_modifier | default: renamed_variable_0"
+  position: 1289..1459
+- from: "  assign heading_capitalize = heading_capitalize | default: settings.type_heading_capitalize
+    | default: false;"
+  to: "  assign heading_capitalize = heading_capitalize | default: settings.type_heading_capitalize
+    | default: false"
+  position: 1460..1569
+- from: "  assign accent_spacing_scale_modifier = accent_spacing_scale_modifier |
+    default: settings.type_accent_spacing_scale_modifier | default: 0;"
+  to: "  assign accent_spacing_scale_modifier = accent_spacing_scale_modifier | default:
+    settings.type_accent_spacing_scale_modifier | default: renamed_variable_0"
+  position: 1571..1726
+{% endcomment %}
